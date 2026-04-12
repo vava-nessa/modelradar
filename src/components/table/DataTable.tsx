@@ -68,7 +68,7 @@ export function DataTable<TData>({
                       ${stickyFirstColumn && i === 0 ? "sticky left-0 z-30 bg-[var(--color-surface)]" : ""}
                     `}
                     onClick={header.column.getCanSort() ? header.column.getToggleSortingHandler() : undefined}
-                    style={{ cursor: header.column.getCanSort() ? "pointer" : "default" }}
+                    style={{ cursor: header.column.getCanSort() ? "pointer" : "default", width: stickyFirstColumn && i === 0 ? header.getSize() : undefined }}
                   >
                     <div className="flex items-center gap-1">
                       {flexRender(header.column.columnDef.header, header.getContext())}
@@ -97,6 +97,7 @@ export function DataTable<TData>({
                       px-3 py-2
                       ${stickyFirstColumn && i === 0 ? "sticky left-0 z-10 bg-[var(--color-bg)]" : ""}
                     `}
+                    style={stickyFirstColumn && i === 0 ? { width: cell.column.getSize(), minWidth: cell.column.getSize() } : undefined}
                   >
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </td>

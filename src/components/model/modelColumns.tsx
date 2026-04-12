@@ -72,6 +72,7 @@ export const modelColumns = [
     enableSorting: true,
     enableColumnFilter: true,
     filterFn: "includesString",
+    size: 220,
   }),
 
   columnHelper.accessor("family", {
