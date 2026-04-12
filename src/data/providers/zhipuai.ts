@@ -6,6 +6,7 @@ export const zhipuai: Provider = {
   description:
     "Chinese AI company behind the GLM series of models. Direct API access to GLM-4 and GLM-5 models with OpenAI-compatible endpoints.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://www.zhipuai.cn",
   regions: ["cn"],

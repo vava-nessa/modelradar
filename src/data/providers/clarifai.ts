@@ -6,6 +6,7 @@ export const clarifai: Provider = {
   description:
     "Enterprise AI platform with full lifecycle capabilities. Supports 500+ models with compute orchestration, RAG, and multi-cloud deployment.",
   type: "cloud",
+  provider_access_type: "api",
   status: "active",
   url: "https://clarifai.com",
   regions: ["us", "eu"],

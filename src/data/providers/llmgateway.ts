@@ -6,6 +6,7 @@ export const llmgateway: Provider = {
   description:
     "Unified API gateway for multiple LLM providers. Access 180+ models from OpenAI, Anthropic, Google and more through a single OpenAI-compatible endpoint.",
   type: "aggregator",
+  provider_access_type: "api",
   status: "active",
   url: "https://llmgateway.io",
   has_free_tier: false,

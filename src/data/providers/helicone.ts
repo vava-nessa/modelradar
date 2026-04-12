@@ -6,6 +6,7 @@ export const helicone: Provider = {
   description:
     "AI observability platform providing proxy routing, analytics, and cost management for LLM applications. Supports 300+ models.",
   type: "aggregator",
+  provider_access_type: "api",
   status: "active",
   url: "https://helicone.ai",
   has_free_tier: true,

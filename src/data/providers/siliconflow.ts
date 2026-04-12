@@ -6,6 +6,7 @@ export const siliconflow: Provider = {
   description:
     "Chinese AI aggregator platform offering unified API access to multiple model providers including Qwen, DeepSeek, GLM, and more.",
   type: "aggregator",
+  provider_access_type: "api",
   status: "active",
   url: "https://cloud.siliconflow.com",
   regions: ["cn"],

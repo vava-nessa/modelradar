@@ -5,6 +5,7 @@ export const cohere: Provider = {
   name: "Cohere",
   description: "Direct API access to Command R models. Enterprise-focused with strong RAG and tool-use capabilities.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://cohere.com",
   regions: ["us", "eu"],

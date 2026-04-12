@@ -5,6 +5,7 @@ export const groq: Provider = {
   name: "Groq",
   description: "Fast inference API powered by LPU chips. Extremely low latency for Llama and other models.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://console.groq.com",
   regions: ["us"],

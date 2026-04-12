@@ -6,6 +6,7 @@ export const nova: Provider = {
   description:
     "Amazon Nova is a family of foundation models from AWS offering state-of-the-art intelligence and industry-leading price-performance. Available via Amazon Bedrock and nova.amazon.com for text and multimodal tasks.",
   type: "cloud",
+  provider_access_type: "api",
   status: "active",
   url: "https://aws.amazon.com/nova/",
   regions: ["us", "eu", "asia"],

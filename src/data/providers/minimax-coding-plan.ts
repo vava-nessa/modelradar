@@ -6,6 +6,7 @@ export const minimaxCodingPlan: Provider = {
   description:
     "MiniMax's subscription-based coding plan offering discounted access to M2.5 and M2.7 series models optimized for software development workflows.",
   type: "direct",
+  provider_access_type: "sub",
   status: "active",
   url: "https://platform.minimax.io",
   auth_type: "api_key",

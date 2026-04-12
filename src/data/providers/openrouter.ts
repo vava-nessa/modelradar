@@ -6,6 +6,7 @@ export const openrouter: Provider = {
   description:
     "Model aggregator with unified OpenAI-compatible API. Access 300+ models from 60+ providers through a single endpoint.",
   type: "aggregator",
+  provider_access_type: "api",
   status: "active",
   url: "https://openrouter.ai",
   regions: ["us"],

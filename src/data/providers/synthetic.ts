@@ -6,6 +6,7 @@ export const synthetic: Provider = {
   description:
     "AI platform offering curated models including MiniMax, Moonshot, NVIDIA, DeepSeek, and Qwen via subscription. Includes Always-On models, LoRA adapters, and embedding models with usage-based pricing available.",
   type: "direct",
+  provider_access_type: "sub",
   status: "active",
   url: "https://synthetic.new",
   auth_type: "api_key",

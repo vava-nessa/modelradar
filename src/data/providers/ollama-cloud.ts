@@ -6,6 +6,7 @@ export const ollamaCloud: Provider = {
   description:
     "Cloud-hosted Ollama models accessible via the same API as local Ollama. Run large models like Qwen3 Coder 480B without local GPU.",
   type: "cloud",
+  provider_access_type: "sub",
   status: "active",
   url: "https://docs.ollama.com/cloud",
   regions: ["us"],

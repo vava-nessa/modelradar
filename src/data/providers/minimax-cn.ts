@@ -6,6 +6,7 @@ export const minimaxCn: Provider = {
   description:
     "MiniMax's China-specific API platform (api.minimaxi.com) offering access to MiniMax M2 series models with Anthropic-compatible API for text generation.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://platform.minimaxi.com",
   regions: ["cn"],

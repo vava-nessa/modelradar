@@ -6,6 +6,7 @@ export const wandb: Provider = {
   description:
     "ML experiment tracking platform now offering API access to open-source models including Llama, DeepSeek, Qwen, Phi, and MiniMax through W&B Inference.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://wandb.ai",
   auth_type: "api_key",

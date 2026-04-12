@@ -6,6 +6,7 @@ export const opencode_go: Provider = {
   description:
     "Low-cost subscription service for coding agents offering reliable access to open-source models like GLM-5.1, GLM-5, Kimi K2.5, and MiniMax M2.5. Built for international users with models hosted in the US, EU, and Singapore.",
   type: "direct",
+  provider_access_type: "sub",
   status: "active",
   url: "https://opencode.ai/go",
   regions: ["us", "eu", "sgp"],

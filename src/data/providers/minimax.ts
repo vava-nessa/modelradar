@@ -6,6 +6,7 @@ export const minimax: Provider = {
   description:
     "Chinese AI company offering direct API access to MiniMax models including the M2 series with reasoning capabilities.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://platform.minimax.io",
   regions: ["us", "cn"],

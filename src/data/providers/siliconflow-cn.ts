@@ -6,6 +6,7 @@ export const siliconflowCn: Provider = {
   description:
     "Chinese AI aggregator platform for China region, offering unified API access to multiple model providers.",
   type: "aggregator",
+  provider_access_type: "api",
   status: "active",
   url: "https://cloud.siliconflow.com",
   regions: ["cn"],

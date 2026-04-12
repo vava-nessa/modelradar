@@ -5,6 +5,7 @@ export const togetherai: Provider = {
   name: "Together AI",
   description: "Cloud platform for training and serving open-source models. Finely tuned models and instant inference.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://together.ai",
   regions: ["us", "eu"],

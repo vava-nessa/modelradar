@@ -6,6 +6,7 @@ export const submodel: Provider = {
   description:
     "GPU cloud platform offering high-performance inference for open-source models including DeepSeek, Qwen, and GLM. Provides pay-per-token pricing with OpenAI-compatible API.",
   type: "cloud",
+  provider_access_type: "api",
   status: "active",
   url: "https://submodel.ai",
   auth_type: "api_key",

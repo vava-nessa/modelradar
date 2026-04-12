@@ -6,6 +6,7 @@ export const zenmux: Provider = {
   description:
     "Multi-provider AI router that aggregates models from OpenAI, Anthropic, Google and other providers with automatic routing for cost optimization. Supports OpenAI, Anthropic Messages, and Google Vertex protocols.",
   type: "aggregator",
+  provider_access_type: "api",
   status: "active",
   url: "https://zenmux.ai",
   auth_type: "api_key",

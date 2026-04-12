@@ -6,6 +6,7 @@ export const nebius: Provider = {
   description:
     "Production inference platform for open-source models. Sub-second latency, autoscaling, 99.9% SLA, and fine-tuning support.",
   type: "cloud",
+  provider_access_type: "api",
   status: "active",
   url: "https://tokenfactory.nebius.com",
   regions: ["eu", "us"],

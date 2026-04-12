@@ -6,6 +6,7 @@ export const zaiCodingPlan: Provider = {
   description:
     "Z.ai's coding-focused subscription plan offering discounted access to GLM models optimized for software development and code generation tasks.",
   type: "direct",
+  provider_access_type: "sub",
   status: "active",
   url: "https://platform.z.ai",
   auth_type: "api_key",

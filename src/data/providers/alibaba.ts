@@ -6,6 +6,7 @@ export const alibaba: Provider = {
   description:
     "Alibaba Cloud's Model Studio offering access to Qwen models through their international cloud platform.",
   type: "cloud",
+  provider_access_type: "api",
   status: "active",
   url: "https://www.alibabacloud.com/en/solutions/generative-ai/qwen",
   has_free_tier: true,

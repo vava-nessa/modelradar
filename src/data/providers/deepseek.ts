@@ -5,6 +5,7 @@ export const deepseek: Provider = {
   name: "DeepSeek",
   description: "Direct API access to DeepSeek models. Ultra-competitive pricing, OpenAI-compatible.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://deepseek.com",
   regions: ["us"],

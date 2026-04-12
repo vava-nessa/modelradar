@@ -6,6 +6,7 @@ export const perplexity: Provider = {
   description:
     "AI search engine and API platform. Provides Sonar family models optimized for real-time web-grounded answers with citations. Offers both API and Pro subscription.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://perplexity.ai",
   regions: ["us"],

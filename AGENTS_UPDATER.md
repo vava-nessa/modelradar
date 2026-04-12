@@ -235,6 +235,7 @@ export const newProvider: Provider = {
   name: "Provider Name",
   description: "Short description.",
   type: "direct",           // direct | aggregator | cloud | self_hosted
+  provider_access_type: "api", // free | api | sub | local
   status: "active",         // active | maintenance | sunset
   url: "https://...",
   regions: ["us", "eu"],
@@ -310,6 +311,9 @@ The build will fail if:
 
 ### ProviderType
 `"direct" | "aggregator" | "cloud" | "self_hosted"`
+
+### ProviderAccessType
+`"free" | "api" | "sub" | "local"`
 
 ### ProviderStatus
 `"active" | "maintenance" | "sunset"`

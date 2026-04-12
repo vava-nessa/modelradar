@@ -6,6 +6,7 @@ export const chutes: Provider = {
   description:
     "Chutes is a serverless AI compute platform for open-source models. Provides high-performance inference with ephemeral jobs, batch processing, and a curated registry of SOTA open-source models accessible via OpenAI-compatible API.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://chutes.ai",
   regions: ["us", "global"],

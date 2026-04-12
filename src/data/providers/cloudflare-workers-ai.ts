@@ -6,6 +6,7 @@ export const cloudflareWorkersAI: Provider = {
   description:
     "Serverless GPU inference on Cloudflare's global network. Run open-source models close to users with pay-per-request pricing.",
   type: "cloud",
+  provider_access_type: "api",
   status: "active",
   url: "https://developers.cloudflare.com/workers-ai",
   regions: ["global"],

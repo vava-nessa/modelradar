@@ -6,6 +6,7 @@ export const alibabaCn: Provider = {
   description:
     "Alibaba Cloud's China region offering featuring DashScope API for Qwen and DeepSeek models, optimized for Chinese market.",
   type: "cloud",
+  provider_access_type: "api",
   status: "active",
   url: "https://help.aliyun.com",
   has_free_tier: true,

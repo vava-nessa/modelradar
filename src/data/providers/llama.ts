@@ -6,6 +6,7 @@ export const llama: Provider = {
   description:
     "Llama.com is Meta's official platform for accessing Llama models via API. Provides direct access to open-source Llama models including Llama 3, 3.1, 3.2, 3.3 and 4 families with enterprise support options.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://llama.com",
   regions: ["us", "eu"],

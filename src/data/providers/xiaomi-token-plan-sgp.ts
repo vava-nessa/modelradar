@@ -6,6 +6,7 @@ export const xiaomiTokenPlanSgp: Provider = {
   description:
     "Xiaomi MiMo API platform for Singapore region with token-based billing, offering access to MiMo-V2 Pro, Omni, and TTS models.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://platform.xiaomimimo.com",
   regions: ["sg"],

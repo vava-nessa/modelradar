@@ -1,11 +1,72 @@
 import type { ProviderOffer } from "@/data/schema";
 import { formatPrice, formatRateLimit } from "@/lib/format";
 import { Link } from "@tanstack/react-router";
+import {
+  IconCloud,
+  IconCreditCard,
+  IconReceipt,
+  IconDeviceLaptop,
+} from "@tabler/icons-react";
+
+interface ProviderWithAccessType {
+  id: string;
+  name: string;
+  type: string;
+  provider_access_type: "free" | "api" | "sub" | "local";
+}
 
 interface OfferTableProps {
   offers: (ProviderOffer & {
-    provider: { id: string; name: string; type: string };
+    provider: ProviderWithAccessType;
   })[];
+}
+
+const accessTypeConfig: Record<
+  string,
+  { icon: typeof IconCloud; label: string; color: string; bgColor: string }
+> = {
+  free: {
+    icon: IconCreditCard,
+    label: "Free tier available",
+    color: "text-emerald-400",
+    bgColor: "bg-emerald-400/10",
+  },
+  api: {
+    icon: IconCloud,
+    label: "Pay-per-token API",
+    color: "text-blue-400",
+    bgColor: "bg-blue-400/10",
+  },
+  sub: {
+    icon: IconReceipt,
+    label: "Subscription-based",
+    color: "text-purple-400",
+    bgColor: "bg-purple-400/10",
+  },
+  local: {
+    icon: IconDeviceLaptop,
+    label: "Runs locally",
+    color: "text-orange-400",
+    bgColor: "bg-orange-400/10",
+  },
+};
+
+function AccessTypeIcon({
+  type,
+}: {
+  type: "free" | "api" | "sub" | "local";
+}) {
+  const config = accessTypeConfig[type] ?? accessTypeConfig.api;
+  const Icon = config.icon;
+  return (
+    <div
+      className={`tooltip tooltip-top flex items-center gap-1 rounded px-1.5 py-0.5 text-xs ${config.bgColor} ${config.color}`}
+      data-tip={config.label}
+    >
+      <Icon size={14} stroke={2} />
+      <span className="uppercase">{type}</span>
+    </div>
+  );
 }
 
 export function OfferTable({ offers }: OfferTableProps) {
@@ -43,7 +104,9 @@ export function OfferTable({ offers }: OfferTableProps) {
                   {offer.provider.name}
                 </Link>
               </td>
-              <td className="px-3 py-2 capitalize">{offer.provider.type}</td>
+              <td className="px-3 py-2">
+                <AccessTypeIcon type={offer.provider.provider_access_type} />
+              </td>
               <td className="px-3 py-2 text-right">
                 {formatPrice(offer.input_per_mtok)}
               </td>

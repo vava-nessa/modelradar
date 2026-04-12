@@ -6,6 +6,7 @@ export const moark: Provider = {
   description:
     "AI platform aggregating Chinese AI models including GLM and MiniMax, offering serverless API access with OpenAI-compatible endpoints.",
   type: "aggregator",
+  provider_access_type: "api",
   status: "active",
   url: "https://moark.ai",
   has_free_tier: false,

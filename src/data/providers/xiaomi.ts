@@ -6,6 +6,7 @@ export const xiaomi: Provider = {
   description:
     "Xiaomi's MiMo model family API platform offering access to MiMo-V2 series models including Pro, Omni, Flash, and TTS. OpenAI-compatible API with multimodal and reasoning capabilities.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://platform.xiaomimimo.com",
   auth_type: "api_key",

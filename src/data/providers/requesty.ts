@@ -6,6 +6,7 @@ export const requesty: Provider = {
   description:
     "Unified LLM gateway with intelligent routing, automatic failover, and real-time observability. Access 400+ models with geo-based routing, policy controls, and PII detection. EU hosting available.",
   type: "aggregator",
+  provider_access_type: "api",
   status: "active",
   url: "https://requesty.ai",
   regions: ["us", "eu", "apac"],

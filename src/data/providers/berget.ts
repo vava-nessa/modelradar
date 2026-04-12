@@ -6,6 +6,7 @@ export const berget: Provider = {
   description:
     "Berget.AI is a European AI inference provider focused on AI sovereignty and sustainability. Offers access to powerful open-source models with per-response CO2e emission tracking, optimized for agentic applications.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://berget.ai",
   regions: ["eu"],

@@ -6,6 +6,7 @@ export const jiekou: Provider = {
   description:
     "Chinese AI aggregator platform offering unified API access to multiple model providers including OpenAI, Anthropic, Google, and Chinese models.",
   type: "aggregator",
+  provider_access_type: "api",
   status: "active",
   url: "https://www.jiekou.ai",
   regions: ["cn"],

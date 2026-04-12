@@ -6,6 +6,7 @@ export const evroc: Provider = {
   description:
     "European sovereign AI platform offering access to frontier models with data residency within EU borders. Provides shared and dedicated AI model endpoints through their Think platform.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://evroc.com",
   regions: ["eu"],

@@ -6,6 +6,7 @@ export const bailing: Provider = {
   description:
     "Bailing is an AI inference service by Ant Group / Alipay, providing access to large language models via the TBox platform. Offers OpenAI-compatible API for seamless integration.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://alipay.com",
   regions: ["cn"],

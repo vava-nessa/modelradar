@@ -6,6 +6,7 @@ export const nanoGpt: Provider = {
   description:
     "Lightweight AI provider offering access to ASI and auto-select models with competitive pricing for text processing.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://nano-gpt.ai",
   has_free_tier: false,

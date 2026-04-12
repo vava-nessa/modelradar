@@ -6,6 +6,7 @@ export const aihubmix: Provider = {
   description:
     "Chinese AI aggregator platform offering unified API access to multiple model providers including OpenAI, Claude, Gemini, and Chinese models.",
   type: "aggregator",
+  provider_access_type: "api",
   status: "active",
   url: "https://www.aihubmix.com",
   regions: ["cn"],

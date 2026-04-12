@@ -5,6 +5,7 @@ export const xai: Provider = {
   name: "xAI",
   description: "Direct API access to Grok models. Real-time knowledge up to 2024, strong reasoning capabilities.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://x.ai",
   regions: ["us"],

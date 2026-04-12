@@ -6,6 +6,7 @@ export const inference: Provider = {
   description:
     "Inference is a direct AI inference provider offering OpenAI-compatible API access to various LLM models. Provides pay-per-token pricing for developers building AI-powered applications.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://inference.net",
   regions: ["us"],

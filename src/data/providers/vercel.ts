@@ -6,6 +6,7 @@ export const vercel: Provider = {
   description:
     "Cloud platform offering AI model access through Vercel AI SDK. Aggregates multiple providers including OpenAI, Anthropic, Google, Mistral, and more.",
   type: "aggregator",
+  provider_access_type: "api",
   status: "active",
   url: "https://vercel.com",
   auth_type: "api_key",

@@ -6,6 +6,7 @@ export const xiaomiTokenPlanAms: Provider = {
   description:
     "Xiaomi MiMo API platform deployed on AMS (Amazon Marketing Services) region, offering token-based billing for MiMo-V2 models including Pro, Omni, and TTS.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://platform.xiaomimimo.com",
   regions: ["us"],

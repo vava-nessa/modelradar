@@ -5,6 +5,7 @@ export const anthropic: Provider = {
   name: "Anthropic API",
   description: "Direct API access to Claude models. Best for Claude-native features (MCP, computer use, prompt caching).",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://console.anthropic.com",
   regions: ["us", "eu"],

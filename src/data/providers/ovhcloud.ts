@@ -6,6 +6,7 @@ export const ovhcloud: Provider = {
   description:
     "European sovereign cloud provider offering AI Endpoints — serverless inference API for LLMs, voice processing, document analysis, and image analysis. Supports 40+ open-weight models with zero data retention.",
   type: "cloud",
+  provider_access_type: "api",
   status: "active",
   url: "https://www.ovhcloud.com/en/public-cloud/ai-endpoints/",
   regions: ["eu"],

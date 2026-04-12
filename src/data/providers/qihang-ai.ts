@@ -6,6 +6,7 @@ export const qihangAi: Provider = {
   description:
     "QiHang AI is a Chinese LLM inference provider offering access to various AI models via an OpenAI-compatible API. Provides pay-per-token pricing for developers integrating AI capabilities.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://www.qhaigc.net",
   regions: ["cn"],

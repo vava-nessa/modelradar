@@ -6,6 +6,7 @@ export const moonshotai: Provider = {
   description:
     "Chinese AI company behind the Kimi series of models. Offers direct API access to Kimi K2 and earlier models with OpenAI-compatible endpoints.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://platform.moonshot.ai",
   regions: ["us", "cn"],

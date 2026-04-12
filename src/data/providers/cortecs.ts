@@ -6,6 +6,7 @@ export const cortecs: Provider = {
   description:
     "AI infrastructure provider offering access to frontier models with a focus on coding and reasoning capabilities.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://cortecs.ai",
   has_free_tier: false,

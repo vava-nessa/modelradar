@@ -6,6 +6,7 @@ export const vivgrid: Provider = {
   description:
     "AI agent infrastructure platform offering observability, debugging, evaluation, and globally distributed inference. Supports models like GPT-5, GLM-5, and DeepSeek with geo-distributed acceleration for low latency.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://www.vivgrid.com",
   regions: ["us", "eu", "apac"],

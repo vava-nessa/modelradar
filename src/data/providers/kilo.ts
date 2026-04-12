@@ -6,6 +6,7 @@ export const kilo: Provider = {
   description:
     "Universal AI inference gateway that intelligently routes requests across top-tier providers (Anthropic, OpenAI, Mistral, and 500+ models). OpenAI-compatible API with unified access.",
   type: "aggregator",
+  provider_access_type: "api",
   status: "active",
   url: "https://kilo.ai/gateway",
   regions: ["us", "eu"],

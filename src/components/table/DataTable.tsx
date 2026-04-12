@@ -57,14 +57,14 @@ export function DataTable<TData>({
         style={{ height: "100%" }}
       >
         <table className="w-full">
-          <thead className="sticky top-0 z-20 bg-[var(--color-surface)] text-xs uppercase tracking-wider text-[var(--color-text-muted)]">
+          <thead className="sticky top-14 z-20 bg-[var(--color-surface)] text-xs uppercase tracking-wider text-[var(--color-text-muted)] shadow-sm">
             {table.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id}>
                 {headerGroup.headers.map((header, i) => (
                   <th
                     key={header.id}
                     className={`
-                      px-4 py-3 text-left font-medium border-x border-[var(--color-border)] first:border-l-0 last:border-r-0
+                      px-2.5 py-2 text-left font-medium border-x border-[var(--color-border)] first:border-l-0 last:border-r-0
                       ${stickyFirstColumn && i === 0 ? "sticky left-0 z-30 bg-[var(--color-surface)] border-r" : ""}
                     `}
                     onClick={header.column.getCanSort() ? header.column.getToggleSortingHandler() : undefined}

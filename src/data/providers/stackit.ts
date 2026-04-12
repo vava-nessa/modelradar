@@ -6,6 +6,7 @@ export const stackit: Provider = {
   description:
     "German sovereign cloud from Schwarz Group offering AI Model Serving. GDPR-compliant European cloud hosting open-source models like Llama, Qwen, and Gemma.",
   type: "cloud",
+  provider_access_type: "api",
   status: "active",
   url: "https://www.stackit.de",
   regions: ["eu"],

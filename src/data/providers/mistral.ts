@@ -5,6 +5,7 @@ export const mistral: Provider = {
   name: "Mistral AI",
   description: "Direct API access to Mistral models. OpenAI-compatible, fast inference, EU-hosted options.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://mistral.ai",
   regions: ["us", "eu"],

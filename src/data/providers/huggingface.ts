@@ -6,6 +6,7 @@ export const huggingface: Provider = {
   description:
     "Platform for ML models with Inference Providers — access 200+ models from leading AI providers with unified API and no markup.",
   type: "aggregator",
+  provider_access_type: "api",
   status: "active",
   url: "https://huggingface.co/docs/api-inference",
   regions: ["us"],

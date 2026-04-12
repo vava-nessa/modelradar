@@ -6,6 +6,7 @@ export const inception: Provider = {
   description:
     "Fast inference platform specializing in Mercury, the fastest reasoning LLM. Offers Mercury 2 for chat and Mercury Edit 2 for code editing with FIM and next-edit capabilities.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://www.inceptionlabs.ai",
   auth_type: "api_key",

@@ -5,6 +5,7 @@ export const novita_ai: Provider = {
   name: "Novita AI",
   description: "Multi-provider AI API with access to hundreds of models. Competitive pricing, fast inference.",
   type: "aggregator",
+  provider_access_type: "api",
   status: "active",
   url: "https://novita.ai",
   regions: ["us", "eu"],

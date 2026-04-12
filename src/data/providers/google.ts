@@ -5,6 +5,7 @@ export const google: Provider = {
   name: "Google AI",
   description: "Direct API access to Gemini models via Google AI Studio. Multimodal with massive context windows.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://ai.google.dev",
   regions: ["us", "eu", "asia"],

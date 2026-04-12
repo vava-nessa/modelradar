@@ -6,6 +6,7 @@ export const lucidquery: Provider = {
   description:
     "AI inference platform specializing in code generation models including LucidNova RF1 100B and Nexus Coder. Provides OpenAI-compatible API for coding tasks.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://lucidquery.ai",
   regions: ["us"],

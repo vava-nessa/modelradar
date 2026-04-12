@@ -6,6 +6,7 @@ export const quantumML: Provider = {
   description:
     "QuantumML is an AI inference provider offering access to various large language models via OpenAI-compatible API. Focuses on delivering fast and cost-effective model inference for production workloads.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://quantumml.ai",
   regions: ["us"],

@@ -6,6 +6,7 @@ export const gitlab: Provider = {
   description:
     "GitLab's AI-powered coding assistant integrated into the GitLab DevOps platform. Provides AI chat and code completion within GitLab's CI/CD and repository workflows.",
   type: "aggregator",
+  provider_access_type: "sub",
   status: "active",
   url: "https://about.gitlab.com/gitlab-duo",
   regions: ["us", "eu"],

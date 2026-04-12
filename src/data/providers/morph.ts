@@ -6,6 +6,7 @@ export const morph: Provider = {
   description:
     "AI model provider specializing in efficient text processing with context windows up to 32K tokens.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://morph.ai",
   has_free_tier: false,

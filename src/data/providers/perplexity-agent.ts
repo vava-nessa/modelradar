@@ -6,6 +6,7 @@ export const perplexityAgent: Provider = {
   description:
     "Perplexity's agentic AI platform that combines web search with multiple frontier models (Claude, Gemini, GPT, Grok) for autonomous research and task completion.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://perplexity.ai",
   auth_type: "api_key",

@@ -6,6 +6,7 @@ export const iflowcn: Provider = {
   description:
     "Chinese AI model aggregation platform offering free access to models like Kimi K2, Qwen3 Coder, and DeepSeek v3. OpenAI-compatible API with a free model marketplace.",
   type: "aggregator",
+  provider_access_type: "api",
   status: "sunset",
   url: "https://platform.iflow.cn",
   regions: ["cn"],

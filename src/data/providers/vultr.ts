@@ -6,6 +6,7 @@ export const vultr: Provider = {
   description:
     "Serverless inference platform for GenAI applications with global, self-optimizing AI model deployment. Deploy on AMD MI355X or NVIDIA GPUs with OpenAI-compatible API, turnkey RAG, and private cluster options.",
   type: "cloud",
+  provider_access_type: "api",
   status: "active",
   url: "https://www.vultr.com/products/cloud-inference/",
   regions: ["us", "eu", "apac"],

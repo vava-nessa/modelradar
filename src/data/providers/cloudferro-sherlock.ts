@@ -6,6 +6,7 @@ export const cloudferroSherlock: Provider = {
   description:
     "CloudFerro's fully managed Generative AI service with OpenAI-compatible endpoints. Provides curated language models through Sherlock AI Hub with high security and privacy standards.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://console.sherlock.cloudferro.com",
   regions: ["eu-central", "eu-west"],

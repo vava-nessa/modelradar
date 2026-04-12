@@ -6,6 +6,7 @@ export const modelscope: Provider = {
   description:
     "Chinese AI platform by Alibaba's Damo Academy offering API access to Qwen, GLM, and other models. Integrates many open-source models.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://modelscope.cn",
   regions: ["cn"],

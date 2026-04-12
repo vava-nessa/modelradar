@@ -6,6 +6,7 @@ export const stepfun: Provider = {
   description:
     "Chinese AI company offering Step series models via direct API. Step models are OpenAI-compatible with competitive pricing.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://platform.stepfun.com",
   regions: ["cn"],

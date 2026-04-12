@@ -6,6 +6,7 @@ export const dinference: Provider = {
   description:
     "Dinference is an AI inference platform offering access to open-source and proprietary models with a focus on developer experience and competitive pricing.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://dinference.ai",
   regions: ["us"],

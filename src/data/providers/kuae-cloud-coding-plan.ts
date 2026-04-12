@@ -6,6 +6,7 @@ export const kuaeCloudCodingPlan: Provider = {
   description:
     "Chinese cloud-based AI coding assistant platform offering access to coding-specialized models including Kimi K2. Provides code completion and AI-assisted development features.",
   type: "direct",
+  provider_access_type: "sub",
   status: "active",
   url: "https://kuae.cn",
   regions: ["cn"],

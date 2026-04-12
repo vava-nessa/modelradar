@@ -6,6 +6,7 @@ export const ai302: Provider = {
   description:
     "Chinese AI aggregator platform offering pay-per-use access to multiple AI providers and models with no subscription required.",
   type: "aggregator",
+  provider_access_type: "api",
   status: "active",
   url: "https://302.ai",
   regions: ["cn"],

@@ -6,6 +6,7 @@ export const kimiForCoding: Provider = {
   description:
     "Kimi for Coding is Moonshot AI's code-specialized API service offering access to Kimi K2 and K2.5 models optimized for software development tasks including code completion, debugging, and refactoring.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://platform.moonshot.ai/docs/kimi-code",
   regions: ["us", "asia"],

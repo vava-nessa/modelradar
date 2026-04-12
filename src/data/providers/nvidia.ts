@@ -6,6 +6,7 @@ export const nvidia: Provider = {
   description:
     "NVIDIA NIM (NVIDIA Inference Microservices) provides optimized containers for self-hosting GPU-accelerated AI models. Offers enterprise-grade inference with prebuilt, optimized containers for pretrained and customized AI models across clouds, data centers, RTX AI PCs and workstations.",
   type: "cloud",
+  provider_access_type: "api",
   status: "active",
   url: "https://developer.nvidia.com/nim",
   regions: ["us", "eu"],

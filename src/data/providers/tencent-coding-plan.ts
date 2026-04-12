@@ -6,6 +6,7 @@ export const tencentCodingPlan: Provider = {
   description:
     "Tencent Cloud's AI coding assistant powered by Hunyuan and混元 models. Integrated with Tencent Cloud development tools for Chinese developers.",
   type: "direct",
+  provider_access_type: "sub",
   status: "active",
   url: "https://cloud.tencent.com/product/coding",
   regions: ["cn"],

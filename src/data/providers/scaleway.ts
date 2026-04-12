@@ -6,6 +6,7 @@ export const scaleway: Provider = {
   description:
     "French cloud provider offering AI Model Serving with GDPR-compliant infrastructure. Hosts open-source models like Llama, Mistral, Qwen, and Whisper.",
   type: "cloud",
+  provider_access_type: "api",
   status: "active",
   url: "https://www.scaleway.com",
   regions: ["eu"],

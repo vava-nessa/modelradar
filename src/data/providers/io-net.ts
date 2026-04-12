@@ -6,6 +6,7 @@ export const ionet: Provider = {
   description:
     "IO.net is a distributed GPU cloud for AI inference. Offers access to distributed compute resources for running AI models at scale with competitive pricing.",
   type: "cloud",
+  provider_access_type: "api",
   status: "active",
   url: "https://ionet.com",
   regions: ["us", "eu"],

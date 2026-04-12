@@ -6,6 +6,7 @@ export const moonshotaiCn: Provider = {
   description:
     "Moonshot AI's China-region specific deployment offering Kimi K2 and related models to Chinese developers. OpenAI-compatible API with CN data residency.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://platform.moonshot.cn",
   regions: ["cn"],

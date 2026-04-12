@@ -5,6 +5,7 @@ export const fireworks_ai: Provider = {
   name: "Fireworks AI",
   description: "High-performance inference for open-source models. Extremely fast, OpenAI-compatible API.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://fireworks.ai",
   regions: ["us"],

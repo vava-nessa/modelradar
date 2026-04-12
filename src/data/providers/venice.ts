@@ -6,6 +6,7 @@ export const venice: Provider = {
   description:
     "Uncensored AI model API provider. Offers open-source models like Llama, Mistral, Qwen, and MiniMax with relaxed content policies. Focus on privacy and uncensored outputs.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://venice.ai",
   auth_type: "api_key",

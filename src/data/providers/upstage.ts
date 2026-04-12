@@ -6,6 +6,7 @@ export const upstage: Provider = {
   description:
     "South Korean AI company offering Solar Pro family of models. Solar Pro 3 is a 102B MoE model rivaling frontier models, running efficiently on single GPU.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://www.upstage.ai",
   regions: ["us", "eu", "ap"],

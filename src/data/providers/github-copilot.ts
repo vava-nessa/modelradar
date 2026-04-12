@@ -6,6 +6,7 @@ export const githubCopilot: Provider = {
   description:
     "GitHub's AI pair programmer offering access to multiple frontier models including Claude, GPT, Gemini, and Grok through Copilot subscriptions.",
   type: "direct",
+  provider_access_type: "sub",
   status: "active",
   url: "https://github.com/features/copilot",
   auth_type: "oauth",

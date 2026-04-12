@@ -6,6 +6,7 @@ export const cerebras: Provider = {
   description:
     "Wafer-scale engine inference delivering 10-20x faster than GPU solutions. Runs open models like Llama 3.1 70B at 2,100 tokens/sec.",
   type: "cloud",
+  provider_access_type: "api",
   status: "active",
   url: "https://cerebras.ai/inference",
   regions: ["us"],

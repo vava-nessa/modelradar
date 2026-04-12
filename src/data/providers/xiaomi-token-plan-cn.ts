@@ -6,6 +6,7 @@ export const xiaomiTokenPlanCn: Provider = {
   description:
     "Xiaomi MiMo API platform for China region with token-based billing, offering access to MiMo-V2 series models through minimaxi.com endpoint.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://platform.xiaomimimo.com",
   regions: ["cn"],

@@ -6,6 +6,7 @@ export const cloudflareAiGateway: Provider = {
   description:
     "Cloudflare AI Gateway provides unified API access to multiple AI models via Workers AI and external providers. Offers edge-native inference with global distribution, caching, and rate limiting.",
   type: "aggregator",
+  provider_access_type: "api",
   status: "active",
   url: "https://developers.cloudflare.com/ai-gateway/",
   regions: ["global"],

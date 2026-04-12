@@ -6,6 +6,7 @@ export const deepinfra: Provider = {
   description:
     "Low-cost AI inference platform with OpenAI-compatible API. 100+ hosted models on H100/A100 GPUs with pay-per-token pricing.",
   type: "cloud",
+  provider_access_type: "api",
   status: "active",
   url: "https://deepinfra.com",
   regions: ["us"],

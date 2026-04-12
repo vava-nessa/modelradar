@@ -6,6 +6,7 @@ export const githubModels: Provider = {
   description:
     "GitHub's model marketplace providing API access to open-source and frontier models. Part of GitHub Copilot ecosystem with OAuth authentication.",
   type: "aggregator",
+  provider_access_type: "api",
   status: "active",
   url: "https://github.com/marketplace/models",
   auth_type: "oauth",

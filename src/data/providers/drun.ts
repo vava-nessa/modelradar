@@ -6,6 +6,7 @@ export const drun: Provider = {
   description:
     "AI inference provider offering serverless API access to open-weight models including DeepSeek R1 and V3 with reasoning capabilities.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://drun.io",
   auth_type: "api_key",

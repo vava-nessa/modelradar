@@ -6,6 +6,7 @@ export const qiniuAi: Provider = {
   description:
     "Chinese AI infrastructure provider offering Qwen and other open-source models through a pay-per-token API.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://qiniu.com",
   has_free_tier: false,

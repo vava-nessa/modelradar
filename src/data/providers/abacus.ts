@@ -6,6 +6,7 @@ export const abacus: Provider = {
   description:
     "AI aggregator platform offering access to a wide range of models including OpenAI, Anthropic, Google, Meta, and Chinese models via RouteLLM.",
   type: "aggregator",
+  provider_access_type: "api",
   status: "active",
   url: "https://abacus.ai",
   regions: ["us"],

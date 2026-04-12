@@ -6,6 +6,7 @@ export const meganova: Provider = {
   description:
     "AI model provider offering a diverse catalog of models including DeepSeek, Meta Llama, MiniMax, Mistral, and Moonshot models via OpenAI-compatible API endpoints.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://meganova.ai",
   regions: ["us", "cn"],

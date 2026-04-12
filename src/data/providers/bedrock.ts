@@ -6,6 +6,7 @@ export const bedrock: Provider = {
   description:
     "AWS managed service for foundation models. Enterprise-grade with IAM, VPC, cross-region inference, and AgentCore for multi-agent workflows.",
   type: "cloud",
+  provider_access_type: "api",
   status: "active",
   url: "https://aws.amazon.com/bedrock",
   regions: ["us-east-1", "us-west-2", "eu-west-1", "ap-northeast-1"],

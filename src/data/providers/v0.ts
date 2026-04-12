@@ -6,6 +6,7 @@ export const v0: Provider = {
   description:
     "Vercel's AI code generator specialized in web development. Generates React, Vue, Svelte, and HTML/CSS code from text prompts.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://v0.app",
   auth_type: "api_key",

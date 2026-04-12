@@ -6,6 +6,7 @@ export const azure: Provider = {
   description:
     "Microsoft's enterprise AI platform offering OpenAI models with Azure's security, compliance, and private networking.",
   type: "cloud",
+  provider_access_type: "api",
   status: "active",
   url: "https://azure.microsoft.com/services/ai-foundry",
   regions: ["us-east", "us-west", "eu-west", "uk-south"],

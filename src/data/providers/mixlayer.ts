@@ -6,6 +6,7 @@ export const mixlayer: Provider = {
   description:
     "AI API platform aggregating Qwen and other Chinese open-source models with OpenAI-compatible endpoints for text generation and reasoning.",
   type: "aggregator",
+  provider_access_type: "api",
   status: "active",
   url: "https://mixlayer.ai",
   auth_type: "api_key",

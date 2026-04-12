@@ -6,6 +6,7 @@ export const baseten: Provider = {
   description:
     "Baseten is a platform for deploying and scaling machine learning models. Provides serverless inference for LLMs with support for open-source models, custom inference endpoints, and GPU acceleration.",
   type: "direct",
+  provider_access_type: "api",
   status: "active",
   url: "https://baseten.co",
   regions: ["us"],
