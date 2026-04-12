@@ -53,7 +53,7 @@ export function DataTable<TData>({
     <div className="flex flex-col gap-4">
       <div
         ref={containerRef}
-        className="relative overflow-auto rounded-md border border-[var(--color-border)]"
+        className="relative overflow-auto"
         style={{ maxHeight: "70vh" }}
       >
         <table className="w-full">

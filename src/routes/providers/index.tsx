@@ -49,7 +49,7 @@ const providerColumns = [
 
 function ProvidersIndex() {
   return (
-    <main className="px-4 py-6">
+    <main className="py-6">
       <DataTable
           data={allProviders}
           columns={providerColumns}
