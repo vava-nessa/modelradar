@@ -1,0 +1,140 @@
+import type { ProviderOffer } from "@/data/schema";
+
+export const allOffers: ProviderOffer[] = [
+  // --- Claude Sonnet 4 ---
+  {
+    model_id: "claude-sonnet-4",
+    provider_id: "anthropic",
+    provider_model_id: "claude-sonnet-4-20250514",
+    input_per_mtok: 3.0,
+    output_per_mtok: 15.0,
+    cache_read_per_mtok: 0.3,
+    cache_write_per_mtok: 3.75,
+    batch_input_per_mtok: 1.5,
+    batch_output_per_mtok: 7.5,
+    rate_limit_rpm: 4000,
+    rate_limit_tpm: 400000,
+    status: "ga",
+    available_since: "2025-05-14",
+  },
+  {
+    model_id: "claude-sonnet-4",
+    provider_id: "openrouter",
+    provider_model_id: "anthropic/claude-sonnet-4",
+    input_per_mtok: 3.0,
+    output_per_mtok: 15.0,
+    status: "ga",
+    available_since: "2025-05-14",
+    notes: "OpenAI-compatible endpoint",
+  },
+  {
+    model_id: "claude-sonnet-4",
+    provider_id: "bedrock",
+    provider_model_id: "anthropic.claude-sonnet-4-20250514-v1:0",
+    input_per_mtok: 3.0,
+    output_per_mtok: 15.0,
+    rate_limit_rpm: 1000,
+    status: "ga",
+    available_since: "2025-05-20",
+    notes: "Cross-region inference available",
+  },
+
+  // --- Claude Opus 4 ---
+  {
+    model_id: "claude-opus-4",
+    provider_id: "anthropic",
+    provider_model_id: "claude-opus-4-20250514",
+    input_per_mtok: 15.0,
+    output_per_mtok: 75.0,
+    cache_read_per_mtok: 1.5,
+    cache_write_per_mtok: 18.75,
+    batch_input_per_mtok: 7.5,
+    batch_output_per_mtok: 37.5,
+    rate_limit_rpm: 2000,
+    rate_limit_tpm: 200000,
+    status: "ga",
+    available_since: "2025-05-14",
+  },
+  {
+    model_id: "claude-opus-4",
+    provider_id: "openrouter",
+    provider_model_id: "anthropic/claude-opus-4",
+    input_per_mtok: 15.0,
+    output_per_mtok: 75.0,
+    status: "ga",
+    available_since: "2025-05-15",
+  },
+
+  // --- GPT-4o ---
+  {
+    model_id: "gpt-4o",
+    provider_id: "openai",
+    provider_model_id: "gpt-4o",
+    input_per_mtok: 2.5,
+    output_per_mtok: 10.0,
+    rate_limit_rpm: 10000,
+    rate_limit_tpm: 30000000,
+    status: "ga",
+    available_since: "2024-05-13",
+  },
+  {
+    model_id: "gpt-4o",
+    provider_id: "openrouter",
+    provider_model_id: "openai/gpt-4o",
+    input_per_mtok: 2.5,
+    output_per_mtok: 10.0,
+    status: "ga",
+    available_since: "2024-05-13",
+  },
+
+  // --- o3 ---
+  {
+    model_id: "o3",
+    provider_id: "openai",
+    provider_model_id: "o3",
+    input_per_mtok: 2.0,
+    output_per_mtok: 8.0,
+    status: "ga",
+    available_since: "2025-04-16",
+  },
+  {
+    model_id: "o3",
+    provider_id: "openrouter",
+    provider_model_id: "openai/o3",
+    input_per_mtok: 2.0,
+    output_per_mtok: 8.0,
+    status: "ga",
+    available_since: "2025-04-18",
+  },
+
+  // --- Gemini 2.5 Pro ---
+  {
+    model_id: "gemini-2.5-pro",
+    provider_id: "openrouter",
+    provider_model_id: "google/gemini-2.5-pro-preview",
+    input_per_mtok: 1.25,
+    output_per_mtok: 10.0,
+    status: "preview",
+    available_since: "2025-03-26",
+  },
+
+  // --- Llama 4 Maverick ---
+  {
+    model_id: "llama-4-maverick",
+    provider_id: "openrouter",
+    provider_model_id: "meta-llama/llama-4-maverick",
+    input_per_mtok: 0.22,
+    output_per_mtok: 0.88,
+    status: "ga",
+    available_since: "2025-04-06",
+  },
+  {
+    model_id: "llama-4-maverick",
+    provider_id: "bedrock",
+    provider_model_id: "meta.llama4-maverick-17b-instruct-v1:0",
+    input_per_mtok: 0.22,
+    output_per_mtok: 0.88,
+    status: "ga",
+    available_since: "2025-04-10",
+  },
+];
