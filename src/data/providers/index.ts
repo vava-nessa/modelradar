@@ -25,7 +25,10 @@ import { groq } from "./groq";
 import { helicone } from "./helicone";
 import { sapAiCore } from "./sap-ai-core";
 import { cortecs } from "./cortecs";
+import { drun } from "./drun";
+import { evroc } from "./evroc";
 import { moark } from "./moark";
+import { mixlayer } from "./mixlayer";
 import { nanoGpt } from "./nano-gpt";
 import { llmgateway } from "./llmgateway";
 import { morph } from "./morph";
@@ -51,6 +54,10 @@ import { venice } from "./venice";
 import { wandb } from "./wandb";
 import { vercel } from "./vercel";
 import { xai } from "./xai";
+import { xiaomi } from "./xiaomi";
+import { xiaomiTokenPlanAms } from "./xiaomi-token-plan-ams";
+import { xiaomiTokenPlanCn } from "./xiaomi-token-plan-cn";
+import { xiaomiTokenPlanSgp } from "./xiaomi-token-plan-sgp";
 import { minimax } from "./minimax";
 import { moonshotai } from "./moonshotai";
 import { stepfun } from "./stepfun";
@@ -73,6 +80,17 @@ import { llama } from "./llama";
 import { nvidia } from "./nvidia";
 import { nova } from "./nova";
 import { privatemodeAi } from "./privatemode-ai";
+import { opencode_go } from "./opencode-go";
+import { opencode } from "./opencode";
+import { inception } from "./inception";
+import { ovhcloud } from "./ovhcloud";
+import { requesty } from "./requesty";
+import { the_grid_ai } from "./the-grid-ai";
+import { submodel } from "./submodel";
+import { synthetic } from "./synthetic";
+import { vivgrid } from "./vivgrid";
+import { vultr } from "./vultr";
+import { firmware } from "./firmware";
 
 export const allProviders: Provider[] = [
   anthropic,
@@ -140,4 +158,15 @@ export const allProviders: Provider[] = [
   nvidia,
   nova,
   privatemodeAi,
+  opencode_go,
+  opencode,
+  inception,
+  ovhcloud,
+  requesty,
+  the_grid_ai,
+  submodel,
+  synthetic,
+  vivgrid,
+  vultr,
+  firmware,
 ];
