@@ -15,7 +15,7 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 h-12 border-b border-[var(--color-border)] bg-[var(--color-bg)]">
+    <header className="sticky top-0 z-50 h-14 border-b border-[var(--color-border)] bg-[var(--color-bg)]/80 backdrop-blur-md">
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-4">
         <div className="flex items-center gap-6">
           <Link to="/" className="flex items-center gap-2 font-semibold">

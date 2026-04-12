@@ -57,17 +57,25 @@ export function DataTable<TData>({
         style={{ height: "100%" }}
       >
         <table className="w-full">
-          <thead className="sticky top-0 z-20 bg-[var(--color-surface)] text-xs uppercase text-[var(--color-text-muted)]">
+          <thead className="sticky top-0 z-20 bg-[var(--color-surface)] text-xs uppercase tracking-wider text-[var(--color-text-muted)]">
             {table.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id}>
                 {headerGroup.headers.map((header, i) => (
                   <th
                     key={header.id}
                     className={`
-                      px-3 py-2 text-left font-medium
-                      ${stickyFirstColumn && i === 0 ? "sticky left-0 z-30 bg-[var(--color-surface)]" : ""}
+                      px-4 py-3 text-left font-medium border-x border-[var(--color-border)] first:border-l-0 last:border-r-0
+                      ${stickyFirstColumn && i === 0 ? "sticky left-0 z-30 bg-[var(--color-surface)] border-r" : ""}
                     `}
                     onClick={header.column.getCanSort() ? header.column.getToggleSortingHandler() : undefined}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        if (header.column.getCanSort()) {
+                          header.column.getToggleSortingHandler()?.(e);
+                        }
+                      }
+                    }}
+                    tabIndex={header.column.getCanSort() ? 0 : undefined}
                     style={{ cursor: header.column.getCanSort() ? "pointer" : "default", width: stickyFirstColumn && i === 0 ? header.getSize() : undefined }}
                   >
                     <div className="flex items-center gap-1">
@@ -87,15 +95,22 @@ export function DataTable<TData>({
             {rows.map((row) => (
               <tr
                 key={row.id}
-                className="cursor-pointer border-t border-[var(--color-border)] hover:bg-[var(--color-surface)]"
+                className="cursor-pointer border-t border-[var(--color-border)] hover:bg-[var(--color-surface)] transition-colors duration-150"
                 onClick={() => onRowClick?.(row.original)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    onRowClick?.(row.original);
+                  }
+                }}
+                tabIndex={0}
               >
                 {row.getVisibleCells().map((cell, i) => (
                   <td
                     key={cell.id}
                     className={`
-                      px-3 py-2
-                      ${stickyFirstColumn && i === 0 ? "sticky left-0 z-10 bg-[var(--color-bg)]" : ""}
+                      px-4 py-3 border-x border-[var(--color-border)] first:border-l-0 last:border-r-0
+                      ${stickyFirstColumn && i === 0 ? "sticky left-0 z-10 bg-[var(--color-bg)] border-r" : ""}
                     `}
                     style={stickyFirstColumn && i === 0 ? { width: cell.column.getSize(), minWidth: cell.column.getSize() } : undefined}
                   >
