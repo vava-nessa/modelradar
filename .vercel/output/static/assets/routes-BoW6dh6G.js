@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime-DWSWI4JT.js";import{t}from"./DataTable-DxrIOTig.js";import{t as n}from"./modelColumns-DAztMOgO.js";import{o as r}from"./data-9DzMV6ft.js";var i=e();function a(){return(0,i.jsx)(`main`,{className:`px-4 py-6`,children:(0,i.jsx)(t,{data:r,columns:n,onRowClick:e=>{window.location.href=`/models/${e.id}`}})})}export{a as component};
