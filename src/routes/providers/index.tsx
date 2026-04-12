@@ -1,4 +1,3 @@
-import { Container } from "@/components/layout/Container";
 import { DataTable } from "@/components/table/DataTable";
 import { allProviders, getModelsForProvider } from "@/data";
 import type { Provider } from "@/data/schema";
@@ -50,17 +49,14 @@ const providerColumns = [
 
 function ProvidersIndex() {
   return (
-    <Container>
-      <main className="py-6">
-        <h1 className="mb-6 text-2xl font-semibold">Providers</h1>
-        <DataTable
+    <main className="px-4 py-6">
+      <DataTable
           data={allProviders}
           columns={providerColumns}
           onRowClick={(provider) => {
             window.location.href = `/providers/${provider.id}`;
           }}
         />
-      </main>
-    </Container>
+    </main>
   );
 }

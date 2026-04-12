@@ -1,11 +1,11 @@
 import { r as __toESM } from "../_runtime.mjs";
 import { a as require_jsx_runtime, o as require_react, r as QueryClientProvider } from "../_libs/react+tanstack__react-query.mjs";
 import { a as createRouter, c as createFileRoute, d as Navigate, l as createRootRoute, n as Scripts, o as Outlet, r as HeadContent, s as lazyRouteComponent, u as Link } from "../_libs/@tanstack/react-router+[...].mjs";
-import { t as Route$5 } from "../_modelId-BCSTlzuj.mjs";
+import { t as Route$7 } from "../_modelId-BWdfdN-o.mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
-import { i as useAuth, s as useSignOut } from "./auth-D3uBDTIm.mjs";
-import { t as Route$6 } from "../_providerId-D0eRY7V-.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-DtQbV5fi.js
+import { i as useAuth, u as useSignOut } from "./auth-DtuNQAhG.mjs";
+import { t as Route$8 } from "../_providerId-D0eRY7V-.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/router-DYccX6UM.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function ThemeToggle() {
@@ -96,11 +96,15 @@ function Header() {
 						className: "rounded-md px-2 py-1 text-[var(--color-text-muted)] hover:bg-[var(--color-surface)] disabled:cursor-not-allowed",
 						children: signOut.isPending ? "..." : "Logout"
 					})
-				] }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+				] }) : /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+					to: "/signup",
+					className: "rounded-md px-3 py-1.5 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)]",
+					children: "Sign up"
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
 					to: "/login",
 					className: "rounded-md bg-[var(--color-accent)] px-3 py-1.5 text-white hover:opacity-90",
-					children: "Login"
-				})]
+					children: "Sign in"
+				})] })]
 			})]
 		})
 	});
@@ -124,7 +128,7 @@ var THEME_INIT_SCRIPT = `(function(){
     root.style.colorScheme = resolved;
   } catch(e) {}
 })();`;
-var Route$4 = createRootRoute({
+var Route$6 = createRootRoute({
 	head: () => ({
 		meta: [
 			{ charSet: "utf-8" },
@@ -163,57 +167,73 @@ function RootDocument() {
 		})
 	});
 }
-var $$splitComponentImporter$3 = () => import("./login-Dlg0EGNl.mjs");
+var $$splitComponentImporter$5 = () => import("./signup-Bs0Z04-V.mjs");
+var Route$5 = createFileRoute("/signup")({ component: lazyRouteComponent($$splitComponentImporter$5, "component") });
+var $$splitComponentImporter$4 = () => import("./reset-password-BM8wxbDw.mjs");
+var Route$4 = createFileRoute("/reset-password")({ component: lazyRouteComponent($$splitComponentImporter$4, "component") });
+var $$splitComponentImporter$3 = () => import("./login-DAUY_5Rk.mjs");
 var Route$3 = createFileRoute("/login")({ component: lazyRouteComponent($$splitComponentImporter$3, "component") });
-var $$splitComponentImporter$2 = () => import("./favorites-CcxlzOt1.mjs");
+var $$splitComponentImporter$2 = () => import("./favorites-CIEIcXXa.mjs");
 var Route$2 = createFileRoute("/favorites")({
 	component: lazyRouteComponent($$splitComponentImporter$2, "component"),
 	beforeLoad: ({ context }) => {
 		if (!context.user) throw new Navigate({ to: "/login" });
 	}
 });
-var $$splitComponentImporter$1 = () => import("./routes-BNPYiF4M.mjs");
+var $$splitComponentImporter$1 = () => import("./routes-BiROOtUc.mjs");
 var Route$1 = createFileRoute("/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./providers-unNC9hnI.mjs");
+var $$splitComponentImporter = () => import("./providers-61Rp1z2l.mjs");
 var Route = createFileRoute("/providers/")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
+var SignupRoute = Route$5.update({
+	id: "/signup",
+	path: "/signup",
+	getParentRoute: () => Route$6
+});
+var ResetPasswordRoute = Route$4.update({
+	id: "/reset-password",
+	path: "/reset-password",
+	getParentRoute: () => Route$6
+});
 var LoginRoute = Route$3.update({
 	id: "/login",
 	path: "/login",
-	getParentRoute: () => Route$4
+	getParentRoute: () => Route$6
 });
 var FavoritesRoute = Route$2.update({
 	id: "/favorites",
 	path: "/favorites",
-	getParentRoute: () => Route$4
+	getParentRoute: () => Route$6
 });
 var IndexRoute = Route$1.update({
 	id: "/",
 	path: "/",
-	getParentRoute: () => Route$4
+	getParentRoute: () => Route$6
 });
 var ProvidersIndexRoute = Route.update({
 	id: "/providers/",
 	path: "/providers/",
-	getParentRoute: () => Route$4
+	getParentRoute: () => Route$6
 });
-var ProvidersProviderIdRoute = Route$6.update({
+var ProvidersProviderIdRoute = Route$8.update({
 	id: "/providers/$providerId",
 	path: "/providers/$providerId",
-	getParentRoute: () => Route$4
+	getParentRoute: () => Route$6
 });
 var rootRouteChildren = {
 	IndexRoute,
 	FavoritesRoute,
 	LoginRoute,
-	ModelsModelIdRoute: Route$5.update({
+	ResetPasswordRoute,
+	SignupRoute,
+	ModelsModelIdRoute: Route$7.update({
 		id: "/models/$modelId",
 		path: "/models/$modelId",
-		getParentRoute: () => Route$4
+		getParentRoute: () => Route$6
 	}),
 	ProvidersProviderIdRoute,
 	ProvidersIndexRoute
 };
-var routeTree = Route$4._addFileChildren(rootRouteChildren)._addFileTypes();
+var routeTree = Route$6._addFileChildren(rootRouteChildren)._addFileTypes();
 function getRouter() {
 	return createRouter({
 		routeTree,

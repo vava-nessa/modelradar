@@ -1,11 +1,11 @@
 import { a as getOffersForModel, r as getModelById } from "./_ssr/data-D7EWEMVj.mjs";
 import { a as require_jsx_runtime } from "./_libs/react+tanstack__react-query.mjs";
 import { f as notFound, u as Link } from "./_libs/@tanstack/react-router+[...].mjs";
-import { t as Route } from "./_modelId-BCSTlzuj.mjs";
+import { t as Route } from "./_modelId-BWdfdN-o.mjs";
 import { t as Container } from "./_ssr/Container-CgY9s-MS.mjs";
-import { t as FavoriteButton } from "./_ssr/FavoriteButton-edtdjBZW.mjs";
+import { t as FavoriteButton } from "./_ssr/FavoriteButton-DTylPTvu.mjs";
 import { n as formatRateLimit, t as formatPrice } from "./_ssr/format-J35ANvIi.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/_modelId-B88ZywIl.js
+//#region node_modules/.nitro/vite/services/ssr/assets/_modelId-C9n_00Q-.js
 var import_jsx_runtime = require_jsx_runtime();
 function OfferTable({ offers }) {
 	if (offers.length === 0) return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {

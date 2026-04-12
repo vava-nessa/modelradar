@@ -1,9 +1,8 @@
 import { i as getModelsForProvider, n as allProviders } from "./data-D7EWEMVj.mjs";
 import { a as require_jsx_runtime } from "../_libs/react+tanstack__react-query.mjs";
-import { t as Container } from "./Container-CgY9s-MS.mjs";
 import { r as createColumnHelper } from "../_libs/@tanstack/react-table+[...].mjs";
 import { t as DataTable } from "./DataTable-CL-yjd2J.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/providers-unNC9hnI.js
+//#region node_modules/.nitro/vite/services/ssr/assets/providers-61Rp1z2l.js
 var import_jsx_runtime = require_jsx_runtime();
 var columnHelper = createColumnHelper();
 var providerColumns = [
@@ -46,19 +45,16 @@ var providerColumns = [
 	})
 ];
 function ProvidersIndex() {
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Container, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("main", {
-		className: "py-6",
-		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
-			className: "mb-6 text-2xl font-semibold",
-			children: "Providers"
-		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(DataTable, {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("main", {
+		className: "px-4 py-6",
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(DataTable, {
 			data: allProviders,
 			columns: providerColumns,
 			onRowClick: (provider) => {
 				window.location.href = `/providers/${provider.id}`;
 			}
-		})]
-	}) });
+		})
+	});
 }
 //#endregion
 export { ProvidersIndex as component };

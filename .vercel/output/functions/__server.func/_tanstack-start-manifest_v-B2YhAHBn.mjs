@@ -1,4 +1,4 @@
-//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-4G4L24-m.js
+//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-B2YhAHBn.js
 var tsrStartManifest = () => ({
 	routes: {
 		__root__: {
@@ -7,6 +7,8 @@ var tsrStartManifest = () => ({
 				"/",
 				"/favorites",
 				"/login",
+				"/reset-password",
+				"/signup",
 				"/models/$modelId",
 				"/providers/$providerId",
 				"/providers/"
@@ -15,19 +17,19 @@ var tsrStartManifest = () => ({
 				tag: "link",
 				attrs: {
 					rel: "stylesheet",
-					href: "/assets/index-CXvrUppC.css",
+					href: "/assets/index-mIoPwXRP.css",
 					type: "text/css"
 				}
 			}],
 			preloads: [
-				"/assets/index-BJm6m9Vr.js",
+				"/assets/index-DdOeZTQu.js",
 				"/assets/jsx-runtime-DWSWI4JT.js",
 				"/assets/preload-helper-CXXbbz0t.js",
-				"/assets/auth-BmMKHcp1.js",
+				"/assets/auth-DzqFEg9k.js",
 				"/assets/link-BO0Gorts.js",
 				"/assets/useNavigate-ODRfZEJQ.js",
 				"/assets/not-found-BF0uzWBa.js",
-				"/assets/_modelId-DSYsU11Z.js",
+				"/assets/_modelId-CkStBEIW.js",
 				"/assets/_providerId-XQucnQ5P.js"
 			]
 		},
@@ -36,9 +38,9 @@ var tsrStartManifest = () => ({
 			children: void 0,
 			assets: void 0,
 			preloads: [
-				"/assets/routes-Bkfc272H.js",
+				"/assets/routes-BoW6dh6G.js",
 				"/assets/DataTable-DxrIOTig.js",
-				"/assets/modelColumns-BowkCezu.js",
+				"/assets/modelColumns-DAztMOgO.js",
 				"/assets/data-9DzMV6ft.js"
 			]
 		},
@@ -47,11 +49,11 @@ var tsrStartManifest = () => ({
 			children: void 0,
 			assets: void 0,
 			preloads: [
-				"/assets/favorites-C-jX_Cal.js",
+				"/assets/favorites-Bt0uTkz7.js",
 				"/assets/DataTable-DxrIOTig.js",
-				"/assets/FavoriteButton-CI8gMKRM.js",
+				"/assets/FavoriteButton-Ch1JPSaE.js",
 				"/assets/Container-Ca16PsMT.js",
-				"/assets/modelColumns-BowkCezu.js",
+				"/assets/modelColumns-DAztMOgO.js",
 				"/assets/data-9DzMV6ft.js"
 			]
 		},
@@ -59,15 +61,27 @@ var tsrStartManifest = () => ({
 			filePath: "/Users/vava/Documents/GitHub/modelradar/src/routes/login.tsx",
 			children: void 0,
 			assets: void 0,
-			preloads: ["/assets/login-DrnzyCpA.js", "/assets/Container-Ca16PsMT.js"]
+			preloads: ["/assets/login-DlXtl1zX.js", "/assets/Container-Ca16PsMT.js"]
+		},
+		"/reset-password": {
+			filePath: "/Users/vava/Documents/GitHub/modelradar/src/routes/reset-password.tsx",
+			children: void 0,
+			assets: void 0,
+			preloads: ["/assets/reset-password-eRhm3DOA.js", "/assets/Container-Ca16PsMT.js"]
+		},
+		"/signup": {
+			filePath: "/Users/vava/Documents/GitHub/modelradar/src/routes/signup.tsx",
+			children: void 0,
+			assets: void 0,
+			preloads: ["/assets/signup-CwlHXIJE.js", "/assets/Container-Ca16PsMT.js"]
 		},
 		"/models/$modelId": {
 			filePath: "/Users/vava/Documents/GitHub/modelradar/src/routes/models/$modelId.tsx",
 			children: void 0,
 			assets: void 0,
 			preloads: [
-				"/assets/_modelId-Ch_qLARX.js",
-				"/assets/FavoriteButton-CI8gMKRM.js",
+				"/assets/_modelId-DDUQ9FjR.js",
+				"/assets/FavoriteButton-Ch1JPSaE.js",
 				"/assets/Container-Ca16PsMT.js",
 				"/assets/data-9DzMV6ft.js",
 				"/assets/format-BBGapIQC.js",
@@ -91,14 +105,13 @@ var tsrStartManifest = () => ({
 			children: void 0,
 			assets: void 0,
 			preloads: [
-				"/assets/providers-D84f82MF.js",
+				"/assets/providers-njJXtlRo.js",
 				"/assets/DataTable-DxrIOTig.js",
-				"/assets/Container-Ca16PsMT.js",
 				"/assets/data-9DzMV6ft.js"
 			]
 		}
 	},
-	clientEntry: "/assets/index-BJm6m9Vr.js"
+	clientEntry: "/assets/index-DdOeZTQu.js"
 });
 //#endregion
 export { tsrStartManifest };

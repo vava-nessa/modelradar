@@ -1,22 +1,61 @@
 import { useState } from "react";
 import { Container } from "@/components/layout/Container";
-import { useSignInWithEmail, useSignInWithGithub, formatAuthError, isSupabaseConfigured } from "@/lib/auth";
-import { createFileRoute } from "@tanstack/react-router";
+import {
+  useSignInWithEmail,
+  useSignInWithPassword,
+  useSignInWithGithub,
+  useForgotPassword,
+  formatAuthError,
+  isSupabaseConfigured,
+} from "@/lib/auth";
+import { createFileRoute, Link } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/login")({
   component: LoginPage,
 });
 
+type AuthMode = "password" | "magic";
+
 function LoginPage() {
+  const [mode, setMode] = useState<AuthMode>("password");
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [sent, setSent] = useState(false);
+  const [forgotSent, setForgotSent] = useState(false);
   const [localError, setLocalError] = useState<string | null>(null);
+  const [isForgotMode, setIsForgotMode] = useState(false);
+
   const signInWithEmail = useSignInWithEmail();
+  const signInWithPassword = useSignInWithPassword();
   const signInWithGithub = useSignInWithGithub();
+  const forgotPassword = useForgotPassword();
 
   const configured = isSupabaseConfigured();
 
-  const handleEmailSubmit = async (e: React.FormEvent) => {
+  const handlePasswordSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLocalError(null);
+
+    if (!email.trim()) {
+      setLocalError("Please enter your email address");
+      return;
+    }
+    if (!password) {
+      setLocalError("Please enter your password");
+      return;
+    }
+
+    try {
+      await signInWithPassword.mutateAsync({
+        email: email.trim(),
+        password,
+      });
+    } catch {
+      // Error is handled by the mutation
+    }
+  };
+
+  const handleMagicLinkSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLocalError(null);
 
@@ -33,6 +72,23 @@ function LoginPage() {
     }
   };
 
+  const handleForgotSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLocalError(null);
+
+    if (!email.trim()) {
+      setLocalError("Please enter your email address");
+      return;
+    }
+
+    try {
+      await forgotPassword.mutateAsync(email.trim());
+      setForgotSent(true);
+    } catch {
+      // Error is handled by the mutation
+    }
+  };
+
   const handleGithubSignIn = async () => {
     setLocalError(null);
     try {
@@ -43,8 +99,108 @@ function LoginPage() {
   };
 
   const displayError = localError
+    || (signInWithPassword.isError ? formatAuthError(signInWithPassword.error) : null)
     || (signInWithEmail.isError ? formatAuthError(signInWithEmail.error) : null)
+    || (forgotPassword.isError ? formatAuthError(forgotPassword.error) : null)
     || (signInWithGithub.isError ? formatAuthError(signInWithGithub.error) : null);
+
+  const isPending = signInWithPassword.isPending || signInWithEmail.isPending || forgotPassword.isPending;
+
+  if (isForgotMode && forgotSent) {
+    return (
+      <Container>
+        <main className="flex min-h-[60vh] items-center justify-center py-12">
+          <div className="w-full max-w-md space-y-8 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-8">
+            <div className="space-y-4 text-center">
+              <div className="text-4xl">✉️</div>
+              <h1 className="text-xl font-bold">Check your email</h1>
+              <p className="text-sm text-[var(--color-text-muted)]">
+                We sent a password reset link to <strong>{email}</strong>.
+                Click the link in the email to reset your password.
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={() => {
+                setIsForgotMode(false);
+                setForgotSent(false);
+              }}
+              className="w-full text-sm text-[var(--color-accent)] hover:underline"
+            >
+              Back to sign in
+            </button>
+          </div>
+        </main>
+      </Container>
+    );
+  }
+
+  if (isForgotMode) {
+    return (
+      <Container>
+        <main className="flex min-h-[60vh] items-center justify-center py-12">
+          <div className="w-full max-w-md space-y-8 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-8">
+            <div className="text-center">
+              <h1 className="text-2xl font-bold">Reset your password</h1>
+              <p className="mt-2 text-sm text-[var(--color-text-muted)]">
+                Enter your email and we'll send you a reset link
+              </p>
+            </div>
+
+            {!configured && (
+              <div className="rounded-md bg-yellow-50 p-4 text-sm text-yellow-800 dark:bg-yellow-900/20 dark:text-yellow-200">
+                <p className="font-medium">⚠️ Authentication not configured</p>
+                <p className="mt-1 text-xs">
+                  Please set up Supabase environment variables to enable sign in.
+                </p>
+              </div>
+            )}
+
+            <form onSubmit={handleForgotSubmit} className="space-y-4">
+              <div>
+                <label htmlFor="forgot-email" className="block text-sm font-medium">
+                  Email address
+                </label>
+                <input
+                  id="forgot-email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    setLocalError(null);
+                  }}
+                  required
+                  disabled={!configured || forgotPassword.isPending}
+                  className="mt-1 block w-full rounded-md border border-[var(--color-border)] bg-[var(--color-bg)] px-3 py-2 text-sm placeholder:text-[var(--color-text-muted)] focus:border-[var(--color-accent)] focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+                  placeholder="you@example.com"
+                />
+              </div>
+              {displayError && (
+                <div className="rounded-md bg-red-50 p-3 text-sm text-red-600 dark:bg-red-900/20 dark:text-red-200">
+                  {displayError}
+                </div>
+              )}
+              <button
+                type="submit"
+                disabled={!configured || forgotPassword.isPending}
+                className="w-full rounded-md bg-[var(--color-accent)] px-4 py-2 text-white hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                {forgotPassword.isPending ? "Sending..." : "Send reset link"}
+              </button>
+            </form>
+
+            <button
+              type="button"
+              onClick={() => setIsForgotMode(false)}
+              className="w-full text-sm text-[var(--color-accent)] hover:underline"
+            >
+              Back to sign in
+            </button>
+          </div>
+        </main>
+      </Container>
+    );
+  }
 
   return (
     <Container>
@@ -66,7 +222,33 @@ function LoginPage() {
             </div>
           )}
 
-          {sent ? (
+          {/* Mode tabs */}
+          <div className="flex rounded-md border border-[var(--color-border)] p-1">
+            <button
+              type="button"
+              onClick={() => { setMode("password"); setSent(false); setLocalError(null); }}
+              className={`flex-1 rounded-md px-3 py-1.5 text-sm transition-colors ${
+                mode === "password"
+                  ? "bg-[var(--color-accent)] text-white"
+                  : "text-[var(--color-text-muted)] hover:text-[var(--color-text)]"
+              }`}
+            >
+              Password
+            </button>
+            <button
+              type="button"
+              onClick={() => { setMode("magic"); setSent(false); setLocalError(null); }}
+              className={`flex-1 rounded-md px-3 py-1.5 text-sm transition-colors ${
+                mode === "magic"
+                  ? "bg-[var(--color-accent)] text-white"
+                  : "text-[var(--color-text-muted)] hover:text-[var(--color-text)]"
+              }`}
+            >
+              Magic Link
+            </button>
+          </div>
+
+          {mode === "magic" && sent ? (
             <div className="space-y-4 text-center">
               <div className="text-4xl">✉️</div>
               <p className="text-sm">
@@ -80,14 +262,74 @@ function LoginPage() {
                 Use a different email
               </button>
             </div>
-          ) : (
-            <form onSubmit={handleEmailSubmit} className="space-y-4">
+          ) : mode === "password" ? (
+            <form onSubmit={handlePasswordSubmit} className="space-y-4">
               <div>
                 <label htmlFor="email" className="block text-sm font-medium">
                   Email address
                 </label>
                 <input
                   id="email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    setLocalError(null);
+                  }}
+                  required
+                  disabled={!configured || signInWithPassword.isPending}
+                  className="mt-1 block w-full rounded-md border border-[var(--color-border)] bg-[var(--color-bg)] px-3 py-2 text-sm placeholder:text-[var(--color-text-muted)] focus:border-[var(--color-accent)] focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+                  placeholder="you@example.com"
+                />
+              </div>
+              <div>
+                <label htmlFor="password" className="block text-sm font-medium">
+                  Password
+                </label>
+                <input
+                  id="password"
+                  type="password"
+                  value={password}
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                    setLocalError(null);
+                  }}
+                  required
+                  disabled={!configured || signInWithPassword.isPending}
+                  className="mt-1 block w-full rounded-md border border-[var(--color-border)] bg-[var(--color-bg)] px-3 py-2 text-sm placeholder:text-[var(--color-text-muted)] focus:border-[var(--color-accent)] focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+                  placeholder="••••••••"
+                />
+              </div>
+              <div className="flex justify-end">
+                <button
+                  type="button"
+                  onClick={() => setIsForgotMode(true)}
+                  className="text-xs text-[var(--color-accent)] hover:underline"
+                >
+                  Forgot password?
+                </button>
+              </div>
+              {displayError && (
+                <div className="rounded-md bg-red-50 p-3 text-sm text-red-600 dark:bg-red-900/20 dark:text-red-200">
+                  {displayError}
+                </div>
+              )}
+              <button
+                type="submit"
+                disabled={!configured || signInWithPassword.isPending}
+                className="w-full rounded-md bg-[var(--color-accent)] px-4 py-2 text-white hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                {signInWithPassword.isPending ? "Signing in..." : "Sign in"}
+              </button>
+            </form>
+          ) : (
+            <form onSubmit={handleMagicLinkSubmit} className="space-y-4">
+              <div>
+                <label htmlFor="magic-email" className="block text-sm font-medium">
+                  Email address
+                </label>
+                <input
+                  id="magic-email"
                   type="email"
                   value={email}
                   onChange={(e) => {
@@ -114,6 +356,14 @@ function LoginPage() {
               </button>
             </form>
           )}
+
+          {/* Sign up link */}
+          <p className="text-center text-sm text-[var(--color-text-muted)]">
+            Don't have an account?{" "}
+            <Link to="/signup" className="text-[var(--color-accent)] hover:underline">
+              Sign up
+            </Link>
+          </p>
 
           <div className="relative">
             <div className="absolute inset-0 flex items-center">

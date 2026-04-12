@@ -10,16 +10,13 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <main className="px-4 py-6">
-      <div className="mx-auto max-w-7xl">
-        <h1 className="mb-6 text-2xl font-semibold">Models</h1>
-        <DataTable
+      <DataTable
           data={allModels}
           columns={modelColumns}
           onRowClick={(model) => {
             window.location.href = `/models/${model.id}`;
           }}
         />
-      </div>
     </main>
   );
 }

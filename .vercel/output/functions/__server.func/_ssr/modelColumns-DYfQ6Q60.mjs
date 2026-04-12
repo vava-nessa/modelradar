@@ -1,8 +1,8 @@
 import { a as require_jsx_runtime } from "../_libs/react+tanstack__react-query.mjs";
-import { t as FavoriteButton } from "./FavoriteButton-edtdjBZW.mjs";
+import { t as FavoriteButton } from "./FavoriteButton-DTylPTvu.mjs";
 import { r as formatTokens } from "./format-J35ANvIi.mjs";
 import { r as createColumnHelper } from "../_libs/@tanstack/react-table+[...].mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/modelColumns-DzDWLAk7.js
+//#region node_modules/.nitro/vite/services/ssr/assets/modelColumns-DYfQ6Q60.js
 var import_jsx_runtime = require_jsx_runtime();
 var columnHelper = createColumnHelper();
 var modelColumns = [

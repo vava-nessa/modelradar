@@ -1,8 +1,8 @@
 import { r as __toESM } from "../_runtime.mjs";
 import { a as require_jsx_runtime, i as useQueryClient, n as useQuery, o as require_react, t as useMutation } from "../_libs/react+tanstack__react-query.mjs";
 import { u as Link } from "../_libs/@tanstack/react-router+[...].mjs";
-import { i as useAuth, n as getSupabase, r as isSupabaseConfigured } from "./auth-D3uBDTIm.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/FavoriteButton-edtdjBZW.js
+import { i as useAuth, n as getSupabase, r as isSupabaseConfigured } from "./auth-DtuNQAhG.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/FavoriteButton-DTylPTvu.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 /** Hook to get all favorite model IDs for the current user.

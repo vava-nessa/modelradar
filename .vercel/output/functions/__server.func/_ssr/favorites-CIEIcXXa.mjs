@@ -2,11 +2,11 @@ import { t as allModels } from "./data-D7EWEMVj.mjs";
 import { a as require_jsx_runtime } from "../_libs/react+tanstack__react-query.mjs";
 import { d as Navigate, u as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { t as Container } from "./Container-CgY9s-MS.mjs";
-import { i as useAuth } from "./auth-D3uBDTIm.mjs";
-import { n as useFavorites } from "./FavoriteButton-edtdjBZW.mjs";
-import { t as modelColumns } from "./modelColumns-DzDWLAk7.mjs";
+import { i as useAuth } from "./auth-DtuNQAhG.mjs";
+import { n as useFavorites } from "./FavoriteButton-DTylPTvu.mjs";
+import { t as modelColumns } from "./modelColumns-DYfQ6Q60.mjs";
 import { t as DataTable } from "./DataTable-CL-yjd2J.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/favorites-CcxlzOt1.js
+//#region node_modules/.nitro/vite/services/ssr/assets/favorites-CIEIcXXa.js
 var import_jsx_runtime = require_jsx_runtime();
 function FavoritesPage() {
 	const { data: user, isLoading: authLoading } = useAuth();
