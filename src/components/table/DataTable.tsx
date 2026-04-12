@@ -80,11 +80,15 @@ export function DataTable<TData>({
                   >
                     <div className="flex items-center gap-1">
                       {flexRender(header.column.columnDef.header, header.getContext())}
-                      {header.column.getIsSorted() && (
-                        <span className="text-[var(--color-accent)]">
-                          {header.column.getIsSorted() === "asc" ? "↑" : "↓"}
-                        </span>
-                      )}
+                      <span className="inline-block w-4 text-center select-none">
+                        {header.column.getIsSorted() ? (
+                          <span className="text-[var(--color-accent)]">
+                            {header.column.getIsSorted() === "asc" ? "↑" : "↓"}
+                          </span>
+                        ) : (
+                          header.column.getCanSort() ? <span className="opacity-0">↑</span> : null
+                        )}
+                      </span>
                     </div>
                   </th>
                 ))}
