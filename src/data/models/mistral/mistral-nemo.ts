@@ -1,0 +1,57 @@
+import type { ModelEntry } from "@/data/schema";
+
+export const mistralNemo: ModelEntry = {
+  model: {
+    id: "mistral-nemo",
+    name: "Mistral Nemo",
+    creator: "mistral",
+    family: "mistral-nemo",
+    category: "mid",
+    status: "active",
+    modality_input: ["text"],
+    modality_output: ["text"],
+    context_window: 131072,
+    max_output_tokens: 8192,
+    is_open_source: true,
+    license: "apache-2.0",
+    architecture: "dense transformer",
+    knowledge: "2024-07",
+    release_date: "2024-07",
+    reasoning: false,
+    temperature: true,
+    capabilities: {
+      streaming: true,
+      function_calling: true,
+      json_mode: true,
+      json_schema: true,
+      system_prompt: true,
+      vision: false,
+      code_execution: false,
+      web_search: false,
+      mcp: false,
+      computer_use: false,
+      extended_thinking: false,
+    },
+    benchmarks: {
+      mmlu: 26.4,
+      math_500: 8.7,
+    },
+    description:
+      "Open-source 12B model optimized for efficiency. Good for code and reasoning at low cost.",
+    url: "https://mistral.ai/news/mistral-nemo",
+    documentation_url: "https://docs.mistral.ai/models",
+    tags: ["open-source", "code", "efficient"],
+    supportedOn: ["api", "local"],
+    cost: { input: 0.15, output: 0.15 },
+  },
+  offers: [
+    {
+      provider_id: "mistral",
+      provider_model_id: "mistral-nemo",
+      input_per_mtok: 0.03,
+      output_per_mtok: 0.03,
+      status: "ga",
+      available_since: "2024-07",
+    },
+  ],
+};

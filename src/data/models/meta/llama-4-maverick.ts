@@ -1,11 +1,13 @@
-import type { Model } from "@/data/schema";
+import type { ModelEntry } from "@/data/schema";
 
-export const metaModels: Model[] = [
-  {
+export const llama4Maverick: ModelEntry = {
+  model: {
     id: "llama-4-maverick",
     name: "Llama 4 Maverick",
     creator: "meta",
+    family: "llama-4",
     category: "flagship",
+    status: "active",
     modality_input: ["text", "image"],
     modality_output: ["text"],
     context_window: 1048576,
@@ -14,8 +16,11 @@ export const metaModels: Model[] = [
     license: "llama-4-community",
     parameters: "400B (17B active)",
     architecture: "MoE",
-    training_cutoff: "2025-03",
+    knowledge: "2025-03",
     release_date: "2025-04-05",
+    reasoning: false,
+    temperature: true,
+    weights_url: "https://huggingface.co/meta-llama/Llama-4-Maverick-17B-128E-Instruct",
     capabilities: {
       streaming: true,
       function_calling: true,
@@ -23,9 +28,6 @@ export const metaModels: Model[] = [
       json_schema: false,
       system_prompt: true,
       vision: true,
-      image_gen: false,
-      audio_input: false,
-      audio_output: false,
       code_execution: false,
       web_search: false,
       mcp: false,
@@ -42,6 +44,27 @@ export const metaModels: Model[] = [
     description:
       "Meta's open-weight MoE model with 1M context window. 400B total params, 17B active per forward pass.",
     url: "https://llama.meta.com",
+    documentation_url: "https://llama.meta.com",
     tags: ["open-source", "MoE", "long-context"],
+    supportedOn: ["api", "local"],
+    cost: { input: 0.2, output: 0.8 },
   },
-];
+  offers: [
+    {
+      provider_id: "openrouter",
+      provider_model_id: "meta-llama/llama-4-maverick",
+      input_per_mtok: 0.22,
+      output_per_mtok: 0.88,
+      status: "ga",
+      available_since: "2025-04-06",
+    },
+    {
+      provider_id: "bedrock",
+      provider_model_id: "meta.llama4-maverick-17b-instruct-v1:0",
+      input_per_mtok: 0.22,
+      output_per_mtok: 0.88,
+      status: "ga",
+      available_since: "2025-04-10",
+    },
+  ],
+};

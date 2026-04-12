@@ -1,19 +1,23 @@
-import type { Model } from "@/data/schema";
+import type { ModelEntry } from "@/data/schema";
 
-export const googleModels: Model[] = [
-  {
+export const gemini25Pro: ModelEntry = {
+  model: {
     id: "gemini-2.5-pro",
     name: "Gemini 2.5 Pro",
     creator: "google",
+    family: "gemini-2.5-pro",
     category: "flagship",
-    modality_input: ["text", "image", "audio", "video", "pdf"],
+    status: "active",
+    modality_input: ["text", "image", "pdf"],
     modality_output: ["text"],
     context_window: 1048576,
     max_output_tokens: 65536,
     is_open_source: false,
     license: "proprietary",
-    training_cutoff: "2025-01",
+    knowledge: "2025-01",
     release_date: "2025-03-25",
+    reasoning: true,
+    temperature: true,
     capabilities: {
       streaming: true,
       function_calling: true,
@@ -21,14 +25,13 @@ export const googleModels: Model[] = [
       json_schema: true,
       system_prompt: true,
       vision: true,
-      image_gen: true,
-      audio_input: true,
-      audio_output: true,
       code_execution: true,
       web_search: true,
       mcp: false,
       computer_use: false,
       extended_thinking: true,
+      prompt_caching: true,
+      batch_api: false,
     },
     benchmarks: {
       swe_bench: 63.8,
@@ -41,6 +44,19 @@ export const googleModels: Model[] = [
     description:
       "Google's most capable model with 1M context window and native multimodal capabilities.",
     url: "https://ai.google.dev/gemini-api/docs/models#gemini-2.5-pro",
+    documentation_url: "https://ai.google.dev/gemini-api/docs/models#gemini-2.5-pro",
     tags: ["frontier", "reasoning", "multimodal", "long-context"],
+    supportedOn: ["api"],
+    cost: { input: 1.25, output: 5 },
   },
-];
+  offers: [
+    {
+      provider_id: "openrouter",
+      provider_model_id: "google/gemini-2.5-pro-preview",
+      input_per_mtok: 1.25,
+      output_per_mtok: 10.0,
+      status: "preview",
+      available_since: "2025-03-26",
+    },
+  ],
+};

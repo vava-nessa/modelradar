@@ -1,88 +1,27 @@
+/**
+ * @file Providers aggregation
+ * @description Collects all individual provider files into a single array.
+ * 📖 To add a provider: create a new file in this folder, then add it here.
+ *
+ * @exports allProviders → Provider[]
+ */
+
 import type { Provider } from "@/data/schema";
 
+import { anthropic } from "./anthropic";
+import { azure } from "./azure";
+import { bedrock } from "./bedrock";
+import { deepseek } from "./deepseek";
+import { mistral } from "./mistral";
+import { openai } from "./openai";
+import { openrouter } from "./openrouter";
+
 export const allProviders: Provider[] = [
-  {
-    id: "anthropic",
-    name: "Anthropic API",
-    type: "direct",
-    url: "https://console.anthropic.com",
-    regions: ["us", "eu"],
-    auth_type: "api_key",
-    has_free_tier: true,
-    billing_model: "pay_per_token",
-    sdk: ["python", "typescript"],
-    openai_compatible: false,
-  },
-  {
-    id: "openai",
-    name: "OpenAI Platform",
-    type: "direct",
-    url: "https://platform.openai.com",
-    regions: ["us", "eu", "asia"],
-    auth_type: "api_key",
-    has_free_tier: true,
-    billing_model: "pay_per_token",
-    sdk: ["python", "typescript", "dotnet", "java"],
-    openai_compatible: true,
-  },
-  {
-    id: "openrouter",
-    name: "OpenRouter",
-    type: "aggregator",
-    url: "https://openrouter.ai",
-    regions: ["us"],
-    auth_type: "api_key",
-    has_free_tier: true,
-    billing_model: "pay_per_token",
-    sdk: [],
-    openai_compatible: true,
-  },
-  {
-    id: "bedrock",
-    name: "AWS Bedrock",
-    type: "cloud",
-    url: "https://aws.amazon.com/bedrock",
-    regions: ["us-east-1", "us-west-2", "eu-west-1", "ap-northeast-1"],
-    auth_type: "iam",
-    has_free_tier: false,
-    billing_model: "pay_per_token",
-    sdk: ["python", "typescript", "java", "dotnet"],
-    openai_compatible: false,
-  },
-  {
-    id: "mistral",
-    name: "Mistral AI",
-    type: "direct",
-    url: "https://mistral.ai",
-    regions: ["us", "eu"],
-    auth_type: "api_key",
-    has_free_tier: true,
-    billing_model: "pay_per_token",
-    sdk: ["python", "typescript"],
-    openai_compatible: true,
-  },
-  {
-    id: "deepseek",
-    name: "DeepSeek",
-    type: "direct",
-    url: "https://deepseek.com",
-    regions: ["us"],
-    auth_type: "api_key",
-    has_free_tier: true,
-    billing_model: "pay_per_token",
-    sdk: ["python", "typescript"],
-    openai_compatible: true,
-  },
-  {
-    id: "azure",
-    name: "Azure AI",
-    type: "cloud",
-    url: "https://azure.microsoft.com/services/cognitive-services/openai",
-    regions: ["us", "eu", "asia"],
-    auth_type: "api_key",
-    has_free_tier: false,
-    billing_model: "pay_per_token",
-    sdk: ["python", "typescript", "dotnet", "java"],
-    openai_compatible: true,
-  },
+  anthropic,
+  openai,
+  openrouter,
+  bedrock,
+  mistral,
+  deepseek,
+  azure,
 ];

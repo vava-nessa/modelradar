@@ -22,6 +22,7 @@ function ModelPage() {
 
   const offers = getOffersForModel(model.id);
 
+  // 📖 Labels for coding-relevant capabilities displayed on the model detail page
   const capabilityLabels: Record<string, string> = {
     streaming: "Streaming",
     function_calling: "Function Calling",
@@ -29,14 +30,15 @@ function ModelPage() {
     json_schema: "JSON Schema",
     system_prompt: "System Prompt",
     vision: "Vision",
-    image_gen: "Image Gen",
-    audio_input: "Audio Input",
-    audio_output: "Audio Output",
     code_execution: "Code Execution",
     web_search: "Web Search",
     mcp: "MCP",
     computer_use: "Computer Use",
     extended_thinking: "Extended Thinking",
+    citations: "Citations",
+    prompt_caching: "Prompt Caching",
+    batch_api: "Batch API",
+    fine_tuning: "Fine-Tuning",
   };
 
   const trueCapabilities = Object.entries(model.capabilities)
