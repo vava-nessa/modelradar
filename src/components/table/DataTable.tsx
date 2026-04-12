@@ -113,7 +113,7 @@ export function DataTable<TData>({
                   <td
                     key={cell.id}
                     className={`
-                      px-4 py-3 border-x border-[var(--color-border)] first:border-l-0 last:border-r-0
+                      px-2.5 py-1.5 border-x border-[var(--color-border)] first:border-l-0 last:border-r-0
                       ${stickyFirstColumn && i === 0 ? "sticky left-0 z-10 bg-[var(--color-bg)] border-r" : ""}
                     `}
                     style={stickyFirstColumn && i === 0 ? { width: cell.column.getSize(), minWidth: cell.column.getSize() } : undefined}
