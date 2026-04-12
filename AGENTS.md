@@ -8,16 +8,18 @@ RULES
 
 4. after every meaningful change: push commit + check Vercel deploy result + verify page loads correctly with chrome-devtools.
 
+   **IMPORTANT**: The official production URL is `https://modelradar.dev`. Use this for browser verification, NOT the Vercel preview URL.
+
    ```
    steps:
    a. git add . && git commit -m "fix|feat|chore: description"
-   b. vercel_deploy_to_vercel (deploy to Vercel)
-   c. wait for deploy URL from vercel_deploy_to_vercel result
-   d. chrome-devtools_navigate_page to the deployed URL
+   b. vercel_deploy_to_vercel (deploy to Vercel) — this triggers the Vercel git integration deploy
+   c. wait for deploy URL from vercel_deploy_to_vercel result (or check Vercel dashboard)
+   d. chrome-devtools_navigate_page to https://modelradar.dev
    e. chrome-devtools_take_snapshot to confirm page renders correctly (no blank/error pages)
    f. pnpm build to verify build still passes locally
    g. If any step fails, fix and repeat
    ```
 
-5. always verify with real browser check — don't assume the deploy worked. Use chrome-devtools to screenshot or snapshot the actual rendered page on the Vercel deployment URL.
+5. always verify with real browser check — don't assume the deploy worked. Use chrome-devtools to screenshot or snapshot the actual rendered page at `https://modelradar.dev`.
 
