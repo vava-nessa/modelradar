@@ -38,7 +38,8 @@ export const googleModels: Model[] = [
       humaneval: 91.4,
       aime_2025: 86.7,
     },
-    description: "Google's most capable model with 1M context window and native multimodal capabilities.",
+    description:
+      "Google's most capable model with 1M context window and native multimodal capabilities.",
     url: "https://ai.google.dev/gemini-api/docs/models#gemini-2.5-pro",
     tags: ["frontier", "reasoning", "multimodal", "long-context"],
   },

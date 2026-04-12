@@ -1,8 +1,8 @@
+import type { Model } from "@/data/schema";
 import { anthropicModels } from "./anthropic";
-import { openaiModels } from "./openai";
 import { googleModels } from "./google";
 import { metaModels } from "./meta";
-import type { Model } from "@/data/schema";
+import { openaiModels } from "./openai";
 
 export const allModels: Model[] = [
   ...anthropicModels,

@@ -38,7 +38,8 @@ export const anthropicModels: Model[] = [
       humaneval: 93.0,
       aider_polyglot: 65.4,
     },
-    description: "Best combination of performance, speed, and cost. Excels at coding, analysis, and complex reasoning.",
+    description:
+      "Best combination of performance, speed, and cost. Excels at coding, analysis, and complex reasoning.",
     url: "https://docs.anthropic.com/en/docs/about-claude/models",
     tags: ["frontier", "coding", "reasoning", "agentic"],
   },
@@ -79,7 +80,8 @@ export const anthropicModels: Model[] = [
       humaneval: 95.0,
       tau_bench: 62.5,
     },
-    description: "Most capable model for complex tasks, deep analysis, and extended autonomous coding sessions.",
+    description:
+      "Most capable model for complex tasks, deep analysis, and extended autonomous coding sessions.",
     url: "https://docs.anthropic.com/en/docs/about-claude/models",
     tags: ["frontier", "coding", "reasoning", "agentic", "premium"],
   },

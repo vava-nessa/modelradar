@@ -37,7 +37,8 @@ export const openaiModels: Model[] = [
       arena_elo: 1286,
       math_500: 76.6,
     },
-    description: "OpenAI's versatile multimodal flagship model with strong all-around performance.",
+    description:
+      "OpenAI's versatile multimodal flagship model with strong all-around performance.",
     url: "https://platform.openai.com/docs/models/gpt-4o",
     tags: ["multimodal", "audio", "versatile"],
   },
@@ -77,7 +78,8 @@ export const openaiModels: Model[] = [
       math_500: 96.7,
       aime_2025: 88.9,
     },
-    description: "OpenAI's most powerful reasoning model with extended chain-of-thought capabilities.",
+    description:
+      "OpenAI's most powerful reasoning model with extended chain-of-thought capabilities.",
     url: "https://platform.openai.com/docs/models/o3",
     tags: ["frontier", "reasoning", "math", "science"],
   },

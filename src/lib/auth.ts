@@ -1,6 +1,6 @@
-import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { supabase } from "./supabase";
 import type { User } from "@supabase/supabase-js";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { supabase } from "./supabase";
 
 /** Hook React pour l'état d'authentification.
  * Utilise TanStack Query pour cache et revalidation.
@@ -9,7 +9,9 @@ export function useAuth() {
   return useQuery({
     queryKey: ["auth"],
     queryFn: async () => {
-      const { data: { user } } = await supabase.auth.getUser();
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
       return user;
     },
     staleTime: 1000 * 60 * 5,
@@ -66,10 +68,12 @@ export function useOnAuthStateChange(callback: (user: User | null) => void) {
   useQuery({
     queryKey: ["auth"],
     queryFn: async () => {
-      const { data: { user } } = await supabase.auth.getUser();
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
       callback(user);
       return user;
     },
-    staleTime: Infinity,
+    staleTime: Number.POSITIVE_INFINITY,
   });
 }

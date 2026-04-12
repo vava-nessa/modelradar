@@ -1,29 +1,39 @@
 import { allModels } from "./models";
-import { allProviders } from "./providers";
 import { allOffers } from "./offers";
+import { allProviders } from "./providers";
 import type { Model, Provider, ProviderOffer } from "./schema";
 
 export { allModels, allProviders, allOffers };
 export type { Model, Provider, ProviderOffer };
 
 /** Toutes les offres pour un modèle donné, enrichies avec les infos provider */
-export function getOffersForModel(modelId: string): (ProviderOffer & { provider: Provider })[] {
+export function getOffersForModel(
+  modelId: string,
+): (ProviderOffer & { provider: Provider })[] {
   return allOffers
     .filter((o) => o.model_id === modelId)
-    .map((o) => ({
-      ...o,
-      provider: allProviders.find((p) => p.id === o.provider_id)!,
-    }));
+    .map((o) => {
+      const provider = allProviders.find((p) => p.id === o.provider_id);
+      if (!provider) {
+        throw new Error(`Provider not found: ${o.provider_id}`);
+      }
+      return { ...o, provider };
+    });
 }
 
 /** Tous les modèles disponibles chez un provider, enrichis avec l'offre */
-export function getModelsForProvider(providerId: string): (Model & { offer: ProviderOffer })[] {
+export function getModelsForProvider(
+  providerId: string,
+): (Model & { offer: ProviderOffer })[] {
   return allOffers
     .filter((o) => o.provider_id === providerId)
-    .map((o) => ({
-      ...allModels.find((m) => m.id === o.model_id)!,
-      offer: o,
-    }));
+    .map((o) => {
+      const model = allModels.find((m) => m.id === o.model_id);
+      if (!model) {
+        throw new Error(`Model not found: ${o.model_id}`);
+      }
+      return { ...model, offer: o };
+    });
 }
 
 /** Trouver un modèle par son ID */

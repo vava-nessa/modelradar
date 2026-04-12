@@ -39,7 +39,8 @@ export const metaModels: Model[] = [
       arena_elo: 1320,
       math_500: 78.1,
     },
-    description: "Meta's open-weight MoE model with 1M context window. 400B total params, 17B active per forward pass.",
+    description:
+      "Meta's open-weight MoE model with 1M context window. 400B total params, 17B active per forward pass.",
     url: "https://llama.meta.com",
     tags: ["open-source", "MoE", "long-context"],
   },

@@ -18,7 +18,7 @@ export function formatDate(iso: string): string {
 }
 
 /** Formater un score de benchmark */
-export function formatBenchmark(score: number, max: number = 100): string {
+export function formatBenchmark(score: number, max = 100): string {
   return `${score.toFixed(1)}${max !== 100 ? ` / ${max}` : "%"}`;
 }
 

@@ -2,7 +2,11 @@
 export type ProviderType = "direct" | "aggregator" | "cloud" | "self_hosted";
 
 /** Modèle de facturation */
-export type BillingModel = "pay_per_token" | "subscription" | "credits" | "enterprise";
+export type BillingModel =
+  | "pay_per_token"
+  | "subscription"
+  | "credits"
+  | "enterprise";
 
 /** Une plateforme qui vend l'accès à des modèles via API */
 export interface Provider {
