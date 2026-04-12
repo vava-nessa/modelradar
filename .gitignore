@@ -142,3 +142,4 @@ vite.config.timestamp_*.mjs
 app.config.timestamp_*.js
 app.config.timestamp_*.mjs
 .vercel/
+.tanstack/
