@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-DWSWI4JT.js";var t=e();function n({children:e}){return(0,t.jsx)(`div`,{className:`mx-auto max-w-7xl px-4`,children:e})}export{n as t};

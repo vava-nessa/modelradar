@@ -74,5 +74,14 @@ export const deepseekR1: ModelEntry = {
       status: "ga",
       available_since: "2025-01-22",
     },
+    {
+      provider_id: "alibaba-cn",
+      provider_model_id: "deepseek-r1",
+      input_per_mtok: 0.574,
+      output_per_mtok: 2.294,
+      context_window: 131072,
+      status: "ga",
+      available_since: "2025-01-01",
+    },
   ],
 };

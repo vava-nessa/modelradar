@@ -8,7 +8,7 @@ export const cosmosNemotron34b: ModelEntry = {
     family: "nemotron",
     category: "mid",
     status: "active",
-    modality_input: ["text", "image", "video"],
+    modality_input: ["text", "image"],
     modality_output: ["text"],
     context_window: 131072,
     max_output_tokens: 8192,

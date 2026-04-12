@@ -8,7 +8,7 @@ export const parakeetTdt06bV2: ModelEntry = {
     family: "parakeet",
     category: "small",
     status: "active",
-    modality_input: ["audio"],
+    modality_input: ["text"],
     modality_output: ["text"],
     context_window: 0,
     max_output_tokens: 4096,

@@ -62,6 +62,17 @@ import { abacus } from "./abacus";
 import { aihubmix } from "./aihubmix";
 import { ai302 } from "./302ai";
 import { jiekou } from "./jiekou";
+import { baseten } from "./baseten";
+import { cloudflareAiGateway } from "./cloudflare-ai-gateway";
+import { dinference } from "./dinference";
+import { fastrouter } from "./fastrouter";
+import { friendli } from "./friendli";
+import { ionet } from "./io-net";
+import { kimiForCoding } from "./kimi-for-coding";
+import { llama } from "./llama";
+import { nvidia } from "./nvidia";
+import { nova } from "./nova";
+import { privatemodeAi } from "./privatemode-ai";
 
 export const allProviders: Provider[] = [
   anthropic,
@@ -118,4 +129,15 @@ export const allProviders: Provider[] = [
   qiniuAi,
   alibaba,
   alibabaCn,
+  baseten,
+  cloudflareAiGateway,
+  dinference,
+  fastrouter,
+  friendli,
+  ionet,
+  kimiForCoding,
+  llama,
+  nvidia,
+  nova,
+  privatemodeAi,
 ];

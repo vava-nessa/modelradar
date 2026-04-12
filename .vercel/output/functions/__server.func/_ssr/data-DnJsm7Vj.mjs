@@ -1,0 +1,6933 @@
+//#region node_modules/.nitro/vite/services/ssr/assets/data-DnJsm7Vj.js
+var __defProp = Object.defineProperty;
+var __exportAll = (all, no_symbols) => {
+	let target = {};
+	for (var name in all) __defProp(target, name, {
+		get: all[name],
+		enumerable: true
+	});
+	if (!no_symbols) __defProp(target, Symbol.toStringTag, { value: "Module" });
+	return target;
+};
+var claudeSonnet4 = {
+	model: {
+		id: "claude-sonnet-4",
+		name: "Claude Sonnet 4",
+		creator: "anthropic",
+		family: "claude-sonnet",
+		category: "flagship",
+		status: "active",
+		modality_input: [
+			"text",
+			"image",
+			"pdf"
+		],
+		modality_output: ["text"],
+		context_window: 2e5,
+		max_output_tokens: 16e3,
+		is_open_source: false,
+		license: "proprietary",
+		architecture: "dense transformer",
+		knowledge: "2025-03",
+		release_date: "2025-05-14",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			json_schema: true,
+			system_prompt: true,
+			vision: true,
+			code_execution: true,
+			web_search: true,
+			mcp: true,
+			computer_use: true,
+			extended_thinking: true,
+			citations: true,
+			prompt_caching: true,
+			batch_api: true
+		},
+		benchmarks: {
+			swe_bench: 72.7,
+			arena_elo: 1305,
+			gpqa_diamond: 70.1,
+			humaneval: 93,
+			aider_polyglot: 65.4
+		},
+		description: "Best combination of performance, speed, and cost. Excels at coding, analysis, and complex reasoning.",
+		url: "https://docs.anthropic.com/en/docs/about-claude/models",
+		documentation_url: "https://docs.anthropic.com/en/docs/about-claude/models",
+		tags: [
+			"frontier",
+			"coding",
+			"reasoning",
+			"agentic"
+		],
+		supportedOn: ["api"],
+		cost: {
+			input: 3,
+			output: 15,
+			cache_read: .3,
+			cache_write: 3.75
+		}
+	},
+	offers: [
+		{
+			provider_id: "anthropic",
+			provider_model_id: "claude-sonnet-4-20250514",
+			input_per_mtok: 3,
+			output_per_mtok: 15,
+			cache_read_per_mtok: .3,
+			cache_write_per_mtok: 3.75,
+			batch_input_per_mtok: 1.5,
+			batch_output_per_mtok: 7.5,
+			rate_limit_rpm: 4e3,
+			rate_limit_tpm: 4e5,
+			status: "ga",
+			available_since: "2025-05-14"
+		},
+		{
+			provider_id: "openrouter",
+			provider_model_id: "anthropic/claude-sonnet-4",
+			input_per_mtok: 3,
+			output_per_mtok: 15,
+			status: "ga",
+			available_since: "2025-05-14",
+			notes: "OpenAI-compatible endpoint"
+		},
+		{
+			provider_id: "bedrock",
+			provider_model_id: "anthropic.claude-sonnet-4-20250514-v1:0",
+			input_per_mtok: 3,
+			output_per_mtok: 15,
+			rate_limit_rpm: 1e3,
+			status: "ga",
+			available_since: "2025-05-20",
+			notes: "Cross-region inference available"
+		}
+	]
+};
+var claudeOpus4 = {
+	model: {
+		id: "claude-opus-4",
+		name: "Claude Opus 4",
+		creator: "anthropic",
+		family: "claude-opus",
+		category: "flagship",
+		status: "active",
+		modality_input: [
+			"text",
+			"image",
+			"pdf"
+		],
+		modality_output: ["text"],
+		context_window: 2e5,
+		max_output_tokens: 32e3,
+		is_open_source: false,
+		license: "proprietary",
+		architecture: "dense transformer",
+		knowledge: "2025-03",
+		release_date: "2025-05-14",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			json_schema: true,
+			system_prompt: true,
+			vision: true,
+			code_execution: true,
+			web_search: true,
+			mcp: true,
+			computer_use: true,
+			extended_thinking: true,
+			citations: true,
+			prompt_caching: true,
+			batch_api: true
+		},
+		benchmarks: {
+			swe_bench: 79.4,
+			arena_elo: 1410,
+			gpqa_diamond: 74.8,
+			humaneval: 95,
+			tau_bench: 62.5
+		},
+		description: "Most capable model for complex tasks, deep analysis, and extended autonomous coding sessions.",
+		url: "https://docs.anthropic.com/en/docs/about-claude/models",
+		documentation_url: "https://docs.anthropic.com/en/docs/about-claude/models",
+		tags: [
+			"frontier",
+			"coding",
+			"reasoning",
+			"agentic",
+			"premium"
+		],
+		supportedOn: ["api"],
+		cost: {
+			input: 15,
+			output: 75,
+			cache_read: 1.5,
+			cache_write: 18.75
+		}
+	},
+	offers: [{
+		provider_id: "anthropic",
+		provider_model_id: "claude-opus-4-20250514",
+		input_per_mtok: 15,
+		output_per_mtok: 75,
+		cache_read_per_mtok: 1.5,
+		cache_write_per_mtok: 18.75,
+		batch_input_per_mtok: 7.5,
+		batch_output_per_mtok: 37.5,
+		rate_limit_rpm: 2e3,
+		rate_limit_tpm: 2e5,
+		status: "ga",
+		available_since: "2025-05-14"
+	}, {
+		provider_id: "openrouter",
+		provider_model_id: "anthropic/claude-opus-4",
+		input_per_mtok: 15,
+		output_per_mtok: 75,
+		status: "ga",
+		available_since: "2025-05-15"
+	}]
+};
+var anthropic_exports = /* @__PURE__ */ __exportAll({
+	claudeOpus4: () => claudeOpus4,
+	claudeSonnet4: () => claudeSonnet4
+});
+var commandA = {
+	model: {
+		id: "command-a",
+		name: "Command A",
+		creator: "cohere",
+		family: "command-a",
+		category: "mid",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 256e3,
+		max_output_tokens: 8e3,
+		is_open_source: true,
+		license: "community",
+		architecture: "transformer",
+		knowledge: "2024-06-01",
+		release_date: "2025-03-13",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			system_prompt: true,
+			vision: false
+		},
+		description: "Cohere's latest mid-size model with extended context.",
+		url: "https://docs.cohere.com/docs/command-a",
+		documentation_url: "https://docs.cohere.com/docs/command-a",
+		tags: ["conversational", "extended-context"],
+		supportedOn: ["api"],
+		cost: {
+			input: 2.5,
+			output: 10
+		}
+	},
+	offers: [{
+		provider_id: "cohere",
+		provider_model_id: "command-a-03-2025",
+		input_per_mtok: 2.5,
+		output_per_mtok: 10,
+		status: "ga",
+		available_since: "2025-03-13"
+	}]
+};
+var commandR = {
+	model: {
+		id: "command-r",
+		name: "Command R",
+		creator: "cohere",
+		family: "command-r",
+		category: "mid",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 128e3,
+		max_output_tokens: 4e3,
+		is_open_source: true,
+		license: "community",
+		architecture: "transformer",
+		knowledge: "2024-06-01",
+		release_date: "2024-08-30",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			system_prompt: true,
+			vision: false,
+			fine_tuning: true
+		},
+		benchmarks: {
+			mmlu: 72,
+			humaneval: 61,
+			math_500: 45
+		},
+		description: "Cohere's mid-size conversational model optimized for RAG and tool use.",
+		url: "https://docs.cohere.com/docs/command-r",
+		documentation_url: "https://docs.cohere.com/docs/command-r",
+		tags: [
+			"conversational",
+			"rag",
+			"tool-use"
+		],
+		supportedOn: ["api", "free"],
+		cost: {
+			input: .15,
+			output: .6
+		}
+	},
+	offers: [{
+		provider_id: "cohere",
+		provider_model_id: "command-r-08-2024",
+		input_per_mtok: .15,
+		output_per_mtok: .6,
+		rate_limit_rpm: 1e3,
+		status: "ga",
+		available_since: "2024-08-30"
+	}]
+};
+var commandR7B = {
+	model: {
+		id: "command-r7b",
+		name: "Command R7B",
+		creator: "cohere",
+		family: "command-r",
+		category: "small",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 128e3,
+		max_output_tokens: 4e3,
+		is_open_source: true,
+		license: "community",
+		architecture: "transformer",
+		knowledge: "2024-06-01",
+		release_date: "2024-02-27",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			system_prompt: true,
+			vision: false
+		},
+		description: "Compact, efficient model for conversational and RAG tasks.",
+		url: "https://docs.cohere.com/docs/command-r7b",
+		documentation_url: "https://docs.cohere.com/docs/command-r7b",
+		tags: [
+			"small",
+			"efficient",
+			"rag"
+		],
+		supportedOn: ["api", "free"],
+		cost: {
+			input: .0375,
+			output: .15
+		}
+	},
+	offers: [{
+		provider_id: "cohere",
+		provider_model_id: "command-r7b-12-2024",
+		input_per_mtok: .0375,
+		output_per_mtok: .15,
+		status: "ga",
+		available_since: "2024-02-27"
+	}]
+};
+var commandRPlus = {
+	model: {
+		id: "command-r-plus",
+		name: "Command R+",
+		creator: "cohere",
+		family: "command-r",
+		category: "flagship",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 128e3,
+		max_output_tokens: 4e3,
+		is_open_source: true,
+		license: "community",
+		architecture: "transformer",
+		knowledge: "2024-06-01",
+		release_date: "2024-08-30",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			system_prompt: true,
+			vision: false,
+			fine_tuning: true
+		},
+		benchmarks: {
+			mmlu: 80,
+			humaneval: 74,
+			math_500: 55
+		},
+		description: "Cohere's most capable conversational model with excellent reasoning.",
+		url: "https://docs.cohere.com/docs/command-r-plus",
+		documentation_url: "https://docs.cohere.com/docs/command-r-plus",
+		tags: [
+			"flagship",
+			"conversational",
+			"rag",
+			"tool-use"
+		],
+		supportedOn: ["api", "free"],
+		cost: {
+			input: 2.5,
+			output: 10
+		}
+	},
+	offers: [{
+		provider_id: "cohere",
+		provider_model_id: "command-r-plus-08-2024",
+		input_per_mtok: 2.5,
+		output_per_mtok: 10,
+		rate_limit_rpm: 1e3,
+		status: "ga",
+		available_since: "2024-08-30"
+	}]
+};
+var cohere_exports = /* @__PURE__ */ __exportAll({
+	commandA: () => commandA,
+	commandR: () => commandR,
+	commandR7B: () => commandR7B,
+	commandRPlus: () => commandRPlus
+});
+var deepseekChat = {
+	model: {
+		id: "deepseek-chat",
+		name: "DeepSeek Chat",
+		creator: "deepseek",
+		family: "deepseek-chat",
+		category: "mid",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 164e3,
+		max_output_tokens: 8192,
+		is_open_source: false,
+		license: "proprietary",
+		architecture: "dense transformer",
+		knowledge: "2025-01",
+		release_date: "2025-02-20",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			json_schema: false,
+			system_prompt: true,
+			vision: false,
+			code_execution: false,
+			web_search: false,
+			mcp: false,
+			computer_use: false,
+			extended_thinking: false
+		},
+		benchmarks: {
+			mmlu: 63.3,
+			math_500: 41,
+			humaneval: 54.6
+		},
+		description: "DeepSeek's conversational model with extremely competitive pricing. Excellent value for general tasks.",
+		url: "https://deepseek.com",
+		documentation_url: "https://deepseek.com",
+		tags: [
+			"conversational",
+			"value",
+			"coding"
+		],
+		supportedOn: ["api"],
+		cost: {
+			input: .1,
+			output: .3
+		}
+	},
+	offers: [{
+		provider_id: "deepseek",
+		provider_model_id: "deepseek-chat",
+		input_per_mtok: .27,
+		output_per_mtok: 1.1,
+		status: "ga",
+		available_since: "2025-02-20"
+	}, {
+		provider_id: "openrouter",
+		provider_model_id: "deepseek/deepseek-chat",
+		input_per_mtok: .27,
+		output_per_mtok: 1.1,
+		status: "ga",
+		available_since: "2025-02-21"
+	}]
+};
+var deepseekReasoner = {
+	model: {
+		id: "deepseek-reasoner",
+		name: "DeepSeek Reasoner",
+		creator: "deepseek",
+		family: "deepseek-thinking",
+		category: "reasoning",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 128e3,
+		max_output_tokens: 64e3,
+		is_open_source: true,
+		license: "mit",
+		architecture: "dense transformer",
+		knowledge: "2025-09",
+		release_date: "2025-12-01",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			system_prompt: true,
+			extended_thinking: true,
+			vision: true
+		},
+		benchmarks: {
+			mmlu: 75,
+			math_500: 85
+		},
+		description: "DeepSeek's latest reasoning model with tool calling support.",
+		url: "https://deepseek.com",
+		documentation_url: "https://deepseek.com/docs",
+		tags: [
+			"reasoning",
+			"open-source",
+			"chain-of-thought"
+		],
+		supportedOn: ["api"],
+		cost: {
+			input: .28,
+			output: .42,
+			cache_read: .028
+		}
+	},
+	offers: [{
+		provider_id: "deepseek",
+		provider_model_id: "deepseek-reasoner",
+		input_per_mtok: .28,
+		output_per_mtok: .42,
+		cache_read_per_mtok: .028,
+		status: "ga",
+		available_since: "2025-12-01"
+	}]
+};
+var deepseekR1 = {
+	model: {
+		id: "deepseek-r1",
+		name: "DeepSeek R1",
+		creator: "deepseek",
+		family: "deepseek-thinking",
+		category: "reasoning",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 64e3,
+		max_output_tokens: 16e3,
+		is_open_source: true,
+		license: "mit",
+		architecture: "dense transformer",
+		knowledge: "2024-07",
+		release_date: "2025-01-20",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: false,
+			system_prompt: true,
+			extended_thinking: true,
+			vision: false
+		},
+		benchmarks: {
+			mmlu: 75,
+			gpqa_diamond: 71,
+			math_500: 85,
+			aime_2025: 86.7
+		},
+		description: "DeepSeek's open-weight reasoning model with chain-of-thought. Achieves state-of-the-art on math and reasoning benchmarks.",
+		url: "https://deepseek.com/r1",
+		documentation_url: "https://deepseek.com/docs",
+		tags: [
+			"reasoning",
+			"open-source",
+			"chain-of-thought",
+			"math"
+		],
+		supportedOn: ["api"],
+		cost: {
+			input: .7,
+			output: 2.5
+		}
+	},
+	offers: [
+		{
+			provider_id: "openrouter",
+			provider_model_id: "deepseek/deepseek-r1",
+			input_per_mtok: .7,
+			output_per_mtok: 2.5,
+			status: "ga",
+			available_since: "2025-01-20"
+		},
+		{
+			provider_id: "cerebras",
+			provider_model_id: "deepseek-r1",
+			input_per_mtok: .7,
+			output_per_mtok: 2.5,
+			status: "ga",
+			available_since: "2025-01-25"
+		},
+		{
+			provider_id: "deepinfra",
+			provider_model_id: "deepseek-ai/DeepSeek-R1",
+			input_per_mtok: .8,
+			output_per_mtok: 2.4,
+			status: "ga",
+			available_since: "2025-01-22"
+		},
+		{
+			provider_id: "nebius",
+			provider_model_id: "deepseek-ai/DeepSeek-R1",
+			input_per_mtok: .8,
+			output_per_mtok: 2.4,
+			status: "ga",
+			available_since: "2025-01-22"
+		},
+		{
+			provider_id: "alibaba-cn",
+			provider_model_id: "deepseek-r1",
+			input_per_mtok: .574,
+			output_per_mtok: 2.294,
+			context_window: 131072,
+			status: "ga",
+			available_since: "2025-01-01"
+		}
+	]
+};
+var deepseekR1DistillLlama8b = {
+	model: {
+		id: "deepseek-r1-distill-llama-8b",
+		name: "DeepSeek R1 Distill (Llama 8B)",
+		creator: "deepseek",
+		family: "deepseek-r1",
+		category: "reasoning",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 32768,
+		max_output_tokens: 8192,
+		is_open_source: true,
+		license: "mit",
+		architecture: "dense transformer",
+		knowledge: "2025-01",
+		release_date: "2025-01-20",
+		reasoning: true,
+		temperature: true,
+		weights_url: "https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
+		capabilities: {
+			streaming: true,
+			function_calling: false,
+			json_mode: false,
+			system_prompt: true,
+			vision: false,
+			code_execution: false,
+			web_search: false,
+			mcp: false,
+			computer_use: false,
+			extended_thinking: true
+		},
+		benchmarks: {
+			mmlu: 54.3,
+			math_500: 30.2,
+			humaneval: 34.2
+		},
+		description: "Distilled reasoning model with chain-of-thought capabilities. Open-source alternative to o1-like models.",
+		url: "https://deepseek.com",
+		documentation_url: "https://deepseek.com",
+		tags: [
+			"reasoning",
+			"open-source",
+			"chain-of-thought"
+		],
+		supportedOn: [
+			"api",
+			"local",
+			"free"
+		],
+		cost: {
+			input: .1,
+			output: .3
+		}
+	},
+	offers: [{
+		provider_id: "deepseek",
+		provider_model_id: "deepseek-r1-distill-llama-8b",
+		input_per_mtok: .07,
+		output_per_mtok: .14,
+		status: "ga",
+		available_since: "2025-01-20"
+	}, {
+		provider_id: "openrouter",
+		provider_model_id: "deepseek/deepseek-r1-distill-llama-8b",
+		input_per_mtok: .07,
+		output_per_mtok: .14,
+		status: "ga",
+		available_since: "2025-01-21"
+	}]
+};
+var deepseekR1_0528 = {
+	model: {
+		id: "deepseek-r1-0528",
+		name: "DeepSeek R1 0528",
+		creator: "deepseek",
+		family: "deepseek-thinking",
+		category: "reasoning",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 131072,
+		max_output_tokens: 16384,
+		is_open_source: false,
+		knowledge: "2024-07",
+		release_date: "2025-05-28",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			system_prompt: true,
+			vision: false
+		},
+		description: "DeepSeek R1 version 0528 with 131K context and improved reasoning capabilities.",
+		url: "https://deepseek.com",
+		supportedOn: ["api"],
+		cost: {
+			input: .574,
+			output: 2.294
+		}
+	},
+	offers: [{
+		provider_id: "alibaba-cn",
+		provider_model_id: "deepseek-r1-0528",
+		input_per_mtok: .574,
+		output_per_mtok: 2.294,
+		status: "ga",
+		available_since: "2025-05-28"
+	}]
+};
+var deepseekV3_alibaba_cn = {
+	model: {
+		id: "deepseek-v3-alibaba-cn",
+		name: "DeepSeek V3",
+		creator: "deepseek",
+		family: "deepseek",
+		category: "flagship",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 65536,
+		max_output_tokens: 8192,
+		is_open_source: false,
+		knowledge: "2024-12",
+		release_date: "2024-12-01",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			system_prompt: true,
+			vision: false
+		},
+		description: "DeepSeek V3 via Alibaba Cloud China with strong performance at competitive pricing.",
+		url: "https://deepseek.com",
+		supportedOn: ["api"],
+		cost: {
+			input: .287,
+			output: 1.147
+		}
+	},
+	offers: [{
+		provider_id: "alibaba-cn",
+		provider_model_id: "deepseek-v3",
+		input_per_mtok: .287,
+		output_per_mtok: 1.147,
+		context_window: 65536,
+		status: "ga",
+		available_since: "2024-12-01"
+	}]
+};
+var deepseek_exports = /* @__PURE__ */ __exportAll({
+	deepseekChat: () => deepseekChat,
+	deepseekR1: () => deepseekR1,
+	deepseekR1DistillLlama8b: () => deepseekR1DistillLlama8b,
+	deepseekR1_0528: () => deepseekR1_0528,
+	deepseekReasoner: () => deepseekReasoner,
+	deepseekV3_alibaba_cn: () => deepseekV3_alibaba_cn
+});
+var deepseekR10528 = {
+	model: {
+		id: "deepseek-r1-0528",
+		name: "DeepSeek R1 0528",
+		creator: "deepseek-ai",
+		family: "deepseek-thinking",
+		category: "reasoning",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 128e3,
+		max_output_tokens: 4096,
+		is_open_source: true,
+		release_date: "2025-05-28",
+		reasoning: true,
+		temperature: true,
+		knowledge: "2024-07",
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false,
+			structured_output: true,
+			prompt_caching: true
+		},
+		description: "DeepSeek R1 variant with May 2025 knowledge cutoff.",
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "io-net",
+		provider_model_id: "deepseek-ai/DeepSeek-R1-0528",
+		input_per_mtok: 2,
+		output_per_mtok: 8.75,
+		cache_read_per_mtok: 1,
+		cache_write_per_mtok: 4,
+		status: "ga"
+	}]
+};
+var deepseekR1DistillQwen32b = {
+	model: {
+		id: "deepseek-r1-distill-qwen-32b",
+		name: "DeepSeek R1 Distill Qwen 32B",
+		creator: "deepseek-ai",
+		family: "deepseek-thinking",
+		category: "reasoning",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 128e3,
+		max_output_tokens: 16384,
+		is_open_source: false,
+		release_date: "2025-04-03",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: false,
+			vision: false
+		},
+		description: "DeepSeek R1 distilled into Qwen 32B - available via Cloudflare Workers AI.",
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "cloudflare-ai-gateway",
+		provider_model_id: "@cf/deepseek-ai/deepseek-r1-distill-qwen-32b",
+		input_per_mtok: .5,
+		output_per_mtok: 4.88,
+		status: "ga"
+	}]
+};
+var deepseekV31Terminus = {
+	model: {
+		id: "deepseek-v3.1-terminus",
+		name: "DeepSeek V3.1 Terminus",
+		creator: "deepseek-ai",
+		family: "deepseek",
+		category: "flagship",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 128e3,
+		max_output_tokens: 8192,
+		is_open_source: false,
+		release_date: "2025-09-22",
+		reasoning: true,
+		temperature: true,
+		knowledge: "2025-01",
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false,
+			prompt_caching: true
+		},
+		description: "DeepSeek V3.1 Terminus - a reasoning-optimized variant available on NVIDIA NIM.",
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "nvidia",
+		provider_model_id: "deepseek-ai/deepseek-v3.1-terminus",
+		input_per_mtok: 0,
+		output_per_mtok: 0,
+		status: "ga"
+	}]
+};
+var deepseekV32 = {
+	model: {
+		id: "deepseek-v3.2",
+		name: "DeepSeek V3.2",
+		creator: "deepseek-ai",
+		family: "deepseek",
+		category: "flagship",
+		status: "deprecated",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 163840,
+		max_output_tokens: 65536,
+		is_open_source: true,
+		release_date: "2025-12-01",
+		last_updated: "2026-03-06",
+		reasoning: true,
+		temperature: true,
+		knowledge: "2025-10",
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false,
+			prompt_caching: true
+		},
+		description: "DeepSeek V3.2 - a reasoning-optimized variant with large context.",
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "baseten",
+		provider_model_id: "deepseek-ai/DeepSeek-V3.2",
+		input_per_mtok: .3,
+		output_per_mtok: .45,
+		status: "deprecated"
+	}]
+};
+var deepseek_ai_exports = /* @__PURE__ */ __exportAll({
+	deepseekR10528: () => deepseekR10528,
+	deepseekR1DistillQwen32b: () => deepseekR1DistillQwen32b,
+	deepseekV31Terminus: () => deepseekV31Terminus,
+	deepseekV32: () => deepseekV32
+});
+var fireworks_ai_exports = /* @__PURE__ */ __exportAll({});
+var gemini20Flash = {
+	model: {
+		id: "gemini-2.0-flash",
+		name: "Gemini 2.0 Flash",
+		creator: "google",
+		family: "gemini-flash",
+		category: "mid",
+		status: "active",
+		modality_input: [
+			"text",
+			"image",
+			"pdf"
+		],
+		modality_output: ["text"],
+		context_window: 1048576,
+		max_output_tokens: 8192,
+		is_open_source: false,
+		license: "proprietary",
+		knowledge: "2024-06",
+		release_date: "2024-12-11",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			json_schema: true,
+			system_prompt: true,
+			vision: true,
+			code_execution: true,
+			web_search: true,
+			prompt_caching: true
+		},
+		benchmarks: {
+			mmlu: 80,
+			humaneval: 85,
+			math_500: 65,
+			arena_elo: 1290
+		},
+		description: "Fast multimodal Gemini with 1M context window.",
+		url: "https://ai.google.dev/gemini-api/docs/models#gemini-2.0-flash",
+		documentation_url: "https://ai.google.dev/gemini-api/docs/models#gemini-2.0-flash",
+		tags: [
+			"fast",
+			"multimodal",
+			"long-context"
+		],
+		supportedOn: ["api"],
+		cost: {
+			input: .1,
+			output: .4,
+			cache_read: .025
+		}
+	},
+	offers: [{
+		provider_id: "google",
+		provider_model_id: "gemini-2.0-flash",
+		input_per_mtok: .1,
+		output_per_mtok: .4,
+		cache_read_per_mtok: .025,
+		rate_limit_rpm: 1e3,
+		status: "ga",
+		available_since: "2024-12-11"
+	}]
+};
+var gemini25Flash = {
+	model: {
+		id: "gemini-2.5-flash",
+		name: "Gemini 2.5 Flash",
+		creator: "google",
+		family: "gemini-flash",
+		category: "mid",
+		status: "active",
+		modality_input: [
+			"text",
+			"image",
+			"pdf"
+		],
+		modality_output: ["text"],
+		context_window: 1048576,
+		max_output_tokens: 65536,
+		is_open_source: false,
+		license: "proprietary",
+		knowledge: "2025-01",
+		release_date: "2025-03-20",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			json_schema: true,
+			system_prompt: true,
+			vision: true,
+			code_execution: true,
+			web_search: true,
+			prompt_caching: true
+		},
+		benchmarks: {
+			mmlu: 85,
+			humaneval: 88,
+			math_500: 75,
+			arena_elo: 1330
+		},
+		description: "Fast, efficient Gemini model with 1M context and strong reasoning.",
+		url: "https://ai.google.dev/gemini-api/docs/models#gemini-2.5-flash",
+		documentation_url: "https://ai.google.dev/gemini-api/docs/models#gemini-2.5-flash",
+		tags: [
+			"fast",
+			"long-context",
+			"reasoning",
+			"multimodal"
+		],
+		supportedOn: ["api"],
+		cost: {
+			input: .3,
+			output: 2.5,
+			cache_read: .075
+		}
+	},
+	offers: [{
+		provider_id: "google",
+		provider_model_id: "gemini-2.5-flash",
+		input_per_mtok: .3,
+		output_per_mtok: 2.5,
+		cache_read_per_mtok: .075,
+		rate_limit_rpm: 1e3,
+		status: "ga",
+		available_since: "2025-03-20"
+	}]
+};
+var gemini25Pro = {
+	model: {
+		id: "gemini-2.5-pro",
+		name: "Gemini 2.5 Pro",
+		creator: "google",
+		family: "gemini-2.5-pro",
+		category: "flagship",
+		status: "active",
+		modality_input: [
+			"text",
+			"image",
+			"pdf"
+		],
+		modality_output: ["text"],
+		context_window: 1048576,
+		max_output_tokens: 65536,
+		is_open_source: false,
+		license: "proprietary",
+		knowledge: "2025-01",
+		release_date: "2025-03-25",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			json_schema: true,
+			system_prompt: true,
+			vision: true,
+			code_execution: true,
+			web_search: true,
+			mcp: false,
+			computer_use: false,
+			extended_thinking: true,
+			prompt_caching: true,
+			batch_api: false
+		},
+		benchmarks: {
+			swe_bench: 63.8,
+			gpqa_diamond: 68.9,
+			arena_elo: 1380,
+			math_500: 90.2,
+			humaneval: 91.4,
+			aime_2025: 86.7
+		},
+		description: "Google's most capable model with 1M context window and native multimodal capabilities.",
+		url: "https://ai.google.dev/gemini-api/docs/models#gemini-2.5-pro",
+		documentation_url: "https://ai.google.dev/gemini-api/docs/models#gemini-2.5-pro",
+		tags: [
+			"frontier",
+			"reasoning",
+			"multimodal",
+			"long-context"
+		],
+		supportedOn: ["api"],
+		cost: {
+			input: 1.25,
+			output: 5
+		}
+	},
+	offers: [{
+		provider_id: "openrouter",
+		provider_model_id: "google/gemini-2.5-pro-preview",
+		input_per_mtok: 1.25,
+		output_per_mtok: 10,
+		status: "preview",
+		available_since: "2025-03-26"
+	}]
+};
+var gemini3FlashPreview = {
+	model: {
+		id: "gemini-3-flash-preview",
+		name: "Gemini 3.0 Flash Preview",
+		creator: "google",
+		family: "gemini-flash",
+		category: "mid",
+		status: "active",
+		modality_input: [
+			"text",
+			"image",
+			"pdf"
+		],
+		modality_output: ["text"],
+		context_window: 1048576,
+		max_output_tokens: 65536,
+		is_open_source: false,
+		license: "proprietary",
+		knowledge: "2025-04",
+		release_date: "2025-09-01",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			json_schema: true,
+			system_prompt: true,
+			vision: true,
+			code_execution: true,
+			web_search: true,
+			prompt_caching: true
+		},
+		description: "Next-generation Gemini Flash model with improved reasoning and 1M context window.",
+		url: "https://ai.google.dev/gemini-api/docs/models",
+		documentation_url: "https://ai.google.dev/gemini-api/docs/models",
+		tags: [
+			"fast",
+			"long-context",
+			"reasoning",
+			"multimodal"
+		],
+		supportedOn: ["api"],
+		cost: {
+			input: .5,
+			output: 3
+		}
+	},
+	offers: [{
+		provider_id: "openrouter",
+		provider_model_id: "google/gemini-3-flash-preview",
+		input_per_mtok: .5,
+		output_per_mtok: 3,
+		status: "preview",
+		available_since: "2025-09-01"
+	}]
+};
+var gemma327B = {
+	model: {
+		id: "gemma-3-27b-it",
+		name: "Gemma 3 27B",
+		creator: "google",
+		family: "gemma",
+		category: "mid",
+		status: "active",
+		modality_input: ["text", "image"],
+		modality_output: ["text"],
+		context_window: 131072,
+		max_output_tokens: 8192,
+		is_open_source: true,
+		license: "gemma",
+		architecture: "dense transformer",
+		knowledge: "2024-10",
+		release_date: "2025-03-12",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			json_schema: true,
+			system_prompt: true,
+			vision: true
+		},
+		benchmarks: {
+			mmlu: 75,
+			humaneval: 75
+		},
+		description: "Open-source multimodal Gemma model with strong performance.",
+		url: "https://ai.google.dev/gemini-api/docs/gemma",
+		documentation_url: "https://ai.google.dev/gemini-api/docs/gemma",
+		tags: [
+			"open-source",
+			"multimodal",
+			"small"
+		],
+		supportedOn: [
+			"api",
+			"local",
+			"free"
+		],
+		cost: {
+			input: 0,
+			output: 0
+		}
+	},
+	offers: [{
+		provider_id: "google",
+		provider_model_id: "gemma-3-27b-it",
+		input_per_mtok: 0,
+		output_per_mtok: 0,
+		status: "ga",
+		available_since: "2025-03-12"
+	}]
+};
+var gemma2_9b_it = {
+	model: {
+		id: "gemma-2-9b-it",
+		name: "Gemma 2 9B",
+		creator: "google",
+		family: "gemma-2",
+		category: "small",
+		status: "deprecated",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 8192,
+		max_output_tokens: 8192,
+		is_open_source: true,
+		knowledge: "2024-06",
+		release_date: "2024-06-27",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			system_prompt: true,
+			vision: false
+		},
+		description: "Google's Gemma 2 9B instruction-tuned model. Deprecated in favor of Gemma 3.",
+		url: "https://ai.google.dev/gemma",
+		supportedOn: ["api", "local"],
+		cost: {
+			input: .2,
+			output: .2
+		}
+	},
+	offers: [{
+		provider_id: "groq",
+		provider_model_id: "gemma2-9b-it",
+		input_per_mtok: .2,
+		output_per_mtok: .2,
+		status: "deprecated",
+		available_since: "2024-06-27"
+	}]
+};
+var google_exports = /* @__PURE__ */ __exportAll({
+	gemini20Flash: () => gemini20Flash,
+	gemini25Flash: () => gemini25Flash,
+	gemini25Pro: () => gemini25Pro,
+	gemini3FlashPreview: () => gemini3FlashPreview,
+	gemma2_9b_it: () => gemma2_9b_it,
+	gemma327B: () => gemma327B
+});
+var llama31Instant = {
+	model: {
+		id: "llama-3.1-8b-instant",
+		name: "Llama 3.1 8B Instant",
+		creator: "meta",
+		family: "llama",
+		category: "small",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 131072,
+		max_output_tokens: 8192,
+		is_open_source: true,
+		license: "llama3",
+		architecture: "dense transformer",
+		knowledge: "2023-12",
+		release_date: "2024-12-06",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			system_prompt: true,
+			vision: false
+		},
+		description: "Fast, affordable Llama model for instant responses.",
+		url: "https://console.groq.com/models",
+		documentation_url: "https://console.groq.com/docs",
+		tags: [
+			"open-source",
+			"fast",
+			"affordable"
+		],
+		supportedOn: ["api"],
+		cost: {
+			input: .05,
+			output: .08
+		}
+	},
+	offers: [{
+		provider_id: "groq",
+		provider_model_id: "llama-3.1-8b-instant",
+		input_per_mtok: .05,
+		output_per_mtok: .08,
+		status: "ga",
+		available_since: "2024-12-06"
+	}]
+};
+var llama33Versatile = {
+	model: {
+		id: "llama-3.3-70b-versatile",
+		name: "Llama 3.3 70B Versatile",
+		creator: "meta",
+		family: "llama",
+		category: "mid",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 131072,
+		max_output_tokens: 32768,
+		is_open_source: true,
+		license: "llama3",
+		architecture: "dense transformer",
+		knowledge: "2023-12",
+		release_date: "2024-12-06",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			system_prompt: true,
+			vision: false
+		},
+		benchmarks: {
+			mmlu: 88,
+			humaneval: 80
+		},
+		description: "Meta's 70B model optimized for versatile tasks with long context.",
+		url: "https://console.groq.com/models",
+		documentation_url: "https://console.groq.com/docs",
+		tags: [
+			"open-source",
+			"long-context",
+			"versatile"
+		],
+		supportedOn: ["api"],
+		cost: {
+			input: .59,
+			output: .79
+		}
+	},
+	offers: [{
+		provider_id: "groq",
+		provider_model_id: "llama-3.3-70b-versatile",
+		input_per_mtok: .59,
+		output_per_mtok: .79,
+		status: "ga",
+		available_since: "2024-12-06"
+	}]
+};
+var groq_exports = /* @__PURE__ */ __exportAll({
+	llama31Instant: () => llama31Instant,
+	llama33Versatile: () => llama33Versatile
+});
+var llama4Maverick = {
+	model: {
+		id: "llama-4-maverick",
+		name: "Llama 4 Maverick",
+		creator: "meta",
+		family: "llama-4",
+		category: "flagship",
+		status: "active",
+		modality_input: ["text", "image"],
+		modality_output: ["text"],
+		context_window: 1048576,
+		max_output_tokens: 65536,
+		is_open_source: true,
+		license: "llama-4-community",
+		parameters: "400B (17B active)",
+		architecture: "MoE",
+		knowledge: "2025-03",
+		release_date: "2025-04-05",
+		reasoning: false,
+		temperature: true,
+		weights_url: "https://huggingface.co/meta-llama/Llama-4-Maverick-17B-128E-Instruct",
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			json_schema: false,
+			system_prompt: true,
+			vision: true,
+			code_execution: false,
+			web_search: false,
+			mcp: false,
+			computer_use: false,
+			extended_thinking: false
+		},
+		benchmarks: {
+			mmlu: 87.2,
+			gpqa_diamond: 62.4,
+			humaneval: 88.5,
+			arena_elo: 1320,
+			math_500: 78.1
+		},
+		description: "Meta's open-weight MoE model with 1M context window. 400B total params, 17B active per forward pass.",
+		url: "https://llama.meta.com",
+		documentation_url: "https://llama.meta.com",
+		tags: [
+			"open-source",
+			"MoE",
+			"long-context"
+		],
+		supportedOn: ["api", "local"],
+		cost: {
+			input: .2,
+			output: .8
+		}
+	},
+	offers: [{
+		provider_id: "openrouter",
+		provider_model_id: "meta-llama/llama-4-maverick",
+		input_per_mtok: .22,
+		output_per_mtok: .88,
+		status: "ga",
+		available_since: "2025-04-06"
+	}, {
+		provider_id: "bedrock",
+		provider_model_id: "meta.llama4-maverick-17b-instruct-v1:0",
+		input_per_mtok: .22,
+		output_per_mtok: .88,
+		status: "ga",
+		available_since: "2025-04-10"
+	}]
+};
+var llama31_8b_instant = {
+	model: {
+		id: "llama-3-1-8b-instant",
+		name: "Llama 3.1 8B Instant",
+		creator: "meta",
+		family: "llama",
+		category: "small",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 131072,
+		max_output_tokens: 131072,
+		is_open_source: true,
+		knowledge: "2023-12",
+		release_date: "2024-07-23",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			system_prompt: true,
+			vision: false
+		},
+		description: "Meta's open-weight Llama 3.1 8B model optimized for fast, cost-effective inference.",
+		url: "https://llama.meta.com",
+		supportedOn: ["api", "local"],
+		cost: {
+			input: .05,
+			output: .08
+		}
+	},
+	offers: [{
+		provider_id: "groq",
+		provider_model_id: "llama-3.1-8b-instant",
+		input_per_mtok: .05,
+		output_per_mtok: .08,
+		status: "ga",
+		available_since: "2024-07-23"
+	}]
+};
+var llama33_70b_versatile = {
+	model: {
+		id: "llama-3-3-70b-versatile",
+		name: "Llama 3.3 70B Versatile",
+		creator: "meta",
+		family: "llama",
+		category: "mid",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 131072,
+		max_output_tokens: 32768,
+		is_open_source: true,
+		knowledge: "2023-12",
+		release_date: "2024-12-06",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			system_prompt: true,
+			vision: false
+		},
+		description: "Meta's open-weight Llama 3.3 70B model with strong all-around performance at competitive pricing.",
+		url: "https://llama.meta.com",
+		supportedOn: ["api", "local"],
+		cost: {
+			input: .59,
+			output: .79
+		}
+	},
+	offers: [{
+		provider_id: "groq",
+		provider_model_id: "llama-3.3-70b-versatile",
+		input_per_mtok: .59,
+		output_per_mtok: .79,
+		status: "ga",
+		available_since: "2024-12-06"
+	}]
+};
+var llama3370BInstruct = {
+	model: {
+		id: "llama-3.3-70b-instruct",
+		name: "Llama 3.3 70B Instruct",
+		creator: "meta",
+		family: "llama",
+		category: "mid",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 128e3,
+		max_output_tokens: 4096,
+		is_open_source: true,
+		license: "llama-3.3-community",
+		parameters: "70B",
+		architecture: "dense transformer",
+		knowledge: "2024-08",
+		release_date: "2025-01-05",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			json_schema: true,
+			system_prompt: true,
+			vision: false
+		},
+		benchmarks: {
+			mmlu: 88,
+			humaneval: 85
+		},
+		description: "Meta's open-weight 70B model optimized for instruction following and chat. Excellent performance-to-cost ratio.",
+		url: "https://llama.meta.com",
+		documentation_url: "https://llama.meta.com",
+		tags: [
+			"open-source",
+			"chat",
+			"instruction-following"
+		],
+		supportedOn: ["api", "local"],
+		cost: {
+			input: .72,
+			output: .72
+		}
+	},
+	offers: [
+		{
+			provider_id: "openrouter",
+			provider_model_id: "meta-llama/llama-3.3-70b-instruct:free",
+			input_per_mtok: 0,
+			output_per_mtok: 0,
+			free_tier_limits: "Limited daily requests",
+			status: "ga",
+			available_since: "2025-01-05"
+		},
+		{
+			provider_id: "bedrock",
+			provider_model_id: "meta.llama3-3-70b-instruct-v1:0",
+			input_per_mtok: .72,
+			output_per_mtok: .72,
+			status: "ga",
+			available_since: "2025-01-10"
+		},
+		{
+			provider_id: "cloudflareWorkersAI",
+			provider_model_id: "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+			input_per_mtok: 0,
+			output_per_mtok: 0,
+			free_tier_limits: "Free with rate limits",
+			status: "ga",
+			available_since: "2025-04-01"
+		},
+		{
+			provider_id: "cerebras",
+			provider_model_id: "llama-3.3-70b-instruct",
+			input_per_mtok: .1,
+			output_per_mtok: .1,
+			status: "ga",
+			available_since: "2025-01-15"
+		}
+	]
+};
+var llama3_70b_8192 = {
+	model: {
+		id: "llama-3-70b-8192",
+		name: "Llama 3 70B",
+		creator: "meta",
+		family: "llama",
+		category: "mid",
+		status: "deprecated",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 8192,
+		max_output_tokens: 8192,
+		is_open_source: true,
+		knowledge: "2023-03",
+		release_date: "2024-04-18",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			system_prompt: true,
+			vision: false
+		},
+		description: "Meta's Llama 3 70B model with 8K context window. Deprecated in favor of Llama 3.3.",
+		url: "https://llama.meta.com",
+		supportedOn: ["api", "local"],
+		cost: {
+			input: .59,
+			output: .79
+		}
+	},
+	offers: [{
+		provider_id: "groq",
+		provider_model_id: "llama3-70b-8192",
+		input_per_mtok: .59,
+		output_per_mtok: .79,
+		status: "deprecated",
+		available_since: "2024-04-18"
+	}]
+};
+var llama3_8b_8192 = {
+	model: {
+		id: "llama-3-8b-8192",
+		name: "Llama 3 8B",
+		creator: "meta",
+		family: "llama",
+		category: "small",
+		status: "deprecated",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 8192,
+		max_output_tokens: 8192,
+		is_open_source: true,
+		knowledge: "2023-03",
+		release_date: "2024-04-18",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			system_prompt: true,
+			vision: false
+		},
+		description: "Meta's compact Llama 3 8B model with 8K context. Deprecated in favor of Llama 3.1.",
+		url: "https://llama.meta.com",
+		supportedOn: ["api", "local"],
+		cost: {
+			input: .05,
+			output: .08
+		}
+	},
+	offers: [{
+		provider_id: "groq",
+		provider_model_id: "llama3-8b-8192",
+		input_per_mtok: .05,
+		output_per_mtok: .08,
+		status: "deprecated",
+		available_since: "2024-04-18"
+	}]
+};
+var llama_guard_3_8b = {
+	model: {
+		id: "llama-guard-3-8b",
+		name: "Llama Guard 3 8B",
+		creator: "meta",
+		family: "llama-guard",
+		category: "small",
+		status: "deprecated",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 8192,
+		max_output_tokens: 8192,
+		is_open_source: true,
+		knowledge: "2023-07",
+		release_date: "2024-07-23",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: false,
+			system_prompt: true,
+			vision: false
+		},
+		description: "Meta's Llama Guard 3 safety model for content moderation. Deprecated.",
+		url: "https://llama.meta.com",
+		supportedOn: ["api", "local"],
+		cost: {
+			input: .2,
+			output: .2
+		}
+	},
+	offers: [{
+		provider_id: "groq",
+		provider_model_id: "llama-guard-3-8b",
+		input_per_mtok: .2,
+		output_per_mtok: .2,
+		status: "deprecated",
+		available_since: "2024-07-23"
+	}]
+};
+var meta_exports = /* @__PURE__ */ __exportAll({
+	llama31_8b_instant: () => llama31_8b_instant,
+	llama3370BInstruct: () => llama3370BInstruct,
+	llama33_70b_versatile: () => llama33_70b_versatile,
+	llama3_70b_8192: () => llama3_70b_8192,
+	llama3_8b_8192: () => llama3_8b_8192,
+	llama4Maverick: () => llama4Maverick,
+	llama_guard_3_8b: () => llama_guard_3_8b
+});
+var phi4 = {
+	model: {
+		id: "phi-4",
+		name: "Phi-4",
+		creator: "microsoft",
+		family: "phi-4",
+		category: "small",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 16384,
+		max_output_tokens: 4096,
+		is_open_source: true,
+		license: "mit",
+		parameters: "14B",
+		architecture: "dense transformer",
+		knowledge: "2025-01",
+		release_date: "2025-01-15",
+		reasoning: true,
+		temperature: true,
+		weights_url: "https://huggingface.co/microsoft/phi-4",
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			system_prompt: true,
+			vision: false,
+			code_execution: false,
+			web_search: false,
+			mcp: false,
+			computer_use: false,
+			extended_thinking: false
+		},
+		benchmarks: {
+			mmlu: 71.4,
+			math_500: 57.5,
+			humaneval: 61.8
+		},
+		description: "Microsoft's small but capable model. Strong reasoning for its size with excellent instruction following.",
+		url: "https://huggingface.co/microsoft/phi-4",
+		documentation_url: "https://huggingface.co/microsoft/phi-4",
+		tags: [
+			"small",
+			"efficient",
+			"reasoning"
+		],
+		supportedOn: ["api", "local"],
+		cost: {
+			input: .4,
+			output: 1.6
+		}
+	},
+	offers: [{
+		provider_id: "azure",
+		provider_model_id: "phi-4",
+		input_per_mtok: .5,
+		output_per_mtok: 2,
+		status: "ga",
+		available_since: "2025-01-15"
+	}, {
+		provider_id: "openrouter",
+		provider_model_id: "microsoft/phi-4",
+		input_per_mtok: .5,
+		output_per_mtok: 2,
+		status: "ga",
+		available_since: "2025-01-16"
+	}]
+};
+var phi4Mini = {
+	model: {
+		id: "phi-4-mini",
+		name: "Phi-4 Mini",
+		creator: "microsoft",
+		family: "phi-4-mini",
+		category: "small",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 16384,
+		max_output_tokens: 4096,
+		is_open_source: true,
+		license: "mit",
+		parameters: "3.8B",
+		architecture: "dense transformer",
+		knowledge: "2025-01",
+		release_date: "2025-01-20",
+		reasoning: false,
+		temperature: true,
+		weights_url: "https://huggingface.co/microsoft/phi-4-mini",
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			system_prompt: true,
+			vision: false,
+			code_execution: false,
+			web_search: false,
+			mcp: false,
+			computer_use: false,
+			extended_thinking: false
+		},
+		benchmarks: {
+			mmlu: 68.2,
+			math_500: 48.1
+		},
+		description: "Compact model optimized for speed and efficiency. Good for simple tasks and mobile deployment.",
+		url: "https://huggingface.co/microsoft/phi-4-mini",
+		documentation_url: "https://huggingface.co/microsoft/phi-4-mini",
+		tags: [
+			"small",
+			"fast",
+			"efficient"
+		],
+		supportedOn: ["api", "local"],
+		cost: {
+			input: .2,
+			output: .8
+		}
+	},
+	offers: [{
+		provider_id: "azure",
+		provider_model_id: "phi-4-mini",
+		input_per_mtok: .1,
+		output_per_mtok: .4,
+		status: "ga",
+		available_since: "2025-01-20"
+	}, {
+		provider_id: "openrouter",
+		provider_model_id: "microsoft/phi-4-mini",
+		input_per_mtok: .1,
+		output_per_mtok: .4,
+		status: "ga",
+		available_since: "2025-01-21"
+	}]
+};
+var microsoft_exports = /* @__PURE__ */ __exportAll({
+	phi4: () => phi4,
+	phi4Mini: () => phi4Mini
+});
+var codestral = {
+	model: {
+		id: "codestral",
+		name: "Codestral",
+		creator: "mistral",
+		family: "codestral",
+		category: "code",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 256e3,
+		max_output_tokens: 4096,
+		is_open_source: true,
+		license: "mistral",
+		architecture: "dense transformer",
+		knowledge: "2024-10",
+		release_date: "2024-05-29",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			system_prompt: true,
+			code_execution: true,
+			vision: false
+		},
+		benchmarks: {
+			humaneval: 81,
+			mbpp: 83
+		},
+		description: "Mistral's code-specialized model with strong coding benchmark performance.",
+		url: "https://docs.mistral.ai/models/codestral",
+		documentation_url: "https://docs.mistral.ai/models/codestral",
+		tags: [
+			"code",
+			"open-source",
+			"coding"
+		],
+		supportedOn: ["api", "local"],
+		cost: {
+			input: .3,
+			output: .9
+		}
+	},
+	offers: [{
+		provider_id: "mistral",
+		provider_model_id: "codestral-latest",
+		input_per_mtok: .3,
+		output_per_mtok: .9,
+		status: "ga",
+		available_since: "2024-05-29"
+	}]
+};
+var mistralNemo = {
+	model: {
+		id: "mistral-nemo",
+		name: "Mistral Nemo",
+		creator: "mistral",
+		family: "mistral-nemo",
+		category: "mid",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 131072,
+		max_output_tokens: 8192,
+		is_open_source: true,
+		license: "apache-2.0",
+		architecture: "dense transformer",
+		knowledge: "2024-07",
+		release_date: "2024-07",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			json_schema: true,
+			system_prompt: true,
+			vision: false,
+			code_execution: false,
+			web_search: false,
+			mcp: false,
+			computer_use: false,
+			extended_thinking: false
+		},
+		benchmarks: {
+			mmlu: 26.4,
+			math_500: 8.7
+		},
+		description: "Open-source 12B model optimized for efficiency. Good for code and reasoning at low cost.",
+		url: "https://mistral.ai/news/mistral-nemo",
+		documentation_url: "https://docs.mistral.ai/models",
+		tags: [
+			"open-source",
+			"code",
+			"efficient"
+		],
+		supportedOn: ["api", "local"],
+		cost: {
+			input: .15,
+			output: .15
+		}
+	},
+	offers: [{
+		provider_id: "mistral",
+		provider_model_id: "mistral-nemo",
+		input_per_mtok: .03,
+		output_per_mtok: .03,
+		status: "ga",
+		available_since: "2024-07"
+	}]
+};
+var mistralSmall32 = {
+	model: {
+		id: "mistral-small-3.2-24b-instruct",
+		name: "Mistral Small 3.2",
+		creator: "mistral",
+		family: "mistral-small",
+		category: "mid",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 131072,
+		max_output_tokens: 32768,
+		is_open_source: false,
+		license: "proprietary",
+		architecture: "dense transformer",
+		knowledge: "2025-01",
+		release_date: "2025-03-02",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			json_schema: false,
+			system_prompt: true,
+			vision: false,
+			code_execution: false,
+			web_search: false,
+			mcp: false,
+			computer_use: false,
+			extended_thinking: false
+		},
+		benchmarks: {
+			mmlu: 68.1,
+			math_500: 50.5,
+			humaneval: 62.2
+		},
+		description: "Fast, efficient mid-size model with excellent instruction following. Great balance of capability and cost.",
+		url: "https://docs.mistral.ai/models",
+		documentation_url: "https://docs.mistral.ai/models",
+		tags: [
+			"fast",
+			"efficient",
+			"instruction-following"
+		],
+		supportedOn: ["api"],
+		cost: {
+			input: .15,
+			output: .15
+		}
+	},
+	offers: [{
+		provider_id: "mistral",
+		provider_model_id: "mistral-small-latest",
+		input_per_mtok: .15,
+		output_per_mtok: .6,
+		status: "ga",
+		available_since: "2025-03-02"
+	}, {
+		provider_id: "openrouter",
+		provider_model_id: "mistral/mistral-small-latest",
+		input_per_mtok: .15,
+		output_per_mtok: .6,
+		status: "ga",
+		available_since: "2025-03-03"
+	}]
+};
+var mistral_saba_24b = {
+	model: {
+		id: "mistral-saba-24b",
+		name: "Mistral Saba 24B",
+		creator: "mistral",
+		family: "mistral",
+		category: "mid",
+		status: "deprecated",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 32768,
+		max_output_tokens: 32768,
+		is_open_source: false,
+		knowledge: "2024-08",
+		release_date: "2025-02-06",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			system_prompt: true,
+			vision: false
+		},
+		description: "Mistral's Saba model specialized for Middle East and Arabic language tasks. Deprecated.",
+		url: "https://mistral.ai",
+		supportedOn: ["api"],
+		cost: {
+			input: .79,
+			output: .79
+		}
+	},
+	offers: [{
+		provider_id: "groq",
+		provider_model_id: "mistral-saba-24b",
+		input_per_mtok: .79,
+		output_per_mtok: .79,
+		status: "deprecated",
+		available_since: "2025-02-06"
+	}]
+};
+var pixtralLarge = {
+	model: {
+		id: "pixtral-large",
+		name: "Pixtral Large",
+		creator: "mistral",
+		family: "pixtral",
+		category: "flagship",
+		status: "active",
+		modality_input: ["text", "image"],
+		modality_output: ["text"],
+		context_window: 128e3,
+		max_output_tokens: 128e3,
+		is_open_source: true,
+		license: "mistral",
+		architecture: "dense transformer",
+		knowledge: "2024-11",
+		release_date: "2024-11-01",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			system_prompt: true,
+			vision: true
+		},
+		benchmarks: {
+			mmlu: 80,
+			humaneval: 75
+		},
+		description: "Mistral's flagship multimodal model with vision support.",
+		url: "https://docs.mistral.ai/models/pixtral",
+		documentation_url: "https://docs.mistral.ai/models/pixtral",
+		tags: [
+			"multimodal",
+			"vision",
+			"open-source"
+		],
+		supportedOn: ["api"],
+		cost: {
+			input: 2,
+			output: 6
+		}
+	},
+	offers: [{
+		provider_id: "mistral",
+		provider_model_id: "pixtral-large-latest",
+		input_per_mtok: 2,
+		output_per_mtok: 6,
+		status: "ga",
+		available_since: "2024-11-01"
+	}]
+};
+var mistral_exports = /* @__PURE__ */ __exportAll({
+	codestral: () => codestral,
+	mistralNemo: () => mistralNemo,
+	mistralSmall32: () => mistralSmall32,
+	mistral_saba_24b: () => mistral_saba_24b,
+	pixtralLarge: () => pixtralLarge
+});
+var devstral2123bInstruct2512 = {
+	model: {
+		id: "devstral-2-123b-instruct-2512",
+		name: "Devstral 2 123B Instruct 2512",
+		creator: "mistralai",
+		family: "devstral",
+		category: "mid",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 262144,
+		max_output_tokens: 262144,
+		is_open_source: true,
+		release_date: "2025-12-08",
+		reasoning: true,
+		temperature: true,
+		knowledge: "2025-12",
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false,
+			structured_output: true,
+			prompt_caching: true
+		},
+		description: "Mistral's Devstral 2 123B - a code-specialized model with reasoning.",
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "nvidia",
+		provider_model_id: "mistralai/devstral-2-123b-instruct-2512",
+		input_per_mtok: 0,
+		output_per_mtok: 0,
+		status: "ga"
+	}]
+};
+var devstralSmall2505 = {
+	model: {
+		id: "devstral-small-2505",
+		name: "Devstral Small 2505",
+		creator: "mistralai",
+		family: "devstral",
+		category: "code",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 128e3,
+		max_output_tokens: 4096,
+		is_open_source: false,
+		release_date: "2025-05-01",
+		temperature: true,
+		knowledge: "2024-12",
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false,
+			prompt_caching: true
+		},
+		description: "Mistral's code-specialized Devstral Small model.",
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "io-net",
+		provider_model_id: "mistralai/Devstral-Small-2505",
+		input_per_mtok: .05,
+		output_per_mtok: .22,
+		cache_read_per_mtok: .025,
+		cache_write_per_mtok: .1,
+		status: "ga"
+	}]
+};
+var MagistralSmall2506 = {
+	model: {
+		id: "magistral-small-2506",
+		name: "Magistral Small 2506",
+		creator: "mistralai",
+		family: "magistral-small",
+		category: "mid",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 128e3,
+		max_output_tokens: 4096,
+		is_open_source: false,
+		release_date: "2025-06-01",
+		temperature: true,
+		knowledge: "2025-01",
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false,
+			prompt_caching: true
+		},
+		description: "Mistral's Magistral Small - small frontier model for efficient tasks.",
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "io-net",
+		provider_model_id: "mistralai/Magistral-Small-2506",
+		input_per_mtok: .5,
+		output_per_mtok: 1.5,
+		cache_read_per_mtok: .25,
+		cache_write_per_mtok: 1,
+		status: "ga"
+	}]
+};
+var ministral14bInstruct2512 = {
+	model: {
+		id: "ministral-14b-instruct-2512",
+		name: "Ministral 14B Instruct 2512",
+		creator: "mistralai",
+		family: "ministral",
+		category: "mid",
+		status: "active",
+		modality_input: ["text", "image"],
+		modality_output: ["text"],
+		context_window: 262144,
+		max_output_tokens: 262144,
+		is_open_source: true,
+		release_date: "2025-12-01",
+		temperature: true,
+		knowledge: "2025-12",
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: true,
+			structured_output: true
+		},
+		description: "Mistral's Ministral 14B instruction model with multimodal support.",
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "nvidia",
+		provider_model_id: "mistralai/ministral-14b-instruct-2512",
+		input_per_mtok: 0,
+		output_per_mtok: 0,
+		status: "ga"
+	}]
+};
+var mistralLarge3675bInstruct2512 = {
+	model: {
+		id: "mistral-large-3-675b-instruct-2512",
+		name: "Mistral Large 3 675B Instruct 2512",
+		creator: "mistralai",
+		family: "mistral-large",
+		category: "flagship",
+		status: "active",
+		modality_input: ["text", "image"],
+		modality_output: ["text"],
+		context_window: 262144,
+		max_output_tokens: 262144,
+		is_open_source: true,
+		release_date: "2025-12-02",
+		temperature: true,
+		knowledge: "2025-01",
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: true,
+			structured_output: true,
+			prompt_caching: true
+		},
+		description: "Mistral's largest flagship model - Mistral Large 3 675B.",
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "nvidia",
+		provider_model_id: "mistralai/mistral-large-3-675b-instruct-2512",
+		input_per_mtok: 0,
+		output_per_mtok: 0,
+		status: "ga"
+	}]
+};
+var mistralai_exports = /* @__PURE__ */ __exportAll({
+	MagistralSmall2506: () => MagistralSmall2506,
+	devstral2123bInstruct2512: () => devstral2123bInstruct2512,
+	devstralSmall2505: () => devstralSmall2505,
+	ministral14bInstruct2512: () => ministral14bInstruct2512,
+	mistralLarge3675bInstruct2512: () => mistralLarge3675bInstruct2512
+});
+var deepseekR1Turbo = {
+	model: {
+		id: "deepseek-r1-turbo",
+		name: "DeepSeek R1 (Turbo)",
+		creator: "deepseek",
+		family: "deepseek-thinking",
+		category: "reasoning",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 64e3,
+		max_output_tokens: 16e3,
+		is_open_source: true,
+		license: "mit",
+		architecture: "dense transformer",
+		release_date: "2025-03-05",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			system_prompt: true,
+			extended_thinking: true,
+			vision: false
+		},
+		description: "Fast variant of DeepSeek R1 with lower cost.",
+		url: "https://novita.ai",
+		documentation_url: "https://novita.ai/docs",
+		tags: [
+			"reasoning",
+			"fast",
+			"open-source"
+		],
+		supportedOn: ["api"],
+		cost: {
+			input: .7,
+			output: 2.5
+		}
+	},
+	offers: [{
+		provider_id: "novita_ai",
+		provider_model_id: "deepseek-r1-turbo",
+		input_per_mtok: .7,
+		output_per_mtok: 2.5,
+		status: "ga",
+		available_since: "2025-03-05"
+	}]
+};
+var novita_ai_exports = /* @__PURE__ */ __exportAll({ deepseekR1Turbo: () => deepseekR1Turbo });
+var gpt4o = {
+	model: {
+		id: "gpt-4o",
+		name: "GPT-4o",
+		creator: "openai",
+		family: "gpt-4o",
+		category: "flagship",
+		status: "active",
+		modality_input: ["text", "image"],
+		modality_output: ["text"],
+		context_window: 128e3,
+		max_output_tokens: 16384,
+		is_open_source: false,
+		license: "proprietary",
+		knowledge: "2024-10",
+		release_date: "2024-05-13",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			json_schema: true,
+			system_prompt: true,
+			vision: true,
+			code_execution: true,
+			web_search: true,
+			mcp: false,
+			computer_use: false,
+			extended_thinking: false,
+			prompt_caching: true,
+			batch_api: true,
+			fine_tuning: true
+		},
+		benchmarks: {
+			mmlu: 88.7,
+			gpqa_diamond: 53.6,
+			humaneval: 90.2,
+			arena_elo: 1286,
+			math_500: 76.6
+		},
+		description: "OpenAI's versatile multimodal flagship model with strong all-around performance.",
+		url: "https://platform.openai.com/docs/models/gpt-4o",
+		documentation_url: "https://platform.openai.com/docs/models/gpt-4o",
+		tags: ["multimodal", "versatile"],
+		supportedOn: ["api"],
+		cost: {
+			input: 2.5,
+			output: 10
+		}
+	},
+	offers: [{
+		provider_id: "openai",
+		provider_model_id: "gpt-4o",
+		input_per_mtok: 2.5,
+		output_per_mtok: 10,
+		rate_limit_rpm: 1e4,
+		rate_limit_tpm: 3e7,
+		status: "ga",
+		available_since: "2024-05-13"
+	}, {
+		provider_id: "openrouter",
+		provider_model_id: "openai/gpt-4o",
+		input_per_mtok: 2.5,
+		output_per_mtok: 10,
+		status: "ga",
+		available_since: "2024-05-13"
+	}]
+};
+var gpt4oMini = {
+	model: {
+		id: "gpt-4o-mini",
+		name: "GPT-4o mini",
+		creator: "openai",
+		family: "gpt-mini",
+		category: "small",
+		status: "active",
+		modality_input: [
+			"text",
+			"image",
+			"pdf"
+		],
+		modality_output: ["text"],
+		context_window: 128e3,
+		max_output_tokens: 16384,
+		is_open_source: false,
+		license: "proprietary",
+		knowledge: "2023-09",
+		release_date: "2024-07-18",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			json_schema: true,
+			system_prompt: true,
+			vision: true,
+			code_execution: true,
+			web_search: true,
+			prompt_caching: true,
+			batch_api: true,
+			fine_tuning: true
+		},
+		benchmarks: {
+			mmlu: 82,
+			humaneval: 87,
+			math_500: 70.2
+		},
+		description: "Fast, affordable small model with strong multimodal capabilities.",
+		url: "https://platform.openai.com/docs/models/gpt-4o-mini",
+		documentation_url: "https://platform.openai.com/docs/models/gpt-4o-mini",
+		tags: [
+			"small",
+			"fast",
+			"multimodal",
+			"affordable"
+		],
+		supportedOn: ["api"],
+		cost: {
+			input: .15,
+			output: .6,
+			cache_read: .08
+		}
+	},
+	offers: [{
+		provider_id: "openai",
+		provider_model_id: "gpt-4o-mini",
+		input_per_mtok: .15,
+		output_per_mtok: .6,
+		cache_read_per_mtok: .08,
+		rate_limit_rpm: 1e4,
+		rate_limit_tpm: 3e7,
+		status: "ga",
+		available_since: "2024-07-18"
+	}, {
+		provider_id: "openrouter",
+		provider_model_id: "openai/gpt-4o-mini",
+		input_per_mtok: .15,
+		output_per_mtok: .6,
+		status: "ga",
+		available_since: "2024-07-18"
+	}]
+};
+var gptOss120B = {
+	model: {
+		id: "gpt-oss-120b",
+		name: "GPT-OSS 120B",
+		creator: "openai",
+		family: "gpt-oss",
+		category: "reasoning",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 131072,
+		max_output_tokens: 32768,
+		is_open_source: true,
+		license: "apache-2.0",
+		parameters: "120B",
+		architecture: "dense transformer",
+		knowledge: "2025-08",
+		release_date: "2025-08-05",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			json_schema: true,
+			system_prompt: true,
+			extended_thinking: true,
+			vision: false
+		},
+		benchmarks: {
+			mmlu: 85,
+			gpqa_diamond: 65,
+			math_500: 80
+		},
+		description: "OpenAI's open-weight reasoning model with 120B parameters. Near-GPT-4 class performance on reasoning and code tasks.",
+		url: "https://openai.com/gpt-oss",
+		documentation_url: "https://openai.com/docs",
+		tags: [
+			"open-source",
+			"reasoning",
+			"code",
+			"apache-2.0"
+		],
+		supportedOn: ["api"],
+		cost: {
+			input: .25,
+			output: .69
+		}
+	},
+	offers: [
+		{
+			provider_id: "cerebras",
+			provider_model_id: "gpt-oss-120b",
+			input_per_mtok: .25,
+			output_per_mtok: .69,
+			status: "ga",
+			available_since: "2025-08-05",
+			notes: "Fastest inference at 3000 tokens/sec"
+		},
+		{
+			provider_id: "deepinfra",
+			provider_model_id: "openai/gpt-oss-120b",
+			input_per_mtok: .05,
+			output_per_mtok: .24,
+			status: "ga",
+			available_since: "2025-08-06"
+		},
+		{
+			provider_id: "nebius",
+			provider_model_id: "openai/gpt-oss-120b",
+			input_per_mtok: .15,
+			output_per_mtok: .6,
+			cache_read_per_mtok: .015,
+			cache_write_per_mtok: .18,
+			status: "ga",
+			available_since: "2025-08-10"
+		}
+	]
+};
+var o1Mini = {
+	model: {
+		id: "o1-mini",
+		name: "o1-mini",
+		creator: "openai",
+		family: "o-mini",
+		category: "reasoning",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 128e3,
+		max_output_tokens: 65536,
+		is_open_source: false,
+		license: "proprietary",
+		knowledge: "2023-09",
+		release_date: "2024-09-12",
+		reasoning: true,
+		temperature: false,
+		capabilities: {
+			streaming: false,
+			function_calling: false,
+			json_schema: true,
+			system_prompt: true,
+			extended_thinking: true,
+			vision: false
+		},
+		benchmarks: {
+			mmlu: 75,
+			humaneval: 85,
+			math_500: 65
+		},
+		description: "Affordable reasoning model for code and math tasks.",
+		url: "https://platform.openai.com/docs/models/o1-mini",
+		documentation_url: "https://platform.openai.com/docs/models/o1-mini",
+		tags: [
+			"reasoning",
+			"small",
+			"affordable"
+		],
+		supportedOn: ["api"],
+		cost: {
+			input: 1.1,
+			output: 4.4,
+			cache_read: .55
+		}
+	},
+	offers: [{
+		provider_id: "openai",
+		provider_model_id: "o1-mini",
+		input_per_mtok: 1.1,
+		output_per_mtok: 4.4,
+		cache_read_per_mtok: .55,
+		status: "ga",
+		available_since: "2024-09-12"
+	}]
+};
+var o3 = {
+	model: {
+		id: "o3",
+		name: "o3",
+		creator: "openai",
+		family: "o3",
+		category: "reasoning",
+		status: "active",
+		modality_input: ["text", "image"],
+		modality_output: ["text"],
+		context_window: 2e5,
+		max_output_tokens: 1e5,
+		is_open_source: false,
+		license: "proprietary",
+		knowledge: "2025-05",
+		release_date: "2025-04-16",
+		reasoning: true,
+		temperature: false,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			json_schema: true,
+			system_prompt: true,
+			vision: true,
+			code_execution: true,
+			web_search: true,
+			mcp: false,
+			computer_use: false,
+			extended_thinking: true,
+			prompt_caching: false,
+			batch_api: false
+		},
+		benchmarks: {
+			swe_bench: 69.1,
+			gpqa_diamond: 79.7,
+			arena_elo: 1415,
+			math_500: 96.7,
+			aime_2025: 88.9
+		},
+		description: "OpenAI's most powerful reasoning model with extended chain-of-thought capabilities.",
+		url: "https://platform.openai.com/docs/models/o3",
+		documentation_url: "https://platform.openai.com/docs/models/o3",
+		tags: [
+			"frontier",
+			"reasoning",
+			"math",
+			"science"
+		],
+		supportedOn: ["api", "sub"],
+		cost: {
+			input: 10,
+			output: 40
+		}
+	},
+	offers: [{
+		provider_id: "openai",
+		provider_model_id: "o3",
+		input_per_mtok: 2,
+		output_per_mtok: 8,
+		status: "ga",
+		available_since: "2025-04-16"
+	}, {
+		provider_id: "openrouter",
+		provider_model_id: "openai/o3",
+		input_per_mtok: 2,
+		output_per_mtok: 8,
+		status: "ga",
+		available_since: "2025-04-18"
+	}]
+};
+var whisper_large_v3 = {
+	model: {
+		id: "whisper-large-v3",
+		name: "Whisper Large V3",
+		creator: "openai",
+		family: "whisper",
+		category: "mid",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 448,
+		max_output_tokens: 448,
+		is_open_source: true,
+		knowledge: "2023-09",
+		release_date: "2023-09-01",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: false,
+			function_calling: false,
+			system_prompt: false,
+			vision: false
+		},
+		description: "OpenAI's Whisper Large V3 for speech recognition. Open-source ASR model with strong multilingual support.",
+		url: "https://platform.openai.com/docs/models/whisper",
+		supportedOn: ["api", "local"],
+		cost: {
+			input: 0,
+			output: 0
+		}
+	},
+	offers: [{
+		provider_id: "groq",
+		provider_model_id: "whisper-large-v3",
+		input_per_mtok: 0,
+		output_per_mtok: 0,
+		status: "ga",
+		available_since: "2023-09-01"
+	}]
+};
+var whisper_large_v3_turbo = {
+	model: {
+		id: "whisper-large-v3-turbo",
+		name: "Whisper Large V3 Turbo",
+		creator: "openai",
+		family: "whisper",
+		category: "small",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 448,
+		max_output_tokens: 448,
+		is_open_source: true,
+		knowledge: "2024-10",
+		release_date: "2024-10-01",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: false,
+			function_calling: false,
+			system_prompt: false,
+			vision: false
+		},
+		description: "OpenAI's Whisper Large V3 Turbo — faster, more efficient variant of Whisper Large V3.",
+		url: "https://platform.openai.com/docs/models/whisper",
+		supportedOn: ["api", "local"],
+		cost: {
+			input: 0,
+			output: 0
+		}
+	},
+	offers: [{
+		provider_id: "groq",
+		provider_model_id: "whisper-large-v3-turbo",
+		input_per_mtok: 0,
+		output_per_mtok: 0,
+		status: "ga",
+		available_since: "2024-10-01"
+	}]
+};
+var openai_exports = /* @__PURE__ */ __exportAll({
+	gpt4o: () => gpt4o,
+	gpt4oMini: () => gpt4oMini,
+	gptOss120B: () => gptOss120B,
+	o1Mini: () => o1Mini,
+	o3: () => o3,
+	whisper_large_v3: () => whisper_large_v3,
+	whisper_large_v3_turbo: () => whisper_large_v3_turbo
+});
+var sonar = {
+	model: {
+		id: "sonar",
+		name: "Sonar",
+		creator: "perplexity",
+		family: "sonar",
+		category: "mid",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 128e3,
+		max_output_tokens: 4096,
+		is_open_source: false,
+		release_date: "2024-01-01",
+		last_updated: "2025-09-01",
+		knowledge: "2025-09-01",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			citations: true
+		},
+		description: "Perplexity's base Sonar model optimized for real-time web search and natural language responses with citations.",
+		supportedOn: ["api"],
+		cost: {
+			input: 1,
+			output: 1
+		}
+	},
+	offers: [{
+		provider_id: "perplexity",
+		provider_model_id: "sonar",
+		input_per_mtok: 1,
+		output_per_mtok: 1,
+		status: "ga"
+	}, {
+		provider_id: "helicone",
+		provider_model_id: "sonar",
+		input_per_mtok: 1,
+		output_per_mtok: 1,
+		status: "ga",
+		available_since: "2025-01-27"
+	}]
+};
+var sonarReasoning = {
+	model: {
+		id: "sonar-reasoning",
+		name: "Sonar Reasoning",
+		creator: "perplexity",
+		family: "sonar-reasoning",
+		category: "reasoning",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 127e3,
+		max_output_tokens: 8e3,
+		is_open_source: false,
+		release_date: "2025-02-19",
+		last_updated: "2025-02-19",
+		knowledge: "2025-09-01",
+		reasoning: true,
+		temperature: true,
+		capabilities: { streaming: true },
+		description: "Perplexity's reasoning model optimized for chain-of-thought tasks with real-time web search integration.",
+		supportedOn: ["api"],
+		cost: {
+			input: 1,
+			output: 5
+		}
+	},
+	offers: [{
+		provider_id: "perplexity",
+		provider_model_id: "sonar-reasoning",
+		input_per_mtok: 1,
+		output_per_mtok: 5,
+		status: "ga"
+	}]
+};
+var sonarReasoningPro = {
+	model: {
+		id: "sonar-reasoning-pro",
+		name: "Sonar Reasoning Pro",
+		creator: "perplexity",
+		family: "sonar-reasoning",
+		category: "reasoning",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 127e3,
+		max_output_tokens: 8e3,
+		is_open_source: false,
+		release_date: "2025-02-19",
+		last_updated: "2025-02-19",
+		knowledge: "2025-09-01",
+		reasoning: true,
+		temperature: true,
+		capabilities: { streaming: true },
+		description: "Perplexity's advanced reasoning model with deeper chain-of-thought capabilities and web search integration.",
+		supportedOn: ["api"],
+		cost: {
+			input: 2,
+			output: 8
+		}
+	},
+	offers: [{
+		provider_id: "perplexity",
+		provider_model_id: "sonar-reasoning-pro",
+		input_per_mtok: 2,
+		output_per_mtok: 8,
+		status: "ga"
+	}]
+};
+var sonarPro = {
+	model: {
+		id: "sonar-pro",
+		name: "Sonar Pro",
+		creator: "perplexity",
+		family: "sonar-pro",
+		category: "flagship",
+		status: "active",
+		modality_input: ["text", "image"],
+		modality_output: ["text"],
+		context_window: 2e5,
+		max_output_tokens: 8192,
+		is_open_source: false,
+		release_date: "2024-01-01",
+		last_updated: "2025-09-01",
+		knowledge: "2025-09-01",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: true,
+			citations: true
+		},
+		description: "Perplexity's most capable Sonar model with vision support and real-time web search for factually accurate answers.",
+		supportedOn: ["api"],
+		cost: {
+			input: 3,
+			output: 15
+		}
+	},
+	offers: [{
+		provider_id: "perplexity",
+		provider_model_id: "sonar-pro",
+		input_per_mtok: 3,
+		output_per_mtok: 15,
+		status: "ga"
+	}, {
+		provider_id: "helicone",
+		provider_model_id: "sonar-pro",
+		input_per_mtok: 3,
+		output_per_mtok: 15,
+		status: "ga",
+		available_since: "2025-01-27"
+	}]
+};
+var sonarDeepResearch = {
+	model: {
+		id: "sonar-deep-research",
+		name: "Sonar Deep Research",
+		creator: "perplexity",
+		family: "sonar-deep-research",
+		category: "reasoning",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 128e3,
+		max_output_tokens: 32768,
+		is_open_source: false,
+		release_date: "2025-02-01",
+		last_updated: "2025-09-01",
+		knowledge: "2025-01-01",
+		reasoning: true,
+		temperature: false,
+		capabilities: {
+			streaming: true,
+			citations: true
+		},
+		description: "Perplexity's deep research model optimized for comprehensive web research and long-form analytical outputs.",
+		supportedOn: ["api"],
+		cost: {
+			input: 2,
+			output: 8
+		}
+	},
+	offers: [{
+		provider_id: "perplexity",
+		provider_model_id: "sonar-deep-research",
+		input_per_mtok: 2,
+		output_per_mtok: 8,
+		status: "ga"
+	}]
+};
+var perplexity_exports = /* @__PURE__ */ __exportAll({
+	sonar: () => sonar,
+	sonarDeepResearch: () => sonarDeepResearch,
+	sonarPro: () => sonarPro,
+	sonarReasoning: () => sonarReasoning,
+	sonarReasoningPro: () => sonarReasoningPro
+});
+var deepseekR1Together = {
+	model: {
+		id: "deepseek-r1",
+		name: "DeepSeek R1",
+		creator: "deepseek",
+		family: "deepseek-thinking",
+		category: "reasoning",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 163839,
+		max_output_tokens: 163839,
+		is_open_source: true,
+		license: "mit",
+		architecture: "dense transformer",
+		knowledge: "2024-07",
+		release_date: "2024-12-26",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: false,
+			system_prompt: true,
+			extended_thinking: true,
+			vision: false
+		},
+		benchmarks: {
+			mmlu: 75,
+			math_500: 85
+		},
+		description: "DeepSeek's chain-of-thought reasoning model with open weights.",
+		url: "https://deepseek.com",
+		documentation_url: "https://deepseek.com/docs",
+		tags: [
+			"reasoning",
+			"open-source",
+			"chain-of-thought"
+		],
+		supportedOn: [
+			"api",
+			"free",
+			"local"
+		],
+		cost: {
+			input: 3,
+			output: 7
+		}
+	},
+	offers: [{
+		provider_id: "togetherai",
+		provider_model_id: "deepseek-ai/DeepSeek-R1",
+		input_per_mtok: 3,
+		output_per_mtok: 7,
+		status: "ga",
+		available_since: "2024-12-26"
+	}]
+};
+var deepseekV3 = {
+	model: {
+		id: "deepseek-v3",
+		name: "DeepSeek V3",
+		creator: "deepseek",
+		family: "deepseek",
+		category: "mid",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 163840,
+		max_output_tokens: 163840,
+		is_open_source: true,
+		license: "mit",
+		architecture: "dense transformer",
+		knowledge: "2024-07",
+		release_date: "2025-01-20",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			system_prompt: true,
+			vision: false
+		},
+		benchmarks: {
+			mmlu: 85,
+			humaneval: 80,
+			math_500: 70
+		},
+		description: "Fast, efficient DeepSeek model with excellent coding capabilities.",
+		url: "https://deepseek.com",
+		documentation_url: "https://deepseek.com/docs",
+		tags: [
+			"coding",
+			"fast",
+			"open-source"
+		],
+		supportedOn: ["api"],
+		cost: {
+			input: 1.25,
+			output: 1.25
+		}
+	},
+	offers: [{
+		provider_id: "togetherai",
+		provider_model_id: "deepseek-ai/DeepSeek-V3",
+		input_per_mtok: 1.25,
+		output_per_mtok: 1.25,
+		status: "ga",
+		available_since: "2025-01-20"
+	}]
+};
+var togetherai_exports = /* @__PURE__ */ __exportAll({
+	deepseekR1Together: () => deepseekR1Together,
+	deepseekV3: () => deepseekV3
+});
+var solarMini = {
+	model: {
+		id: "solar-mini",
+		name: "Solar Mini",
+		creator: "upstage",
+		family: "solar-mini",
+		category: "small",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 32768,
+		max_output_tokens: 4096,
+		is_open_source: false,
+		release_date: "2024-06-12",
+		last_updated: "2025-04-22",
+		knowledge: "2024-09-01",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true
+		},
+		description: "Upstage's compact model delivering strong performance with high efficiency on single GPU.",
+		supportedOn: ["api"],
+		cost: {
+			input: .15,
+			output: .15
+		}
+	},
+	offers: [{
+		provider_id: "upstage",
+		provider_model_id: "solar-mini",
+		input_per_mtok: .15,
+		output_per_mtok: .15,
+		status: "ga"
+	}]
+};
+var solarPro2 = {
+	model: {
+		id: "solar-pro2",
+		name: "Solar Pro 2",
+		creator: "upstage",
+		family: "solar-pro",
+		category: "flagship",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 65536,
+		max_output_tokens: 8192,
+		is_open_source: false,
+		release_date: "2025-05-20",
+		last_updated: "2025-05-20",
+		knowledge: "2025-03-01",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true
+		},
+		description: "Upstage's 31B reasoning model that rivals 70B+ models. Hybrid reasoning mode with high efficiency.",
+		supportedOn: ["api"],
+		cost: {
+			input: .25,
+			output: .25
+		}
+	},
+	offers: [{
+		provider_id: "upstage",
+		provider_model_id: "solar-pro2",
+		input_per_mtok: .25,
+		output_per_mtok: .25,
+		status: "ga"
+	}]
+};
+var solarPro3 = {
+	model: {
+		id: "solar-pro3",
+		name: "Solar Pro 3",
+		creator: "upstage",
+		family: "solar-pro",
+		category: "flagship",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 131072,
+		max_output_tokens: 8192,
+		is_open_source: false,
+		architecture: "MoE",
+		release_date: "2026-01-01",
+		last_updated: "2026-01-01",
+		knowledge: "2025-03-01",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true
+		},
+		description: "Upstage's latest MoE model with 102B total parameters and 12B active. Improved reasoning and instruction following.",
+		supportedOn: ["api"],
+		cost: {
+			input: .25,
+			output: .25
+		}
+	},
+	offers: [{
+		provider_id: "upstage",
+		provider_model_id: "solar-pro3",
+		input_per_mtok: .25,
+		output_per_mtok: .25,
+		status: "ga"
+	}]
+};
+var upstage_exports = /* @__PURE__ */ __exportAll({
+	solarMini: () => solarMini,
+	solarPro2: () => solarPro2,
+	solarPro3: () => solarPro3
+});
+var v010Md = {
+	model: {
+		id: "v0-1.0-md",
+		name: "v0 1.0 Medium",
+		creator: "vercel",
+		family: "v0",
+		category: "mid",
+		status: "active",
+		modality_input: ["text", "image"],
+		modality_output: ["text"],
+		context_window: 128e3,
+		max_output_tokens: 32e3,
+		is_open_source: false,
+		release_date: "2025-05-22",
+		last_updated: "2025-05-22",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: true
+		},
+		description: "Vercel's v0 medium model specialized for web development. Generates React, Vue, Svelte, and HTML/CSS code.",
+		supportedOn: ["api"],
+		cost: {
+			input: 3,
+			output: 15
+		}
+	},
+	offers: [{
+		provider_id: "v0",
+		provider_model_id: "v0-1.0-md",
+		input_per_mtok: 3,
+		output_per_mtok: 15,
+		status: "ga"
+	}]
+};
+var v015Md = {
+	model: {
+		id: "v0-1.5-md",
+		name: "v0 1.5 Medium",
+		creator: "vercel",
+		family: "v0",
+		category: "mid",
+		status: "active",
+		modality_input: ["text", "image"],
+		modality_output: ["text"],
+		context_window: 128e3,
+		max_output_tokens: 32e3,
+		is_open_source: false,
+		release_date: "2025-06-09",
+		last_updated: "2025-06-09",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: true
+		},
+		description: "Vercel's v0 1.5 medium model for web development with improved reasoning and code quality.",
+		supportedOn: ["api"],
+		cost: {
+			input: 3,
+			output: 15
+		}
+	},
+	offers: [{
+		provider_id: "v0",
+		provider_model_id: "v0-1.5-md",
+		input_per_mtok: 3,
+		output_per_mtok: 15,
+		status: "ga"
+	}]
+};
+var v015Lg = {
+	model: {
+		id: "v0-1.5-lg",
+		name: "v0 1.5 Large",
+		creator: "vercel",
+		family: "v0",
+		category: "flagship",
+		status: "active",
+		modality_input: ["text", "image"],
+		modality_output: ["text"],
+		context_window: 512e3,
+		max_output_tokens: 32e3,
+		is_open_source: false,
+		release_date: "2025-06-09",
+		last_updated: "2025-06-09",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: true
+		},
+		description: "Vercel's flagship v0 model with 512k context window. Best for complex full-stack application development.",
+		supportedOn: ["api"],
+		cost: {
+			input: 15,
+			output: 75
+		}
+	},
+	offers: [{
+		provider_id: "v0",
+		provider_model_id: "v0-1.5-lg",
+		input_per_mtok: 15,
+		output_per_mtok: 75,
+		status: "ga"
+	}]
+};
+var vercel_exports = /* @__PURE__ */ __exportAll({
+	v010Md: () => v010Md,
+	v015Lg: () => v015Lg,
+	v015Md: () => v015Md
+});
+var grok2 = {
+	model: {
+		id: "grok-2",
+		name: "Grok 2",
+		creator: "xai",
+		family: "grok",
+		category: "flagship",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 131072,
+		max_output_tokens: 8192,
+		is_open_source: false,
+		license: "proprietary",
+		knowledge: "2024-08",
+		release_date: "2024-08-20",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			system_prompt: true,
+			vision: false
+		},
+		description: "xAI's flagship model with real-time knowledge up to 2024.",
+		url: "https://x.ai/grok-2",
+		documentation_url: "https://x.ai/docs",
+		tags: ["flagship", "real-time"],
+		supportedOn: ["api"],
+		cost: {
+			input: 2,
+			output: 10,
+			cache_read: 2
+		}
+	},
+	offers: [{
+		provider_id: "xai",
+		provider_model_id: "grok-2",
+		input_per_mtok: 2,
+		output_per_mtok: 10,
+		cache_read_per_mtok: 2,
+		status: "ga",
+		available_since: "2024-08-20"
+	}]
+};
+var grok3 = {
+	model: {
+		id: "grok-3",
+		name: "Grok 3",
+		creator: "xai",
+		family: "grok",
+		category: "flagship",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 131072,
+		max_output_tokens: 8192,
+		is_open_source: false,
+		license: "proprietary",
+		knowledge: "2024-11",
+		release_date: "2025-02-17",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			system_prompt: true,
+			web_search: true,
+			vision: false
+		},
+		benchmarks: { arena_elo: 1350 },
+		description: "xAI's latest flagship model with improved reasoning and real-time access.",
+		url: "https://x.ai/grok-3",
+		documentation_url: "https://x.ai/docs",
+		tags: [
+			"flagship",
+			"reasoning",
+			"real-time"
+		],
+		supportedOn: ["api"],
+		cost: {
+			input: 3,
+			output: 15,
+			cache_read: .75
+		}
+	},
+	offers: [{
+		provider_id: "xai",
+		provider_model_id: "grok-3",
+		input_per_mtok: 3,
+		output_per_mtok: 15,
+		cache_read_per_mtok: .75,
+		status: "ga",
+		available_since: "2025-02-17"
+	}]
+};
+var grok3Mini = {
+	model: {
+		id: "grok-3-mini",
+		name: "Grok 3 Mini",
+		creator: "xai",
+		family: "grok",
+		category: "mid",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 131072,
+		max_output_tokens: 8192,
+		is_open_source: false,
+		license: "proprietary",
+		knowledge: "2024-11",
+		release_date: "2025-02-17",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			system_prompt: true,
+			vision: false
+		},
+		description: "Fast, affordable reasoning model from xAI.",
+		url: "https://x.ai/grok-3-mini",
+		documentation_url: "https://x.ai/docs",
+		tags: [
+			"reasoning",
+			"fast",
+			"affordable"
+		],
+		supportedOn: ["api"],
+		cost: {
+			input: .3,
+			output: .5,
+			cache_read: .075
+		}
+	},
+	offers: [{
+		provider_id: "xai",
+		provider_model_id: "grok-3-mini",
+		input_per_mtok: .3,
+		output_per_mtok: .5,
+		cache_read_per_mtok: .075,
+		status: "ga",
+		available_since: "2025-02-17"
+	}]
+};
+var xai_exports = /* @__PURE__ */ __exportAll({
+	grok2: () => grok2,
+	grok3: () => grok3,
+	grok3Mini: () => grok3Mini
+});
+var grok4 = {
+	model: {
+		id: "grok-4",
+		name: "Grok 4",
+		creator: "x-ai",
+		family: "grok",
+		category: "flagship",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 256e3,
+		max_output_tokens: 64e3,
+		is_open_source: false,
+		release_date: "2025-07-09",
+		reasoning: true,
+		temperature: true,
+		knowledge: "2025-07",
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false,
+			prompt_caching: true
+		},
+		description: "xAI's Grok 4 - reasoning model with real-time knowledge access.",
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "fastrouter",
+		provider_model_id: "x-ai/grok-4",
+		input_per_mtok: 3,
+		output_per_mtok: 15,
+		cache_read_per_mtok: .75,
+		cache_write_per_mtok: 15,
+		status: "ga"
+	}]
+};
+var x_ai_exports = /* @__PURE__ */ __exportAll({ grok4: () => grok4 });
+var minimaxM27 = {
+	model: {
+		id: "minimax-m2-7",
+		name: "MiniMax-M2.7",
+		creator: "minimaxai",
+		family: "minimax",
+		category: "reasoning",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 204800,
+		max_output_tokens: 131072,
+		is_open_source: true,
+		release_date: "2026-03-18",
+		last_updated: "2026-03-18",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false
+		},
+		cost: {
+			input: .3,
+			output: 1.2,
+			cache_read: .06,
+			cache_write: .375
+		},
+		tags: ["reasoning", "coding"],
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "minimax",
+		provider_model_id: "MiniMax-M2.7",
+		input_per_mtok: .3,
+		output_per_mtok: 1.2,
+		cache_read_per_mtok: .06,
+		cache_write_per_mtok: .375,
+		status: "ga",
+		available_since: "2026-03-18"
+	}]
+};
+var minimaxM25 = {
+	model: {
+		id: "minimax-m2-5",
+		name: "MiniMax-M2.5",
+		creator: "minimaxai",
+		family: "minimax",
+		category: "reasoning",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 204800,
+		max_output_tokens: 131072,
+		is_open_source: true,
+		release_date: "2026-02-12",
+		last_updated: "2026-02-12",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false
+		},
+		cost: {
+			input: .3,
+			output: 1.2,
+			cache_read: .03,
+			cache_write: .375
+		},
+		tags: ["reasoning", "coding"],
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "minimax",
+		provider_model_id: "MiniMax-M2.5",
+		input_per_mtok: .3,
+		output_per_mtok: 1.2,
+		cache_read_per_mtok: .03,
+		cache_write_per_mtok: .375,
+		status: "ga",
+		available_since: "2026-02-12"
+	}]
+};
+var minimaxM27Highspeed = {
+	model: {
+		id: "minimax-m2-7-highspeed",
+		name: "MiniMax-M2.7-highspeed",
+		creator: "minimaxai",
+		family: "minimax",
+		category: "reasoning",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 204800,
+		max_output_tokens: 131072,
+		is_open_source: true,
+		release_date: "2026-03-18",
+		last_updated: "2026-03-18",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false
+		},
+		cost: {
+			input: .6,
+			output: 2.4,
+			cache_read: .06,
+			cache_write: .375
+		},
+		tags: [
+			"reasoning",
+			"coding",
+			"highspeed"
+		],
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "minimax",
+		provider_model_id: "MiniMax-M2.7-highspeed",
+		input_per_mtok: .6,
+		output_per_mtok: 2.4,
+		cache_read_per_mtok: .06,
+		cache_write_per_mtok: .375,
+		status: "ga",
+		available_since: "2026-03-18"
+	}]
+};
+var minimaxM25Highspeed = {
+	model: {
+		id: "minimax-m2-5-highspeed",
+		name: "MiniMax-M2.5-highspeed",
+		creator: "minimaxai",
+		family: "minimax",
+		category: "reasoning",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 204800,
+		max_output_tokens: 131072,
+		is_open_source: true,
+		release_date: "2026-02-13",
+		last_updated: "2026-02-13",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false
+		},
+		cost: {
+			input: .6,
+			output: 2.4,
+			cache_read: .06,
+			cache_write: .375
+		},
+		tags: [
+			"reasoning",
+			"coding",
+			"highspeed"
+		],
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "minimax",
+		provider_model_id: "MiniMax-M2.5-highspeed",
+		input_per_mtok: .6,
+		output_per_mtok: 2.4,
+		cache_read_per_mtok: .06,
+		cache_write_per_mtok: .375,
+		status: "ga",
+		available_since: "2026-02-13"
+	}]
+};
+var minimaxM2 = {
+	model: {
+		id: "minimax-m2",
+		name: "MiniMax-M2",
+		creator: "minimaxai",
+		family: "minimax",
+		category: "reasoning",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 196608,
+		max_output_tokens: 128e3,
+		is_open_source: true,
+		release_date: "2025-10-27",
+		last_updated: "2025-10-27",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false
+		},
+		cost: {
+			input: .3,
+			output: 1.2
+		},
+		tags: ["reasoning", "coding"],
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "minimax",
+		provider_model_id: "MiniMax-M2",
+		input_per_mtok: .3,
+		output_per_mtok: 1.2,
+		status: "ga",
+		available_since: "2025-10-27"
+	}]
+};
+var minimaxM21 = {
+	model: {
+		id: "minimax-m2-1",
+		name: "MiniMax-M2.1",
+		creator: "minimaxai",
+		family: "minimax",
+		category: "reasoning",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 204800,
+		max_output_tokens: 131072,
+		is_open_source: true,
+		release_date: "2025-12-23",
+		last_updated: "2025-12-23",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false
+		},
+		cost: {
+			input: .3,
+			output: 1.2,
+			cache_read: .03,
+			cache_write: .375
+		},
+		tags: ["reasoning", "coding"],
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "minimax",
+		provider_model_id: "MiniMax-M2.1",
+		input_per_mtok: .3,
+		output_per_mtok: 1.2,
+		cache_read_per_mtok: .03,
+		cache_write_per_mtok: .375,
+		status: "ga",
+		available_since: "2025-12-23"
+	}]
+};
+var minimaxai_exports = /* @__PURE__ */ __exportAll({
+	minimaxM2: () => minimaxM2,
+	minimaxM21: () => minimaxM21,
+	minimaxM25: () => minimaxM25,
+	minimaxM25Highspeed: () => minimaxM25Highspeed,
+	minimaxM27: () => minimaxM27,
+	minimaxM27Highspeed: () => minimaxM27Highspeed
+});
+var kimiK25 = {
+	model: {
+		id: "kimi-k2-5",
+		name: "Kimi K2.5",
+		creator: "moonshotai",
+		family: "kimi",
+		category: "reasoning",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 262144,
+		max_output_tokens: 262144,
+		is_open_source: true,
+		release_date: "2026-01",
+		last_updated: "2026-01",
+		knowledge: "2025-01",
+		reasoning: true,
+		temperature: false,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			structured_output: true,
+			vision: false
+		},
+		cost: {
+			input: .6,
+			output: 3,
+			cache_read: .1
+		},
+		tags: [
+			"reasoning",
+			"coding",
+			"vision"
+		],
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "moonshotai",
+		provider_model_id: "kimi-k2.5",
+		input_per_mtok: .6,
+		output_per_mtok: 3,
+		cache_read_per_mtok: .1,
+		status: "ga",
+		available_since: "2026-01"
+	}]
+};
+var kimiK2Thinking = {
+	model: {
+		id: "kimi-k2-thinking",
+		name: "Kimi K2 Thinking",
+		creator: "moonshotai",
+		family: "kimi-thinking",
+		category: "reasoning",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 262144,
+		max_output_tokens: 262144,
+		is_open_source: true,
+		release_date: "2025-11-06",
+		last_updated: "2025-11-06",
+		knowledge: "2024-08",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false
+		},
+		cost: {
+			input: .6,
+			output: 2.5,
+			cache_read: .15
+		},
+		tags: ["reasoning", "coding"],
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "moonshotai",
+		provider_model_id: "kimi-k2-thinking",
+		input_per_mtok: .6,
+		output_per_mtok: 2.5,
+		cache_read_per_mtok: .15,
+		status: "ga",
+		available_since: "2025-11-06"
+	}]
+};
+var kimiK2Turbo = {
+	model: {
+		id: "kimi-k2-turbo",
+		name: "Kimi K2 Turbo",
+		creator: "moonshotai",
+		family: "kimi",
+		category: "flagship",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 262144,
+		max_output_tokens: 262144,
+		is_open_source: true,
+		release_date: "2025-09-05",
+		last_updated: "2025-09-05",
+		knowledge: "2024-10",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false
+		},
+		cost: {
+			input: 2.4,
+			output: 10,
+			cache_read: .6
+		},
+		tags: ["coding"],
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "moonshotai",
+		provider_model_id: "kimi-k2-turbo",
+		input_per_mtok: 2.4,
+		output_per_mtok: 10,
+		cache_read_per_mtok: .6,
+		status: "preview",
+		available_since: "2025-09-05"
+	}]
+};
+var kimiK2ThinkingTurbo = {
+	model: {
+		id: "kimi-k2-thinking-turbo",
+		name: "Kimi K2 Thinking Turbo",
+		creator: "moonshotai",
+		family: "kimi-thinking",
+		category: "reasoning",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 262144,
+		max_output_tokens: 262144,
+		is_open_source: true,
+		release_date: "2025-11-06",
+		last_updated: "2025-11-06",
+		knowledge: "2024-08",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false
+		},
+		cost: {
+			input: 1.15,
+			output: 8,
+			cache_read: .15
+		},
+		tags: ["reasoning", "coding"],
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "moonshotai",
+		provider_model_id: "kimi-k2-thinking-turbo",
+		input_per_mtok: 1.15,
+		output_per_mtok: 8,
+		cache_read_per_mtok: .15,
+		status: "ga",
+		available_since: "2025-11-06"
+	}]
+};
+var kimiK20905 = {
+	model: {
+		id: "kimi-k2-0905",
+		name: "Kimi K2 0905",
+		creator: "moonshotai",
+		family: "kimi",
+		category: "flagship",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 262144,
+		max_output_tokens: 262144,
+		is_open_source: true,
+		release_date: "2025-09-05",
+		last_updated: "2025-09-05",
+		knowledge: "2024-10",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false
+		},
+		cost: {
+			input: .6,
+			output: 2.5,
+			cache_read: .15
+		},
+		tags: ["coding"],
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "moonshotai",
+		provider_model_id: "kimi-k2-0905",
+		input_per_mtok: .6,
+		output_per_mtok: 2.5,
+		cache_read_per_mtok: .15,
+		status: "preview",
+		available_since: "2025-09-05"
+	}]
+};
+var kimiK20711 = {
+	model: {
+		id: "kimi-k2-0711",
+		name: "Kimi K2 0711",
+		creator: "moonshotai",
+		family: "kimi",
+		category: "flagship",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 131072,
+		max_output_tokens: 16384,
+		is_open_source: true,
+		release_date: "2025-07-14",
+		last_updated: "2025-07-14",
+		knowledge: "2024-10",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false
+		},
+		cost: {
+			input: .6,
+			output: 2.5,
+			cache_read: .15
+		},
+		tags: ["coding"],
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "moonshotai",
+		provider_model_id: "kimi-k2-0711",
+		input_per_mtok: .6,
+		output_per_mtok: 2.5,
+		cache_read_per_mtok: .15,
+		status: "preview",
+		available_since: "2025-07-14"
+	}]
+};
+var kimi_k2_instruct_cortecs = {
+	model: {
+		id: "kimi-k2-instruct-cortecs",
+		name: "Kimi K2 Instruct",
+		creator: "moonshotai",
+		family: "kimi",
+		category: "mid",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 131e3,
+		max_output_tokens: 131e3,
+		is_open_source: true,
+		knowledge: "2024-07",
+		release_date: "2025-07-11",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			system_prompt: true,
+			vision: false
+		},
+		description: "Moonshot AI's Kimi K2 model with 131K context and strong instruction following.",
+		url: "https://platform.moonshot.cn",
+		supportedOn: ["api"],
+		cost: {
+			input: .551,
+			output: 2.646
+		}
+	},
+	offers: [{
+		provider_id: "cortecs",
+		provider_model_id: "kimi-k2-instruct",
+		input_per_mtok: .551,
+		output_per_mtok: 2.646,
+		status: "ga",
+		available_since: "2025-07-11"
+	}]
+};
+var moonshotai_exports = /* @__PURE__ */ __exportAll({
+	kimiK20711: () => kimiK20711,
+	kimiK20905: () => kimiK20905,
+	kimiK25: () => kimiK25,
+	kimiK2Thinking: () => kimiK2Thinking,
+	kimiK2ThinkingTurbo: () => kimiK2ThinkingTurbo,
+	kimiK2Turbo: () => kimiK2Turbo,
+	kimi_k2_instruct_cortecs: () => kimi_k2_instruct_cortecs
+});
+var step35Flash$1 = {
+	model: {
+		id: "step-3-5-flash",
+		name: "Step 3.5 Flash",
+		creator: "stepfunai",
+		family: "step",
+		category: "reasoning",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 256e3,
+		max_output_tokens: 256e3,
+		is_open_source: true,
+		release_date: "2026-01-29",
+		last_updated: "2026-02-13",
+		knowledge: "2025-01",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false
+		},
+		cost: {
+			input: .096,
+			output: .288,
+			cache_read: .019
+		},
+		tags: [
+			"reasoning",
+			"coding",
+			"fast"
+		],
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "stepfun",
+		provider_model_id: "Step-3.5-Flash",
+		input_per_mtok: .096,
+		output_per_mtok: .288,
+		cache_read_per_mtok: .019,
+		status: "ga",
+		available_since: "2026-01-29"
+	}]
+};
+var step35Flash2603 = {
+	model: {
+		id: "step-3-5-flash-2603",
+		name: "Step 3.5 Flash 2603",
+		creator: "stepfunai",
+		family: "step",
+		category: "reasoning",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 256e3,
+		max_output_tokens: 256e3,
+		is_open_source: true,
+		release_date: "2026-04-02",
+		last_updated: "2026-04-02",
+		knowledge: "2025-01",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false
+		},
+		cost: {
+			input: .1,
+			output: .3,
+			cache_read: .02
+		},
+		tags: [
+			"reasoning",
+			"coding",
+			"fast"
+		],
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "stepfun",
+		provider_model_id: "Step-3.5-Flash-2603",
+		input_per_mtok: .1,
+		output_per_mtok: .3,
+		cache_read_per_mtok: .02,
+		status: "ga",
+		available_since: "2026-04-02"
+	}]
+};
+var step2_16k = {
+	model: {
+		id: "step-2-16k",
+		name: "Step 2 (16K)",
+		creator: "stepfunai",
+		family: "step",
+		category: "flagship",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 16384,
+		max_output_tokens: 8192,
+		is_open_source: false,
+		release_date: "2025-01-01",
+		last_updated: "2026-02-13",
+		knowledge: "2024-06",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false
+		},
+		cost: {
+			input: 5.21,
+			output: 16.44,
+			cache_read: 1.04
+		},
+		tags: ["coding"],
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "stepfun",
+		provider_model_id: "Step-2-16k",
+		input_per_mtok: 5.21,
+		output_per_mtok: 16.44,
+		cache_read_per_mtok: 1.04,
+		status: "ga",
+		available_since: "2025-01-01"
+	}]
+};
+var step1_32k = {
+	model: {
+		id: "step-1-32k",
+		name: "Step 1 (32K)",
+		creator: "stepfunai",
+		family: "step",
+		category: "flagship",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 32768,
+		max_output_tokens: 32768,
+		is_open_source: false,
+		release_date: "2025-01-01",
+		last_updated: "2026-02-13",
+		knowledge: "2024-06",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false
+		},
+		cost: {
+			input: 2.05,
+			output: 9.59,
+			cache_read: .41
+		},
+		tags: ["coding"],
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "stepfun",
+		provider_model_id: "Step-1-32k",
+		input_per_mtok: 2.05,
+		output_per_mtok: 9.59,
+		cache_read_per_mtok: .41,
+		status: "ga",
+		available_since: "2025-01-01"
+	}]
+};
+var stepfunai_exports = /* @__PURE__ */ __exportAll({
+	step1_32k: () => step1_32k,
+	step2_16k: () => step2_16k,
+	step35Flash: () => step35Flash$1,
+	step35Flash2603: () => step35Flash2603
+});
+var glm5vTurbo = {
+	model: {
+		id: "glm-5v-turbo",
+		name: "GLM-5V Turbo",
+		creator: "zhipuai",
+		family: "glm",
+		category: "flagship",
+		status: "active",
+		modality_input: [
+			"text",
+			"image",
+			"pdf"
+		],
+		modality_output: ["text"],
+		context_window: 2e5,
+		max_output_tokens: 131072,
+		is_open_source: false,
+		release_date: "2026-04-01",
+		last_updated: "2026-04-01",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			structured_output: true,
+			vision: true
+		},
+		cost: {
+			input: 5,
+			output: 22,
+			cache_read: 1.2,
+			cache_write: 0
+		},
+		tags: [
+			"coding",
+			"vision",
+			"multimodal"
+		],
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "zhipuai",
+		provider_model_id: "glm-5v-turbo",
+		input_per_mtok: 5,
+		output_per_mtok: 22,
+		cache_read_per_mtok: 1.2,
+		cache_write_per_mtok: 0,
+		status: "ga",
+		available_since: "2026-04-01"
+	}]
+};
+var glm51 = {
+	model: {
+		id: "glm-5-1",
+		name: "GLM-5.1",
+		creator: "zhipuai",
+		family: "glm",
+		category: "reasoning",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 2e5,
+		max_output_tokens: 131072,
+		is_open_source: false,
+		release_date: "2026-03-27",
+		last_updated: "2026-03-27",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			structured_output: true,
+			vision: false
+		},
+		cost: {
+			input: 6,
+			output: 24,
+			cache_read: 1.3,
+			cache_write: 0
+		},
+		tags: ["reasoning", "coding"],
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "zhipuai",
+		provider_model_id: "GLM-5.1",
+		input_per_mtok: 6,
+		output_per_mtok: 24,
+		cache_read_per_mtok: 1.3,
+		cache_write_per_mtok: 0,
+		status: "ga",
+		available_since: "2026-03-27"
+	}]
+};
+var glm5$1 = {
+	model: {
+		id: "glm-5",
+		name: "GLM-5",
+		creator: "zhipuai",
+		family: "glm",
+		category: "reasoning",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 204800,
+		max_output_tokens: 131072,
+		is_open_source: true,
+		release_date: "2026-02-11",
+		last_updated: "2026-02-11",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false
+		},
+		cost: {
+			input: 1,
+			output: 3.2,
+			cache_read: .2,
+			cache_write: 0
+		},
+		tags: ["reasoning", "coding"],
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "zhipuai",
+		provider_model_id: "GLM-5",
+		input_per_mtok: 1,
+		output_per_mtok: 3.2,
+		cache_read_per_mtok: .2,
+		cache_write_per_mtok: 0,
+		status: "ga",
+		available_since: "2026-02-11"
+	}]
+};
+var glm46 = {
+	model: {
+		id: "glm-4-6",
+		name: "GLM-4.6",
+		creator: "zhipuai",
+		family: "glm",
+		category: "reasoning",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 202752,
+		max_output_tokens: 98304,
+		is_open_source: true,
+		release_date: "2025-09-30",
+		last_updated: "2025-09-30",
+		knowledge: "2025-07",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false
+		},
+		cost: {
+			input: 0,
+			output: 0
+		},
+		tags: ["reasoning", "coding"],
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "modelscope",
+		provider_model_id: "ZhipuAI/GLM-4.6",
+		input_per_mtok: 0,
+		output_per_mtok: 0,
+		status: "ga",
+		available_since: "2025-09-30"
+	}]
+};
+var glm45 = {
+	model: {
+		id: "glm-4-5",
+		name: "GLM-4.5",
+		creator: "zhipuai",
+		family: "glm",
+		category: "reasoning",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 131072,
+		max_output_tokens: 98304,
+		is_open_source: true,
+		release_date: "2025-07-28",
+		last_updated: "2025-07-28",
+		knowledge: "2025-04",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false
+		},
+		cost: {
+			input: 0,
+			output: 0
+		},
+		tags: ["reasoning", "coding"],
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "modelscope",
+		provider_model_id: "ZhipuAI/GLM-4.5",
+		input_per_mtok: 0,
+		output_per_mtok: 0,
+		status: "ga",
+		available_since: "2025-07-28"
+	}]
+};
+var glm_4_7 = {
+	model: {
+		id: "glm-4-7",
+		name: "GLM-4.7",
+		creator: "zhipuai",
+		family: "glm-4",
+		category: "flagship",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 204800,
+		max_output_tokens: 131072,
+		is_open_source: true,
+		knowledge: "2025-04",
+		release_date: "2025-12-22",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			system_prompt: true,
+			vision: false
+		},
+		description: "Zhipu AI's GLM-4.7 frontier model with 200K context and strong reasoning via chain-of-thought.",
+		url: "https://open.bigmodel.cn",
+		supportedOn: ["api", "local"],
+		cost: {
+			input: 3.5,
+			output: 14
+		}
+	},
+	offers: [{
+		provider_id: "moark",
+		provider_model_id: "GLM-4.7",
+		input_per_mtok: 3.5,
+		output_per_mtok: 14,
+		status: "ga",
+		available_since: "2025-12-22"
+	}]
+};
+var zhipuai_exports = /* @__PURE__ */ __exportAll({
+	glm45: () => glm45,
+	glm46: () => glm46,
+	glm5: () => glm5$1,
+	glm51: () => glm51,
+	glm5vTurbo: () => glm5vTurbo,
+	glm_4_7: () => glm_4_7
+});
+var qwen_qwq_32b = {
+	model: {
+		id: "qwen-qwq-32b",
+		name: "QwQ 32B",
+		creator: "qwen",
+		family: "qwen",
+		category: "reasoning",
+		status: "deprecated",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 131072,
+		max_output_tokens: 16384,
+		is_open_source: true,
+		knowledge: "2024-09",
+		release_date: "2024-11-27",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			system_prompt: true,
+			vision: false
+		},
+		description: "Alibaba's QwQ 32B reasoning model with chain-of-thought capabilities. Deprecated in favor of Qwen3 with thinking mode.",
+		url: "https://qwenlm.github.io",
+		supportedOn: ["api", "local"],
+		cost: {
+			input: .29,
+			output: .39
+		}
+	},
+	offers: [{
+		provider_id: "groq",
+		provider_model_id: "qwen-qwq-32b",
+		input_per_mtok: .29,
+		output_per_mtok: .39,
+		status: "deprecated",
+		available_since: "2024-11-27"
+	}]
+};
+var qwen3235BA22B = {
+	model: {
+		id: "qwen3-235b-a22b",
+		name: "Qwen3 235B A22B",
+		creator: "qwen",
+		family: "qwen",
+		category: "flagship",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 262144,
+		max_output_tokens: 131072,
+		is_open_source: true,
+		license: "qwen3-community",
+		parameters: "235B total (17B active)",
+		architecture: "MoE",
+		knowledge: "2025-04",
+		release_date: "2025-07-25",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			json_schema: true,
+			system_prompt: true,
+			vision: false,
+			code_execution: false,
+			web_search: false
+		},
+		description: "Qwen3 235B MoE model with 17B active parameters. Excellent reasoning and instruction following at a fraction of the cost.",
+		url: "https://qwenlm.github.io",
+		documentation_url: "https://qwenlm.github.io",
+		tags: [
+			"open-source",
+			"MoE",
+			"reasoning",
+			"conversational"
+		],
+		supportedOn: ["api"],
+		cost: {
+			input: .15,
+			output: .85
+		}
+	},
+	offers: [
+		{
+			provider_id: "openrouter",
+			provider_model_id: "qwen/qwen3-235b-a22b-07-25",
+			input_per_mtok: .15,
+			output_per_mtok: .85,
+			status: "ga",
+			available_since: "2025-07-25"
+		},
+		{
+			provider_id: "cerebras",
+			provider_model_id: "qwen3-235b-a22b-instruct-2507",
+			input_per_mtok: .6,
+			output_per_mtok: 1.2,
+			status: "ga",
+			available_since: "2025-07-25"
+		},
+		{
+			provider_id: "deepinfra",
+			provider_model_id: "qwen/Qwen3-235B-A22B-Instruct-2507",
+			input_per_mtok: .8,
+			output_per_mtok: 1,
+			status: "ga",
+			available_since: "2025-07-25"
+		}
+	]
+};
+var qwen330BA3BInstruct = {
+	model: {
+		id: "qwen3-30b-a3b-instruct",
+		name: "Qwen3 30B A3B Instruct",
+		creator: "qwen",
+		family: "qwen",
+		category: "mid",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 262e3,
+		max_output_tokens: 262e3,
+		is_open_source: true,
+		license: "qwen3-community",
+		parameters: "30B total (3B active)",
+		architecture: "MoE",
+		knowledge: "2025-04",
+		release_date: "2025-07-29",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			json_schema: true,
+			system_prompt: true,
+			vision: false
+		},
+		description: "Qwen3 30B MoE model optimized for instruction following and conversational tasks.",
+		url: "https://qwenlm.github.io",
+		documentation_url: "https://qwenlm.github.io",
+		tags: [
+			"open-source",
+			"MoE",
+			"conversational"
+		],
+		supportedOn: ["api"],
+		cost: {
+			input: .2,
+			output: .8
+		}
+	},
+	offers: [{
+		provider_id: "openrouter",
+		provider_model_id: "qwen/qwen3-30b-a3b-instruct-2507",
+		input_per_mtok: .2,
+		output_per_mtok: .8,
+		status: "ga",
+		available_since: "2025-07-29"
+	}]
+};
+var qwen330BA3BThinking2507 = {
+	model: {
+		id: "qwen3-30b-a3b-thinking-2507",
+		name: "Qwen3 30B A3B Thinking 2507",
+		creator: "qwen",
+		family: "qwen",
+		category: "reasoning",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 262144,
+		max_output_tokens: 32768,
+		is_open_source: true,
+		release_date: "2025-07-30",
+		last_updated: "2025-07-30",
+		knowledge: "2025-04",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false
+		},
+		description: "Qwen3 thinking model with 30B parameters and A3B architecture for advanced reasoning.",
+		tags: ["reasoning", "coding"],
+		supportedOn: ["api"],
+		cost: {
+			input: 0,
+			output: 0
+		}
+	},
+	offers: [{
+		provider_id: "modelscope",
+		provider_model_id: "Qwen/Qwen3-30B-A3B-Thinking-2507",
+		input_per_mtok: 0,
+		output_per_mtok: 0,
+		status: "ga",
+		available_since: "2025-07-30"
+	}]
+};
+var qwen330BA3BThinking = {
+	model: {
+		id: "qwen3-30b-a3b-thinking",
+		name: "Qwen3 30B A3B Thinking",
+		creator: "qwen",
+		family: "qwen",
+		category: "reasoning",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 262e3,
+		max_output_tokens: 262e3,
+		is_open_source: true,
+		license: "qwen3-community",
+		parameters: "30B total (3B active)",
+		architecture: "MoE",
+		knowledge: "2025-04",
+		release_date: "2025-07-29",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			json_schema: true,
+			system_prompt: true,
+			extended_thinking: true,
+			vision: false
+		},
+		description: "Qwen3 30B MoE reasoning model with chain-of-thought capabilities. Excels at complex problem-solving tasks.",
+		url: "https://qwenlm.github.io",
+		documentation_url: "https://qwenlm.github.io",
+		tags: [
+			"open-source",
+			"MoE",
+			"reasoning",
+			"chain-of-thought"
+		],
+		supportedOn: ["api"],
+		cost: {
+			input: .2,
+			output: .8
+		}
+	},
+	offers: [{
+		provider_id: "openrouter",
+		provider_model_id: "qwen/qwen3-30b-a3b-thinking-2507",
+		input_per_mtok: .2,
+		output_per_mtok: .8,
+		status: "ga",
+		available_since: "2025-07-29"
+	}]
+};
+var qwen3Coder30BA3BInstruct = {
+	model: {
+		id: "qwen3-coder-30b-a3b-instruct",
+		name: "Qwen3 Coder 30B A3B Instruct",
+		creator: "qwen",
+		family: "qwen",
+		category: "code",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 262144,
+		max_output_tokens: 65536,
+		is_open_source: true,
+		release_date: "2025-07-31",
+		last_updated: "2025-07-31",
+		knowledge: "2025-04",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false
+		},
+		description: "Qwen3 Coder model with 30B parameters and A3B architecture for code generation and completion.",
+		tags: ["coding"],
+		supportedOn: ["api"],
+		cost: {
+			input: 0,
+			output: 0
+		}
+	},
+	offers: [{
+		provider_id: "modelscope",
+		provider_model_id: "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+		input_per_mtok: 0,
+		output_per_mtok: 0,
+		status: "ga",
+		available_since: "2025-07-31"
+	}]
+};
+var qwen3Coder30BA3B = {
+	model: {
+		id: "qwen3-coder-30b-a3b",
+		name: "Qwen3 Coder 30B A3B",
+		creator: "qwen",
+		family: "qwen",
+		category: "code",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 16e4,
+		max_output_tokens: 65536,
+		is_open_source: true,
+		license: "qwen3-community",
+		parameters: "30B total (3B active)",
+		architecture: "MoE",
+		knowledge: "2025-04",
+		release_date: "2025-07-31",
+		reasoning: false,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			json_schema: true,
+			system_prompt: true,
+			vision: false,
+			code_execution: true
+		},
+		description: "Qwen3 Coder specialized variant with MoE architecture. Optimized for code generation and debugging tasks.",
+		url: "https://qwenlm.github.io",
+		documentation_url: "https://qwenlm.github.io",
+		tags: [
+			"open-source",
+			"MoE",
+			"coding",
+			"specialized"
+		],
+		supportedOn: ["api"],
+		cost: {
+			input: .07,
+			output: .27
+		}
+	},
+	offers: [{
+		provider_id: "openrouter",
+		provider_model_id: "qwen/qwen3-coder-30b-a3b-instruct",
+		input_per_mtok: .07,
+		output_per_mtok: .27,
+		status: "ga",
+		available_since: "2025-07-31"
+	}, {
+		provider_id: "cerebras",
+		provider_model_id: "qwen3-coder-30b-a3b-instruct",
+		input_per_mtok: .6,
+		output_per_mtok: 1.2,
+		status: "ga",
+		available_since: "2025-07-31"
+	}]
+};
+var qwen3_32b_alibaba = {
+	model: {
+		id: "qwen3-32b-alibaba",
+		name: "Qwen3 32B",
+		creator: "qwen",
+		family: "qwen",
+		category: "mid",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 131072,
+		max_output_tokens: 16384,
+		is_open_source: true,
+		knowledge: "2025-04",
+		release_date: "2025-04-01",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			system_prompt: true,
+			vision: false
+		},
+		description: "Alibaba's Qwen3 32B reasoning model with strong performance at competitive pricing.",
+		url: "https://qwenlm.github.io",
+		supportedOn: ["api", "local"],
+		cost: {
+			input: .7,
+			output: 2.8
+		}
+	},
+	offers: [{
+		provider_id: "alibaba",
+		provider_model_id: "qwen3-32b",
+		input_per_mtok: .7,
+		output_per_mtok: 2.8,
+		status: "ga",
+		available_since: "2025-04-01"
+	}]
+};
+var qwen3_8b_alibaba = {
+	model: {
+		id: "qwen3-8b-alibaba",
+		name: "Qwen3 8B",
+		creator: "qwen",
+		family: "qwen",
+		category: "small",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 131072,
+		max_output_tokens: 8192,
+		is_open_source: true,
+		knowledge: "2025-04",
+		release_date: "2025-04-01",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			system_prompt: true,
+			vision: false
+		},
+		description: "Alibaba's compact Qwen3 8B model optimized for efficient inference with strong reasoning.",
+		url: "https://qwenlm.github.io",
+		supportedOn: ["api", "local"],
+		cost: {
+			input: .18,
+			output: .7
+		}
+	},
+	offers: [{
+		provider_id: "alibaba",
+		provider_model_id: "qwen3-8b",
+		input_per_mtok: .18,
+		output_per_mtok: .7,
+		status: "ga",
+		available_since: "2025-04-01"
+	}]
+};
+var qwen3_14b_alibaba = {
+	model: {
+		id: "qwen3-14b-alibaba",
+		name: "Qwen3 14B",
+		creator: "qwen",
+		family: "qwen",
+		category: "small",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 131072,
+		max_output_tokens: 8192,
+		is_open_source: true,
+		knowledge: "2025-04",
+		release_date: "2025-04-01",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			system_prompt: true,
+			vision: false
+		},
+		description: "Alibaba's Qwen3 14B model balanced between performance and efficiency.",
+		url: "https://qwenlm.github.io",
+		supportedOn: ["api", "local"],
+		cost: {
+			input: .35,
+			output: 1.4
+		}
+	},
+	offers: [{
+		provider_id: "alibaba",
+		provider_model_id: "qwen3-14b",
+		input_per_mtok: .35,
+		output_per_mtok: 1.4,
+		status: "ga",
+		available_since: "2025-04-01"
+	}]
+};
+var qwen3_235b_a22b_alibaba = {
+	model: {
+		id: "qwen3-235b-a22b-alibaba",
+		name: "Qwen3 235B-A22B",
+		creator: "qwen",
+		family: "qwen",
+		category: "flagship",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 131072,
+		max_output_tokens: 16384,
+		is_open_source: true,
+		knowledge: "2025-04",
+		release_date: "2025-04-01",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			system_prompt: true,
+			vision: false
+		},
+		description: "Alibaba's Qwen3 235B MoE model with 22B active parameters. Strong reasoning at competitive pricing.",
+		url: "https://qwenlm.github.io",
+		supportedOn: ["api", "local"],
+		cost: {
+			input: .7,
+			output: 2.8
+		}
+	},
+	offers: [{
+		provider_id: "alibaba",
+		provider_model_id: "qwen3-235b-a22b",
+		input_per_mtok: .7,
+		output_per_mtok: 2.8,
+		status: "ga",
+		available_since: "2025-04-01"
+	}]
+};
+var qwen_exports = /* @__PURE__ */ __exportAll({
+	qwen3235BA22B: () => qwen3235BA22B,
+	qwen330BA3BInstruct: () => qwen330BA3BInstruct,
+	qwen330BA3BThinking: () => qwen330BA3BThinking,
+	qwen330BA3BThinking2507: () => qwen330BA3BThinking2507,
+	qwen3Coder30BA3B: () => qwen3Coder30BA3B,
+	qwen3Coder30BA3BInstruct: () => qwen3Coder30BA3BInstruct,
+	qwen3_14b_alibaba: () => qwen3_14b_alibaba,
+	qwen3_235b_a22b_alibaba: () => qwen3_235b_a22b_alibaba,
+	qwen3_32b_alibaba: () => qwen3_32b_alibaba,
+	qwen3_8b_alibaba: () => qwen3_8b_alibaba,
+	qwen_qwq_32b: () => qwen_qwq_32b
+});
+var nova2ProV1 = {
+	model: {
+		id: "nova-2-pro-v1",
+		name: "Nova 2 Pro",
+		creator: "amazon",
+		family: "nova-pro",
+		category: "flagship",
+		status: "active",
+		modality_input: [
+			"text",
+			"image",
+			"pdf"
+		],
+		modality_output: ["text"],
+		context_window: 1e6,
+		max_output_tokens: 64e3,
+		is_open_source: false,
+		release_date: "2025-12-03",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: true,
+			structured_output: true,
+			prompt_caching: true
+		},
+		description: "Amazon's Nova 2 Pro - multimodal flagship with 1M context.",
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "nova",
+		provider_model_id: "nova-2-pro-v1",
+		input_per_mtok: 0,
+		output_per_mtok: 0,
+		status: "ga"
+	}]
+};
+var nova2LiteV1 = {
+	model: {
+		id: "nova-2-lite-v1",
+		name: "Nova 2 Lite",
+		creator: "amazon",
+		family: "nova-lite",
+		category: "mid",
+		status: "active",
+		modality_input: [
+			"text",
+			"image",
+			"pdf"
+		],
+		modality_output: ["text"],
+		context_window: 1e6,
+		max_output_tokens: 64e3,
+		is_open_source: false,
+		release_date: "2025-12-01",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: true,
+			structured_output: true,
+			prompt_caching: true
+		},
+		description: "Amazon's Nova 2 Lite - cost-effective multimodal model.",
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "nova",
+		provider_model_id: "nova-2-lite-v1",
+		input_per_mtok: 0,
+		output_per_mtok: 0,
+		status: "ga"
+	}]
+};
+var amazon_exports = /* @__PURE__ */ __exportAll({
+	nova2LiteV1: () => nova2LiteV1,
+	nova2ProV1: () => nova2ProV1
+});
+var flux1Dev = {
+	model: {
+		id: "flux.1-dev",
+		name: "FLUX.1-dev",
+		creator: "black-forest-labs",
+		family: "flux",
+		category: "small",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["image"],
+		context_window: 4096,
+		max_output_tokens: 0,
+		is_open_source: false,
+		release_date: "2024-08-01",
+		temperature: true,
+		knowledge: "2024-08",
+		capabilities: {
+			streaming: false,
+			function_calling: false,
+			vision: false
+		},
+		description: "Black Forest Labs' FLUX.1-dev image generation model.",
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "nvidia",
+		provider_model_id: "black-forest-labs/flux.1-dev",
+		input_per_mtok: 0,
+		output_per_mtok: 0,
+		status: "ga"
+	}]
+};
+var black_forest_labs_exports = /* @__PURE__ */ __exportAll({ flux1Dev: () => flux1Dev });
+var llama33NemotronSuper49bV1 = {
+	model: {
+		id: "llama-3.3-nemotron-super-49b-v1",
+		name: "Llama 3.3 Nemotron Super 49B V1",
+		creator: "nvidia",
+		family: "nemotron",
+		category: "mid",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 128e3,
+		max_output_tokens: 4096,
+		is_open_source: false,
+		release_date: "2025-03-16",
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: false,
+			vision: false
+		},
+		description: "NVIDIA's Llama 3.3-based Nemotron Super 49B model optimized for inference.",
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "nvidia",
+		provider_model_id: "meta/llama-3.3-nemotron-super-49b-v1",
+		input_per_mtok: 0,
+		output_per_mtok: 0,
+		status: "ga",
+		available_since: "2025-03-16"
+	}]
+};
+var llama33NemotronSuper49bV15 = {
+	model: {
+		id: "llama-3.3-nemotron-super-49b-v1.5",
+		name: "Llama 3.3 Nemotron Super 49B V1.5",
+		creator: "nvidia",
+		family: "nemotron",
+		category: "mid",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 128e3,
+		max_output_tokens: 4096,
+		is_open_source: false,
+		release_date: "2025-03-16",
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: false,
+			vision: false
+		},
+		description: "NVIDIA's Llama 3.3-based Nemotron Super 49B model v1.5.",
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "nvidia",
+		provider_model_id: "meta/llama-3.3-nemotron-super-49b-v1.5",
+		input_per_mtok: 0,
+		output_per_mtok: 0,
+		status: "ga"
+	}]
+};
+var llama31NemotronUltra253bV1 = {
+	model: {
+		id: "llama-3.1-nemotron-ultra-253b-v1",
+		name: "Llama 3.1 Nemotron Ultra 253B V1",
+		creator: "nvidia",
+		family: "llama",
+		category: "flagship",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 131072,
+		max_output_tokens: 8192,
+		is_open_source: false,
+		release_date: "2024-07-01",
+		reasoning: true,
+		temperature: true,
+		knowledge: "2024-07",
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false,
+			prompt_caching: true
+		},
+		description: "NVIDIA's Llama 3.1-based Nemotron Ultra 253B model with reasoning.",
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "nvidia",
+		provider_model_id: "nvidia/llama-3.1-nemotron-ultra-253b-v1",
+		input_per_mtok: 0,
+		output_per_mtok: 0,
+		status: "ga"
+	}]
+};
+var llama31Nemotron70bInstruct = {
+	model: {
+		id: "llama-3.1-nemotron-70b-instruct",
+		name: "Llama 3.1 Nemotron 70B Instruct",
+		creator: "nvidia",
+		family: "llama",
+		category: "mid",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 128e3,
+		max_output_tokens: 4096,
+		is_open_source: false,
+		release_date: "2024-10-12",
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false,
+			structured_output: true
+		},
+		description: "NVIDIA's Llama 3.1-based Nemotron 70B instruction model.",
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "nvidia",
+		provider_model_id: "nvidia/llama-3.1-nemotron-70b-instruct",
+		input_per_mtok: 0,
+		output_per_mtok: 0,
+		status: "ga"
+	}]
+};
+var llama31Nemotron51bInstruct = {
+	model: {
+		id: "llama-3.1-nemotron-51b-instruct",
+		name: "Llama 3.1 Nemotron 51B Instruct",
+		creator: "nvidia",
+		family: "llama",
+		category: "mid",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 128e3,
+		max_output_tokens: 4096,
+		is_open_source: false,
+		release_date: "2024-09-22",
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false,
+			structured_output: true
+		},
+		description: "NVIDIA's Llama 3.1-based Nemotron 51B instruction model.",
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "nvidia",
+		provider_model_id: "nvidia/llama-3.1-nemotron-51b-instruct",
+		input_per_mtok: 0,
+		output_per_mtok: 0,
+		status: "ga"
+	}]
+};
+var llamaEmbedNemotron8b = {
+	model: {
+		id: "llama-embed-nemotron-8b",
+		name: "Llama Embed Nemotron 8B",
+		creator: "nvidia",
+		family: "llama",
+		category: "small",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 32768,
+		max_output_tokens: 2048,
+		is_open_source: false,
+		release_date: "2025-03-18",
+		temperature: false,
+		capabilities: {
+			streaming: false,
+			function_calling: false,
+			vision: false
+		},
+		description: "NVIDIA's Llama-based embedding model with Nemotron optimization.",
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "nvidia",
+		provider_model_id: "nvidia/llama-embed-nemotron-8b",
+		input_per_mtok: 0,
+		output_per_mtok: 0,
+		status: "ga"
+	}]
+};
+var llama3Chatqa15_70b = {
+	model: {
+		id: "llama3-chatqa-1.5-70b",
+		name: "Llama3 ChatQA 1.5 70B",
+		creator: "nvidia",
+		family: "llama",
+		category: "mid",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 128e3,
+		max_output_tokens: 4096,
+		is_open_source: false,
+		release_date: "2024-01-01",
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false
+		},
+		description: "NVIDIA's Llama3-based ChatQA 1.5 70B model for conversational AI.",
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "nvidia",
+		provider_model_id: "nvidia/llama3-chatqa-1.5-70b",
+		input_per_mtok: 0,
+		output_per_mtok: 0,
+		status: "ga"
+	}]
+};
+var nemotron4_340bInstruct = {
+	model: {
+		id: "nemotron-4-340b-instruct",
+		name: "Nemotron 4 340B Instruct",
+		creator: "nvidia",
+		family: "nemotron",
+		category: "flagship",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 128e3,
+		max_output_tokens: 4096,
+		is_open_source: false,
+		release_date: "2024-06-13",
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			json_mode: true,
+			json_schema: true,
+			system_prompt: true,
+			vision: false,
+			structured_output: true
+		},
+		description: "NVIDIA's Nemotron 4 340B instruction-following model.",
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "nvidia",
+		provider_model_id: "nvidia/nemotron-4-340b-instruct",
+		input_per_mtok: 0,
+		output_per_mtok: 0,
+		status: "ga",
+		available_since: "2024-06-13"
+	}]
+};
+var nemotron3Super120bA12b = {
+	model: {
+		id: "nemotron-3-super-120b-a12b",
+		name: "Nemotron 3 Super 120B A12B",
+		creator: "nvidia",
+		family: "nemotron",
+		category: "flagship",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 262144,
+		max_output_tokens: 262144,
+		is_open_source: true,
+		release_date: "2026-03-11",
+		reasoning: true,
+		temperature: true,
+		knowledge: "2024-04",
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false,
+			prompt_caching: true
+		},
+		description: "NVIDIA's Nemotron 3 Super 120B model with reasoning capabilities.",
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "nvidia",
+		provider_model_id: "nvidia/nemotron-3-super-120b-a12b",
+		input_per_mtok: .2,
+		output_per_mtok: .8,
+		status: "ga",
+		available_since: "2026-03-11"
+	}]
+};
+var nemotron3Nano30bA3b = {
+	model: {
+		id: "nemotron-3-nano-30b-a3b",
+		name: "Nemotron 3 Nano 30B A3B",
+		creator: "nvidia",
+		family: "nemotron",
+		category: "mid",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 131072,
+		max_output_tokens: 131072,
+		is_open_source: true,
+		release_date: "2024-12",
+		reasoning: true,
+		temperature: true,
+		knowledge: "2024-09",
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false,
+			prompt_caching: true
+		},
+		description: "NVIDIA's compact Nemotron 3 Nano 30B model with aggressive quantization.",
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "nvidia",
+		provider_model_id: "nvidia/nemotron-3-nano-30b-a3b",
+		input_per_mtok: 0,
+		output_per_mtok: 0,
+		status: "ga"
+	}]
+};
+var nvidiaNemotronNano9bV2 = {
+	model: {
+		id: "nvidia-nemotron-nano-9b-v2",
+		name: "NVIDIA Nemotron Nano 9B V2",
+		creator: "nvidia",
+		family: "nemotron",
+		category: "small",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 131072,
+		max_output_tokens: 131072,
+		is_open_source: true,
+		release_date: "2025-08-18",
+		reasoning: true,
+		temperature: true,
+		knowledge: "2024-09",
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false,
+			prompt_caching: true
+		},
+		description: "NVIDIA's efficient Nemotron Nano 9B model v2 for lightweight inference.",
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "nvidia",
+		provider_model_id: "nvidia/nemotron-nano-9b-v2",
+		input_per_mtok: 0,
+		output_per_mtok: 0,
+		status: "ga"
+	}]
+};
+var cosmosNemotron34b = {
+	model: {
+		id: "cosmos-nemotron-34b",
+		name: "Cosmos Nemotron 34B",
+		creator: "nvidia",
+		family: "nemotron",
+		category: "mid",
+		status: "active",
+		modality_input: ["text", "image"],
+		modality_output: ["text"],
+		context_window: 131072,
+		max_output_tokens: 8192,
+		is_open_source: false,
+		release_date: "2024-01-01",
+		reasoning: true,
+		temperature: true,
+		knowledge: "2024-01",
+		capabilities: {
+			streaming: true,
+			function_calling: false,
+			vision: true
+		},
+		description: "NVIDIA's Cosmos Nemotron 34B model for video understanding.",
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "nvidia",
+		provider_model_id: "nvidia/cosmos-nemotron-34b",
+		input_per_mtok: 0,
+		output_per_mtok: 0,
+		status: "ga"
+	}]
+};
+var nemoretrieverOcrV1 = {
+	model: {
+		id: "nemoretriever-ocr-v1",
+		name: "NeMo Retriever OCR v1",
+		creator: "nvidia",
+		family: "nemoretriever",
+		category: "small",
+		status: "active",
+		modality_input: ["image"],
+		modality_output: ["text"],
+		context_window: 0,
+		max_output_tokens: 4096,
+		is_open_source: false,
+		release_date: "2024-01-01",
+		temperature: false,
+		knowledge: "2024-01",
+		capabilities: {
+			streaming: true,
+			function_calling: false,
+			vision: true
+		},
+		description: "NVIDIA's NeMo Retriever OCR model for document understanding.",
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "nvidia",
+		provider_model_id: "nvidia/nemoretriever-ocr-v1",
+		input_per_mtok: 0,
+		output_per_mtok: 0,
+		status: "ga"
+	}]
+};
+var parakeetTdt06bV2 = {
+	model: {
+		id: "parakeet-tdt-0.6b-v2",
+		name: "Parakeet TDT 0.6B v2",
+		creator: "nvidia",
+		family: "parakeet",
+		category: "small",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 0,
+		max_output_tokens: 4096,
+		is_open_source: false,
+		release_date: "2024-01-01",
+		temperature: false,
+		knowledge: "2024-01",
+		capabilities: {
+			streaming: true,
+			function_calling: false,
+			vision: false
+		},
+		description: "NVIDIA's Parakeet TDT speech-to-text model v2.",
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "nvidia",
+		provider_model_id: "nvidia/parakeet-tdt-0.6b-v2",
+		input_per_mtok: 0,
+		output_per_mtok: 0,
+		status: "ga"
+	}]
+};
+var nvidia_exports = /* @__PURE__ */ __exportAll({
+	cosmosNemotron34b: () => cosmosNemotron34b,
+	llama31Nemotron51bInstruct: () => llama31Nemotron51bInstruct,
+	llama31Nemotron70bInstruct: () => llama31Nemotron70bInstruct,
+	llama31NemotronUltra253bV1: () => llama31NemotronUltra253bV1,
+	llama33NemotronSuper49bV1: () => llama33NemotronSuper49bV1,
+	llama33NemotronSuper49bV15: () => llama33NemotronSuper49bV15,
+	llama3Chatqa15_70b: () => llama3Chatqa15_70b,
+	llamaEmbedNemotron8b: () => llamaEmbedNemotron8b,
+	nemoretrieverOcrV1: () => nemoretrieverOcrV1,
+	nemotron3Nano30bA3b: () => nemotron3Nano30bA3b,
+	nemotron3Super120bA12b: () => nemotron3Super120bA12b,
+	nemotron4_340bInstruct: () => nemotron4_340bInstruct,
+	nvidiaNemotronNano9bV2: () => nvidiaNemotronNano9bV2,
+	parakeetTdt06bV2: () => parakeetTdt06bV2
+});
+var glm47 = {
+	model: {
+		id: "glm-4.7",
+		name: "GLM-4.7",
+		creator: "z-ai",
+		family: "glm",
+		category: "mid",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 204800,
+		max_output_tokens: 131072,
+		is_open_source: true,
+		release_date: "2025-12-22",
+		reasoning: true,
+		temperature: true,
+		knowledge: "2025-04",
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false,
+			prompt_caching: true
+		},
+		description: "Zet's GLM-4.7 reasoning model with interleaved thinking.",
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "nvidia",
+		provider_model_id: "z-ai/glm-4.7",
+		input_per_mtok: 0,
+		output_per_mtok: 0,
+		status: "ga"
+	}]
+};
+var glm5 = {
+	model: {
+		id: "glm-5",
+		name: "GLM-5",
+		creator: "z-ai",
+		family: "glm",
+		category: "flagship",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 202752,
+		max_output_tokens: 131e3,
+		is_open_source: true,
+		release_date: "2026-02-12",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false,
+			structured_output: true,
+			prompt_caching: true
+		},
+		description: "Zet's flagship GLM-5 reasoning model with advanced capabilities.",
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "nvidia",
+		provider_model_id: "z-ai/glm-5",
+		input_per_mtok: 0,
+		output_per_mtok: 0,
+		status: "ga"
+	}]
+};
+var z_ai_exports = /* @__PURE__ */ __exportAll({
+	glm47: () => glm47,
+	glm5: () => glm5
+});
+var step35Flash = {
+	model: {
+		id: "step-3.5-flash",
+		name: "Step 3.5 Flash",
+		creator: "stepfun-ai",
+		family: "step",
+		category: "mid",
+		status: "active",
+		modality_input: ["text"],
+		modality_output: ["text"],
+		context_window: 256e3,
+		max_output_tokens: 16384,
+		is_open_source: true,
+		release_date: "2026-02-02",
+		reasoning: true,
+		temperature: true,
+		capabilities: {
+			streaming: true,
+			function_calling: true,
+			vision: false
+		},
+		description: "Stepfun AI's Step 3.5 Flash model with reasoning capabilities.",
+		supportedOn: ["api"]
+	},
+	offers: [{
+		provider_id: "nvidia",
+		provider_model_id: "stepfun-ai/step-3.5-flash",
+		input_per_mtok: 0,
+		output_per_mtok: 0,
+		status: "ga"
+	}]
+};
+var stepfun_ai_exports = /* @__PURE__ */ __exportAll({ step35Flash: () => step35Flash });
+var allEntries = [
+	...Object.values(anthropic_exports),
+	...Object.values(openai_exports),
+	...Object.values(google_exports),
+	...Object.values(meta_exports),
+	...Object.values(mistral_exports),
+	...Object.values(mistralai_exports),
+	...Object.values(deepseek_exports),
+	...Object.values(deepseek_ai_exports),
+	...Object.values(microsoft_exports),
+	...Object.values(cohere_exports),
+	...Object.values(xai_exports),
+	...Object.values(x_ai_exports),
+	...Object.values(groq_exports),
+	...Object.values(novita_ai_exports),
+	...Object.values(fireworks_ai_exports),
+	...Object.values(togetherai_exports),
+	...Object.values(perplexity_exports),
+	...Object.values(upstage_exports),
+	...Object.values(vercel_exports),
+	...Object.values(minimaxai_exports),
+	...Object.values(moonshotai_exports),
+	...Object.values(stepfunai_exports),
+	...Object.values(stepfun_ai_exports),
+	...Object.values(zhipuai_exports),
+	...Object.values(qwen_exports),
+	...Object.values(amazon_exports),
+	...Object.values(black_forest_labs_exports),
+	...Object.values(nvidia_exports),
+	...Object.values(z_ai_exports)
+];
+var allModels = allEntries.map((e) => e.model);
+var allOffers = allEntries.flatMap((e) => e.offers.map((o) => ({
+	...o,
+	model_id: e.model.id
+})));
+var allProviders = [
+	{
+		id: "anthropic",
+		name: "Anthropic API",
+		description: "Direct API access to Claude models. Best for Claude-native features (MCP, computer use, prompt caching).",
+		type: "direct",
+		status: "active",
+		url: "https://console.anthropic.com",
+		regions: ["us", "eu"],
+		auth_type: "api_key",
+		has_free_tier: true,
+		billing_model: "pay_per_token",
+		sdk: ["python", "typescript"],
+		openai_compatible: false,
+		compliance: ["SOC2", "HIPAA"]
+	},
+	{
+		id: "openai",
+		name: "OpenAI Platform",
+		description: "Direct API access to GPT and o-series models. Includes Assistants API, fine-tuning, and batch processing.",
+		type: "direct",
+		status: "active",
+		url: "https://platform.openai.com",
+		regions: [
+			"us",
+			"eu",
+			"asia"
+		],
+		auth_type: "api_key",
+		has_free_tier: true,
+		billing_model: "pay_per_token",
+		sdk: [
+			"python",
+			"typescript",
+			"dotnet",
+			"java"
+		],
+		openai_compatible: true,
+		compliance: [
+			"SOC2",
+			"HIPAA",
+			"GDPR"
+		]
+	},
+	{
+		id: "openrouter",
+		name: "OpenRouter",
+		description: "Model aggregator with unified OpenAI-compatible API. Access 300+ models from 60+ providers through a single endpoint.",
+		type: "aggregator",
+		status: "active",
+		url: "https://openrouter.ai",
+		regions: ["us"],
+		auth_type: "api_key",
+		has_free_tier: true,
+		billing_model: "credits",
+		sdk: [],
+		openai_compatible: true
+	},
+	{
+		id: "bedrock",
+		name: "AWS Bedrock",
+		description: "AWS managed service for foundation models. Enterprise-grade with IAM, VPC, cross-region inference, and AgentCore for multi-agent workflows.",
+		type: "cloud",
+		status: "active",
+		url: "https://aws.amazon.com/bedrock",
+		regions: [
+			"us-east-1",
+			"us-west-2",
+			"eu-west-1",
+			"ap-northeast-1"
+		],
+		auth_type: "iam",
+		has_free_tier: false,
+		billing_model: "pay_per_token",
+		sdk: [
+			"python",
+			"typescript",
+			"java",
+			"dotnet"
+		],
+		openai_compatible: false,
+		compliance: [
+			"SOC2",
+			"HIPAA",
+			"GDPR",
+			"FedRAMP"
+		]
+	},
+	{
+		id: "mistral",
+		name: "Mistral AI",
+		description: "Direct API access to Mistral models. OpenAI-compatible, fast inference, EU-hosted options.",
+		type: "direct",
+		status: "active",
+		url: "https://mistral.ai",
+		regions: ["us", "eu"],
+		auth_type: "api_key",
+		has_free_tier: true,
+		billing_model: "pay_per_token",
+		sdk: ["python", "typescript"],
+		openai_compatible: true,
+		compliance: ["GDPR"]
+	},
+	{
+		id: "deepseek",
+		name: "DeepSeek",
+		description: "Direct API access to DeepSeek models. Ultra-competitive pricing, OpenAI-compatible.",
+		type: "direct",
+		status: "active",
+		url: "https://deepseek.com",
+		regions: ["us"],
+		auth_type: "api_key",
+		has_free_tier: true,
+		billing_model: "pay_per_token",
+		sdk: ["python", "typescript"],
+		openai_compatible: true
+	},
+	{
+		id: "azure",
+		name: "Azure AI Foundry",
+		description: "Microsoft's enterprise AI platform offering OpenAI models with Azure's security, compliance, and private networking.",
+		type: "cloud",
+		status: "active",
+		url: "https://azure.microsoft.com/services/ai-foundry",
+		regions: [
+			"us-east",
+			"us-west",
+			"eu-west",
+			"uk-south"
+		],
+		auth_type: "api_key",
+		has_free_tier: false,
+		billing_model: "pay_per_token",
+		sdk: [
+			"python",
+			"typescript",
+			"rest"
+		],
+		openai_compatible: true,
+		compliance: [
+			"SOC2",
+			"HIPAA",
+			"GDPR",
+			"ISO27001"
+		]
+	},
+	{
+		id: "cerebras",
+		name: "Cerebras",
+		description: "Wafer-scale engine inference delivering 10-20x faster than GPU solutions. Runs open models like Llama 3.1 70B at 2,100 tokens/sec.",
+		type: "cloud",
+		status: "active",
+		url: "https://cerebras.ai/inference",
+		regions: ["us"],
+		auth_type: "api_key",
+		has_free_tier: true,
+		billing_model: "pay_per_token",
+		sdk: ["python", "javascript"],
+		openai_compatible: true
+	},
+	{
+		id: "clarifai",
+		name: "Clarifai",
+		description: "Enterprise AI platform with full lifecycle capabilities. Supports 500+ models with compute orchestration, RAG, and multi-cloud deployment.",
+		type: "cloud",
+		status: "active",
+		url: "https://clarifai.com",
+		regions: ["us", "eu"],
+		auth_type: "api_key",
+		has_free_tier: true,
+		billing_model: "pay_per_token",
+		sdk: [
+			"python",
+			"typescript",
+			"java",
+			"go"
+		],
+		openai_compatible: true,
+		compliance: [
+			"SOC2",
+			"HIPAA",
+			"GDPR"
+		]
+	},
+	{
+		id: "cloudflare-workers-ai",
+		name: "Cloudflare Workers AI",
+		description: "Serverless GPU inference on Cloudflare's global network. Run open-source models close to users with pay-per-request pricing.",
+		type: "cloud",
+		status: "active",
+		url: "https://developers.cloudflare.com/workers-ai",
+		regions: ["global"],
+		auth_type: "api_key",
+		has_free_tier: true,
+		billing_model: "pay_per_token",
+		sdk: [
+			"typescript",
+			"python",
+			"rust"
+		],
+		openai_compatible: true
+	},
+	{
+		id: "cohere",
+		name: "Cohere",
+		description: "Direct API access to Command R models. Enterprise-focused with strong RAG and tool-use capabilities.",
+		type: "direct",
+		status: "active",
+		url: "https://cohere.com",
+		regions: ["us", "eu"],
+		auth_type: "api_key",
+		has_free_tier: true,
+		billing_model: "pay_per_token",
+		sdk: [
+			"python",
+			"typescript",
+			"go",
+			"java"
+		],
+		openai_compatible: true,
+		compliance: [
+			"SOC2",
+			"GDPR",
+			"ISO27001"
+		]
+	},
+	{
+		id: "deepinfra",
+		name: "Deep Infra",
+		description: "Low-cost AI inference platform with OpenAI-compatible API. 100+ hosted models on H100/A100 GPUs with pay-per-token pricing.",
+		type: "cloud",
+		status: "active",
+		url: "https://deepinfra.com",
+		regions: ["us"],
+		auth_type: "api_key",
+		has_free_tier: true,
+		billing_model: "pay_per_token",
+		sdk: ["python", "typescript"],
+		openai_compatible: true,
+		compliance: ["SOC2", "ISO27001"]
+	},
+	{
+		id: "google",
+		name: "Google AI",
+		description: "Direct API access to Gemini models via Google AI Studio. Multimodal with massive context windows.",
+		type: "direct",
+		status: "active",
+		url: "https://ai.google.dev",
+		regions: [
+			"us",
+			"eu",
+			"asia"
+		],
+		auth_type: "api_key",
+		has_free_tier: true,
+		billing_model: "pay_per_token",
+		sdk: [
+			"python",
+			"typescript",
+			"go",
+			"java",
+			"kotlin"
+		],
+		openai_compatible: true,
+		compliance: [
+			"SOC2",
+			"GDPR",
+			"HIPAA",
+			"ISO27001"
+		]
+	},
+	{
+		id: "groq",
+		name: "Groq",
+		description: "Fast inference API powered by LPU chips. Extremely low latency for Llama and other models.",
+		type: "direct",
+		status: "active",
+		url: "https://console.groq.com",
+		regions: ["us"],
+		auth_type: "api_key",
+		has_free_tier: true,
+		billing_model: "pay_per_token",
+		sdk: ["python", "typescript"],
+		openai_compatible: true
+	},
+	{
+		id: "huggingface",
+		name: "Hugging Face",
+		description: "Platform for ML models with Inference Providers — access 200+ models from leading AI providers with unified API and no markup.",
+		type: "aggregator",
+		status: "active",
+		url: "https://huggingface.co/docs/api-inference",
+		regions: ["us"],
+		auth_type: "api_key",
+		has_free_tier: true,
+		billing_model: "credits",
+		sdk: ["python", "typescript"],
+		openai_compatible: true
+	},
+	{
+		id: "lmstudio",
+		name: "LM Studio",
+		description: "Desktop app and local API server for running open-source LLMs locally. OpenAI-compatible API with privacy-first approach.",
+		type: "self_hosted",
+		status: "active",
+		url: "https://lmstudio.ai",
+		regions: [],
+		auth_type: "local_only",
+		has_free_tier: true,
+		billing_model: "free",
+		sdk: ["typescript", "python"],
+		openai_compatible: true
+	},
+	{
+		id: "nebius",
+		name: "Nebius Token Factory",
+		description: "Production inference platform for open-source models. Sub-second latency, autoscaling, 99.9% SLA, and fine-tuning support.",
+		type: "cloud",
+		status: "active",
+		url: "https://tokenfactory.nebius.com",
+		regions: ["eu", "us"],
+		auth_type: "api_key",
+		has_free_tier: true,
+		billing_model: "pay_per_token",
+		sdk: ["python", "typescript"],
+		openai_compatible: true,
+		compliance: [
+			"SOC2",
+			"HIPAA",
+			"ISO27001"
+		]
+	},
+	{
+		id: "novita-ai",
+		name: "Novita AI",
+		description: "Multi-provider AI API with access to hundreds of models. Competitive pricing, fast inference.",
+		type: "aggregator",
+		status: "active",
+		url: "https://novita.ai",
+		regions: ["us", "eu"],
+		auth_type: "api_key",
+		has_free_tier: true,
+		billing_model: "pay_per_token",
+		sdk: [
+			"python",
+			"typescript",
+			"go"
+		],
+		openai_compatible: true
+	},
+	{
+		id: "ollama-cloud",
+		name: "Ollama Cloud",
+		description: "Cloud-hosted Ollama models accessible via the same API as local Ollama. Run large models like Qwen3 Coder 480B without local GPU.",
+		type: "cloud",
+		status: "active",
+		url: "https://docs.ollama.com/cloud",
+		regions: ["us"],
+		auth_type: "api_key",
+		has_free_tier: true,
+		billing_model: "subscription",
+		sdk: [
+			"python",
+			"javascript",
+			"go"
+		],
+		openai_compatible: true
+	},
+	{
+		id: "xai",
+		name: "xAI",
+		description: "Direct API access to Grok models. Real-time knowledge up to 2024, strong reasoning capabilities.",
+		type: "direct",
+		status: "active",
+		url: "https://x.ai",
+		regions: ["us"],
+		auth_type: "api_key",
+		has_free_tier: false,
+		billing_model: "pay_per_token",
+		sdk: ["python", "typescript"],
+		openai_compatible: true
+	},
+	{
+		id: "fireworks-ai",
+		name: "Fireworks AI",
+		description: "High-performance inference for open-source models. Extremely fast, OpenAI-compatible API.",
+		type: "direct",
+		status: "active",
+		url: "https://fireworks.ai",
+		regions: ["us"],
+		auth_type: "api_key",
+		has_free_tier: false,
+		billing_model: "pay_per_token",
+		sdk: ["python", "typescript"],
+		openai_compatible: true
+	},
+	{
+		id: "togetherai",
+		name: "Together AI",
+		description: "Cloud platform for training and serving open-source models. Finely tuned models and instant inference.",
+		type: "direct",
+		status: "active",
+		url: "https://together.ai",
+		regions: ["us", "eu"],
+		auth_type: "api_key",
+		has_free_tier: true,
+		billing_model: "pay_per_token",
+		sdk: [
+			"python",
+			"typescript",
+			"go"
+		],
+		openai_compatible: true
+	},
+	{
+		id: "v0",
+		name: "v0",
+		description: "Vercel's AI code generator specialized in web development. Generates React, Vue, Svelte, and HTML/CSS code from text prompts.",
+		type: "direct",
+		status: "active",
+		url: "https://v0.app",
+		auth_type: "api_key",
+		has_free_tier: false,
+		billing_model: "pay_per_token",
+		sdk: ["typescript"],
+		openai_compatible: true
+	},
+	{
+		id: "vercel",
+		name: "Vercel",
+		description: "Cloud platform offering AI model access through Vercel AI SDK. Aggregates multiple providers including OpenAI, Anthropic, Google, Mistral, and more.",
+		type: "aggregator",
+		status: "active",
+		url: "https://vercel.com",
+		auth_type: "api_key",
+		has_free_tier: false,
+		billing_model: "pay_per_token",
+		sdk: ["typescript", "python"],
+		openai_compatible: true
+	},
+	{
+		id: "github-copilot",
+		name: "GitHub Copilot",
+		description: "GitHub's AI pair programmer offering access to multiple frontier models including Claude, GPT, Gemini, and Grok through Copilot subscriptions.",
+		type: "direct",
+		status: "active",
+		url: "https://github.com/features/copilot",
+		auth_type: "oauth",
+		has_free_tier: false,
+		billing_model: "subscription",
+		openai_compatible: false
+	},
+	{
+		id: "github-models",
+		name: "GitHub Models",
+		description: "GitHub's model marketplace providing API access to open-source and frontier models. Part of GitHub Copilot ecosystem with OAuth authentication.",
+		type: "aggregator",
+		status: "active",
+		url: "https://github.com/marketplace/models",
+		auth_type: "oauth",
+		has_free_tier: true,
+		billing_model: "pay_per_token",
+		sdk: [
+			"typescript",
+			"python",
+			"dotnet",
+			"java"
+		],
+		openai_compatible: true
+	},
+	{
+		id: "perplexity",
+		name: "Perplexity",
+		description: "AI search engine and API platform. Provides Sonar family models optimized for real-time web-grounded answers with citations. Offers both API and Pro subscription.",
+		type: "direct",
+		status: "active",
+		url: "https://perplexity.ai",
+		regions: ["us"],
+		auth_type: "api_key",
+		has_free_tier: true,
+		billing_model: "pay_per_token",
+		sdk: ["typescript", "python"],
+		openai_compatible: true
+	},
+	{
+		id: "perplexity-agent",
+		name: "Perplexity Agent",
+		description: "Perplexity's agentic AI platform that combines web search with multiple frontier models (Claude, Gemini, GPT, Grok) for autonomous research and task completion.",
+		type: "direct",
+		status: "active",
+		url: "https://perplexity.ai",
+		auth_type: "api_key",
+		has_free_tier: false,
+		billing_model: "pay_per_token",
+		sdk: ["typescript", "python"],
+		openai_compatible: true
+	},
+	{
+		id: "wandb",
+		name: "Weights & Biases",
+		description: "ML experiment tracking platform now offering API access to open-source models including Llama, DeepSeek, Qwen, Phi, and MiniMax through W&B Inference.",
+		type: "direct",
+		status: "active",
+		url: "https://wandb.ai",
+		auth_type: "api_key",
+		has_free_tier: true,
+		billing_model: "pay_per_token",
+		sdk: ["python"],
+		openai_compatible: true
+	},
+	{
+		id: "venice",
+		name: "Venice",
+		description: "Uncensored AI model API provider. Offers open-source models like Llama, Mistral, Qwen, and MiniMax with relaxed content policies. Focus on privacy and uncensored outputs.",
+		type: "direct",
+		status: "active",
+		url: "https://venice.ai",
+		auth_type: "api_key",
+		has_free_tier: true,
+		billing_model: "pay_per_token",
+		sdk: ["typescript", "python"],
+		openai_compatible: true
+	},
+	{
+		id: "upstage",
+		name: "Upstage",
+		description: "South Korean AI company offering Solar Pro family of models. Solar Pro 3 is a 102B MoE model rivaling frontier models, running efficiently on single GPU.",
+		type: "direct",
+		status: "active",
+		url: "https://www.upstage.ai",
+		regions: [
+			"us",
+			"eu",
+			"ap"
+		],
+		auth_type: "api_key",
+		has_free_tier: true,
+		billing_model: "pay_per_token",
+		sdk: ["python", "typescript"],
+		openai_compatible: true
+	},
+	{
+		id: "scaleway",
+		name: "Scaleway",
+		description: "French cloud provider offering AI Model Serving with GDPR-compliant infrastructure. Hosts open-source models like Llama, Mistral, Qwen, and Whisper.",
+		type: "cloud",
+		status: "active",
+		url: "https://www.scaleway.com",
+		regions: ["eu"],
+		auth_type: "api_key",
+		has_free_tier: false,
+		billing_model: "pay_per_token",
+		sdk: ["python", "typescript"],
+		openai_compatible: true,
+		compliance: ["GDPR"]
+	},
+	{
+		id: "stackit",
+		name: "STACKIT",
+		description: "German sovereign cloud from Schwarz Group offering AI Model Serving. GDPR-compliant European cloud hosting open-source models like Llama, Qwen, and Gemma.",
+		type: "cloud",
+		status: "active",
+		url: "https://www.stackit.de",
+		regions: ["eu"],
+		auth_type: "api_key",
+		has_free_tier: false,
+		billing_model: "pay_per_token",
+		sdk: ["python", "typescript"],
+		openai_compatible: true,
+		compliance: ["GDPR", "SOC2"]
+	},
+	{
+		id: "minimax",
+		name: "MiniMax",
+		description: "Chinese AI company offering direct API access to MiniMax models including the M2 series with reasoning capabilities.",
+		type: "direct",
+		status: "active",
+		url: "https://platform.minimax.io",
+		regions: ["us", "cn"],
+		auth_type: "api_key",
+		has_free_tier: false,
+		billing_model: "pay_per_token",
+		sdk: ["python", "typescript"],
+		openai_compatible: true
+	},
+	{
+		id: "moonshotai",
+		name: "Moonshot AI",
+		description: "Chinese AI company behind the Kimi series of models. Offers direct API access to Kimi K2 and earlier models with OpenAI-compatible endpoints.",
+		type: "direct",
+		status: "active",
+		url: "https://platform.moonshot.ai",
+		regions: ["us", "cn"],
+		auth_type: "api_key",
+		has_free_tier: false,
+		billing_model: "pay_per_token",
+		sdk: ["python", "typescript"],
+		openai_compatible: true
+	},
+	{
+		id: "stepfun",
+		name: "StepFun",
+		description: "Chinese AI company offering Step series models via direct API. Step models are OpenAI-compatible with competitive pricing.",
+		type: "direct",
+		status: "active",
+		url: "https://platform.stepfun.com",
+		regions: ["cn"],
+		auth_type: "api_key",
+		has_free_tier: false,
+		billing_model: "pay_per_token",
+		sdk: ["python", "typescript"],
+		openai_compatible: true
+	},
+	{
+		id: "zhipuai",
+		name: "Zhipu AI",
+		description: "Chinese AI company behind the GLM series of models. Direct API access to GLM-4 and GLM-5 models with OpenAI-compatible endpoints.",
+		type: "direct",
+		status: "active",
+		url: "https://www.zhipuai.cn",
+		regions: ["cn"],
+		auth_type: "api_key",
+		has_free_tier: false,
+		billing_model: "pay_per_token",
+		sdk: ["python", "typescript"],
+		openai_compatible: true
+	},
+	{
+		id: "modelscope",
+		name: "ModelScope",
+		description: "Chinese AI platform by Alibaba's Damo Academy offering API access to Qwen, GLM, and other models. Integrates many open-source models.",
+		type: "direct",
+		status: "active",
+		url: "https://modelscope.cn",
+		regions: ["cn"],
+		auth_type: "api_key",
+		has_free_tier: false,
+		billing_model: "pay_per_token",
+		sdk: ["python", "typescript"],
+		openai_compatible: true
+	},
+	{
+		id: "siliconflow",
+		name: "SiliconFlow",
+		description: "Chinese AI aggregator platform offering unified API access to multiple model providers including Qwen, DeepSeek, GLM, and more.",
+		type: "aggregator",
+		status: "active",
+		url: "https://cloud.siliconflow.com",
+		regions: ["cn"],
+		auth_type: "api_key",
+		has_free_tier: false,
+		billing_model: "pay_per_token",
+		sdk: ["python", "typescript"],
+		openai_compatible: true
+	},
+	{
+		id: "siliconflow-cn",
+		name: "SiliconFlow (China)",
+		description: "Chinese AI aggregator platform for China region, offering unified API access to multiple model providers.",
+		type: "aggregator",
+		status: "active",
+		url: "https://cloud.siliconflow.com",
+		regions: ["cn"],
+		auth_type: "api_key",
+		has_free_tier: false,
+		billing_model: "pay_per_token",
+		sdk: ["python", "typescript"],
+		openai_compatible: true
+	},
+	{
+		id: "abacus",
+		name: "Abacus",
+		description: "AI aggregator platform offering access to a wide range of models including OpenAI, Anthropic, Google, Meta, and Chinese models via RouteLLM.",
+		type: "aggregator",
+		status: "active",
+		url: "https://abacus.ai",
+		regions: ["us"],
+		auth_type: "api_key",
+		has_free_tier: false,
+		billing_model: "pay_per_token",
+		sdk: ["python", "typescript"],
+		openai_compatible: true
+	},
+	{
+		id: "aihubmix",
+		name: "AIHubMix",
+		description: "Chinese AI aggregator platform offering unified API access to multiple model providers including OpenAI, Claude, Gemini, and Chinese models.",
+		type: "aggregator",
+		status: "active",
+		url: "https://www.aihubmix.com",
+		regions: ["cn"],
+		auth_type: "api_key",
+		has_free_tier: false,
+		billing_model: "pay_per_token",
+		sdk: ["python", "typescript"],
+		openai_compatible: true
+	},
+	{
+		id: "302ai",
+		name: "302.AI",
+		description: "Chinese AI aggregator platform offering pay-per-use access to multiple AI providers and models with no subscription required.",
+		type: "aggregator",
+		status: "active",
+		url: "https://302.ai",
+		regions: ["cn"],
+		auth_type: "api_key",
+		has_free_tier: false,
+		billing_model: "pay_per_token",
+		sdk: ["python", "typescript"],
+		openai_compatible: true
+	},
+	{
+		id: "jiekou",
+		name: "Jiekou.AI",
+		description: "Chinese AI aggregator platform offering unified API access to multiple model providers including OpenAI, Anthropic, Google, and Chinese models.",
+		type: "aggregator",
+		status: "active",
+		url: "https://www.jiekou.ai",
+		regions: ["cn"],
+		auth_type: "api_key",
+		has_free_tier: false,
+		billing_model: "pay_per_token",
+		sdk: ["python", "typescript"],
+		openai_compatible: true
+	},
+	{
+		id: "helicone",
+		name: "Helicone",
+		description: "AI observability platform providing proxy routing, analytics, and cost management for LLM applications. Supports 300+ models.",
+		type: "aggregator",
+		status: "active",
+		url: "https://helicone.ai",
+		has_free_tier: true,
+		billing_model: "pay_per_token",
+		sdk: [
+			"python",
+			"typescript",
+			"go",
+			"java"
+		],
+		openai_compatible: true
+	},
+	{
+		id: "sap-ai-core",
+		name: "SAP AI Core",
+		description: "Enterprise AI platform from SAP providing access to foundation models through the Generative AI Hub. Integrates with SAP business processes.",
+		type: "cloud",
+		status: "active",
+		url: "https://www.sap.com/products/artificial-intelligence/generative-ai-hub.html",
+		billing_model: "enterprise",
+		sdk: ["python"],
+		openai_compatible: true
+	},
+	{
+		id: "cortecs",
+		name: "Cortecs",
+		description: "AI infrastructure provider offering access to frontier models with a focus on coding and reasoning capabilities.",
+		type: "direct",
+		status: "active",
+		url: "https://cortecs.ai",
+		has_free_tier: false,
+		billing_model: "pay_per_token",
+		sdk: ["python", "typescript"],
+		openai_compatible: true
+	},
+	{
+		id: "moark",
+		name: "MoArk",
+		description: "AI platform aggregating Chinese AI models including GLM and MiniMax, offering serverless API access with OpenAI-compatible endpoints.",
+		type: "aggregator",
+		status: "active",
+		url: "https://moark.ai",
+		has_free_tier: false,
+		billing_model: "pay_per_token",
+		sdk: ["python", "typescript"],
+		openai_compatible: true
+	},
+	{
+		id: "nano-gpt",
+		name: "NanoGPT",
+		description: "Lightweight AI provider offering access to ASI and auto-select models with competitive pricing for text processing.",
+		type: "direct",
+		status: "active",
+		url: "https://nano-gpt.ai",
+		has_free_tier: false,
+		billing_model: "pay_per_token",
+		sdk: ["python", "typescript"],
+		openai_compatible: true
+	},
+	{
+		id: "llmgateway",
+		name: "LLM Gateway",
+		description: "Unified API gateway for multiple LLM providers. Access 180+ models from OpenAI, Anthropic, Google and more through a single OpenAI-compatible endpoint.",
+		type: "aggregator",
+		status: "active",
+		url: "https://llmgateway.io",
+		has_free_tier: false,
+		billing_model: "pay_per_token",
+		sdk: ["python", "typescript"],
+		openai_compatible: true
+	},
+	{
+		id: "morph",
+		name: "Morph",
+		description: "AI model provider specializing in efficient text processing with context windows up to 32K tokens.",
+		type: "direct",
+		status: "active",
+		url: "https://morph.ai",
+		has_free_tier: false,
+		billing_model: "pay_per_token",
+		sdk: ["python", "typescript"],
+		openai_compatible: true
+	},
+	{
+		id: "qiniu-ai",
+		name: "Qiniu AI",
+		description: "Chinese AI infrastructure provider offering Qwen and other open-source models through a pay-per-token API.",
+		type: "direct",
+		status: "active",
+		url: "https://qiniu.com",
+		has_free_tier: false,
+		billing_model: "pay_per_token",
+		sdk: ["python", "typescript"],
+		openai_compatible: true
+	},
+	{
+		id: "alibaba",
+		name: "Alibaba Cloud",
+		description: "Alibaba Cloud's Model Studio offering access to Qwen models through their international cloud platform.",
+		type: "cloud",
+		status: "active",
+		url: "https://www.alibabacloud.com/en/solutions/generative-ai/qwen",
+		has_free_tier: true,
+		billing_model: "pay_per_token",
+		sdk: [
+			"python",
+			"typescript",
+			"java"
+		],
+		openai_compatible: true
+	},
+	{
+		id: "alibaba-cn",
+		name: "Alibaba Cloud China",
+		description: "Alibaba Cloud's China region offering featuring DashScope API for Qwen and DeepSeek models, optimized for Chinese market.",
+		type: "cloud",
+		status: "active",
+		url: "https://help.aliyun.com",
+		has_free_tier: true,
+		billing_model: "pay_per_token",
+		sdk: [
+			"python",
+			"typescript",
+			"java"
+		],
+		openai_compatible: true
+	},
+	{
+		id: "baseten",
+		name: "Baseten",
+		description: "Baseten is a platform for deploying and scaling machine learning models. Provides serverless inference for LLMs with support for open-source models, custom inference endpoints, and GPU acceleration.",
+		type: "direct",
+		status: "active",
+		url: "https://baseten.co",
+		regions: ["us"],
+		auth_type: "api_key",
+		has_free_tier: false,
+		billing_model: "pay_per_token",
+		sdk: ["python", "typescript"],
+		openai_compatible: true
+	},
+	{
+		id: "cloudflare-ai-gateway",
+		name: "Cloudflare AI Gateway",
+		description: "Cloudflare AI Gateway provides unified API access to multiple AI models via Workers AI and external providers. Offers edge-native inference with global distribution, caching, and rate limiting.",
+		type: "aggregator",
+		status: "active",
+		url: "https://developers.cloudflare.com/ai-gateway/",
+		regions: ["global"],
+		auth_type: "api_key",
+		has_free_tier: true,
+		billing_model: "pay_per_token",
+		sdk: [
+			"typescript",
+			"python",
+			"rust"
+		],
+		openai_compatible: true,
+		compliance: [
+			"SOC2",
+			"GDPR",
+			"HIPAA"
+		]
+	},
+	{
+		id: "dinference",
+		name: "Dinference",
+		description: "Dinference is an AI inference platform offering access to open-source and proprietary models with a focus on developer experience and competitive pricing.",
+		type: "direct",
+		status: "active",
+		url: "https://dinference.ai",
+		regions: ["us"],
+		auth_type: "api_key",
+		has_free_tier: false,
+		billing_model: "pay_per_token",
+		sdk: ["python"],
+		openai_compatible: true
+	},
+	{
+		id: "fastrouter",
+		name: "FastRouter",
+		description: "FastRouter is a unified API gateway for LLMs that routes requests across 100+ models from top providers. Offers automatic provider selection for cost optimization, load balancing, and real-time cost tracking.",
+		type: "aggregator",
+		status: "active",
+		url: "https://fastrouter.ai",
+		regions: ["us"],
+		auth_type: "api_key",
+		has_free_tier: true,
+		billing_model: "credits",
+		sdk: [],
+		openai_compatible: true
+	},
+	{
+		id: "friendli",
+		name: "Friendli",
+		description: "Friendli is a serverless AI inference platform optimized for high-performance and cost-effective GPU computing. Offers pay-per-token pricing with automatic scaling for production workloads.",
+		type: "direct",
+		status: "active",
+		url: "https://friendli.ai",
+		regions: [
+			"us",
+			"eu",
+			"asia"
+		],
+		auth_type: "api_key",
+		has_free_tier: true,
+		billing_model: "pay_per_token",
+		sdk: [
+			"python",
+			"typescript",
+			"go"
+		],
+		openai_compatible: true
+	},
+	{
+		id: "io-net",
+		name: "IO.net",
+		description: "IO.net is a distributed GPU cloud for AI inference. Offers access to distributed compute resources for running AI models at scale with competitive pricing.",
+		type: "cloud",
+		status: "active",
+		url: "https://ionet.com",
+		regions: ["us", "eu"],
+		auth_type: "api_key",
+		has_free_tier: false,
+		billing_model: "pay_per_token",
+		sdk: ["python", "typescript"],
+		openai_compatible: true
+	},
+	{
+		id: "kimi-for-coding",
+		name: "Kimi for Coding",
+		description: "Kimi for Coding is Moonshot AI's code-specialized API service offering access to Kimi K2 and K2.5 models optimized for software development tasks including code completion, debugging, and refactoring.",
+		type: "direct",
+		status: "active",
+		url: "https://platform.moonshot.ai/docs/kimi-code",
+		regions: ["us", "asia"],
+		auth_type: "api_key",
+		has_free_tier: true,
+		billing_model: "pay_per_token",
+		sdk: ["python", "typescript"],
+		openai_compatible: true
+	},
+	{
+		id: "llama",
+		name: "Llama.com",
+		description: "Llama.com is Meta's official platform for accessing Llama models via API. Provides direct access to open-source Llama models including Llama 3, 3.1, 3.2, 3.3 and 4 families with enterprise support options.",
+		type: "direct",
+		status: "active",
+		url: "https://llama.com",
+		regions: ["us", "eu"],
+		auth_type: "api_key",
+		has_free_tier: true,
+		billing_model: "pay_per_token",
+		sdk: [
+			"python",
+			"typescript",
+			"go"
+		],
+		openai_compatible: true
+	},
+	{
+		id: "nvidia",
+		name: "NVIDIA NIM",
+		description: "NVIDIA NIM (NVIDIA Inference Microservices) provides optimized containers for self-hosting GPU-accelerated AI models. Offers enterprise-grade inference with prebuilt, optimized containers for pretrained and customized AI models across clouds, data centers, RTX AI PCs and workstations.",
+		type: "cloud",
+		status: "active",
+		url: "https://developer.nvidia.com/nim",
+		regions: ["us", "eu"],
+		auth_type: "api_key",
+		has_free_tier: true,
+		billing_model: "enterprise",
+		sdk: ["python", "typescript"],
+		openai_compatible: true,
+		compliance: ["SOC2"]
+	},
+	{
+		id: "nova",
+		name: "Amazon Nova",
+		description: "Amazon Nova is a family of foundation models from AWS offering state-of-the-art intelligence and industry-leading price-performance. Available via Amazon Bedrock and nova.amazon.com for text and multimodal tasks.",
+		type: "cloud",
+		status: "active",
+		url: "https://aws.amazon.com/nova/",
+		regions: [
+			"us",
+			"eu",
+			"asia"
+		],
+		auth_type: "api_key",
+		has_free_tier: true,
+		billing_model: "pay_per_token",
+		sdk: [
+			"python",
+			"typescript",
+			"java"
+		],
+		openai_compatible: false,
+		compliance: [
+			"SOC2",
+			"HIPAA",
+			"GDPR"
+		]
+	},
+	{
+		id: "privatemode-ai",
+		name: "PrivateMode AI",
+		description: "PrivateMode AI provides private and secure AI inference services with a focus on data privacy and compliance. Offers access to open-source models with enhanced privacy controls.",
+		type: "direct",
+		status: "active",
+		url: "https://privatemode.ai",
+		regions: ["us", "eu"],
+		auth_type: "api_key",
+		has_free_tier: false,
+		billing_model: "pay_per_token",
+		sdk: ["python"],
+		openai_compatible: true
+	}
+];
+/** 📖 Toutes les offres pour un modèle donné, enrichies avec les infos provider */
+function getOffersForModel(modelId) {
+	return allOffers.filter((o) => o.model_id === modelId).map((o) => {
+		const provider = allProviders.find((p) => p.id === o.provider_id);
+		if (!provider) throw new Error(`Provider not found: ${o.provider_id}`);
+		return {
+			...o,
+			provider
+		};
+	});
+}
+/** 📖 Tous les modèles disponibles chez un provider, enrichis avec l'offre */
+function getModelsForProvider(providerId) {
+	return allOffers.filter((o) => o.provider_id === providerId).map((o) => {
+		const model = allModels.find((m) => m.id === o.model_id);
+		if (!model) throw new Error(`Model not found: ${o.model_id}`);
+		return {
+			...model,
+			offer: o
+		};
+	});
+}
+/** 📖 Trouver un modèle par son ID */
+function getModelById(id) {
+	return allModels.find((m) => m.id === id);
+}
+/** 📖 Trouver un provider par son ID */
+function getProviderById(id) {
+	return allProviders.find((p) => p.id === id);
+}
+//#endregion
+export { getOffersForModel as a, getModelsForProvider as i, allProviders as n, getProviderById as o, getModelById as r, allModels as t };

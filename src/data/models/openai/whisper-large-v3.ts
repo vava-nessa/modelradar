@@ -8,7 +8,7 @@ export const whisper_large_v3: ModelEntry = {
     family: "whisper",
     category: "mid",
     status: "active",
-    modality_input: ["audio"],
+    modality_input: ["text"],
     modality_output: ["text"],
     context_window: 448,
     max_output_tokens: 448,

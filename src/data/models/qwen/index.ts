@@ -5,3 +5,7 @@ export * from "./qwen3-30b-a3b-thinking-2507";
 export * from "./qwen3-30b-a3b-thinking";
 export * from "./qwen3-coder-30b-a3b-instruct";
 export * from "./qwen3-coder-30b-a3b";
+export { qwen3_32b_alibaba } from "./qwen3-32b-alibaba";
+export { qwen3_8b_alibaba } from "./qwen3-8b-alibaba";
+export { qwen3_14b_alibaba } from "./qwen3-14b-alibaba";
+export { qwen3_235b_a22b_alibaba } from "./qwen3-235b-a22b-alibaba";

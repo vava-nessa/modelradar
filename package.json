@@ -19,7 +19,9 @@
     "@tanstack/react-table": "^8.21.3",
     "@tanstack/react-virtual": "^3.13.23",
     "@tanstack/router-plugin": "^1.167.18",
+    "@vercel/node": "^5.7.4",
     "@vitejs/plugin-react": "^4.7.0",
+    "nitro": "3.0.260311-beta",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "tailwindcss": "^4.2.2"
@@ -32,6 +34,6 @@
     "supabase-mcp": "^1.5.0",
     "typescript": "^5.9.3",
     "vercel": "^50.44.0",
-    "vite": "^6.4.2"
+    "vite": "^8.0.8"
   }
 }

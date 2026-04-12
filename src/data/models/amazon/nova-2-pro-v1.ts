@@ -8,7 +8,7 @@ export const nova2ProV1: ModelEntry = {
     family: "nova-pro",
     category: "flagship",
     status: "active",
-    modality_input: ["text", "image", "video", "pdf"],
+    modality_input: ["text", "image", "pdf"],
     modality_output: ["text"],
     context_window: 1000000,
     max_output_tokens: 64000,
