@@ -5,7 +5,7 @@ import type { Provider } from "@/data/schema";
 import { createFileRoute } from "@tanstack/react-router";
 import { createColumnHelper } from "@tanstack/react-table";
 
-export const Route = createFileRoute("/providers")({
+export const Route = createFileRoute("/providers/")({
   component: ProvidersIndex,
 });
 
