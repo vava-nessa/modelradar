@@ -1,5 +1,6 @@
 import { Container } from "@/components/layout/Container";
 import { OfferTable } from "@/components/offer/OfferTable";
+import { FavoriteButton } from "@/components/favorites/FavoriteButton";
 import { getModelById, getOffersForModel } from "@/data";
 import type { Model } from "@/data/schema";
 import { createFileRoute, notFound } from "@tanstack/react-router";
@@ -53,7 +54,10 @@ function ModelPage() {
         </Link>
 
         <div className="mb-8">
-          <h1 className="mb-2 text-3xl font-bold">{model.name}</h1>
+          <div className="flex items-center gap-3">
+            <h1 className="text-3xl font-bold">{model.name}</h1>
+            <FavoriteButton modelId={model.id} />
+          </div>
           <div className="mb-4 flex items-center gap-4 text-sm text-[var(--color-text-muted)]">
             <span className="capitalize">{model.creator}</span>
             <span className="capitalize">{model.category}</span>

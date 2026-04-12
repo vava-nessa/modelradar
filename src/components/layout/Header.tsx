@@ -1,5 +1,6 @@
 import { useAuth } from "@/lib/auth";
 import { Link } from "@tanstack/react-router";
+import { ThemeToggle } from "./ThemeToggle";
 
 export function Header() {
   const { data: user } = useAuth();
@@ -29,7 +30,8 @@ export function Header() {
             </Link>
           </nav>
         </div>
-        <div className="flex items-center gap-4 text-sm">
+        <div className="flex items-center gap-3 text-sm">
+          <ThemeToggle />
           {user ? (
             <>
               <Link

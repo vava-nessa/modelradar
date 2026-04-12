@@ -26,9 +26,12 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
+    "@robinson_ai_systems/vercel-mcp": "^1.0.1",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
+    "supabase-mcp": "^1.5.0",
     "typescript": "^5.9.3",
+    "vercel": "^50.44.0",
     "vite": "^6.4.2"
   }
 }

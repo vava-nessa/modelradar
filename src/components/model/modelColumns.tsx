@@ -6,6 +6,7 @@ import {
 import type { Model } from "@/data/schema";
 import { formatPrice, formatTokens } from "@/lib/format";
 import { createColumnHelper } from "@tanstack/react-table";
+import { FavoriteButton } from "@/components/favorites/FavoriteButton";
 
 const columnHelper = createColumnHelper<Model>();
 
@@ -86,5 +87,11 @@ export const modelColumns = [
       }),
     enableSorting: true,
     sortingFn: "datetime",
+  }),
+
+  columnHelper.display({
+    id: "favorite",
+    header: "★",
+    cell: (info) => <FavoriteButton modelId={info.row.original.id} />,
   }),
 ];
