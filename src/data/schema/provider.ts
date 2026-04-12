@@ -3,8 +3,11 @@
  * @description Defines the data structure for providers (Anthropic, OpenAI, OpenRouter, etc.)
  * 📖 A Provider is a platform where you can access models via API.
  *
- * @exports ProviderType, ProviderStatus, BillingModel, Provider
+ * @exports ProviderAccessType, ProviderType, ProviderStatus, BillingModel, Provider
  */
+
+/** 📖 Type d'accès au provider — comment on y accède */
+export type ProviderAccessType = "free" | "api" | "sub" | "local";
 
 /** 📖 Type de provider */
 export type ProviderType = "direct" | "aggregator" | "cloud" | "self_hosted";
@@ -27,8 +30,10 @@ export interface Provider {
   name: string;
   /** 📖 Description courte du provider */
   description?: string;
-  /** 📖 Type de provider */
+  /** 📖 Type de provider (architectural) */
   type: ProviderType;
+  /** 📖 Type d'accès au provider */
+  provider_access_type: ProviderAccessType;
   /** 📖 Statut du provider */
   status: ProviderStatus;
   /** 📖 URL du logo */

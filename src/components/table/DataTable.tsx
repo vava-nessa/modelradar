@@ -54,7 +54,7 @@ export function DataTable<TData>({
       <div
         ref={containerRef}
         className="relative overflow-auto"
-        style={{ maxHeight: "70vh" }}
+        style={{ height: "100%" }}
       >
         <table className="w-full">
           <thead className="sticky top-0 z-20 bg-[var(--color-surface)] text-xs uppercase text-[var(--color-text-muted)]">
