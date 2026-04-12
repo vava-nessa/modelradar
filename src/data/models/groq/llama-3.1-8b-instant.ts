@@ -1,0 +1,46 @@
+import type { ModelEntry } from "@/data/schema";
+
+export const llama31Instant: ModelEntry = {
+  model: {
+    id: "llama-3.1-8b-instant",
+    name: "Llama 3.1 8B Instant",
+    creator: "meta",
+    family: "llama",
+    category: "small",
+    status: "active",
+    modality_input: ["text"],
+    modality_output: ["text"],
+    context_window: 131072,
+    max_output_tokens: 8192,
+    is_open_source: true,
+    license: "llama3",
+    architecture: "dense transformer",
+    knowledge: "2023-12",
+    release_date: "2024-12-06",
+    reasoning: false,
+    temperature: true,
+    capabilities: {
+      streaming: true,
+      function_calling: true,
+      json_mode: true,
+      system_prompt: true,
+      vision: false,
+    },
+    description: "Fast, affordable Llama model for instant responses.",
+    url: "https://console.groq.com/models",
+    documentation_url: "https://console.groq.com/docs",
+    tags: ["open-source", "fast", "affordable"],
+    supportedOn: ["api"],
+    cost: { input: 0.05, output: 0.08 },
+  },
+  offers: [
+    {
+      provider_id: "groq",
+      provider_model_id: "llama-3.1-8b-instant",
+      input_per_mtok: 0.05,
+      output_per_mtok: 0.08,
+      status: "ga",
+      available_since: "2024-12-06",
+    },
+  ],
+};

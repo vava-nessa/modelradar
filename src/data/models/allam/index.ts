@@ -1,0 +1,1 @@
+export { allam_2_7b } from "./allam-2-7b";

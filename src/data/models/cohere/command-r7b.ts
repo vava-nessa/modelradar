@@ -1,0 +1,46 @@
+import type { ModelEntry } from "@/data/schema";
+
+export const commandR7B: ModelEntry = {
+  model: {
+    id: "command-r7b",
+    name: "Command R7B",
+    creator: "cohere",
+    family: "command-r",
+    category: "small",
+    status: "active",
+    modality_input: ["text"],
+    modality_output: ["text"],
+    context_window: 128000,
+    max_output_tokens: 4000,
+    is_open_source: true,
+    license: "community",
+    architecture: "transformer",
+    knowledge: "2024-06-01",
+    release_date: "2024-02-27",
+    reasoning: false,
+    temperature: true,
+    capabilities: {
+      streaming: true,
+      function_calling: true,
+      json_mode: true,
+      system_prompt: true,
+      vision: false,
+    },
+    description: "Compact, efficient model for conversational and RAG tasks.",
+    url: "https://docs.cohere.com/docs/command-r7b",
+    documentation_url: "https://docs.cohere.com/docs/command-r7b",
+    tags: ["small", "efficient", "rag"],
+    supportedOn: ["api", "free"],
+    cost: { input: 0.0375, output: 0.15 },
+  },
+  offers: [
+    {
+      provider_id: "cohere",
+      provider_model_id: "command-r7b-12-2024",
+      input_per_mtok: 0.0375,
+      output_per_mtok: 0.15,
+      status: "ga",
+      available_since: "2024-02-27",
+    },
+  ],
+};

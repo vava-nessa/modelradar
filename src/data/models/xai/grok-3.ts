@@ -1,0 +1,50 @@
+import type { ModelEntry } from "@/data/schema";
+
+export const grok3: ModelEntry = {
+  model: {
+    id: "grok-3",
+    name: "Grok 3",
+    creator: "xai",
+    family: "grok",
+    category: "flagship",
+    status: "active",
+    modality_input: ["text"],
+    modality_output: ["text"],
+    context_window: 131072,
+    max_output_tokens: 8192,
+    is_open_source: false,
+    license: "proprietary",
+    knowledge: "2024-11",
+    release_date: "2025-02-17",
+    reasoning: false,
+    temperature: true,
+    capabilities: {
+      streaming: true,
+      function_calling: true,
+      json_mode: true,
+      system_prompt: true,
+      web_search: true,
+      vision: false,
+    },
+    benchmarks: {
+      arena_elo: 1350,
+    },
+    description: "xAI's latest flagship model with improved reasoning and real-time access.",
+    url: "https://x.ai/grok-3",
+    documentation_url: "https://x.ai/docs",
+    tags: ["flagship", "reasoning", "real-time"],
+    supportedOn: ["api"],
+    cost: { input: 3.0, output: 15.0, cache_read: 0.75 },
+  },
+  offers: [
+    {
+      provider_id: "xai",
+      provider_model_id: "grok-3",
+      input_per_mtok: 3.0,
+      output_per_mtok: 15.0,
+      cache_read_per_mtok: 0.75,
+      status: "ga",
+      available_since: "2025-02-17",
+    },
+  ],
+};

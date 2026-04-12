@@ -1,0 +1,1 @@
+export { asi1_mini } from "./asi1-mini";

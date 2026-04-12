@@ -1,0 +1,51 @@
+import type { ModelEntry } from "@/data/schema";
+
+export const deepseekV3: ModelEntry = {
+  model: {
+    id: "deepseek-v3",
+    name: "DeepSeek V3",
+    creator: "deepseek",
+    family: "deepseek",
+    category: "mid",
+    status: "active",
+    modality_input: ["text"],
+    modality_output: ["text"],
+    context_window: 163840,
+    max_output_tokens: 163840,
+    is_open_source: true,
+    license: "mit",
+    architecture: "dense transformer",
+    knowledge: "2024-07",
+    release_date: "2025-01-20",
+    reasoning: false,
+    temperature: true,
+    capabilities: {
+      streaming: true,
+      function_calling: true,
+      json_mode: true,
+      system_prompt: true,
+      vision: false,
+    },
+    benchmarks: {
+      mmlu: 85.0,
+      humaneval: 80.0,
+      math_500: 70.0,
+    },
+    description: "Fast, efficient DeepSeek model with excellent coding capabilities.",
+    url: "https://deepseek.com",
+    documentation_url: "https://deepseek.com/docs",
+    tags: ["coding", "fast", "open-source"],
+    supportedOn: ["api"],
+    cost: { input: 1.25, output: 1.25 },
+  },
+  offers: [
+    {
+      provider_id: "togetherai",
+      provider_model_id: "deepseek-ai/DeepSeek-V3",
+      input_per_mtok: 1.25,
+      output_per_mtok: 1.25,
+      status: "ga",
+      available_since: "2025-01-20",
+    },
+  ],
+};

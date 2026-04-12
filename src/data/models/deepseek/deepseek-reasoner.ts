@@ -1,0 +1,52 @@
+import type { ModelEntry } from "@/data/schema";
+
+export const deepseekReasoner: ModelEntry = {
+  model: {
+    id: "deepseek-reasoner",
+    name: "DeepSeek Reasoner",
+    creator: "deepseek",
+    family: "deepseek-thinking",
+    category: "reasoning",
+    status: "active",
+    modality_input: ["text"],
+    modality_output: ["text"],
+    context_window: 128000,
+    max_output_tokens: 64000,
+    is_open_source: true,
+    license: "mit",
+    architecture: "dense transformer",
+    knowledge: "2025-09",
+    release_date: "2025-12-01",
+    reasoning: true,
+    temperature: true,
+    capabilities: {
+      streaming: true,
+      function_calling: true,
+      json_mode: true,
+      system_prompt: true,
+      extended_thinking: true,
+      vision: true,
+    },
+    benchmarks: {
+      mmlu: 75.0,
+      math_500: 85.0,
+    },
+    description: "DeepSeek's latest reasoning model with tool calling support.",
+    url: "https://deepseek.com",
+    documentation_url: "https://deepseek.com/docs",
+    tags: ["reasoning", "open-source", "chain-of-thought"],
+    supportedOn: ["api"],
+    cost: { input: 0.28, output: 0.42, cache_read: 0.028 },
+  },
+  offers: [
+    {
+      provider_id: "deepseek",
+      provider_model_id: "deepseek-reasoner",
+      input_per_mtok: 0.28,
+      output_per_mtok: 0.42,
+      cache_read_per_mtok: 0.028,
+      status: "ga",
+      available_since: "2025-12-01",
+    },
+  ],
+};

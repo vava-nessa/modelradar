@@ -1,0 +1,1 @@
+export { minimax_m2_1 } from "./minimax-m2-1";

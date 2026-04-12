@@ -1,0 +1,50 @@
+import type { ModelEntry } from "@/data/schema";
+
+export const gemini3FlashPreview: ModelEntry = {
+  model: {
+    id: "gemini-3-flash-preview",
+    name: "Gemini 3.0 Flash Preview",
+    creator: "google",
+    family: "gemini-flash",
+    category: "mid",
+    status: "active",
+    modality_input: ["text", "image", "pdf"],
+    modality_output: ["text"],
+    context_window: 1048576,
+    max_output_tokens: 65536,
+    is_open_source: false,
+    license: "proprietary",
+    knowledge: "2025-04",
+    release_date: "2025-09-01",
+    reasoning: true,
+    temperature: true,
+    capabilities: {
+      streaming: true,
+      function_calling: true,
+      json_mode: true,
+      json_schema: true,
+      system_prompt: true,
+      vision: true,
+      code_execution: true,
+      web_search: true,
+      prompt_caching: true,
+    },
+    description:
+      "Next-generation Gemini Flash model with improved reasoning and 1M context window.",
+    url: "https://ai.google.dev/gemini-api/docs/models",
+    documentation_url: "https://ai.google.dev/gemini-api/docs/models",
+    tags: ["fast", "long-context", "reasoning", "multimodal"],
+    supportedOn: ["api"],
+    cost: { input: 0.5, output: 3.0 },
+  },
+  offers: [
+    {
+      provider_id: "openrouter",
+      provider_model_id: "google/gemini-3-flash-preview",
+      input_per_mtok: 0.5,
+      output_per_mtok: 3.0,
+      status: "preview",
+      available_since: "2025-09-01",
+    },
+  ],
+};

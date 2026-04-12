@@ -1,0 +1,51 @@
+import type { ModelEntry } from "@/data/schema";
+
+export const gemma327B: ModelEntry = {
+  model: {
+    id: "gemma-3-27b-it",
+    name: "Gemma 3 27B",
+    creator: "google",
+    family: "gemma",
+    category: "mid",
+    status: "active",
+    modality_input: ["text", "image"],
+    modality_output: ["text"],
+    context_window: 131072,
+    max_output_tokens: 8192,
+    is_open_source: true,
+    license: "gemma",
+    architecture: "dense transformer",
+    knowledge: "2024-10",
+    release_date: "2025-03-12",
+    reasoning: false,
+    temperature: true,
+    capabilities: {
+      streaming: true,
+      function_calling: true,
+      json_mode: true,
+      json_schema: true,
+      system_prompt: true,
+      vision: true,
+    },
+    benchmarks: {
+      mmlu: 75.0,
+      humaneval: 75.0,
+    },
+    description: "Open-source multimodal Gemma model with strong performance.",
+    url: "https://ai.google.dev/gemini-api/docs/gemma",
+    documentation_url: "https://ai.google.dev/gemini-api/docs/gemma",
+    tags: ["open-source", "multimodal", "small"],
+    supportedOn: ["api", "local", "free"],
+    cost: { input: 0, output: 0 },
+  },
+  offers: [
+    {
+      provider_id: "google",
+      provider_model_id: "gemma-3-27b-it",
+      input_per_mtok: 0,
+      output_per_mtok: 0,
+      status: "ga",
+      available_since: "2025-03-12",
+    },
+  ],
+};

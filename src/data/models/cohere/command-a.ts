@@ -1,0 +1,46 @@
+import type { ModelEntry } from "@/data/schema";
+
+export const commandA: ModelEntry = {
+  model: {
+    id: "command-a",
+    name: "Command A",
+    creator: "cohere",
+    family: "command-a",
+    category: "mid",
+    status: "active",
+    modality_input: ["text"],
+    modality_output: ["text"],
+    context_window: 256000,
+    max_output_tokens: 8000,
+    is_open_source: true,
+    license: "community",
+    architecture: "transformer",
+    knowledge: "2024-06-01",
+    release_date: "2025-03-13",
+    reasoning: false,
+    temperature: true,
+    capabilities: {
+      streaming: true,
+      function_calling: true,
+      json_mode: true,
+      system_prompt: true,
+      vision: false,
+    },
+    description: "Cohere's latest mid-size model with extended context.",
+    url: "https://docs.cohere.com/docs/command-a",
+    documentation_url: "https://docs.cohere.com/docs/command-a",
+    tags: ["conversational", "extended-context"],
+    supportedOn: ["api"],
+    cost: { input: 2.5, output: 10.0 },
+  },
+  offers: [
+    {
+      provider_id: "cohere",
+      provider_model_id: "command-a-03-2025",
+      input_per_mtok: 2.5,
+      output_per_mtok: 10.0,
+      status: "ga",
+      available_since: "2025-03-13",
+    },
+  ],
+};

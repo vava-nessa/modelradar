@@ -1,0 +1,46 @@
+import type { ModelEntry } from "@/data/schema";
+
+export const grok3Mini: ModelEntry = {
+  model: {
+    id: "grok-3-mini",
+    name: "Grok 3 Mini",
+    creator: "xai",
+    family: "grok",
+    category: "mid",
+    status: "active",
+    modality_input: ["text"],
+    modality_output: ["text"],
+    context_window: 131072,
+    max_output_tokens: 8192,
+    is_open_source: false,
+    license: "proprietary",
+    knowledge: "2024-11",
+    release_date: "2025-02-17",
+    reasoning: true,
+    temperature: true,
+    capabilities: {
+      streaming: true,
+      function_calling: true,
+      json_mode: true,
+      system_prompt: true,
+      vision: false,
+    },
+    description: "Fast, affordable reasoning model from xAI.",
+    url: "https://x.ai/grok-3-mini",
+    documentation_url: "https://x.ai/docs",
+    tags: ["reasoning", "fast", "affordable"],
+    supportedOn: ["api"],
+    cost: { input: 0.3, output: 0.5, cache_read: 0.075 },
+  },
+  offers: [
+    {
+      provider_id: "xai",
+      provider_model_id: "grok-3-mini",
+      input_per_mtok: 0.3,
+      output_per_mtok: 0.5,
+      cache_read_per_mtok: 0.075,
+      status: "ga",
+      available_since: "2025-02-17",
+    },
+  ],
+};

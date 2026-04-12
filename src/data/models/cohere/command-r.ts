@@ -1,0 +1,53 @@
+import type { ModelEntry } from "@/data/schema";
+
+export const commandR: ModelEntry = {
+  model: {
+    id: "command-r",
+    name: "Command R",
+    creator: "cohere",
+    family: "command-r",
+    category: "mid",
+    status: "active",
+    modality_input: ["text"],
+    modality_output: ["text"],
+    context_window: 128000,
+    max_output_tokens: 4000,
+    is_open_source: true,
+    license: "community",
+    architecture: "transformer",
+    knowledge: "2024-06-01",
+    release_date: "2024-08-30",
+    reasoning: false,
+    temperature: true,
+    capabilities: {
+      streaming: true,
+      function_calling: true,
+      json_mode: true,
+      system_prompt: true,
+      vision: false,
+      fine_tuning: true,
+    },
+    benchmarks: {
+      mmlu: 72.0,
+      humaneval: 61.0,
+      math_500: 45.0,
+    },
+    description: "Cohere's mid-size conversational model optimized for RAG and tool use.",
+    url: "https://docs.cohere.com/docs/command-r",
+    documentation_url: "https://docs.cohere.com/docs/command-r",
+    tags: ["conversational", "rag", "tool-use"],
+    supportedOn: ["api", "free"],
+    cost: { input: 0.15, output: 0.6 },
+  },
+  offers: [
+    {
+      provider_id: "cohere",
+      provider_model_id: "command-r-08-2024",
+      input_per_mtok: 0.15,
+      output_per_mtok: 0.6,
+      rate_limit_rpm: 1000,
+      status: "ga",
+      available_since: "2024-08-30",
+    },
+  ],
+};

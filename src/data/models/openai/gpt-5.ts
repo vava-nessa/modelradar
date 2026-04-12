@@ -1,0 +1,45 @@
+import type { ModelEntry } from "@/data/schema";
+
+export const gpt5: ModelEntry = {
+  model: {
+    id: "gpt-5",
+    name: "GPT-5",
+    creator: "openai",
+    family: "gpt",
+    category: "flagship",
+    status: "active",
+    modality_input: ["text", "image"],
+    modality_output: ["text"],
+    context_window: 400000,
+    max_output_tokens: 128000,
+    is_open_source: false,
+    release_date: "2025-08-07",
+    reasoning: true,
+    temperature: true,
+    knowledge: "2024-10-01",
+    capabilities: {
+      streaming: true,
+      function_calling: true,
+      vision: true,
+      json_mode: true,
+      json_schema: true,
+      system_prompt: true,
+      structured_output: true,
+      prompt_caching: true,
+      batch_api: true,
+      fine_tuning: true,
+    },
+    description: "OpenAI's next-generation flagship model with advanced reasoning and multimodal capabilities.",
+    supportedOn: ["api"],
+  },
+  offers: [
+    {
+      provider_id: "fastrouter",
+      provider_model_id: "openai/gpt-5",
+      input_per_mtok: 1.25,
+      output_per_mtok: 10.0,
+      cache_read_per_mtok: 0.125,
+      status: "ga",
+    },
+  ],
+};

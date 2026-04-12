@@ -1,0 +1,58 @@
+import type { ModelEntry } from "@/data/schema";
+
+export const qwen3Coder30BA3B: ModelEntry = {
+  model: {
+    id: "qwen3-coder-30b-a3b",
+    name: "Qwen3 Coder 30B A3B",
+    creator: "qwen",
+    family: "qwen",
+    category: "code",
+    status: "active",
+    modality_input: ["text"],
+    modality_output: ["text"],
+    context_window: 160000,
+    max_output_tokens: 65536,
+    is_open_source: true,
+    license: "qwen3-community",
+    parameters: "30B total (3B active)",
+    architecture: "MoE",
+    knowledge: "2025-04",
+    release_date: "2025-07-31",
+    reasoning: false,
+    temperature: true,
+    capabilities: {
+      streaming: true,
+      function_calling: true,
+      json_mode: true,
+      json_schema: true,
+      system_prompt: true,
+      vision: false,
+      code_execution: true,
+    },
+    description:
+      "Qwen3 Coder specialized variant with MoE architecture. Optimized for code generation and debugging tasks.",
+    url: "https://qwenlm.github.io",
+    documentation_url: "https://qwenlm.github.io",
+    tags: ["open-source", "MoE", "coding", "specialized"],
+    supportedOn: ["api"],
+    cost: { input: 0.07, output: 0.27 },
+  },
+  offers: [
+    {
+      provider_id: "openrouter",
+      provider_model_id: "qwen/qwen3-coder-30b-a3b-instruct",
+      input_per_mtok: 0.07,
+      output_per_mtok: 0.27,
+      status: "ga",
+      available_since: "2025-07-31",
+    },
+    {
+      provider_id: "cerebras",
+      provider_model_id: "qwen3-coder-30b-a3b-instruct",
+      input_per_mtok: 0.6,
+      output_per_mtok: 1.2,
+      status: "ga",
+      available_since: "2025-07-31",
+    },
+  ],
+};

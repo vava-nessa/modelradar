@@ -1,0 +1,50 @@
+import type { ModelEntry } from "@/data/schema";
+
+export const deepseekR1Together: ModelEntry = {
+  model: {
+    id: "deepseek-r1",
+    name: "DeepSeek R1",
+    creator: "deepseek",
+    family: "deepseek-thinking",
+    category: "reasoning",
+    status: "active",
+    modality_input: ["text"],
+    modality_output: ["text"],
+    context_window: 163839,
+    max_output_tokens: 163839,
+    is_open_source: true,
+    license: "mit",
+    architecture: "dense transformer",
+    knowledge: "2024-07",
+    release_date: "2024-12-26",
+    reasoning: true,
+    temperature: true,
+    capabilities: {
+      streaming: true,
+      function_calling: false,
+      system_prompt: true,
+      extended_thinking: true,
+      vision: false,
+    },
+    benchmarks: {
+      mmlu: 75.0,
+      math_500: 85.0,
+    },
+    description: "DeepSeek's chain-of-thought reasoning model with open weights.",
+    url: "https://deepseek.com",
+    documentation_url: "https://deepseek.com/docs",
+    tags: ["reasoning", "open-source", "chain-of-thought"],
+    supportedOn: ["api", "free", "local"],
+    cost: { input: 3.0, output: 7.0 },
+  },
+  offers: [
+    {
+      provider_id: "togetherai",
+      provider_model_id: "deepseek-ai/DeepSeek-R1",
+      input_per_mtok: 3.0,
+      output_per_mtok: 7.0,
+      status: "ga",
+      available_since: "2024-12-26",
+    },
+  ],
+};

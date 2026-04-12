@@ -1,0 +1,45 @@
+import type { ModelEntry } from "@/data/schema";
+
+export const deepseekR1Turbo: ModelEntry = {
+  model: {
+    id: "deepseek-r1-turbo",
+    name: "DeepSeek R1 (Turbo)",
+    creator: "deepseek",
+    family: "deepseek-thinking",
+    category: "reasoning",
+    status: "active",
+    modality_input: ["text"],
+    modality_output: ["text"],
+    context_window: 64000,
+    max_output_tokens: 16000,
+    is_open_source: true,
+    license: "mit",
+    architecture: "dense transformer",
+    release_date: "2025-03-05",
+    reasoning: true,
+    temperature: true,
+    capabilities: {
+      streaming: true,
+      function_calling: true,
+      system_prompt: true,
+      extended_thinking: true,
+      vision: false,
+    },
+    description: "Fast variant of DeepSeek R1 with lower cost.",
+    url: "https://novita.ai",
+    documentation_url: "https://novita.ai/docs",
+    tags: ["reasoning", "fast", "open-source"],
+    supportedOn: ["api"],
+    cost: { input: 0.7, output: 2.5 },
+  },
+  offers: [
+    {
+      provider_id: "novita_ai",
+      provider_model_id: "deepseek-r1-turbo",
+      input_per_mtok: 0.7,
+      output_per_mtok: 2.5,
+      status: "ga",
+      available_since: "2025-03-05",
+    },
+  ],
+};

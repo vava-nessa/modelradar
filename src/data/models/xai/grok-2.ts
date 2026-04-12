@@ -1,0 +1,46 @@
+import type { ModelEntry } from "@/data/schema";
+
+export const grok2: ModelEntry = {
+  model: {
+    id: "grok-2",
+    name: "Grok 2",
+    creator: "xai",
+    family: "grok",
+    category: "flagship",
+    status: "active",
+    modality_input: ["text"],
+    modality_output: ["text"],
+    context_window: 131072,
+    max_output_tokens: 8192,
+    is_open_source: false,
+    license: "proprietary",
+    knowledge: "2024-08",
+    release_date: "2024-08-20",
+    reasoning: false,
+    temperature: true,
+    capabilities: {
+      streaming: true,
+      function_calling: true,
+      json_mode: true,
+      system_prompt: true,
+      vision: false,
+    },
+    description: "xAI's flagship model with real-time knowledge up to 2024.",
+    url: "https://x.ai/grok-2",
+    documentation_url: "https://x.ai/docs",
+    tags: ["flagship", "real-time"],
+    supportedOn: ["api"],
+    cost: { input: 2.0, output: 10.0, cache_read: 2.0 },
+  },
+  offers: [
+    {
+      provider_id: "xai",
+      provider_model_id: "grok-2",
+      input_per_mtok: 2.0,
+      output_per_mtok: 10.0,
+      cache_read_per_mtok: 2.0,
+      status: "ga",
+      available_since: "2024-08-20",
+    },
+  ],
+};

@@ -1,0 +1,52 @@
+import type { ModelEntry } from "@/data/schema";
+
+export const o1Mini: ModelEntry = {
+  model: {
+    id: "o1-mini",
+    name: "o1-mini",
+    creator: "openai",
+    family: "o-mini",
+    category: "reasoning",
+    status: "active",
+    modality_input: ["text"],
+    modality_output: ["text"],
+    context_window: 128000,
+    max_output_tokens: 65536,
+    is_open_source: false,
+    license: "proprietary",
+    knowledge: "2023-09",
+    release_date: "2024-09-12",
+    reasoning: true,
+    temperature: false,
+    capabilities: {
+      streaming: false,
+      function_calling: false,
+      json_schema: true,
+      system_prompt: true,
+      extended_thinking: true,
+      vision: false,
+    },
+    benchmarks: {
+      mmlu: 75.0,
+      humaneval: 85.0,
+      math_500: 65.0,
+    },
+    description: "Affordable reasoning model for code and math tasks.",
+    url: "https://platform.openai.com/docs/models/o1-mini",
+    documentation_url: "https://platform.openai.com/docs/models/o1-mini",
+    tags: ["reasoning", "small", "affordable"],
+    supportedOn: ["api"],
+    cost: { input: 1.1, output: 4.4, cache_read: 0.55 },
+  },
+  offers: [
+    {
+      provider_id: "openai",
+      provider_model_id: "o1-mini",
+      input_per_mtok: 1.1,
+      output_per_mtok: 4.4,
+      cache_read_per_mtok: 0.55,
+      status: "ga",
+      available_since: "2024-09-12",
+    },
+  ],
+};

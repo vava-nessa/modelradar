@@ -11,10 +11,57 @@ import type { Provider } from "@/data/schema";
 import { anthropic } from "./anthropic";
 import { azure } from "./azure";
 import { bedrock } from "./bedrock";
+import { cerebras } from "./cerebras";
+import { clarifai } from "./clarifai";
+import { cloudflareWorkersAI } from "./cloudflare-workers-ai";
+import { cohere } from "./cohere";
+import { deepinfra } from "./deepinfra";
 import { deepseek } from "./deepseek";
+import { fireworks_ai } from "./fireworks-ai";
+import { githubCopilot } from "./github-copilot";
+import { githubModels } from "./github-models";
+import { google } from "./google";
+import { groq } from "./groq";
+import { helicone } from "./helicone";
+import { sapAiCore } from "./sap-ai-core";
+import { cortecs } from "./cortecs";
+import { moark } from "./moark";
+import { nanoGpt } from "./nano-gpt";
+import { llmgateway } from "./llmgateway";
+import { morph } from "./morph";
+import { qiniuAi } from "./qiniu-ai";
+import { alibaba } from "./alibaba";
+import { alibabaCn } from "./alibaba-cn";
+import { huggingface } from "./huggingface";
+import { lmstudio } from "./lmstudio";
 import { mistral } from "./mistral";
+import { nebius } from "./nebius";
+import { novita_ai } from "./novita-ai";
+import { ollamaCloud } from "./ollama-cloud";
 import { openai } from "./openai";
 import { openrouter } from "./openrouter";
+import { perplexity } from "./perplexity";
+import { perplexityAgent } from "./perplexity-agent";
+import { scaleway } from "./scaleway";
+import { stackit } from "./stackit";
+import { togetherai } from "./togetherai";
+import { upstage } from "./upstage";
+import { v0 } from "./v0";
+import { venice } from "./venice";
+import { wandb } from "./wandb";
+import { vercel } from "./vercel";
+import { xai } from "./xai";
+import { minimax } from "./minimax";
+import { moonshotai } from "./moonshotai";
+import { stepfun } from "./stepfun";
+import { zhipuai } from "./zhipuai";
+import { modelscope } from "./modelscope";
+import { siliconflow } from "./siliconflow";
+import { siliconflowCn } from "./siliconflow-cn";
+import { abacus } from "./abacus";
+import { aihubmix } from "./aihubmix";
+import { ai302 } from "./302ai";
+import { jiekou } from "./jiekou";
 
 export const allProviders: Provider[] = [
   anthropic,
@@ -24,4 +71,51 @@ export const allProviders: Provider[] = [
   mistral,
   deepseek,
   azure,
+  cerebras,
+  clarifai,
+  cloudflareWorkersAI,
+  cohere,
+  deepinfra,
+  google,
+  groq,
+  huggingface,
+  lmstudio,
+  nebius,
+  novita_ai,
+  ollamaCloud,
+  xai,
+  fireworks_ai,
+  togetherai,
+  v0,
+  vercel,
+  githubCopilot,
+  githubModels,
+  perplexity,
+  perplexityAgent,
+  wandb,
+  venice,
+  upstage,
+  scaleway,
+  stackit,
+  minimax,
+  moonshotai,
+  stepfun,
+  zhipuai,
+  modelscope,
+  siliconflow,
+  siliconflowCn,
+  abacus,
+  aihubmix,
+  ai302,
+  jiekou,
+  helicone,
+  sapAiCore,
+  cortecs,
+  moark,
+  nanoGpt,
+  llmgateway,
+  morph,
+  qiniuAi,
+  alibaba,
+  alibabaCn,
 ];

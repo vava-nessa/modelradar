@@ -3,7 +3,8 @@ import type { Provider } from "@/data/schema";
 export const bedrock: Provider = {
   id: "bedrock",
   name: "AWS Bedrock",
-  description: "AWS managed service for foundation models. Enterprise-grade with IAM, VPC, and cross-region inference.",
+  description:
+    "AWS managed service for foundation models. Enterprise-grade with IAM, VPC, cross-region inference, and AgentCore for multi-agent workflows.",
   type: "cloud",
   status: "active",
   url: "https://aws.amazon.com/bedrock",

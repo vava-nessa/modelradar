@@ -1,0 +1,50 @@
+import type { ModelEntry } from "@/data/schema";
+
+export const pixtralLarge: ModelEntry = {
+  model: {
+    id: "pixtral-large",
+    name: "Pixtral Large",
+    creator: "mistral",
+    family: "pixtral",
+    category: "flagship",
+    status: "active",
+    modality_input: ["text", "image"],
+    modality_output: ["text"],
+    context_window: 128000,
+    max_output_tokens: 128000,
+    is_open_source: true,
+    license: "mistral",
+    architecture: "dense transformer",
+    knowledge: "2024-11",
+    release_date: "2024-11-01",
+    reasoning: false,
+    temperature: true,
+    capabilities: {
+      streaming: true,
+      function_calling: true,
+      json_mode: true,
+      system_prompt: true,
+      vision: true,
+    },
+    benchmarks: {
+      mmlu: 80.0,
+      humaneval: 75.0,
+    },
+    description: "Mistral's flagship multimodal model with vision support.",
+    url: "https://docs.mistral.ai/models/pixtral",
+    documentation_url: "https://docs.mistral.ai/models/pixtral",
+    tags: ["multimodal", "vision", "open-source"],
+    supportedOn: ["api"],
+    cost: { input: 2.0, output: 6.0 },
+  },
+  offers: [
+    {
+      provider_id: "mistral",
+      provider_model_id: "pixtral-large-latest",
+      input_per_mtok: 2.0,
+      output_per_mtok: 6.0,
+      status: "ga",
+      available_since: "2024-11-01",
+    },
+  ],
+};

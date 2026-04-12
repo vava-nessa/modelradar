@@ -1,0 +1,51 @@
+import type { ModelEntry } from "@/data/schema";
+
+export const codestral: ModelEntry = {
+  model: {
+    id: "codestral",
+    name: "Codestral",
+    creator: "mistral",
+    family: "codestral",
+    category: "code",
+    status: "active",
+    modality_input: ["text"],
+    modality_output: ["text"],
+    context_window: 256000,
+    max_output_tokens: 4096,
+    is_open_source: true,
+    license: "mistral",
+    architecture: "dense transformer",
+    knowledge: "2024-10",
+    release_date: "2024-05-29",
+    reasoning: false,
+    temperature: true,
+    capabilities: {
+      streaming: true,
+      function_calling: true,
+      json_mode: true,
+      system_prompt: true,
+      code_execution: true,
+      vision: false,
+    },
+    benchmarks: {
+      humaneval: 81.0,
+      mbpp: 83.0,
+    },
+    description: "Mistral's code-specialized model with strong coding benchmark performance.",
+    url: "https://docs.mistral.ai/models/codestral",
+    documentation_url: "https://docs.mistral.ai/models/codestral",
+    tags: ["code", "open-source", "coding"],
+    supportedOn: ["api", "local"],
+    cost: { input: 0.3, output: 0.9 },
+  },
+  offers: [
+    {
+      provider_id: "mistral",
+      provider_model_id: "codestral-latest",
+      input_per_mtok: 0.3,
+      output_per_mtok: 0.9,
+      status: "ga",
+      available_since: "2024-05-29",
+    },
+  ],
+};
