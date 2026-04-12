@@ -53,11 +53,11 @@ export function DataTable<TData>({
     <div className="flex flex-col gap-4">
       <div
         ref={containerRef}
-        className="relative overflow-auto"
-        style={{ height: "100%" }}
+        className="relative overflow-auto rounded-md border border-[var(--color-border)] shadow-sm"
+        style={{ maxHeight: "calc(100vh - 6rem)" }}
       >
         <table className="w-full">
-          <thead className="sticky top-14 z-20 bg-[var(--color-surface)] text-xs uppercase tracking-wider text-[var(--color-text-muted)] shadow-sm">
+          <thead className="sticky top-0 z-20 bg-[var(--color-surface)] text-xs uppercase tracking-wider text-[var(--color-text-muted)] shadow-sm">
             {table.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id}>
                 {headerGroup.headers.map((header, i) => (
