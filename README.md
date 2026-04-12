@@ -237,39 +237,82 @@ interface ModelCapabilities {
 
 ```typescript
 interface ModelBenchmarks {
-  // General reasoning
-  mmlu?: number;
-  mmlu_pro?: number;
-  gpqa_diamond?: number;
+  // ============ GENERAL REASONING ============
+  mmlu?: number;                  // Massive Multitask Language Understanding
+  mmlu_pro?: number;              // Harder variant with more challenging questions
+  gpqa_diamond?: number;          // Graduate-Level Google-Proof Q&A (expert-level)
+  arc_challenge?: number;         // Abstraction and Reasoning Corpus (AI2)
+  big_bench_hard?: number;       // BIG-Bench Hard subset
+  hellaswag?: number;            // Commonsense reasoning
+  truthfulqa?: number;           // Truthfulness against misleading questions
 
-  // Coding
-  humaneval?: number;
-  mbpp?: number;
-  swe_bench?: number;
-  verified_swe_bench?: number;   // SWE-Bench Verified (filtered, more reliable)
-  multi_swe_bench?: number;      // Multi-repo SWE-Bench
-  aider_polyglot?: number;
-  bigcodebench?: number;         // Newer, more comprehensive than HumanEval
-  polyglot_benchmark?: number;   // Multi-language coding
+  // ============ MATH ============
+  gsm8k?: number;                // Grade School Math 8K
+  gsm8k_plus?: number;           // Harder variant
+  math?: number;                 // Competition mathematics (AMC, AIME level)
+  math_500?: number;             // MATH benchmark (500 problems)
+  frontier_math?: number;        // Novel math problems
+  aime_2025?: number;            // American Invitational Mathematics Examination
 
-  // Math & reasoning
-  math_500?: number;
-  aime_2025?: number;
+  // ============ CODING ============
+  humaneval?: number;            // OpenAI's Python coding benchmark
+  mbpp?: number;                 // Mostly Basic Python Problems
+  mbpp_plus?: number;            // Harder variant
+  swe_bench?: number;            // Software Engineering (GitHub issues)
+  verified_swe_bench?: number;   // Filtered SWE-Bench subset
+  swe_bench_lite?: number;       // Faster variant (500 samples)
+  multi_swe_bench?: number;      // Multi-file scenarios
+  bigcodebench?: number;         // Improved coding benchmark
+  bigcodebench_hard?: number;    // Harder variant
+  aider_polyglot?: number;       // Multi-language coding (12 languages)
+  livecodebench?: number;        // Continuous evaluation
+  sandbox_eval?: number;          // Sandboxed coding
+  simpler_eval?: number;          // Simplified coding
+  bfcl?: number;                 // Berkeley Function Calling
+  nexus?: number;                // Code editing
 
-  // Arena & composite
-  arena_elo?: number;
-  livebench?: number;
+  // ============ AGENTIC ============
+  tau_bench?: number;            // Tool-augmented reasoning
+  tau_bench_human?: number;      // Human-evaluated tool usage
+  webarena?: number;             // Web shopping/forum tasks
+  miniwoz?: number;              // Dialogue tasks
+  weblinx?: number;              // Web instruction following
+  terminal_bench?: number;       // CLI/terminal tasks
+  os_bench?: number;             // OS task completion
+  swe_agent?: number;             // Software engineering agent
+  ml_bench?: number;             // ML task execution
 
-  // Agentic
-  tau_bench?: number;
-  terminal_bench?: number;       // Terminal/CLI tasks
+  // ============ CYBERSECURITY ============
+  cybench?: number;              // Cybersecurity CTF-style
+  crack_bench?: number;          // Password cracking
 
-  // Security
-  cybench?: number;              // Cybersecurity coding tasks
+  // ============ MULTIMODAL ============
+  mmmu?: number;                 // Multi-modal understanding
+  mathvista?: number;             // Visual math reasoning
+  chart_qa?: number;              // Chart understanding
+  docvqa?: number;               // Document VQA
 
+  // ============ SAFETY ============
+  prompt_injection?: number;     // Adversarial prompts
+  owase_bench?: number;          // Agent safety evaluation
+
+  // ============ COMPOSITE & ARENA ============
+  arena_elo?: number;            // Chatbot Arena (LMSYS)
+  livebench?: number;            // Continuous evaluation
+  tier_list?: number;            // TIER List (coding-focused)
+  scale_leaderboard?: number;    // Scale AI coding leaderboard
+
+  // ============ KNOWLEDGE ============
+  humanity_last_exam?: number;   // Terminal knowledge (beyond training)
+  c_eval?: number;               // Chinese evaluation
+  cmmlu?: number;                // Chinese MMLU
+
+  // ============ CUSTOM ============
   custom?: Record<string, number>;
 }
 ```
+
+> 📖 **See also:** [modelradar.ai/benchmarks](https://modelradar.ai/benchmarks) — glossary with full descriptions and scoring methodology.
 
 ### Provider Interface (`src/data/schema/provider.ts`)
 
@@ -459,23 +502,52 @@ export const claudeSonnet4: ModelEntry = {
 
 ## Column Reference
 
+### Main Table Columns
+
+> 📖 Table supports horizontal scroll with sticky first column (Model name).
+
 | Column | Field | Sortable | Filterable | Filter Type |
 |--------|-------|----------|------------|-------------|
 | Model | `name` | ✅ | ✅ | text |
 | Family | `family` | ✅ | ✅ | select |
 | Creator | `creator` | ✅ | ✅ | select |
-| Category | `category` | ✅ | ✅ | multi-select |
+| Cat | `category` | ✅ | ✅ | multi-select |
 | Access | `supportedOn` | ❌ | ✅ | multi-select |
 | Context | `context_window` | ✅ | ✅ | range |
-| In $/M | `cost.input` | ✅ | ✅ | range |
-| Out $/M | `cost.output` | ✅ | ✅ | range |
-| R (Reasoning) | `reasoning` | ✅ | ✅ | boolean |
-| TC (Tool Call) | `capabilities.function_calling` | ✅ | ✅ | boolean |
+| In | `cost.input` | ✅ | ✅ | range |
+| Out | `cost.output` | ✅ | ✅ | range |
+| R | `reasoning` | ✅ | ✅ | boolean |
+| TC | `capabilities.function_calling` | ✅ | ✅ | boolean |
 | Open | `is_open_source` | ❌ | ✅ | boolean |
-| Knowledge | `knowledge` | ✅ | ❌ | — |
-| Released | `release_date` | ✅ | ❌ | — |
-| Docs | `documentation_url` | ❌ | ❌ | — |
-| ★ | — (display) | ❌ | ❌ | — |
+
+### Benchmark Columns
+
+| Column | Field | Sortable | Description |
+|--------|-------|----------|-------------|
+| **SWE** | `benchmarks.swe_bench` | ✅ | SWE-Bench software engineering |
+| **SWE✓** | `benchmarks.verified_swe_bench` | ✅ | SWE-Bench Verified (filtered) |
+| **HE** | `benchmarks.humaneval` | ✅ | HumanEval Python coding |
+| **MBPP** | `benchmarks.mbpp` | ✅ | Mostly Basic Python Problems |
+| **BCB** | `benchmarks.bigcodebench` | ✅ | BigCodeBench coding |
+| **Aider** | `benchmarks.aider_polyglot` | ✅ | Multi-language coding |
+| **BFCL** | `benchmarks.bfcl` | ✅ | Berkeley Function Calling |
+| **MMLU** | `benchmarks.mmlu` | ✅ | Massive Multitask Language |
+| **GPQA** | `benchmarks.gpqa_diamond` | ✅ | Graduate-level reasoning |
+| **Math** | `benchmarks.math_500` | ✅ | Competition math |
+| **GSM8K** | `benchmarks.gsmm8k` | ✅ | Grade school math |
+| **AIME** | `benchmarks.aime_2025` | ✅ | Math competition |
+| **Arena** | `benchmarks.arena_elo` | ✅ | Chatbot Arena ELO |
+| **Live** | `benchmarks.livebench` | ✅ | LiveBench continuous |
+| **TIER** | `benchmarks.tier_list` | ✅ | TIER List coding score |
+| **HLE** | `benchmarks.humanity_last_exam` | ✅ | Humanity's Last Exam |
+| **TAU** | `benchmarks.tau_bench` | ✅ | Tool-augmented reasoning |
+| **Term** | `benchmarks.terminal_bench` | ✅ | Terminal/CLI tasks |
+| **Knt** | `knowledge` | ✅ | Training knowledge cutoff |
+| **Rel** | `release_date` | ✅ | Release date |
+| **Docs** | `documentation_url` | ❌ | Documentation link |
+| ★ | — (display) | ❌ | Favorite toggle |
+
+> 📖 See [ModelBenchmarks interface](#modelbenchmarks) for full list of supported benchmarks.
 
 ---
 

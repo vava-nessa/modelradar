@@ -11,12 +11,13 @@ function Index() {
   return (
     <main className="px-4 py-6">
       <DataTable
-          data={allModels}
-          columns={modelColumns}
-          onRowClick={(model) => {
-            window.location.href = `/models/${model.id}`;
-          }}
-        />
+        data={allModels}
+        columns={modelColumns}
+        onRowClick={(model) => {
+          window.location.href = `/models/${model.id}`;
+        }}
+        stickyFirstColumn={true}
+      />
     </main>
   );
 }

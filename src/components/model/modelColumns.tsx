@@ -10,7 +10,62 @@ import { createColumnHelper } from "@tanstack/react-table";
 
 const columnHelper = createColumnHelper<Model>();
 
+/** 📖 Compact benchmark score cell with color coding */
+function BenchmarkCell({ score, max = 100 }: { score: number; max?: number }) {
+  const pct = score / max;
+  const colorClass =
+    pct >= 0.9
+      ? "text-emerald-400 font-semibold"
+      : pct >= 0.7
+        ? "text-green-400"
+        : pct >= 0.5
+          ? "text-yellow-400"
+          : "text-[var(--color-text-muted)]";
+  return (
+    <span className={colorClass} title={`${score}/${max}`}>
+      {score.toFixed(score % 1 === 0 ? 0 : 1)}
+    </span>
+  );
+}
+
+/** 📖 SWE score cell with special styling */
+function SweBenchmarkCell({ score }: { score: number }) {
+  return (
+    <span
+      className={
+        score >= 70
+          ? "text-emerald-400 font-semibold"
+          : score >= 50
+            ? "text-green-400"
+            : "text-[var(--color-text-muted)]"
+      }
+      title={`SWE-Bench: ${score}%`}
+    >
+      {score.toFixed(1)}
+    </span>
+  );
+}
+
+/** 📖 Arena ELO cell with ranking colors */
+function ArenaCell({ score }: { score: number }) {
+  return (
+    <span
+      className={
+        score >= 1400
+          ? "text-purple-400 font-semibold"
+          : score >= 1300
+            ? "text-blue-400"
+            : "text-[var(--color-text-muted)]"
+      }
+      title={`Arena ELO: ${score}`}
+    >
+      {score}
+    </span>
+  );
+}
+
 export const modelColumns = [
+  // ============ IDENTITY ============
   columnHelper.accessor("name", {
     header: "Model",
     cell: (info) => info.getValue(),
@@ -35,7 +90,7 @@ export const modelColumns = [
   }),
 
   columnHelper.accessor("category", {
-    header: "Category",
+    header: "Cat",
     enableSorting: true,
     enableColumnFilter: true,
     filterFn: "arrIncludes",
@@ -71,6 +126,7 @@ export const modelColumns = [
     },
   }),
 
+  // ============ CONTEXT & COST ============
   columnHelper.accessor("context_window", {
     header: "Context",
     cell: (info) => formatTokens(info.getValue()),
@@ -81,7 +137,8 @@ export const modelColumns = [
   }),
 
   columnHelper.accessor("cost", {
-    header: "In $/M",
+    id: "cost_input",
+    header: "In",
     cell: (info) => {
       const cost = info.getValue();
       return cost ? `$${cost.input}` : "—";
@@ -93,7 +150,8 @@ export const modelColumns = [
   }),
 
   columnHelper.accessor("cost", {
-    header: "Out $/M",
+    id: "cost_output",
+    header: "Out",
     cell: (info) => {
       const cost = info.getValue();
       return cost ? `$${cost.output}` : "—";
@@ -104,6 +162,7 @@ export const modelColumns = [
     meta: { filterVariant: "range" },
   }),
 
+  // ============ CAPABILITIES ============
   columnHelper.accessor("reasoning", {
     header: "R",
     cell: (info) => (info.getValue() ? "✓" : "—"),
@@ -131,14 +190,236 @@ export const modelColumns = [
     meta: { filterVariant: "boolean" },
   }),
 
+  // ============ CODING BENCHMARKS ============
+  columnHelper.accessor((row) => row.benchmarks?.swe_bench, {
+    id: "swe_bench",
+    header: "SWE",
+    cell: (info) => {
+      const score = info.getValue();
+      if (score === undefined) return "—";
+      return <SweBenchmarkCell score={score} />;
+    },
+    enableSorting: true,
+    enableColumnFilter: false,
+  }),
+
+  columnHelper.accessor((row) => row.benchmarks?.verified_swe_bench, {
+    id: "verified_swe_bench",
+    header: "SWE✓",
+    cell: (info) => {
+      const score = info.getValue();
+      if (score === undefined) return "—";
+      return <SweBenchmarkCell score={score} />;
+    },
+    enableSorting: true,
+    enableColumnFilter: false,
+  }),
+
+  columnHelper.accessor((row) => row.benchmarks?.humaneval, {
+    id: "humaneval",
+    header: "HE",
+    cell: (info) => {
+      const score = info.getValue();
+      if (score === undefined) return "—";
+      return <BenchmarkCell score={score} />;
+    },
+    enableSorting: true,
+    enableColumnFilter: false,
+  }),
+
+  columnHelper.accessor((row) => row.benchmarks?.mbpp, {
+    id: "mbpp",
+    header: "MBPP",
+    cell: (info) => {
+      const score = info.getValue();
+      if (score === undefined) return "—";
+      return <BenchmarkCell score={score} />;
+    },
+    enableSorting: true,
+    enableColumnFilter: false,
+  }),
+
+  columnHelper.accessor((row) => row.benchmarks?.bigcodebench, {
+    id: "bigcodebench",
+    header: "BCB",
+    cell: (info) => {
+      const score = info.getValue();
+      if (score === undefined) return "—";
+      return <BenchmarkCell score={score} />;
+    },
+    enableSorting: true,
+    enableColumnFilter: false,
+  }),
+
+  columnHelper.accessor((row) => row.benchmarks?.aider_polyglot, {
+    id: "aider_polyglot",
+    header: "Aider",
+    cell: (info) => {
+      const score = info.getValue();
+      if (score === undefined) return "—";
+      return <BenchmarkCell score={score} />;
+    },
+    enableSorting: true,
+    enableColumnFilter: false,
+  }),
+
+  columnHelper.accessor((row) => row.benchmarks?.bfcl, {
+    id: "bfcl",
+    header: "BFCL",
+    cell: (info) => {
+      const score = info.getValue();
+      if (score === undefined) return "—";
+      return <BenchmarkCell score={score} />;
+    },
+    enableSorting: true,
+    enableColumnFilter: false,
+  }),
+
+  // ============ REASONING & MATH ============
+  columnHelper.accessor((row) => row.benchmarks?.mmlu, {
+    id: "mmlu",
+    header: "MMLU",
+    cell: (info) => {
+      const score = info.getValue();
+      if (score === undefined) return "—";
+      return <BenchmarkCell score={score} />;
+    },
+    enableSorting: true,
+    enableColumnFilter: false,
+  }),
+
+  columnHelper.accessor((row) => row.benchmarks?.gpqa_diamond, {
+    id: "gpqa_diamond",
+    header: "GPQA",
+    cell: (info) => {
+      const score = info.getValue();
+      if (score === undefined) return "—";
+      return <BenchmarkCell score={score} />;
+    },
+    enableSorting: true,
+    enableColumnFilter: false,
+  }),
+
+  columnHelper.accessor((row) => row.benchmarks?.math_500, {
+    id: "math_500",
+    header: "Math",
+    cell: (info) => {
+      const score = info.getValue();
+      if (score === undefined) return "—";
+      return <BenchmarkCell score={score} />;
+    },
+    enableSorting: true,
+    enableColumnFilter: false,
+  }),
+
+  columnHelper.accessor((row) => row.benchmarks?.gsm8k, {
+    id: "gsm8k",
+    header: "GSM8K",
+    cell: (info) => {
+      const score = info.getValue();
+      if (score === undefined) return "—";
+      return <BenchmarkCell score={score} />;
+    },
+    enableSorting: true,
+    enableColumnFilter: false,
+  }),
+
+  columnHelper.accessor((row) => row.benchmarks?.aime_2025, {
+    id: "aime_2025",
+    header: "AIME",
+    cell: (info) => {
+      const score = info.getValue();
+      if (score === undefined) return "—";
+      return <BenchmarkCell score={score} />;
+    },
+    enableSorting: true,
+    enableColumnFilter: false,
+  }),
+
+  // ============ ARENA & COMPOSITE ============
+  columnHelper.accessor((row) => row.benchmarks?.arena_elo, {
+    id: "arena_elo",
+    header: "Arena",
+    cell: (info) => {
+      const score = info.getValue();
+      if (score === undefined) return "—";
+      return <ArenaCell score={score} />;
+    },
+    enableSorting: true,
+    enableColumnFilter: false,
+  }),
+
+  columnHelper.accessor((row) => row.benchmarks?.livebench, {
+    id: "livebench",
+    header: "Live",
+    cell: (info) => {
+      const score = info.getValue();
+      if (score === undefined) return "—";
+      return <BenchmarkCell score={score} />;
+    },
+    enableSorting: true,
+    enableColumnFilter: false,
+  }),
+
+  columnHelper.accessor((row) => row.benchmarks?.tier_list, {
+    id: "tier_list",
+    header: "TIER",
+    cell: (info) => {
+      const score = info.getValue();
+      if (score === undefined) return "—";
+      return <BenchmarkCell score={score} />;
+    },
+    enableSorting: true,
+    enableColumnFilter: false,
+  }),
+
+  // ============ KNOWLEDGE ============
+  columnHelper.accessor((row) => row.benchmarks?.humanity_last_exam, {
+    id: "humanity_last_exam",
+    header: "HLE",
+    cell: (info) => {
+      const score = info.getValue();
+      if (score === undefined) return "—";
+      return <BenchmarkCell score={score} />;
+    },
+    enableSorting: true,
+    enableColumnFilter: false,
+  }),
+
+  // ============ AGENTIC ============
+  columnHelper.accessor((row) => row.benchmarks?.tau_bench, {
+    id: "tau_bench",
+    header: "TAU",
+    cell: (info) => {
+      const score = info.getValue();
+      if (score === undefined) return "—";
+      return <BenchmarkCell score={score} />;
+    },
+    enableSorting: true,
+    enableColumnFilter: false,
+  }),
+
+  columnHelper.accessor((row) => row.benchmarks?.terminal_bench, {
+    id: "terminal_bench",
+    header: "Term",
+    cell: (info) => {
+      const score = info.getValue();
+      if (score === undefined) return "—";
+      return <BenchmarkCell score={score} />;
+    },
+    enableSorting: true,
+    enableColumnFilter: false,
+  }),
+
+  // ============ DATES & LINKS ============
   columnHelper.accessor("knowledge", {
-    header: "Knowledge",
+    header: "Knt",
     cell: (info) => info.getValue() || "—",
     enableSorting: true,
   }),
 
   columnHelper.accessor("release_date", {
-    header: "Released",
+    header: "Rel",
     cell: (info) =>
       new Date(info.getValue()).toLocaleDateString("en-US", {
         month: "short",

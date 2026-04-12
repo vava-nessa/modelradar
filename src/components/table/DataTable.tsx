@@ -15,12 +15,15 @@ interface DataTableProps<TData> {
   data: TData[];
   columns: ColumnDef<TData, unknown>[];
   onRowClick?: (row: TData) => void;
+  /** 📖 Sticky first column (e.g. model name) for horizontal scroll context */
+  stickyFirstColumn?: boolean;
 }
 
 export function DataTable<TData>({
   data,
   columns,
   onRowClick,
+  stickyFirstColumn = false,
 }: DataTableProps<TData>) {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
@@ -50,17 +53,20 @@ export function DataTable<TData>({
     <div className="flex flex-col gap-4">
       <div
         ref={containerRef}
-        className="overflow-auto rounded-md border border-[var(--color-border)]"
+        className="relative overflow-auto rounded-md border border-[var(--color-border)]"
         style={{ maxHeight: "70vh" }}
       >
         <table className="w-full">
-          <thead className="sticky top-0 z-10 bg-[var(--color-surface)] text-xs uppercase text-[var(--color-text-muted)]">
+          <thead className="sticky top-0 z-20 bg-[var(--color-surface)] text-xs uppercase text-[var(--color-text-muted)]">
             {table.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id}>
-                {headerGroup.headers.map((header) => (
+                {headerGroup.headers.map((header, i) => (
                   <th
                     key={header.id}
-                    className="px-3 py-2 text-left font-medium"
+                    className={`
+                      px-3 py-2 text-left font-medium
+                      ${stickyFirstColumn && i === 0 ? "sticky left-0 z-30 bg-[var(--color-surface)]" : ""}
+                    `}
                     onClick={header.column.getCanSort() ? header.column.getToggleSortingHandler() : undefined}
                     style={{ cursor: header.column.getCanSort() ? "pointer" : "default" }}
                   >
@@ -84,8 +90,14 @@ export function DataTable<TData>({
                 className="cursor-pointer border-t border-[var(--color-border)] hover:bg-[var(--color-surface)]"
                 onClick={() => onRowClick?.(row.original)}
               >
-                {row.getVisibleCells().map((cell) => (
-                  <td key={cell.id} className="px-3 py-2">
+                {row.getVisibleCells().map((cell, i) => (
+                  <td
+                    key={cell.id}
+                    className={`
+                      px-3 py-2
+                      ${stickyFirstColumn && i === 0 ? "sticky left-0 z-10 bg-[var(--color-bg)]" : ""}
+                    `}
+                  >
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </td>
                 ))}

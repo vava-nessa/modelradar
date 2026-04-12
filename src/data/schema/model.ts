@@ -101,45 +101,146 @@ export interface ModelCost {
 /**
  * 📖 Scores de benchmarks — coding & reasoning focused
  * Tous optionnels car chaque modèle publie des scores différents.
+ *
+ * Catégories de benchmarks :
+ * - General Reasoning: MMLU, MMLU Pro, GPQA, ARC, BIG-Bench Hard, HellaSwag, TruthfulQA
+ * - Math: GSM8K, GSM8K Plus, MATH, FrontierMath, AIME
+ * - Coding: HumanEval, MBPP, SWE-Bench, BigCodeBench, Aider, CyberSec
+ * - Agentic: TAU-Bench, WebArena, MiniWoz, BFCL
+ * - Multimodal: MMMU, MMT, MathVista
+ * - Safety: Prompt Injection, OWASE-Bench
+ * - Composite: LiveBench, Chatbot Arena (LMSYS), TIER List
+ * - Knowledge: Humanity's Last Exam (HLE)
+ *
+ * @see https://modelradar.ai/benchmarks — glossary and descriptions
  */
 export interface ModelBenchmarks {
-  // 📖 General reasoning
+  // ============ GENERAL REASONING ============
+  /** 📖 MMLU — Massive Multitask Language Understanding (5-shot, ~0.6% random) */
   mmlu?: number;
+  /** 📖 MMLU Pro — Harder variant with more challenging questions */
   mmlu_pro?: number;
+  /** 📖 GPQA Diamond — Graduate-Level Google-Proof Q&A (expert-level) */
   gpqa_diamond?: number;
+  /** 📖 ARC Challenge — Abstraction and Reasoning Corpus (AI2) */
+  arc_challenge?: number;
+  /** 📖 BIG-Bench Hard — Subset of BIG-Bench with deterministic scoring */
+  big_bench_hard?: number;
+  /** 📖 HellaSwag — Commonsense reasoning (10-shot, ~50% random) */
+  hellaswag?: number;
+  /** 📖 TruthfulQA — Truthfulness against misleading questions */
+  truthfulqa?: number;
 
-  // 📖 Coding
-  humaneval?: number;
-  mbpp?: number;
-  swe_bench?: number;
-  /** 📖 SWE-Bench Verified — sous-ensemble filtré, plus fiable que swe_bench */
-  verified_swe_bench?: number;
-  /** 📖 Multi-repo SWE-Bench — scénarios multi-fichiers, plus réaliste */
-  multi_swe_bench?: number;
-  aider_polyglot?: number;
-  /** 📖 BigCodeBench — benchmark coding plus récent et complet que HumanEval */
-  bigcodebench?: number;
-  /** 📖 Multi-language coding benchmark (pas que Python) */
-  polyglot_benchmark?: number;
-
-  // 📖 Math & reasoning
+  // ============ MATH ============
+  /** 📖 GSM8K — Grade School Math 8K (district-level) */
+  gsm8k?: number;
+  /** 📖 GSM8K Plus — Harder variant with more complex reasoning */
+  gsm8k_plus?: number;
+  /** 📖 MATH — Competition mathematics (AMC, AIME level) */
+  math?: number;
+  /** 📖 MATH 500 — MATH benchmark with 500 problems (standard dataset) */
   math_500?: number;
+  /** 📖 FrontierMath — Novel math problems requiring extended reasoning */
+  frontier_math?: number;
+  /** 📖 AIME 2025 — American Invitational Mathematics Examination */
   aime_2025?: number;
 
-  // 📖 Arena & composite
-  arena_elo?: number;
-  livebench?: number;
+  // ============ CODING ============
+  /** 📖 HumanEval — OpenAI's Python coding benchmark (0-shot) */
+  humaneval?: number;
+  /** 📖 MBPP — Mostly Basic Python Problems (San Francisco基準) */
+  mbpp?: number;
+  /** 📖 MBPP Plus — Harder variant requiring more complex solutions */
+  mbpp_plus?: number;
+  /** 📖 SWE-Bench — Software Engineering challenges from real GitHub issues */
+  swe_bench?: number;
+  /** 📖 SWE-Bench Verified — Filtered subset with reliable annotations */
+  verified_swe_bench?: number;
+  /** 📖 SWE-Bench Lite — Faster variant with 500 samples */
+  swe_bench_lite?: number;
+  /** 📖 Multi-repo SWE-Bench — Multi-file scenarios, more realistic */
+  multi_swe_bench?: number;
+  /** 📖 BigCodeBench — Improved coding benchmark (Hard subset) */
+  bigcodebench?: number;
+  /** 📖 BigCodeBench Hard — Harder variant requiring deeper reasoning */
+  bigcodebench_hard?: number;
+  /** 📖 Aider Polyglot — Multi-language coding (12 languages) */
+  aider_polyglot?: number;
+  /** 📖 LiveCodeBench — Aggregate across time (fresh problems) */
+  livecodebench?: number;
+  /** 📖 SandboxEval — Autonomous coding in sandboxed environments */
+  sandbox_eval?: number;
+  /** 📖 SimplerEval — Simplified coding benchmark */
+  simpler_eval?: number;
+  /** 📖 BFCL — Berkeley Function Calling Leaderboard */
+  bfcl?: number;
+  /** 📖 Nexus — Code editing benchmark */
+  nexus?: number;
 
-  // 📖 Agentic
+  // ============ AGENTIC ============
+  /** 📖 TAU-Bench — Tool-augmented reasoning (Airline, Weather) */
   tau_bench?: number;
-  /** 📖 Terminal/CLI tasks benchmark */
+  /** 📖 TAU-Bench Human — Human-evaluated tool usage */
+  tau_bench_human?: number;
+  /** 📖 WebArena — Web shopping, forum navigation tasks */
+  webarena?: number;
+  /** 📖 MiniWoz — Mini WoZ dialogue tasks */
+  miniwoz?: number;
+  /** 📖 WebLINX — Web-based instruction following */
+  weblinx?: number;
+  /** 📖 Terminal Bench — CLI/terminal task completion */
   terminal_bench?: number;
+  /** 📖 OS-Bench — Operating system task completion */
+  os_bench?: number;
+  /** 📖 SWE-Agent — Software engineering agent tasks */
+  swe_agent?: number;
+  /** 📖 ML-Bench — Machine learning task execution */
+  ml_bench?: number;
 
-  // 📖 Security
-  /** 📖 Cybersecurity coding tasks */
+  // ============ CYBERSECURITY ============
+  /** 📖 CyBench — Cybersecurity CTF-style challenges */
   cybench?: number;
+  /** 📖 Crack-bench — Password cracking and crypto challenges */
+  crack_bench?: number;
 
-  // 📖 Catch-all for benchmarks not covered above
+  // ============ MULTIMODAL ============
+  /** 📖 MMMU — Multi-modal Multi-disciplinary Understanding */
+  mmmu?: number;
+  /** 📖 MathVista — Mathematical visual reasoning */
+  mathvista?: number;
+  /** 📖 Chart QA — Chart understanding and question answering */
+  chart_qa?: number;
+  /** 📖 DocVQA — Document visual question answering */
+  docvqa?: number;
+
+  // ============ SAFETY & ALIGNMENT ============
+  /** 📖 Prompt Injection — Instruction-following under adversarial prompts */
+  prompt_injection?: number;
+  /** 📖 OWASE-Bench — Open-world agent safety evaluation */
+  owase_bench?: number;
+
+  // ============ COMPOSITE & ARENA ============
+  /** 📖 Chatbot Arena (LMSYS) — Human preference ranking (Elo) */
+  arena_elo?: number;
+  /** 📖 LiveBench — Continuous evaluation with recent data */
+  livebench?: number;
+  /** 📖 TIER List — Coding-focused evaluation from the community */
+  tier_list?: number;
+  /** 📖 Scale AI Leaderboard — Aggregated coding leaderboard */
+  scale_leaderboard?: number;
+
+  // ============ KNOWLEDGE & EDUCATION ============
+  /** 📖 Humanity's Last Exam — Terminal knowledge benchmark (beyond training) */
+  humanity_last_exam?: number;
+  /** 📖 MMLU 5-shot (standard, redundant with mmlu but explicit) */
+  mmlu_5shot?: number;
+  /** 📖 C-Eval — Chinese evaluation benchmark */
+  c_eval?: number;
+  /** 📖 CMMLU — Chinese Massive Multitask Language Understanding */
+  cmmlu?: number;
+
+  // ============ CUSTOM / OTHER ============
+  /** 📖 Catch-all for benchmarks not covered above (custom benchmarks) */
   custom?: Record<string, number>;
 }
 

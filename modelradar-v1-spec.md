@@ -172,20 +172,92 @@ export interface ModelCapabilities {
   extended_thinking?: boolean;
 }
 
-/** Scores de benchmarks (tous optionnels car chaque modèle publie des scores différents) */
+/**
+ * 📖 Scores de benchmarks — coding & reasoning focused
+ * Tous optionnels car chaque modèle publie des scores différents.
+ *
+ * Catégories de benchmarks :
+ * - General Reasoning: MMLU, MMLU Pro, GPQA, ARC, BIG-Bench Hard, HellaSwag, TruthfulQA
+ * - Math: GSM8K, GSM8K Plus, MATH, FrontierMath, AIME
+ * - Coding: HumanEval, MBPP, SWE-Bench, BigCodeBench, Aider, CyberSec
+ * - Agentic: TAU-Bench, WebArena, MiniWoz, BFCL
+ * - Multimodal: MMMU, MMT, MathVista
+ * - Safety: Prompt Injection, OWASE-Bench
+ * - Composite: LiveBench, Chatbot Arena (LMSYS), TIER List
+ * - Knowledge: Humanity's Last Exam (HLE)
+ */
 export interface ModelBenchmarks {
-  mmlu?: number;
-  mmlu_pro?: number;
-  gpqa_diamond?: number;
-  humaneval?: number;
-  swe_bench?: number;
-  math_500?: number;
-  aime_2025?: number;
-  arena_elo?: number;
-  livebench?: number;
-  tau_bench?: number;
-  aider_polyglot?: number;
-  /** Benchmarks custom non couverts par les champs ci-dessus */
+  // ============ GENERAL REASONING ============
+  mmlu?: number;                  // Massive Multitask Language Understanding
+  mmlu_pro?: number;              // Harder variant with challenging questions
+  gpqa_diamond?: number;          // Graduate-Level Google-Proof Q&A
+  arc_challenge?: number;         // Abstraction and Reasoning Corpus
+  big_bench_hard?: number;       // BIG-Bench Hard subset
+  hellaswag?: number;            // Commonsense reasoning
+  truthfulqa?: number;           // Truthfulness evaluation
+
+  // ============ MATH ============
+  gsm8k?: number;                // Grade School Math 8K
+  gsm8k_plus?: number;           // Harder variant
+  math?: number;                 // Competition mathematics
+  math_500?: number;             // MATH benchmark (500 problems)
+  frontier_math?: number;         // Novel math problems
+  aime_2025?: number;            // American Invitational Mathematics Exam
+
+  // ============ CODING ============
+  humaneval?: number;            // OpenAI Python coding benchmark
+  mbpp?: number;                // Mostly Basic Python Problems
+  mbpp_plus?: number;            // Harder variant
+  swe_bench?: number;           // Software Engineering (GitHub issues)
+  verified_swe_bench?: number;   // Filtered SWE-Bench subset
+  swe_bench_lite?: number;      // Faster variant (500 samples)
+  multi_swe_bench?: number;     // Multi-file scenarios
+  bigcodebench?: number;        // Improved coding benchmark
+  bigcodebench_hard?: number;   // Harder variant
+  aider_polyglot?: number;      // Multi-language coding
+  livecodebench?: number;        // Continuous evaluation
+  sandbox_eval?: number;         // Sandboxed coding
+  simpler_eval?: number;        // Simplified coding
+  bfcl?: number;               // Berkeley Function Calling
+  nexus?: number;              // Code editing
+
+  // ============ AGENTIC ============
+  tau_bench?: number;           // Tool-augmented reasoning
+  tau_bench_human?: number;     // Human-evaluated tool usage
+  webarena?: number;            // Web shopping/forum tasks
+  miniwoz?: number;           // Dialogue tasks
+  weblinx?: number;            // Web instruction following
+  terminal_bench?: number;      // CLI/terminal tasks
+  os_bench?: number;           // OS task completion
+  swe_agent?: number;          // Software engineering agent
+  ml_bench?: number;           // ML task execution
+
+  // ============ CYBERSECURITY ============
+  cybench?: number;             // Cybersecurity CTF-style
+  crack_bench?: number;         // Password cracking
+
+  // ============ MULTIMODAL ============
+  mmmu?: number;               // Multi-modal understanding
+  mathvista?: number;           // Visual math reasoning
+  chart_qa?: number;            // Chart understanding
+  docvqa?: number;             // Document VQA
+
+  // ============ SAFETY ============
+  prompt_injection?: number;    // Adversarial prompts
+  owase_bench?: number;         // Agent safety evaluation
+
+  // ============ COMPOSITE & ARENA ============
+  arena_elo?: number;           // Chatbot Arena (LMSYS)
+  livebench?: number;           // Continuous evaluation
+  tier_list?: number;           // TIER List (coding-focused)
+  scale_leaderboard?: number;   // Scale AI coding leaderboard
+
+  // ============ KNOWLEDGE ============
+  humanity_last_exam?: number;   // Terminal knowledge (beyond training)
+  c_eval?: number;              // Chinese evaluation
+  cmmlu?: number;               // Chinese MMLU
+
+  // ============ CUSTOM ============
   custom?: Record<string, number>;
 }
 
