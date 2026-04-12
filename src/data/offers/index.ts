@@ -137,4 +137,115 @@ export const allOffers: ProviderOffer[] = [
     status: "ga",
     available_since: "2025-04-10",
   },
+
+  // --- Mistral Small 3.2 ---
+  {
+    model_id: "mistral-small-3.2-24b-instruct",
+    provider_id: "mistral",
+    provider_model_id: "mistral-small-latest",
+    input_per_mtok: 0.15,
+    output_per_mtok: 0.6,
+    status: "ga",
+    available_since: "2025-03-02",
+  },
+  {
+    model_id: "mistral-small-3.2-24b-instruct",
+    provider_id: "openrouter",
+    provider_model_id: "mistral/mistral-small-latest",
+    input_per_mtok: 0.15,
+    output_per_mtok: 0.6,
+    status: "ga",
+    available_since: "2025-03-03",
+  },
+
+  // --- Mistral Nemo ---
+  {
+    model_id: "mistral-nemo",
+    provider_id: "mistral",
+    provider_model_id: "mistral-nemo",
+    input_per_mtok: 0.03,
+    output_per_mtok: 0.03,
+    status: "ga",
+    available_since: "2024-07",
+  },
+
+  // --- DeepSeek Chat ---
+  {
+    model_id: "deepseek-chat",
+    provider_id: "deepseek",
+    provider_model_id: "deepseek-chat",
+    input_per_mtok: 0.27,
+    output_per_mtok: 1.1,
+    status: "ga",
+    available_since: "2025-02-20",
+  },
+  {
+    model_id: "deepseek-chat",
+    provider_id: "openrouter",
+    provider_model_id: "deepseek/deepseek-chat",
+    input_per_mtok: 0.27,
+    output_per_mtok: 1.1,
+    status: "ga",
+    available_since: "2025-02-21",
+  },
+
+  // --- DeepSeek R1 Distill Llama 8B ---
+  {
+    model_id: "deepseek-r1-distill-llama-8b",
+    provider_id: "deepseek",
+    provider_model_id: "deepseek-r1-distill-llama-8b",
+    input_per_mtok: 0.07,
+    output_per_mtok: 0.14,
+    status: "ga",
+    available_since: "2025-01-20",
+  },
+  {
+    model_id: "deepseek-r1-distill-llama-8b",
+    provider_id: "openrouter",
+    provider_model_id: "deepseek/deepseek-r1-distill-llama-8b",
+    input_per_mtok: 0.07,
+    output_per_mtok: 0.14,
+    status: "ga",
+    available_since: "2025-01-21",
+  },
+
+  // --- Phi-4 ---
+  {
+    model_id: "phi-4",
+    provider_id: "azure",
+    provider_model_id: "phi-4",
+    input_per_mtok: 0.5,
+    output_per_mtok: 2.0,
+    status: "ga",
+    available_since: "2025-01-15",
+  },
+  {
+    model_id: "phi-4",
+    provider_id: "openrouter",
+    provider_model_id: "microsoft/phi-4",
+    input_per_mtok: 0.5,
+    output_per_mtok: 2.0,
+    status: "ga",
+    available_since: "2025-01-16",
+  },
+
+  // --- Phi-4 Mini ---
+  {
+    model_id: "phi-4-mini",
+    provider_id: "azure",
+    provider_model_id: "phi-4-mini",
+    input_per_mtok: 0.1,
+    output_per_mtok: 0.4,
+    status: "ga",
+    available_since: "2025-01-20",
+  },
+  {
+    model_id: "phi-4-mini",
+    provider_id: "openrouter",
+    provider_model_id: "microsoft/phi-4-mini",
+    input_per_mtok: 0.1,
+    output_per_mtok: 0.4,
+    status: "ga",
+    available_since: "2025-01-21",
+  },
 ];

@@ -63,7 +63,7 @@ function RootDocument() {
         <head>
           <HeadContent />
         </head>
-        <body>
+        <body suppressHydrationWarning>
           <Header />
           <Outlet />
           <Scripts />

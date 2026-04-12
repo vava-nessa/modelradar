@@ -1,9 +1,18 @@
-import { useAuth } from "@/lib/auth";
+import { useAuth, useSignOut, isSupabaseConfigured } from "@/lib/auth";
 import { Link } from "@tanstack/react-router";
 import { ThemeToggle } from "./ThemeToggle";
 
 export function Header() {
-  const { data: user } = useAuth();
+  const { data: user, isLoading, error } = useAuth();
+  const signOut = useSignOut();
+
+  const handleSignOut = async () => {
+    try {
+      await signOut.mutateAsync();
+    } catch (err) {
+      console.error("Sign out error:", err);
+    }
+  };
 
   return (
     <header className="sticky top-0 z-50 h-12 border-b border-[var(--color-border)] bg-[var(--color-bg)]">
@@ -32,7 +41,9 @@ export function Header() {
         </div>
         <div className="flex items-center gap-3 text-sm">
           <ThemeToggle />
-          {user ? (
+          {isLoading ? (
+            <span className="text-[var(--color-text-muted)]">...</span>
+          ) : user ? (
             <>
               <Link
                 to="/favorites"
@@ -40,9 +51,17 @@ export function Header() {
               >
                 ★ Favorites
               </Link>
-              <span className="text-[var(--color-text-muted)]">
+              <span className="max-w-[150px] truncate text-[var(--color-text-muted)]">
                 {user.email}
               </span>
+              <button
+                type="button"
+                onClick={handleSignOut}
+                disabled={signOut.isPending}
+                className="rounded-md px-2 py-1 text-[var(--color-text-muted)] hover:bg-[var(--color-surface)] disabled:cursor-not-allowed"
+              >
+                {signOut.isPending ? "..." : "Logout"}
+              </button>
             </>
           ) : (
             <Link

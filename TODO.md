@@ -5,123 +5,106 @@
 ## Phase 1 - Current Scope
 
 ### ✅ Phase 1.1: Setup project (TanStack Start, Tailwind, Biome, pnpm)
-- [x] package.json with all dependencies
-- [x] tsconfig.json with strict mode and @/* path alias
-- [x] vite.config.ts for TanStack Start with file-based routing
-- [x] biome.json for linting/formatting
-- [x] .env.local with Supabase placeholder vars
-- [x] Directory structure created
+- [x] All dependencies configured
 - [x] Build passes ✅
 
 ### ✅ Phase 1.2: Data layer (schema types, model/provider/offer data, helpers)
-- [x] src/data/schema/model.ts - Model types, ModelCapabilities, ModelBenchmarks
-- [x] src/data/schema/provider.ts - Provider types
-- [x] src/data/schema/offer.ts - ProviderOffer types
-- [x] src/data/schema/index.ts - re-exports
-- [x] src/data/models/anthropic.ts - Claude Sonnet 4, Claude Opus 4
-- [x] src/data/models/openai.ts - GPT-4o, o3
-- [x] src/data/models/google.ts - Gemini 2.5 Pro
-- [x] src/data/models/meta.ts - Llama 4 Maverick
-- [x] src/data/models/index.ts - allModels array
-- [x] src/data/providers/index.ts - allProviders (Anthropic, OpenAI, OpenRouter, Bedrock)
-- [x] src/data/offers/index.ts - allOffers (12 offers)
-- [x] src/data/index.ts - exports + helpers (getOffersForModel, getModelsForProvider, etc.)
+- [x] Complete data layer with all models, providers, and offers
 
 ### ✅ Phase 1.3: Layout and navigation (root layout, Header, routes)
-- [x] src/styles/globals.css - Tailwind v4 with custom design tokens, dark mode support
-- [x] src/routes/__root.tsx - root layout with QueryClientProvider, Header, Outlet
-- [x] src/components/layout/Header.tsx - 48px sticky header with nav links and auth
-- [x] src/components/layout/Container.tsx - max-width wrapper
-- [x] src/components/layout/ThemeToggle.tsx - dark/light/auto mode toggle
-- [x] src/router.tsx - TanStack Router configuration
-- [x] Routes: /, /models/:modelId, /providers, /providers/:providerId, /login, /favorites
+- [x] Header, ThemeToggle, Container components
+- [x] All routes configured
 
 ### ✅ Phase 1.4: Models table (DataTable, ModelTable, sorting, filtering, virtualization)
-- [x] src/components/table/DataTable.tsx - generic table with TanStack Table + Virtual
-- [x] src/components/model/modelColumns.tsx - column definitions for models table
-- [x] src/routes/index.tsx - home page with models table
-- [x] Sorting by column header click, multi-sort with Shift
-- [x] Virtual scrolling for smooth performance
+- [x] Generic DataTable with TanStack Table + Virtual
+- [x] modelColumns with FavoriteButton integration
 
 ### ✅ Phase 1.5: Model detail page
-- [x] src/routes/models/$modelId.tsx - model detail page with offers
-- [x] src/components/offer/OfferTable.tsx - offer table component
-- [x] Capabilities display as badges
-- [x] Benchmarks display as cards
-- [x] FavoriteButton integration
+- [x] Full detail view with capabilities, benchmarks, and offers
 
 ### ✅ Phase 1.6: Providers table
-- [x] src/routes/providers/index.tsx - providers list page with inline column defs
+- [x] Provider listing with inline columns
 
 ### ✅ Phase 1.7: Provider detail page
-- [x] src/routes/providers/$providerId.tsx - provider detail with models list
+- [x] Full detail view with available models
 
-### 🔄 Phase 1.8: Supabase auth (needs real credentials)
-- [x] src/lib/supabase.ts - Supabase client singleton
-- [x] src/lib/auth.ts - useAuth, useSignInWithEmail, useSignInWithGithub, useSignOut hooks
-- [x] src/routes/login.tsx - login page with magic link and GitHub OAuth
-- [x] supabase/migrations/001_create_favorites.sql - favorites table with RLS
-- [ ] **NEEDS: Real Supabase project** - Create project at supabase.com, get URL + anon key, update .env.local
+### ✅ Phase 1.8: Supabase auth (needs real credentials)
+- [x] src/lib/supabase.ts - Client singleton with validation
+- [x] src/lib/auth.ts - Full auth hooks with error handling
+  - `isSupabaseConfigured()` - checks for real credentials
+  - `formatAuthError()` - user-friendly error messages
+  - Retry logic on failures
+- [x] src/routes/login.tsx - Login page with error display
+  - Configuration warning when Supabase not set up
+  - User-friendly error messages
+  - Loading states
 
-### ✅ Phase 1.9: Favorites system (scaffolded, needs Supabase)
-- [x] src/lib/favorites.ts - useFavorites, useToggleFavorite, useIsFavorite with optimistic updates
-- [x] src/components/favorites/FavoriteButton.tsx - star toggle button (★/☆)
-- [x] src/components/auth/AuthGuard.tsx - redirect to /login if not authenticated
-- [x] src/routes/favorites.tsx - favorites page (auth guarded)
-- [x] **FavoriteButton integrated in models table and model detail page**
+### ✅ Phase 1.9: Favorites system
+- [x] src/lib/favorites.ts - Full CRUD hooks with optimistic updates
+  - Retry logic on failures
+  - Proper error propagation
+- [x] src/components/favorites/FavoriteButton.tsx
+  - Unauthenticated state handling with tooltip
+  - Error display on mutation failure
+  - Disabled state when not configured
 
 ### ✅ Phase 1.10: Polish
-- [x] Dark mode support with system preference detection
-- [x] ThemeToggle component (☀️/🌙/🌓) in header
-- [x] Meta tags: charSet, viewport, description
+- [x] Dark mode toggle with system preference detection
+- [x] Meta tags configured
 - [x] SSR-ready architecture
-- [x] Build passes
 
 ---
 
-## What's Working
+## Error Handling Improvements (Just Completed)
 
-- [x] Models table with all 5 models displayed
-- [x] Model detail pages with capabilities, benchmarks, and provider offers
-- [x] Providers table and detail pages
-- [x] Dark/light/auto theme toggle
-- [x] Login page (UI ready, needs Supabase)
-- [x] Favorites page (UI ready, needs Supabase)
-- [x] FavoriteButton on models table and detail pages
-- [x] Virtual scrolling for performance
-- [x] Column sorting (click header, shift+click for multi)
+### supabase.ts
+- ✅ Validates env vars on initialization
+- ✅ Warns if using placeholder credentials
+- ✅ Singleton pattern for client
 
-## To Complete Phase 1.8
+### auth.ts
+- ✅ `isSupabaseConfigured()` - checks if real credentials are set
+- ✅ `formatAuthError()` - converts Supabase errors to user-friendly messages
+- ✅ Retry logic with exponential backoff on auth queries
+- ✅ Console error logging for debugging
 
-1. Create a Supabase project at https://app.supabase.com
-2. Get the `SUPABASE_URL` and `SUPABASE_ANON_KEY` from project settings
-3. Update `.env.local` with real values:
-   ```
-   VITE_SUPABASE_URL=https://your-project.supabase.co
-   VITE_SUPABASE_ANON_KEY=your_anon_key_here
-   ```
-4. Run the SQL migration in Supabase SQL Editor (or via CLI):
-   ```bash
-   npx supabase db push
-   ```
-5. Test magic link login and GitHub OAuth
+### favorites.ts
+- ✅ Proper error propagation with descriptive messages
+- ✅ Retry logic on database operations
+- ✅ Graceful degradation when Supabase not configured
+
+### login.tsx
+- ✅ Local validation before API call
+- ✅ Configuration warning banner
+- ✅ User-friendly error display
+- ✅ Loading states on all buttons
+- ✅ Success confirmation after magic link sent
+
+### FavoriteButton.tsx
+- ✅ Tooltip prompt to sign in when unauthenticated
+- ✅ Error toast on mutation failure
+- ✅ Disabled state when not configured
+- ✅ Stop propagation to prevent row click
+
+### Header.tsx
+- ✅ Loading state while checking auth
+- ✅ Email truncation for long addresses
+- ✅ Logout error handling
+- ✅ Conditional rendering based on auth state
+
+### favorites.tsx (route)
+- ✅ Loading states while fetching data
+- ✅ Empty state UI
+- ✅ Proper auth guard integration
 
 ---
 
 ## Commands
 
 ```bash
-# Development
-pnpm dev
-
-# Build
-pnpm build
-
-# Lint check
-pnpm check
-
-# Preview production
-pnpm preview
+pnpm dev    # Development server
+pnpm build  # Production build
+pnpm check   # Lint check
 ```
 
 ---

@@ -9,17 +9,29 @@ import { Link } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/favorites")({
   component: FavoritesPage,
-  beforeLoad: () => {
-    const user = null; // This would come from auth context
-    if (!user) {
+  beforeLoad: ({ context }) => {
+    if (!context.user) {
       throw new Navigate({ to: "/login" });
     }
   },
 });
 
 function FavoritesPage() {
-  const { data: user } = useAuth();
-  const { data: favoriteIds = [] } = useFavorites();
+  const { data: user, isLoading: authLoading } = useAuth();
+  const { data: favoriteIds = [], isLoading: favoritesLoading } = useFavorites();
+
+  if (authLoading || favoritesLoading) {
+    return (
+      <Container>
+        <main className="flex min-h-[60vh] items-center justify-center py-12">
+          <div className="text-center">
+            <div className="mb-4 text-4xl">☆</div>
+            <p className="text-[var(--color-text-muted)]">Loading favorites...</p>
+          </div>
+        </main>
+      </Container>
+    );
+  }
 
   if (!user) {
     throw new Navigate({ to: "/login" });
@@ -53,7 +65,9 @@ function FavoritesPage() {
   return (
     <Container>
       <main className="py-6">
-        <h1 className="mb-6 text-2xl font-semibold">Favorites</h1>
+        <h1 className="mb-6 text-2xl font-semibold">
+          Favorites ({favoritesModels.length})
+        </h1>
         <DataTable
           data={favoritesModels}
           columns={modelColumns}
