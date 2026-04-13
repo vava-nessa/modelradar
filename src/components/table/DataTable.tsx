@@ -1,12 +1,18 @@
 /**
  * @file DataTable — virtualized sortable/filterable table with hover popovers
  *
+ * Virtualization strategy:
+ * - Table structure kept for accessibility and sticky header
+ * - <tbody> is replaced by a CSS Grid scrollable container
+ * - Each row is a Grid row; column widths come from header measurements
+ * - Only ~15 visible rows are in the DOM at once
+ *
  * Features:
- * - Virtualized tbody via @tanstack/react-virtual (fixed 44px rows, 10 overscan)
+ * - Virtualized rows via @tanstack/react-virtual
  * - Drag & drop column reordering via header cells
  * - Hover-triggered filter/sort popover per header cell
  * - Column visibility, order & presets persisted to localStorage
- * - Locked columns (e.g. "name"/Model) — pinned, always visible, non-draggable
+ * - Locked columns (Model) — pinned, always visible, non-draggable
  */
 
 import {
@@ -21,12 +27,11 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { useVirtualizer } from "@tanstack/react-virtual";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import { useTablePreferences, LOCKED_COLUMN_IDS } from "@/lib/useTablePreferences";
 import { TablePreferencesModal, TablePrefsButton } from "@/components/table/TablePreferencesModal";
 import { HeaderFilterPopover } from "@/components/table/HeaderFilterPopover";
 
-/* ─── Fixed row height for virtualization ──────────────────────────────── */
 const ROW_HEIGHT = 44;
 
 interface DataTableProps<TData> {
@@ -44,17 +49,16 @@ export function DataTable<TData>({
 }: DataTableProps<TData>) {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
   const [showPrefs, setShowPrefs] = useState(false);
-
-  /* Active filter popover column index */
   const [hoveredColIdx, setHoveredColIdx] = useState<number | null>(null);
-
-  /* Header drag state */
   const [dragOverIdx, setDragOverIdx] = useState<number | null>(null);
   const [draggingIdx, setDraggingIdx] = useState<number | null>(null);
 
-  /* Column ids + labels */
+  /* Column widths measured from thead */
+  const [colWidths, setColWidths] = useState<number[]>([]);
+  const theadRef = useRef<HTMLTableSectionElement>(null);
+
   const allColumnIds = columns.map((c) => (c as { id?: string }).id ?? "");
   const allColumnLabels = columns.map((c) =>
     typeof c.header === "string" ? c.header : (c as { id?: string }).id ?? "",
@@ -63,16 +67,15 @@ export function DataTable<TData>({
     .map((id, i) => ({ id, label: allColumnLabels[i] || id }))
     .filter((c) => c.id);
 
-  /* Preferences */
   const prefs = useTablePreferences({ allColumnIds });
   const columnVisibility: VisibilityState = prefs.visibility;
 
-  // @ts-ignore – getColumnOrder accepts Column<unknown,unknown>[] which is compatible
-  const orderedColumns = prefs.getColumnOrder(columns);
+  const orderedColumns = prefs.getColumnOrder(
+    columns as unknown as Parameters<typeof prefs.getColumnOrder>[0],
+  );
 
-  /* ── TanStack table ─────────────────────────────────────────────── */
   const table = useReactTable({
-    // @ts-expect-error – orderedColumns type mismatch with generic
+    // @ts-ignore – type mismatch with generic ColumnDef
     columns: orderedColumns,
     data,
     state: { sorting, columnFilters, columnVisibility },
@@ -87,10 +90,29 @@ export function DataTable<TData>({
 
   const { rows } = table.getRowModel();
 
-  /* ── Virtualizer ─────────────────────────────────────────────────── */
+  /* ── Measure header column widths ─────────────────────────────── */
+  useEffect(() => {
+    const unsubscribe = table.onStateChange(() => {
+      const ths = theadRef.current?.querySelectorAll("th");
+      if (!ths) return;
+      const widths = Array.from(ths).map((th) => th.offsetWidth);
+      setColWidths(widths);
+    });
+    // Initial measurement
+    requestAnimationFrame(() => {
+      const ths = theadRef.current?.querySelectorAll("th");
+      if (!ths) return;
+      setColWidths(Array.from(ths).map((th) => th.offsetWidth));
+    });
+    return unsubscribe;
+    // table is derived from orderedColumns so re-runs are covered by table dep
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [table]);
+
+  /* ── Virtualizer ─────────────────────────────────────────────── */
   const rowVirtualizer = useVirtualizer({
     count: rows.length,
-    getScrollElement: () => containerRef.current,
+    getScrollElement: () => scrollRef.current,
     estimateSize: () => ROW_HEIGHT,
     overscan: 10,
   });
@@ -98,49 +120,54 @@ export function DataTable<TData>({
   const virtualItems = rowVirtualizer.getVirtualItems();
   const totalSize = rowVirtualizer.getTotalSize();
 
-  /* ── Header drag handlers ─────────────────────────────────────────── */
-  const handleHeaderDragStart = (e: React.DragEvent, visualIdx: number) => {
-    e.dataTransfer.effectAllowed = "move";
-    setDraggingIdx(visualIdx);
-  };
+  /* ── Grid template string ─────────────────────────────────────── */
+  const gridTemplateColumns = colWidths.length > 0
+    ? colWidths.map((w) => `${w}px`).join(" ")
+    : `repeat(${orderedColumns.length}, minmax(100px, 1fr))`;
 
-  const handleHeaderDragOver = (e: React.DragEvent, visualIdx: number) => {
+  /* ── Header drag handlers ──────────────────────────────────────── */
+  const handleHeaderDragStart = (e: React.DragEvent, idx: number) => {
+    e.dataTransfer.effectAllowed = "move";
+    setDraggingIdx(idx);
+  };
+  const handleHeaderDragOver = (e: React.DragEvent, idx: number) => {
     e.preventDefault();
     e.dataTransfer.dropEffect = "move";
-    setDragOverIdx(visualIdx);
+    setDragOverIdx(idx);
   };
-
-  const handleHeaderDrop = (e: React.DragEvent, toVisualIdx: number) => {
+  const handleHeaderDrop = (e: React.DragEvent, toIdx: number) => {
     e.preventDefault();
-    if (draggingIdx !== null && draggingIdx !== toVisualIdx) {
-      prefs.moveColumn(draggingIdx, toVisualIdx);
+    if (draggingIdx !== null && draggingIdx !== toIdx) {
+      prefs.moveColumn(draggingIdx, toIdx);
     }
     setDraggingIdx(null);
     setDragOverIdx(null);
   };
-
   const handleHeaderDragEnd = () => {
     setDraggingIdx(null);
     setDragOverIdx(null);
   };
 
-  /* ── Filter helpers ──────────────────────────────────────────────── */
+  /* ── Filter helpers ────────────────────────────────────────────── */
   const getColumnFilter = (colId: string): unknown => {
-    const found = columnFilters.find((f) => f.id === colId);
-    return found?.value;
+    return columnFilters.find((f) => f.id === colId)?.value;
   };
-
   const setColumnFilter = (colId: string, value: unknown) => {
-    const cleaned = value === undefined || value === "" || (Array.isArray(value) && value.length === 0)
-      ? columnFilters.filter((f) => f.id !== colId)
-      : [
-          ...columnFilters.filter((f) => f.id !== colId),
-          { id: colId, value },
-        ];
-    setColumnFilters(cleaned as ColumnFiltersState);
+    setColumnFilters((prev: ColumnFiltersState) => {
+      const without = prev.filter((f) => f.id !== colId);
+      if (value === undefined || value === "" || (Array.isArray(value) && value.length === 0)) return without;
+      return ([...without, { id: colId, value }] as ColumnFiltersState);
+    });
   };
 
-  /* ── Render ───────────────────────────────────────────────────────── */
+  const handleSort = useCallback((colId: string, dir: "asc" | "desc" | false) => {
+    setSorting((prev) => {
+      const without = prev.filter((x) => x.id !== colId);
+      if (dir === false) return without;
+      return [...without, { id: colId, desc: dir === "desc" }];
+    });
+  }, []);
+
   return (
     <div className="flex flex-col gap-3">
       {/* Toolbar */}
@@ -151,15 +178,17 @@ export function DataTable<TData>({
         />
       </div>
 
-      {/* Scrollable table container */}
+      {/* Table wrapper */}
       <div
-        ref={containerRef}
-        className="relative overflow-auto rounded-md border border-[var(--color-border)] shadow-sm"
+        className="relative overflow-hidden rounded-md border border-[var(--color-border)] shadow-sm"
         style={{ maxHeight: "calc(100vh - 7rem)" }}
       >
-        <table className="w-full">
-          {/* ── THEAD (sticky) ─────────────────────────────────────── */}
-          <thead className="sticky top-0 z-30 bg-[var(--color-surface)] text-xs uppercase tracking-wider text-[var(--color-text-muted)] shadow-sm">
+        <table className="w-full border-collapse">
+          {/* ── THEAD ─────────────────────────────────────────────── */}
+          <thead
+            ref={theadRef}
+            className="sticky top-0 z-30 bg-[var(--color-surface)] text-xs uppercase tracking-wider text-[var(--color-text-muted)] shadow-sm"
+          >
             {table.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id}>
                 {headerGroup.headers.map((header, visualIdx) => {
@@ -188,10 +217,6 @@ export function DataTable<TData>({
                         ${stickyFirstColumn && visualIdx === 0 ? "sticky left-0 z-40 bg-[var(--color-surface)] border-r" : ""}
                         ${isLocked ? "cursor-default" : "cursor-grab active:cursor-grabbing"}
                       `}
-                      style={{
-                        width: stickyFirstColumn && visualIdx === 0 ? header.getSize() : undefined,
-                        minWidth: stickyFirstColumn && visualIdx === 0 ? header.getSize() : undefined,
-                      }}
                     >
                       <div
                         className={`flex items-center gap-1 ${header.column.getCanSort() && !isLocked ? "cursor-pointer select-none" : ""}`}
@@ -209,8 +234,6 @@ export function DataTable<TData>({
                         tabIndex={header.column.getCanSort() && !isLocked ? 0 : undefined}
                       >
                         {flexRender(header.column.columnDef.header, header.getContext())}
-
-                        {/* Sort indicator */}
                         <span className="inline-block w-4 text-center select-none">
                           {isSorted ? (
                             <span className="text-[var(--color-accent)]">
@@ -220,14 +243,12 @@ export function DataTable<TData>({
                             <span className="opacity-0">↑</span>
                           ) : null}
                         </span>
-
-                        {/* Active filter dot */}
                         {hasActiveFilter && !isSorted && (
                           <span className="absolute right-1 top-1 h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]" />
                         )}
                       </div>
 
-                      {/* ── Hover popover ── */}
+                      {/* Hover popover */}
                       {isHovered && (
                         <div
                           className="absolute left-0 top-full z-50 mt-1 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] shadow-xl"
@@ -237,16 +258,7 @@ export function DataTable<TData>({
                           <HeaderFilterPopover
                             column={header.column}
                             isSorted={isSorted}
-                            onSort={(dir) => {
-                              if (dir === false) {
-                                setSorting((s) => s.filter((x) => x.id !== colId));
-                              } else {
-                                setSorting((s) => {
-                                  const without = s.filter((x) => x.id !== colId);
-                                  return [...without, { id: colId, desc: dir === "desc" }];
-                                });
-                              }
-                            }}
+                            onSort={(dir) => handleSort(colId, dir)}
                             filterValue={getColumnFilter(colId)}
                             onFilterChange={(val) => setColumnFilter(colId, val)}
                           />
@@ -258,61 +270,79 @@ export function DataTable<TData>({
               </tr>
             ))}
           </thead>
+        </table>
 
-          {/* ── TBODY (virtualized) ─────────────────────────────────── */}
-          <tbody>
-            {/* Virtualizer spacer — sets tbody scroll height */}
-            <tr style={{ height: totalSize, padding: 0, border: 0 }}>
-              <td colSpan={orderedColumns.length} style={{ padding: 0, border: 0, height: "100%" }} />
-            </tr>
+        {/* ── VIRTUALIZED BODY (CSS Grid) ────────────────────────── */}
+        {/* We use a separate scrollable div with CSS Grid to avoid table+absolute positioning issues */}
+        <div
+          ref={scrollRef}
+          className="overflow-auto"
+          style={{ height: "calc(100vh - 7rem - 41px)" }} /* 41px = thead height */
+        >
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns,
+              width: colWidths.reduce((a, b) => a + b, 0),
+              position: "relative",
+            }}
+          >
+            {/* Scroll spacer — establishes total scroll height */}
+            <div
+              aria-hidden="true"
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: 1,
+                height: totalSize,
+              }}
+            />
 
             {/* Only render visible rows */}
-            {virtualItems.map((virtualRow) => {
-              const row = rows[virtualRow.index];
+            {virtualItems.map((vRow) => {
+              const row = rows[vRow.index];
               return (
-                <tr
+                <div
                   key={row.id}
-                  data-index={virtualRow.index}
+                  data-index={vRow.index}
                   ref={rowVirtualizer.measureElement}
-                  className="cursor-pointer border-t border-[var(--color-border)] hover:bg-[var(--color-surface)] transition-colors duration-100"
-                  onClick={() => onRowClick?.(row.original)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" || e.key === " ") {
-                      e.preventDefault();
-                      onRowClick?.(row.original);
-                    }
-                  }}
-                  tabIndex={0}
+                  className="flex cursor-pointer border-b border-[var(--color-border)] hover:bg-[var(--color-surface)] transition-colors duration-100"
                   style={{
                     position: "absolute",
                     top: 0,
                     left: 0,
                     width: "100%",
                     height: ROW_HEIGHT,
-                    transform: `translateY(${virtualRow.start}px)`,
+                    transform: `translateY(${vRow.start}px)`,
+                  }}
+                  onClick={() => onRowClick?.(row.original)}
+                  onKeyDown={(e) => {
+                    if ((e.key === "Enter" || e.key === " ") && onRowClick) {
+                      e.preventDefault();
+                      onRowClick(row.original);
+                    }
                   }}
                 >
                   {row.getVisibleCells().map((cell, visualIdx) => (
-                    <td
+                    <div
                       key={cell.id}
                       className={`
-                        px-2.5 py-2 border-x border-[var(--color-border)] first:border-l-0 last:border-r-0
+                        flex items-center px-2.5 border-x border-[var(--color-border)]
+                        first:border-l-0 last:border-r-0 overflow-hidden
                         ${stickyFirstColumn && visualIdx === 0 ? "sticky left-0 z-10 bg-[var(--color-bg)] border-r" : ""}
                       `}
-                      style={
-                        stickyFirstColumn && visualIdx === 0
-                          ? { width: cell.column.getSize(), minWidth: cell.column.getSize() }
-                          : undefined
-                      }
                     >
-                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                    </td>
+                      <div className="truncate text-sm">
+                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                      </div>
+                    </div>
                   ))}
-                </tr>
+                </div>
               );
             })}
-          </tbody>
-        </table>
+          </div>
+        </div>
       </div>
 
       {/* Preferences modal */}
