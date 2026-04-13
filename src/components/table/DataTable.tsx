@@ -65,6 +65,7 @@ export function DataTable<TData>({
                     key={header.id}
                     className={`
                       px-2.5 py-2 text-left font-medium border-x border-[var(--color-border)] first:border-l-0 last:border-r-0
+                      ${header.column.getIsSorted() ? "bg-[var(--color-accent)]/10" : ""}
                       ${stickyFirstColumn && i === 0 ? "sticky left-0 z-30 bg-[var(--color-surface)] border-r" : ""}
                     `}
                     style={{ width: stickyFirstColumn && i === 0 ? header.getSize() : undefined }}

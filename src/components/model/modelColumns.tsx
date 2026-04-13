@@ -106,22 +106,26 @@ export const modelColumns = [
     meta: { filterVariant: "multi-select" },
     cell: (info) => {
       const types = info.getValue();
-      const labels: Record<string, string> = {
-        free: "Free",
-        api: "API",
-        sub: "Sub",
-        local: "Local",
+      const config: Record<string, { icon: string; label: string; bg: string; text: string }> = {
+        api:  { icon: "🔑", label: "API",  bg: "bg-red-500/10",   text: "text-red-400"   },
+        free: { icon: "🆓", label: "Free", bg: "bg-green-500/10", text: "text-green-400"  },
+        sub:  { icon: "💎", label: "Sub",  bg: "bg-violet-500/10",text: "text-violet-400" },
+        local:{ icon: "💻", label: "Local",bg: "bg-blue-500/10",  text: "text-blue-400"   },
       };
       return (
         <div className="flex flex-wrap gap-1">
-          {types.map((type) => (
-            <span
-              key={type}
-              className="inline-flex items-center rounded bg-[var(--color-accent)]/10 px-1.5 py-0.5 text-xs font-medium text-[var(--color-accent)]"
-            >
-              {labels[type] ?? type}
-            </span>
-          ))}
+          {types.map((type) => {
+            const c = config[type] ?? { icon: "•", label: type, bg: "bg-gray-500/10", text: "text-gray-400" };
+            return (
+              <span
+                key={type}
+                className={`inline-flex items-center gap-1 rounded ${c.bg} ${c.text} px-1.5 py-0.5 text-xs font-medium`
+                }
+              >
+                <span>{c.icon}</span><span>{c.label}</span>
+              </span>
+            );
+          })}
         </div>
       );
     },
