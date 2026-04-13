@@ -115,6 +115,11 @@ import { opencodeZen } from "./opencode-zen";
 import { zai } from "./zai";
 import { zaiCodingPlan } from "./zai-coding-plan";
 import { zhipuai } from "./zhipuai";
+import { sambanova } from "./sambanova";
+import { hyperbolic } from "./hyperbolic";
+import { replicate } from "./replicate";
+import { codestral } from "./codestral";
+import { iflow } from "./iflow";
 
 export const allProviders: Provider[] = [
   anthropic,
@@ -217,4 +222,9 @@ export const allProviders: Provider[] = [
   opencodeZen,
   zai,
   zaiCodingPlan,
+  sambanova,
+  hyperbolic,
+  replicate,
+  codestral,
+  iflow,
 ];
