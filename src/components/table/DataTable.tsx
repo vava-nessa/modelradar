@@ -59,9 +59,12 @@ export function DataTable<TData>({
   const [colWidths, setColWidths] = useState<number[]>([]);
   const theadRef = useRef<HTMLTableSectionElement>(null);
 
-  const allColumnIds = columns.map((c) => (c as { id?: string }).id ?? "");
+  // 📖 Extract column id: explicit `id` takes priority, then `accessorKey` for string accessors
+  const getColId = (c: ColumnDef<TData, unknown>): string =>
+    (c as { id?: string }).id ?? (c as { accessorKey?: string }).accessorKey ?? "";
+  const allColumnIds = columns.map(getColId);
   const allColumnLabels = columns.map((c) =>
-    typeof c.header === "string" ? c.header : (c as { id?: string }).id ?? "",
+    typeof c.header === "string" ? c.header : getColId(c),
   );
   const allColumns = allColumnIds
     .map((id, i) => ({ id, label: allColumnLabels[i] || id }))
