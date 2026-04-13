@@ -149,7 +149,7 @@ export function TablePreferencesModal({ prefs, allColumns, onClose }: TablePrefe
   const [saveError, setSaveError] = useState("");
   const [drag, setDrag] = useState<DragState | null>(null);
   const [dragOver, setDragOver] = useState<number | null>(null);
-  const listRef = useRef<HTMLDivElement>(null);
+  const listRef = useRef<HTMLUListElement>(null);
 
   const sortedColumns = [...allColumns].sort((a, b) => {
     const ai = order.indexOf(a.id);

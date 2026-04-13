@@ -73,15 +73,15 @@ export const ACCESS_OPTIONS = [
 ] as const;
 
 export const CATEGORY_OPTIONS = [
-  { value: "chat",        label: "Chat"        },
-  { value: "reasoning",   label: "Reasoning"   },
-  { value: "coding",      label: "Coding"      },
-  { value: "vision",      label: "Vision"      },
-  { value: "embedding",   label: "Embedding"   },
-  { value: "multimodal",  label: "Multimodal"  },
-  { value: "audio",       label: "Audio"       },
-  { value: "fast",        label: "Fast"        },
-  { value: "long-context",label: "LongCtx"     },
+  { value: "chat",        label: "Chat",        icon: undefined, color: undefined },
+  { value: "reasoning",   label: "Reasoning",   icon: undefined, color: undefined },
+  { value: "coding",      label: "Coding",      icon: undefined, color: undefined },
+  { value: "vision",      label: "Vision",      icon: undefined, color: undefined },
+  { value: "embedding",   label: "Embedding",   icon: undefined, color: undefined },
+  { value: "multimodal",  label: "Multimodal",  icon: undefined, color: undefined },
+  { value: "audio",       label: "Audio",       icon: undefined, color: undefined },
+  { value: "fast",        label: "Fast",         icon: undefined, color: undefined },
+  { value: "long-context",label: "LongCtx",     icon: undefined, color: undefined },
 ] as const;
 
 export const CONTEXT_PRESETS = [
