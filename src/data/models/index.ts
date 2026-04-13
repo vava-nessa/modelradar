@@ -74,7 +74,6 @@ export const allEntries: ModelEntry[] = [
   ...Object.values(black_forest_labs),
   ...Object.values(nvidia),
   ...Object.values(zai),
-import * as freecoding from "./freecoding/freecodingModels";
 ];
 
 // 📖 Flat list of all models (intrinsic data only)

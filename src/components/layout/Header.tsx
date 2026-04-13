@@ -15,31 +15,30 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 h-14 border-b border-[var(--color-border)] bg-[var(--color-bg)]/80 backdrop-blur-md">
-      <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-4">
-        <div className="flex items-center gap-6">
-          <Link to="/" className="flex items-center gap-2 font-semibold">
-            <span className="text-[var(--color-accent)]">◆</span>
-            <span>ModelRadar</span>
+    <header className="sticky top-0 z-50 flex h-14 items-center justify-between border-b border-[var(--color-border)] bg-[var(--color-bg)]/80 px-4 backdrop-blur-md lg:px-6">
+      <div className="flex items-center gap-6">
+        <Link to="/" className="flex items-center gap-2 font-semibold">
+          <span className="text-[var(--color-accent)]">◆</span>
+          <span>ModelRadar</span>
+        </Link>
+        <nav className="flex items-center gap-4 text-sm">
+          <Link
+            to="/"
+            className="text-[var(--color-text-muted)] hover:text-[var(--color-text)]"
+            activeProps={{ className: "text-[var(--color-text)]" }}
+          >
+            Models
           </Link>
-          <nav className="flex items-center gap-4 text-sm">
-            <Link
-              to="/"
-              className="text-[var(--color-text-muted)] hover:text-[var(--color-text)]"
-              activeProps={{ className: "text-[var(--color-text)]" }}
-            >
-              Models
-            </Link>
-            <Link
-              to="/providers"
-              className="text-[var(--color-text-muted)] hover:text-[var(--color-text)]"
-              activeProps={{ className: "text-[var(--color-text)]" }}
-            >
-              Providers
-            </Link>
-          </nav>
-        </div>
-        <div className="flex items-center gap-3 text-sm">
+          <Link
+            to="/providers"
+            className="text-[var(--color-text-muted)] hover:text-[var(--color-text)]"
+            activeProps={{ className: "text-[var(--color-text)]" }}
+          >
+            Providers
+          </Link>
+        </nav>
+      </div>
+      <div className="flex items-center gap-3 text-sm">
           <ThemeToggle />
           {isLoading ? (
             <span className="text-[var(--color-text-muted)]">...</span>
@@ -80,7 +79,6 @@ export function Header() {
             </>
           )}
         </div>
-      </div>
     </header>
   );
 }
