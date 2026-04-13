@@ -5,8 +5,8 @@ import { getSupabase, isSupabaseConfigured } from "./supabase";
 /** Check if Supabase is properly configured with real credentials */
 export { isSupabaseConfigured } from "./supabase";
 
-/** Hook React pour l'état d'authentification.
- * Utilise TanStack Query pour cache et revalidation.
+/** 📖 React hook for authentication state.
+ * Uses TanStack Query for caching and revalidation.
  */
 export function useAuth() {
   return useQuery({
@@ -40,7 +40,7 @@ export function useAuth() {
 export function formatAuthError(error: AuthError | Error | null): string {
   if (!error) return "An unknown error occurred";
 
-  const message = error instanceof Error ? error.message : error.message;
+  const message = error instanceof Error ? error.message : (error as AuthError).message;
 
   switch (message) {
     case "Invalid login credentials":
@@ -82,7 +82,7 @@ export function formatAuthError(error: AuthError | Error | null): string {
   }
 }
 
-/** S'inscrire avec email + password */
+/** Sign up with email + password */
 export function useSignUpWithEmail() {
   return useMutation({
     mutationFn: async (params: { email: string; password: string }): Promise<void> => {
@@ -105,7 +105,7 @@ export function useSignUpWithEmail() {
   });
 }
 
-/** Se connecter avec email + password */
+/** Sign in with email + password */
 export function useSignInWithPassword() {
   return useMutation({
     mutationFn: async (params: { email: string; password: string }): Promise<void> => {
@@ -125,7 +125,7 @@ export function useSignInWithPassword() {
   });
 }
 
-/** S'inscrire ou se connecter via magic link */
+/** Sign up or sign in via magic link (email OTP) */
 export function useSignInWithEmail() {
   return useMutation({
     mutationFn: async (email: string): Promise<void> => {
@@ -147,7 +147,7 @@ export function useSignInWithEmail() {
   });
 }
 
-/** Se connecter avec GitHub OAuth */
+/** Sign in with GitHub OAuth */
 export function useSignInWithGithub() {
   return useMutation({
     mutationFn: async (): Promise<void> => {
@@ -169,7 +169,7 @@ export function useSignInWithGithub() {
   });
 }
 
-/** Mot de passe oublié - envoie un email de réinitialisation */
+/** Send password reset email */
 export function useForgotPassword() {
   return useMutation({
     mutationFn: async (email: string): Promise<void> => {
@@ -188,7 +188,7 @@ export function useForgotPassword() {
   });
 }
 
-/** Réinitialiser le mot de passe avec le nouveau mot de passe */
+/** Reset password with new password (after email link click) */
 export function useResetPassword() {
   return useMutation({
     mutationFn: async (newPassword: string): Promise<void> => {
@@ -207,7 +207,7 @@ export function useResetPassword() {
   });
 }
 
-/** Se déconnecter */
+/** Sign out the current user */
 export function useSignOut() {
   const queryClient = useQueryClient();
   return useMutation({

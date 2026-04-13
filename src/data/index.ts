@@ -1,5 +1,5 @@
 /**
- * @file Main data exports + helper functions
+ * @file Main data exports and helper functions
  * @description Aggregates models, providers, families, and offers into a unified API.
  * 📖 allModels and allOffers are derived from ModelEntry files (one file per model).
  * 📖 model_id is automatically injected into offers from the parent ModelEntry.
@@ -24,7 +24,7 @@ import type { Model, ModelEntry, ModelFamily, Provider, ProviderOffer } from "./
 export { allEntries, allFamilies, allModels, allOffers, allProviders };
 export type { Model, ModelEntry, ModelFamily, Provider, ProviderOffer };
 
-/** 📖 Toutes les offres pour un modèle donné, enrichies avec les infos provider */
+/** 📖 Returns all offers for a given model, enriched with provider info */
 export function getOffersForModel(
   modelId: string,
 ): (ProviderOffer & { provider: Provider })[] {
@@ -39,7 +39,7 @@ export function getOffersForModel(
     });
 }
 
-/** 📖 Tous les modèles disponibles chez un provider, enrichis avec l'offre */
+/** 📖 Returns all models available at a provider, enriched with the provider offer */
 export function getModelsForProvider(
   providerId: string,
 ): (Model & { offer: ProviderOffer })[] {
@@ -54,41 +54,41 @@ export function getModelsForProvider(
     });
 }
 
-/** 📖 Trouver un modèle par son ID */
+/** 📖 Find a model by its ID */
 export function getModelById(id: string): Model | undefined {
   return allModels.find((m) => m.id === id);
 }
 
-/** 📖 Trouver un provider par son ID */
+/** 📖 Find a provider by its ID */
 export function getProviderById(id: string): Provider | undefined {
   return allProviders.find((p) => p.id === id);
 }
 
-/** 📖 Trouver une famille par son ID */
+/** 📖 Find a family by its ID */
 export function getFamilyById(id: string): ModelFamily | undefined {
   return allFamilies.find((f) => f.id === id);
 }
 
-/** 📖 Tous les modèles d'une famille donnée */
+/** 📖 Returns all models belonging to a given family */
 export function getModelsForFamily(familyId: string): Model[] {
   return allModels.filter((m) => m.family === familyId);
 }
 
-/** 📖 Prix le plus bas pour un modèle (input) tous providers confondus */
+/** 📖 Returns the cheapest input price for a model across all providers */
 export function getCheapestInputPrice(modelId: string): number | null {
   const offers = allOffers.filter((o) => o.model_id === modelId);
   if (offers.length === 0) return null;
   return Math.min(...offers.map((o) => o.input_per_mtok));
 }
 
-/** 📖 Prix le plus bas pour un modèle (output) tous providers confondus */
+/** 📖 Returns the cheapest output price for a model across all providers */
 export function getCheapestOutputPrice(modelId: string): number | null {
   const offers = allOffers.filter((o) => o.model_id === modelId);
   if (offers.length === 0) return null;
   return Math.min(...offers.map((o) => o.output_per_mtok));
 }
 
-/** 📖 Nombre de providers disponibles pour un modèle */
+/** 📖 Returns the number of providers available for a model */
 export function getProviderCount(modelId: string): number {
   return allOffers.filter((o) => o.model_id === modelId).length;
 }

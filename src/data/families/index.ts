@@ -1,7 +1,7 @@
 /**
- * @file Model families — regroupe les versions d'une même lignée de modèles
- * @description Chaque famille correspond à un champ `family` dans Model.
- * 📖 Permet de grouper/filtrer les modèles par lignée avec du contexte (nom, description, creator).
+ * @file Model families — groups model versions into the same lineage
+ * @description Each family corresponds to a `family` field in Model.
+ * 📖 Allows grouping/filtering models by lineage with context (name, description, creator).
  *
  * @exports allFamilies → ModelFamily[]
  */

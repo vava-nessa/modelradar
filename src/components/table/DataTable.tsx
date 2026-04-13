@@ -35,13 +35,16 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { useVirtualizer } from "@tanstack/react-virtual";
-import { useRef, useState, useCallback } from "react";
+import { useRef, useState, useCallback, useMemo } from "react";
 import { useTablePreferences, LOCKED_COLUMN_IDS } from "@/lib/useTablePreferences";
 import { TablePreferencesModal, TablePrefsButton } from "@/components/table/TablePreferencesModal";
 import { HeaderFilterPopover } from "@/components/table/HeaderFilterPopover";
 
 const ROW_HEIGHT = 44;
 const HEADER_HEIGHT = 41;
+
+const getColId = <T,>(c: ColumnDef<T, unknown>): string =>
+  (c as { id?: string }).id ?? (c as { accessorKey?: string }).accessorKey ?? "";
 
 interface DataTableProps<TData> {
   data: TData[];
@@ -67,10 +70,10 @@ export function DataTable<TData>({
   // 📖 Extract column id: explicit `id` takes priority, then `accessorKey` for string accessors
   const getColId = (c: ColumnDef<TData, unknown>): string =>
     (c as { id?: string }).id ?? (c as { accessorKey?: string }).accessorKey ?? "";
-  const allColumnIds = columns.map(getColId);
-  const allColumnLabels = columns.map((c) =>
+  const allColumnIds = useMemo(() => columns.map(getColId), [columns]);
+  const allColumnLabels = useMemo(() => columns.map((c) =>
     typeof c.header === "string" ? c.header : getColId(c),
-  );
+  ), [columns]);
   const allColumns = allColumnIds
     .map((id, i) => ({ id, label: allColumnLabels[i] || id }))
     .filter((c) => c.id);
