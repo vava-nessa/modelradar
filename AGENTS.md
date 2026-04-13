@@ -23,3 +23,11 @@ RULES
 
 5. always verify with real browser check — don't assume the deploy worked. Use chrome-devtools to screenshot or snapshot the actual rendered page at `https://modelradar.dev`.
 
+6. **Model column rules** — The "Model" column (`name`) is a **locked column** and must **always**:
+   - Be the **first column** (leftmost) in the table
+   - Be **sticky** (pinned left) so it stays visible on horizontal scroll
+   - Have a **distinct elevated background** (`--color-surface-elevated`) to separate it visually
+   - **Never be hideable** — it cannot be toggled off in preferences
+   - **Never be draggable** — it cannot be reordered
+   - Have a **minimum width of 280px** (`size: 280` in modelColumns.tsx) so model names are never truncated
+

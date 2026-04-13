@@ -212,6 +212,7 @@ export function DataTable<TData>({
                       onDragEnd={handleHeaderDragEnd}
                       onMouseEnter={() => setHoveredColIdx(visualIdx)}
                       onMouseLeave={() => setHoveredColIdx(null)}
+                      style={{ minWidth: header.column.getSize() !== 150 ? header.column.getSize() : undefined }}
                       className={`
                         relative px-2.5 py-2 text-left font-medium border-x border-[var(--color-border)]
                         first:border-l-0 last:border-r-0
