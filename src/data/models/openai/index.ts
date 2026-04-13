@@ -3,5 +3,7 @@ export { gpt4oMini } from "./gpt-4o-mini";
 export { gptOss120B } from "./gpt-oss-120b";
 export { o1Mini } from "./o1-mini";
 export { o3 } from "./o3";
+export { o3Mini } from "./o3-mini";
+export { o4Mini } from "./o4-mini";
 export { whisper_large_v3 } from "./whisper-large-v3";
 export { whisper_large_v3_turbo } from "./whisper-large-v3-turbo";

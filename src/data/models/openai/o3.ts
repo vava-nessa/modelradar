@@ -34,7 +34,7 @@ export const o3: ModelEntry = {
       batch_api: false,
     },
     benchmarks: {
-      swe_bench: 69.1,
+      swe_bench: 58.4,
       gpqa_diamond: 79.7,
       arena_elo: 1415,
       math_500: 96.7,
