@@ -3,6 +3,7 @@
 @theme {
   --color-bg: #ffffff;
   --color-surface: #f8f8f8;
+  --color-surface-elevated: #f0f0f0;
   --color-border: #e5e5e5;
   --color-text: #171717;
   --color-text-muted: #737373;
@@ -21,6 +22,7 @@
     :root {
       --color-bg: #000000;
       --color-surface: #0a0a0a;
+      --color-surface-elevated: #141414;
       --color-border: #1f1f1f;
       --color-text: #ededed;
       --color-text-muted: #888888;

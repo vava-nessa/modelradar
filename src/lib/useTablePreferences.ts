@@ -173,6 +173,8 @@ export function useTablePreferences({
   }, []);
 
   const toggleVisibility = useCallback((columnId: string) => {
+    // 📖 Locked columns (e.g. "name") cannot be hidden
+    if (LOCKED_COLUMN_IDS.includes(columnId as (typeof LOCKED_COLUMN_IDS)[number])) return;
     setPrefs((prev) => {
       const updated = {
         ...prev,
@@ -307,10 +309,14 @@ export function useTablePreferences({
 
   const getColumnOrder = useCallback(
     (allColumns: Column<unknown, unknown>[]) => {
-      const { order, visibility } = prefs;
-      // Build a map for fast lookup
+      const { order } = prefs;
+      // 📖 Build a map for fast lookup, but locked columns always come first
       const orderIndex = Object.fromEntries(order.map((id, i) => [id, i]));
       return [...allColumns].sort((a, b) => {
+        const aLocked = LOCKED_COLUMN_IDS.includes(a.id as (typeof LOCKED_COLUMN_IDS)[number]);
+        const bLocked = LOCKED_COLUMN_IDS.includes(b.id as (typeof LOCKED_COLUMN_IDS)[number]);
+        if (aLocked && !bLocked) return -1;
+        if (!aLocked && bLocked) return 1;
         const ai = orderIndex[a.id] ?? 999;
         const bi = orderIndex[b.id] ?? 999;
         return ai - bi;
@@ -319,8 +325,14 @@ export function useTablePreferences({
     [prefs],
   );
 
+  // 📖 Force locked columns to always be visible, regardless of saved state
+  const safeVisibility = {
+    ...prefs.visibility,
+    ...Object.fromEntries(LOCKED_COLUMN_IDS.map((id) => [id, true])),
+  };
+
   return {
-    visibility: prefs.visibility,
+    visibility: safeVisibility,
     order: prefs.order,
     activePreset: prefs.activePreset,
     presets: prefs.presets,

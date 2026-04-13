@@ -215,7 +215,7 @@ export function DataTable<TData>({
                         ${isSorted ? "bg-[var(--color-accent)]/10" : ""}
                         ${draggingIdx === visualIdx ? "opacity-40" : ""}
                         ${dragOverIdx === visualIdx && draggingIdx !== null && draggingIdx !== visualIdx ? "border-l-2 border-[var(--color-accent)]" : ""}
-                        ${stickyFirstColumn && visualIdx === 0 ? "sticky left-0 z-40 bg-[var(--color-surface)] border-r" : ""}
+                        ${stickyFirstColumn && visualIdx === 0 ? "sticky left-0 z-40 bg-[var(--color-surface-elevated,var(--color-surface))] border-r-2 border-r-[var(--color-accent)]/30" : ""}
                         ${isLocked ? "cursor-default" : "cursor-grab active:cursor-grabbing"}
                       `}
                     >
@@ -333,7 +333,7 @@ export function DataTable<TData>({
                       className={`
                         flex items-center px-2.5 border-x border-[var(--color-border)]
                         first:border-l-0 last:border-r-0 overflow-hidden
-                        ${stickyFirstColumn && visualIdx === 0 ? "sticky left-0 z-10 bg-[var(--color-bg)] border-r" : ""}
+                        ${stickyFirstColumn && visualIdx === 0 ? "sticky left-0 z-10 bg-[var(--color-surface-elevated,var(--color-bg))] border-r-2 border-r-[var(--color-accent)]/30" : ""}
                       `}
                     >
                       <div className="truncate text-sm">
