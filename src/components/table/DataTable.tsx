@@ -308,8 +308,10 @@ export function DataTable<TData>({
                   key={row.id}
                   data-index={vRow.index}
                   ref={rowVirtualizer.measureElement}
-                  className="flex cursor-pointer border-b border-[var(--color-border)] hover:bg-[var(--color-surface)] transition-colors duration-100"
+                  className="cursor-pointer border-b border-[var(--color-border)] hover:bg-[var(--color-surface)] transition-colors duration-100"
                   style={{
+                    display: "grid",
+                    gridTemplateColumns,
                     position: "absolute",
                     top: 0,
                     left: 0,
