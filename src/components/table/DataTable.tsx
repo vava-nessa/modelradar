@@ -67,18 +67,21 @@ export function DataTable<TData>({
                       px-2.5 py-2 text-left font-medium border-x border-[var(--color-border)] first:border-l-0 last:border-r-0
                       ${stickyFirstColumn && i === 0 ? "sticky left-0 z-30 bg-[var(--color-surface)] border-r" : ""}
                     `}
-                    onClick={header.column.getCanSort() ? header.column.getToggleSortingHandler() : undefined}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter' || e.key === ' ') {
-                        if (header.column.getCanSort()) {
-                          header.column.getToggleSortingHandler()?.(e);
-                        }
-                      }
-                    }}
-                    tabIndex={header.column.getCanSort() ? 0 : undefined}
-                    style={{ cursor: header.column.getCanSort() ? "pointer" : "default", width: stickyFirstColumn && i === 0 ? header.getSize() : undefined }}
+                    style={{ width: stickyFirstColumn && i === 0 ? header.getSize() : undefined }}
                   >
-                    <div className="flex items-center gap-1">
+                    <div 
+                      className={`flex items-center gap-1 ${header.column.getCanSort() ? "cursor-pointer select-none hover:opacity-80" : ""}`}
+                      onClick={header.column.getCanSort() ? header.column.getToggleSortingHandler() : undefined}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault();
+                          if (header.column.getCanSort()) {
+                            header.column.getToggleSortingHandler()?.(e);
+                          }
+                        }
+                      }}
+                      tabIndex={header.column.getCanSort() ? 0 : undefined}
+                    >
                       {flexRender(header.column.columnDef.header, header.getContext())}
                       <span className="inline-block w-4 text-center select-none">
                         {header.column.getIsSorted() ? (
