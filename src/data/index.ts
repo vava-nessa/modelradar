@@ -92,3 +92,20 @@ export function getCheapestOutputPrice(modelId: string): number | null {
 export function getProviderCount(modelId: string): number {
   return allOffers.filter((o) => o.model_id === modelId).length;
 }
+
+/** 📖 Fetch multiple models by IDs, preserving order, silently skipping unknowns */
+export function getModelsByIds(ids: string[]): Model[] {
+  return ids
+    .map((id) => allModels.find((m) => m.id === id))
+    .filter((m): m is Model => m !== undefined);
+}
+
+/** 📖 Return benchmark keys present on ALL given models (intersection) — used by CompareGrid */
+export function getSharedBenchmarkKeys(models: Model[]): string[] {
+  if (models.length === 0) return [];
+  const sets = models.map(
+    (m) => new Set(Object.keys(m.benchmarks ?? {}).filter((k) => k !== "custom")),
+  );
+  const first = sets[0];
+  return [...first].filter((k) => sets.every((s) => s.has(k)));
+}

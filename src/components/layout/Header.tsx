@@ -36,6 +36,29 @@ export function Header() {
           >
             Providers
           </Link>
+          <Link
+            to="/compare"
+            search={{ models: "" }}
+            className="text-[var(--color-text-muted)] hover:text-[var(--color-text)]"
+            activeProps={{ className: "text-[var(--color-text)]" }}
+          >
+            Compare
+          </Link>
+          <Link
+            to="/cost"
+            search={{ model: "" }}
+            className="text-[var(--color-text-muted)] hover:text-[var(--color-text)]"
+            activeProps={{ className: "text-[var(--color-text)]" }}
+          >
+            Cost Sim
+          </Link>
+          <Link
+            to="/wizard"
+            className="text-[var(--color-text-muted)] hover:text-[var(--color-text)]"
+            activeProps={{ className: "text-[var(--color-text)]" }}
+          >
+            Find My Model
+          </Link>
         </nav>
       </div>
       <div className="flex items-center gap-3 text-sm">

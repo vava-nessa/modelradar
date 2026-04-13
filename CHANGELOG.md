@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Fixed
+- **Multi-select filters (Access, Category)** — TanStack Table's built-in `arrIncludes` only works for primitive filter values, not arrays. When filtering `supportedOn: ["api"]` with filter value `["api"]`, the comparison `["api"].includes(["api"])` is always `false` (arrays compared by reference, not value). Created custom `arrIntersects` filter that checks for intersection between row array and filter array. Also fixed stale closure in `toggleValue` by using a `useRef` to always read the latest `filterValue`.
+- **`toggleValue` stale closure** — The `useCallback` for `toggleValue` captured `selectedValues` in its closure, causing it to always toggle against a stale value. Fixed by reading from a `useRef` instead.
+
 ### Changed
 - **Schema: Coding LLMs only** — Removed all image gen, audio, and video related types and fields. ModelRadar is now exclusively focused on coding/text LLMs.
 - **ModelCategory**: Removed `embedding`, `image`, `audio`, `video`. Added `agentic`.

@@ -120,6 +120,15 @@ function ModelPage() {
         <div>
           <h2 className="mb-4 text-lg font-semibold">Provider Offers</h2>
           <OfferTable offers={offers} />
+          <div className="mt-4">
+            <Link
+              to="/cost"
+              search={{ model: model.id }}
+              className="text-sm text-[var(--color-accent)] hover:underline"
+            >
+              Simulate costs for {model.name} →
+            </Link>
+          </div>
         </div>
       </div>
     </Container>

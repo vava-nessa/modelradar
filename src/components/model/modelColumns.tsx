@@ -6,9 +6,22 @@ import {
 } from "@/data";
 import type { Model } from "@/data/schema";
 import { formatPrice, formatTokens } from "@/lib/format";
-import { createColumnHelper } from "@tanstack/react-table";
+import { createColumnHelper, type FilterFn } from "@tanstack/react-table";
+import type { Row } from "@tanstack/react-table";
 
 const columnHelper = createColumnHelper<Model>();
+
+/** 📖 Custom filter: arrIntersects — checks if row array shares ANY value with filter array
+ * TanStack's built-in arrIncludes only works for primitive filter values, not arrays.
+ * Use this for multi-select filters on columns that store arrays (e.g., supportedOn, category). */
+const arrIntersects: FilterFn<Model> = (row: Row<Model>, columnId: string, filterValue: string[]) => {
+  const rowVal = row.getValue<string[]>(columnId);
+  if (!Array.isArray(rowVal) || !Array.isArray(filterValue)) return true;
+  if (filterValue.length === 0) return true;
+  return filterValue.some((v) => rowVal.includes(v));
+};
+arrIntersects.autoRemove = (val: string[] | undefined) =>
+  !val || val.length === 0;
 
 /** 📖 Compact benchmark score cell with color coding */
 function BenchmarkCell({ score, max = 100 }: { score: number; max?: number }) {
@@ -94,7 +107,7 @@ export const modelColumns = [
     header: "Cat",
     enableSorting: true,
     enableColumnFilter: true,
-    filterFn: "arrIncludes",
+    filterFn: arrIntersects,
     meta: { filterVariant: "multi-select" },
   }),
 
@@ -102,7 +115,7 @@ export const modelColumns = [
     header: "Access",
     enableSorting: false,
     enableColumnFilter: true,
-    filterFn: "arrIncludes",
+    filterFn: arrIntersects,
     meta: { filterVariant: "multi-select" },
     cell: (info) => {
       const types = info.getValue();

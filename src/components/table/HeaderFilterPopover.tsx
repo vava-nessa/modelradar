@@ -10,7 +10,7 @@
  * - Active filter dot indicator on header when filtered
  */
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import type { Column } from "@tanstack/react-table";
 
 /* ─── Icons ──────────────────────────────────────────────────────────────── */
@@ -139,14 +139,21 @@ export function HeaderFilterPopover({
   const isBenchmark = BENCHMARK_IDS.has(colId);
 
   /* ── Multi-select ────────────────────────────── */
+  // 📖 Use a ref to avoid stale closure in toggleValue — always read latest filterValue
+  const filterValueRef = useRef(filterValue);
+  filterValueRef.current = filterValue;
+
   const selectedValues = Array.isArray(filterValue) ? (filterValue as string[]) : [];
 
   const toggleValue = useCallback((val: string) => {
-    const next = selectedValues.includes(val)
-      ? selectedValues.filter((v) => v !== val)
-      : [...selectedValues, val];
-    onFilterChange(next.length > 0 ? next : undefined);
-  }, [selectedValues, onFilterChange]);
+    const current = filterValueRef.current;
+    const currentArr = Array.isArray(current) ? current : [];
+    const next = currentArr.includes(val)
+      ? currentArr.filter((v) => v !== val)
+      : [...currentArr, val];
+    // 📖 Pass empty array to CLEAR filter, not undefined — TanStack handles [] correctly
+    onFilterChange(next);
+  }, [onFilterChange]);
 
   /* ── Range ───────────────────────────────────── */
   const getRange = (): [number | undefined, number | undefined] => {

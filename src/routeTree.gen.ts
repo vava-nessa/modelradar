@@ -9,15 +9,23 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WizardRouteImport } from './routes/wizard'
 import { Route as SignupRouteImport } from './routes/signup'
 import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as FavoritesRouteImport } from './routes/favorites'
+import { Route as CostRouteImport } from './routes/cost'
+import { Route as CompareRouteImport } from './routes/compare'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProvidersIndexRouteImport } from './routes/providers/index'
 import { Route as ProvidersProviderIdRouteImport } from './routes/providers/$providerId'
 import { Route as ModelsModelIdRouteImport } from './routes/models/$modelId'
 
+const WizardRoute = WizardRouteImport.update({
+  id: '/wizard',
+  path: '/wizard',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SignupRoute = SignupRouteImport.update({
   id: '/signup',
   path: '/signup',
@@ -36,6 +44,16 @@ const LoginRoute = LoginRouteImport.update({
 const FavoritesRoute = FavoritesRouteImport.update({
   id: '/favorites',
   path: '/favorites',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CostRoute = CostRouteImport.update({
+  id: '/cost',
+  path: '/cost',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CompareRoute = CompareRouteImport.update({
+  id: '/compare',
+  path: '/compare',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -61,20 +79,26 @@ const ModelsModelIdRoute = ModelsModelIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/compare': typeof CompareRoute
+  '/cost': typeof CostRoute
   '/favorites': typeof FavoritesRoute
   '/login': typeof LoginRoute
   '/reset-password': typeof ResetPasswordRoute
   '/signup': typeof SignupRoute
+  '/wizard': typeof WizardRoute
   '/models/$modelId': typeof ModelsModelIdRoute
   '/providers/$providerId': typeof ProvidersProviderIdRoute
   '/providers/': typeof ProvidersIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/compare': typeof CompareRoute
+  '/cost': typeof CostRoute
   '/favorites': typeof FavoritesRoute
   '/login': typeof LoginRoute
   '/reset-password': typeof ResetPasswordRoute
   '/signup': typeof SignupRoute
+  '/wizard': typeof WizardRoute
   '/models/$modelId': typeof ModelsModelIdRoute
   '/providers/$providerId': typeof ProvidersProviderIdRoute
   '/providers': typeof ProvidersIndexRoute
@@ -82,10 +106,13 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/compare': typeof CompareRoute
+  '/cost': typeof CostRoute
   '/favorites': typeof FavoritesRoute
   '/login': typeof LoginRoute
   '/reset-password': typeof ResetPasswordRoute
   '/signup': typeof SignupRoute
+  '/wizard': typeof WizardRoute
   '/models/$modelId': typeof ModelsModelIdRoute
   '/providers/$providerId': typeof ProvidersProviderIdRoute
   '/providers/': typeof ProvidersIndexRoute
@@ -94,30 +121,39 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/compare'
+    | '/cost'
     | '/favorites'
     | '/login'
     | '/reset-password'
     | '/signup'
+    | '/wizard'
     | '/models/$modelId'
     | '/providers/$providerId'
     | '/providers/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/compare'
+    | '/cost'
     | '/favorites'
     | '/login'
     | '/reset-password'
     | '/signup'
+    | '/wizard'
     | '/models/$modelId'
     | '/providers/$providerId'
     | '/providers'
   id:
     | '__root__'
     | '/'
+    | '/compare'
+    | '/cost'
     | '/favorites'
     | '/login'
     | '/reset-password'
     | '/signup'
+    | '/wizard'
     | '/models/$modelId'
     | '/providers/$providerId'
     | '/providers/'
@@ -125,10 +161,13 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CompareRoute: typeof CompareRoute
+  CostRoute: typeof CostRoute
   FavoritesRoute: typeof FavoritesRoute
   LoginRoute: typeof LoginRoute
   ResetPasswordRoute: typeof ResetPasswordRoute
   SignupRoute: typeof SignupRoute
+  WizardRoute: typeof WizardRoute
   ModelsModelIdRoute: typeof ModelsModelIdRoute
   ProvidersProviderIdRoute: typeof ProvidersProviderIdRoute
   ProvidersIndexRoute: typeof ProvidersIndexRoute
@@ -136,6 +175,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/wizard': {
+      id: '/wizard'
+      path: '/wizard'
+      fullPath: '/wizard'
+      preLoaderRoute: typeof WizardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/signup': {
       id: '/signup'
       path: '/signup'
@@ -162,6 +208,20 @@ declare module '@tanstack/react-router' {
       path: '/favorites'
       fullPath: '/favorites'
       preLoaderRoute: typeof FavoritesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cost': {
+      id: '/cost'
+      path: '/cost'
+      fullPath: '/cost'
+      preLoaderRoute: typeof CostRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/compare': {
+      id: '/compare'
+      path: '/compare'
+      fullPath: '/compare'
+      preLoaderRoute: typeof CompareRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -197,10 +257,13 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CompareRoute: CompareRoute,
+  CostRoute: CostRoute,
   FavoritesRoute: FavoritesRoute,
   LoginRoute: LoginRoute,
   ResetPasswordRoute: ResetPasswordRoute,
   SignupRoute: SignupRoute,
+  WizardRoute: WizardRoute,
   ModelsModelIdRoute: ModelsModelIdRoute,
   ProvidersProviderIdRoute: ProvidersProviderIdRoute,
   ProvidersIndexRoute: ProvidersIndexRoute,

@@ -28,6 +28,7 @@ import {
   type ColumnFiltersState,
   type SortingState,
   type VisibilityState,
+  type FilterFn,
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
@@ -85,6 +86,17 @@ export function DataTable<TData>({
     columns as unknown as Parameters<typeof prefs.getColumnOrder>[0],
   );
 
+  // 📖 Custom filter: arrIntersects — checks if row array shares ANY value with filter array
+  // TanStack's built-in arrIncludes only works for primitive filter values, not arrays
+  const arrIntersects: FilterFn<TData> = (row, columnId, filterValue) => {
+    const rowVal = row.getValue(columnId);
+    if (!Array.isArray(rowVal) || !Array.isArray(filterValue)) return true;
+    if (filterValue.length === 0) return true;
+    return filterValue.some((v) => (rowVal as string[]).includes(v));
+  };
+  arrIntersects.autoRemove = (val: string[] | undefined) =>
+    !val || val.length === 0;
+
   const table = useReactTable({
     // @ts-ignore – type mismatch with generic ColumnDef
     columns: orderedColumns,
@@ -97,6 +109,7 @@ export function DataTable<TData>({
     getSortedRowModel: getSortedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
     enableMultiSort: true,
+    filterFns: { arrIntersects },
   });
 
   const { rows } = table.getRowModel();

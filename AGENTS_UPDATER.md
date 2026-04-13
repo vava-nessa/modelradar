@@ -1,4 +1,4 @@
-# AGENTS_UPDATER.md — Guide for AI Agents that update ModelRadar data
+# AGENTS_UPDATER.md — Guide for AI Agents that Update ModelRadar Data
 
 > This file is the **single source of truth** for AI agents responsible for keeping ModelRadar data up to date.
 > Read this ENTIRELY before making any changes.
@@ -44,7 +44,7 @@ The `model.id` is the **UUID / primary key** that links everything together.
 
 ## Operations
 
-### 1. Add a new model
+### 1. Add a New Model
 
 **Files to touch: 2**
 
@@ -63,17 +63,17 @@ export const myNewModel: ModelEntry = {
     creator: "creator-slug",             // Must match folder name
     family: "family-slug",               // FK → ModelFamily.id
     category: "flagship",                // flagship | mid | small | reasoning | code | agentic
-    status: "active",                    // active | deprecated | legacy
-    modality_input: ["text", "image"],   // text | image | pdf | code
+    status: "active",                   // active | deprecated | legacy
+    modality_input: ["text", "image"], // text | image | pdf | code
     modality_output: ["text"],
-    context_window: 200000,              // Total context in tokens
+    context_window: 200000,             // Total context in tokens
     is_open_source: false,
-    release_date: "2025-06-01",          // ISO 8601
-    supportedOn: ["api"],                // free | api | sub | local
+    release_date: "2025-06-01",        // ISO 8601
+    supportedOn: ["api"],               // free | api | sub | local
     capabilities: {
       streaming: true,
       function_calling: true,
-      vision: true,
+      vision: true,                     // vision is REQUIRED (boolean, not optional)
       // ... see ModelCapabilities in schema/model.ts for all fields
     },
 
@@ -81,18 +81,18 @@ export const myNewModel: ModelEntry = {
     max_output_tokens: 16000,
     reasoning: true,                     // Is a chain-of-thought model?
     temperature: true,                   // Supports temperature parameter?
-    knowledge: "2025-03",                // Training data cutoff (YYYY-MM)
+    knowledge: "2025-03",               // Training data cutoff (YYYY-MM)
     license: "proprietary",              // or "apache-2.0", "mit", etc.
-    architecture: "dense transformer",   // or "MoE"
+    architecture: "dense transformer",     // or "MoE"
     parameters: "70B",                   // If published
     description: "Short description of what this model excels at.",
     url: "https://...",                  // Official model page
-    documentation_url: "https://...",    // Docs link
-    tags: ["coding", "reasoning"],       // Free-form tags for filtering
+    documentation_url: "https://...",   // Docs link
+    tags: ["coding", "reasoning"],      // Free-form tags for filtering
     cost: {                              // Reference pricing from creator
-      input: 3,                          // $/Mtok
+      input: 3,                         // $/Mtok
       output: 15,
-      cache_read: 0.3,                   // Optional
+      cache_read: 0.3,                  // Optional
       cache_write: 3.75,                 // Optional
     },
     benchmarks: {
@@ -115,11 +115,11 @@ export const myNewModel: ModelEntry = {
   offers: [
     // One entry per provider that offers this model
     {
-      provider_id: "anthropic",            // FK → Provider.id
+      provider_id: "anthropic",          // FK → Provider.id
       provider_model_id: "model-20250601", // Exact API model ID at this provider
       input_per_mtok: 3.0,
       output_per_mtok: 15.0,
-      status: "ga",                        // ga | preview | beta | deprecated
+      status: "ga",                     // ga | preview | beta | deprecated
 
       // Optional pricing
       cache_read_per_mtok: 0.3,
@@ -132,8 +132,8 @@ export const myNewModel: ModelEntry = {
       rate_limit_tpm: 400000,
       latency_ttft_ms: 800,
       tokens_per_second: 120,
-      context_window: 200000,              // If different from model default
-      max_output_tokens: 16000,            // If different from model default
+      context_window: 200000,            // If different from model default
+      max_output_tokens: 16000,         // If different from model default
 
       // Optional metadata
       available_since: "2025-06-01",
@@ -141,13 +141,6 @@ export const myNewModel: ModelEntry = {
       fine_tuning_available: false,
       regions: ["us", "eu"],
       notes: "Cross-region inference available",
-    },
-    {
-      provider_id: "openrouter",
-      provider_model_id: "creator/model-name",
-      input_per_mtok: 3.0,
-      output_per_mtok: 15.0,
-      status: "ga",
     },
   ],
 };
@@ -200,7 +193,7 @@ Add to `src/data/families/index.ts`:
 
 ---
 
-### 2. Update pricing for a model
+### 2. Update Pricing for a Model
 
 **Files to touch: 1**
 
@@ -210,7 +203,7 @@ Set `last_price_update` to today's date.
 
 ---
 
-### 3. Deprecate a model
+### 3. Deprecate a Model
 
 **Files to touch: 1**
 
@@ -221,7 +214,7 @@ Open the model file and:
 
 ---
 
-### 4. Add a new provider
+### 4. Add a New Provider
 
 **Files to touch: 2**
 
@@ -234,9 +227,9 @@ export const newProvider: Provider = {
   id: "provider-slug",
   name: "Provider Name",
   description: "Short description.",
-  type: "direct",           // direct | aggregator | cloud | self_hosted
-  provider_access_type: "api", // free | api | sub | local
-  status: "active",         // active | maintenance | sunset
+  type: "direct",              // direct | aggregator | cloud | self_hosted
+  provider_access_type: "api",  // free | api | sub | local
+  status: "active",            // active | maintenance | sunset
   url: "https://...",
   regions: ["us", "eu"],
   auth_type: "api_key",
@@ -244,7 +237,7 @@ export const newProvider: Provider = {
   billing_model: "pay_per_token",
   sdk: ["python", "typescript"],
   openai_compatible: true,
-  compliance: ["SOC2"],     // Optional
+  compliance: ["SOC2"],       // Optional
 };
 ```
 
@@ -261,7 +254,7 @@ export const allProviders: Provider[] = [
 
 ---
 
-### 5. Add a provider offer to an existing model
+### 5. Add a Provider Offer to an Existing Model
 
 **Files to touch: 1**
 
@@ -269,7 +262,7 @@ Open `src/data/models/{creator}/{model-id}.ts` and add a new entry to the `offer
 
 ---
 
-### 6. Update provider metadata
+### 6. Update Provider Metadata
 
 **Files to touch: 1**
 
@@ -292,7 +285,7 @@ The build will fail if:
 
 ---
 
-## Type Reference (quick lookup)
+## Type Reference (Quick Lookup)
 
 ### ModelCategory
 `"flagship" | "mid" | "small" | "reasoning" | "code" | "agentic"`
@@ -334,6 +327,7 @@ The build will fail if:
 - Use kebab-case for all file names
 - Model file name must match the `model.id` value
 - Provider file name must match the `provider.id` value
+- Variable name exports must be camelCase: `claudeSonnet4`, not `claude-sonnet-4`
 
 ---
 
@@ -369,3 +363,5 @@ For aggregator pricing:
 5. **Don't modify `models/index.ts`** unless adding a new creator
 6. **Don't modify schema files** unless the data structure itself needs to change
 7. **Variable names** must be valid JS identifiers (camelCase, no hyphens): `claudeSonnet4`, not `claude-sonnet-4`
+8. **`vision` field is required** in ModelCapabilities — always include `vision: true` or `vision: false`
+9. **Don't use `null`** for optional string fields — use `undefined`
