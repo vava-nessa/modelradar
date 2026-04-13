@@ -1,18 +1,26 @@
 /**
  * @file DataTable — virtualized sortable/filterable table with hover popovers
  *
- * Virtualization strategy:
- * - Table structure kept for accessibility and sticky header
- * - <tbody> is replaced by a CSS Grid scrollable container
- * - Each row is a Grid row; column widths come from header measurements
- * - Only ~15 visible rows are in the DOM at once
+ * 📖 Architecture: single scroll container with CSS Grid rows
+ * - Header + body share the same overflow:auto container so horizontal scroll is synced
+ * - Header row uses `position: sticky; top: 0` to stay pinned vertically
+ * - Model column (first) uses `position: sticky; left: 0` to stay pinned horizontally
+ * - Corner cell (header + first col) gets highest z-index (z-30)
+ * - Only ~15 visible rows are in the DOM at once via @tanstack/react-virtual
  *
- * Features:
- * - Virtualized rows via @tanstack/react-virtual
- * - Drag & drop column reordering via header cells
- * - Hover-triggered filter/sort popover per header cell
- * - Column visibility, order & presets persisted to localStorage
- * - Locked columns (Model) — pinned, always visible, non-draggable
+ * @features
+ * → Virtualized rows via @tanstack/react-virtual
+ * → Drag & drop column reordering via header cells
+ * → Hover-triggered filter/sort popover per header cell
+ * → Column visibility, order & presets persisted to localStorage
+ * → Locked columns (Model) — pinned, always visible, non-draggable
+ *
+ * Z-index layering:
+ * - z-0:  regular body cells
+ * - z-10: sticky first-column body cells
+ * - z-20: sticky header cells
+ * - z-30: corner cell (header + first column)
+ * - z-50: hover popovers
  */
 
 import {
@@ -27,12 +35,13 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { useVirtualizer } from "@tanstack/react-virtual";
-import { useRef, useState, useEffect, useCallback } from "react";
+import { useRef, useState, useCallback } from "react";
 import { useTablePreferences, LOCKED_COLUMN_IDS } from "@/lib/useTablePreferences";
 import { TablePreferencesModal, TablePrefsButton } from "@/components/table/TablePreferencesModal";
 import { HeaderFilterPopover } from "@/components/table/HeaderFilterPopover";
 
 const ROW_HEIGHT = 44;
+const HEADER_HEIGHT = 41;
 
 interface DataTableProps<TData> {
   data: TData[];
@@ -54,10 +63,6 @@ export function DataTable<TData>({
   const [hoveredColIdx, setHoveredColIdx] = useState<number | null>(null);
   const [dragOverIdx, setDragOverIdx] = useState<number | null>(null);
   const [draggingIdx, setDraggingIdx] = useState<number | null>(null);
-
-  /* Column widths measured from thead */
-  const [colWidths, setColWidths] = useState<number[]>([]);
-  const theadRef = useRef<HTMLTableSectionElement>(null);
 
   // 📖 Extract column id: explicit `id` takes priority, then `accessorKey` for string accessors
   const getColId = (c: ColumnDef<TData, unknown>): string =>
@@ -93,26 +98,6 @@ export function DataTable<TData>({
 
   const { rows } = table.getRowModel();
 
-  /* ── Measure header column widths via ResizeObserver ──────────── */
-  useEffect(() => {
-    const thead = theadRef.current;
-    if (!thead) return;
-    const ths = thead.querySelectorAll("th");
-    if (!ths || ths.length === 0) return;
-
-    const measure = () => {
-      const widths = Array.from(ths).map((th) => th.offsetWidth);
-      setColWidths(widths);
-    };
-
-    const ro = new ResizeObserver(measure);
-    ro.observe(thead);
-    measure();
-
-    return () => ro.disconnect();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [orderedColumns]);
-
   /* ── Virtualizer ─────────────────────────────────────────────── */
   const rowVirtualizer = useVirtualizer({
     count: rows.length,
@@ -124,10 +109,22 @@ export function DataTable<TData>({
   const virtualItems = rowVirtualizer.getVirtualItems();
   const totalSize = rowVirtualizer.getTotalSize();
 
-  /* ── Grid template string ─────────────────────────────────────── */
-  const gridTemplateColumns = colWidths.length > 0
-    ? colWidths.map((w) => `${w}px`).join(" ")
-    : `repeat(${orderedColumns.length}, minmax(100px, 1fr))`;
+  // 📖 Build grid template from column sizes defined in columnDef
+  const headerGroups = table.getHeaderGroups();
+  const visibleHeaders = headerGroups[0]?.headers ?? [];
+  const gridTemplateColumns = visibleHeaders
+    .map((h) => {
+      const size = h.column.getSize();
+      // TanStack default size is 150; use minmax for those, explicit px for custom sizes
+      return size !== 150 ? `${size}px` : "minmax(80px, 1fr)";
+    })
+    .join(" ");
+
+  // 📖 Total width: sum of all column sizes for the inner container
+  const totalWidth = visibleHeaders.reduce((sum, h) => {
+    const size = h.column.getSize();
+    return sum + (size !== 150 ? size : 120);
+  }, 0);
 
   /* ── Header drag handlers ──────────────────────────────────────── */
   const handleHeaderDragStart = (e: React.DragEvent, idx: number) => {
@@ -182,129 +179,124 @@ export function DataTable<TData>({
         />
       </div>
 
-      {/* Table wrapper */}
+      {/* ── Single scroll container for header + body ──────────────── */}
       <div
-        className="relative overflow-hidden rounded-md border border-[var(--color-border)] shadow-sm"
+        ref={scrollRef}
+        className="overflow-auto rounded-md border border-[var(--color-border)] shadow-sm"
         style={{ maxHeight: "calc(100vh - 7rem)" }}
       >
-        <table className="w-full border-collapse">
-          {/* ── THEAD ─────────────────────────────────────────────── */}
-          <thead
-            ref={theadRef}
-            className="sticky top-0 z-30 bg-[var(--color-surface)] text-xs uppercase tracking-wider text-[var(--color-text-muted)] shadow-sm"
-          >
-            {table.getHeaderGroups().map((headerGroup) => (
-              <tr key={headerGroup.id}>
-                {headerGroup.headers.map((header, visualIdx) => {
-                  const colId = header.column.id;
-                  const isLocked = LOCKED_COLUMN_IDS.includes(colId as typeof LOCKED_COLUMN_IDS[number]);
-                  const isSorted = header.column.getIsSorted();
-                  const isHovered = hoveredColIdx === visualIdx;
-                  const hasActiveFilter = getColumnFilter(colId) !== undefined;
+        {/* Inner width container — sets the full scrollable width */}
+        <div style={{ width: totalWidth, minWidth: "100%", position: "relative" }}>
 
-                  return (
-                    <th
-                      key={header.id}
-                      draggable={!isLocked}
-                      onDragStart={(e) => handleHeaderDragStart(e, visualIdx)}
-                      onDragOver={(e) => handleHeaderDragOver(e, visualIdx)}
-                      onDrop={(e) => handleHeaderDrop(e, visualIdx)}
-                      onDragEnd={handleHeaderDragEnd}
-                      onMouseEnter={() => setHoveredColIdx(visualIdx)}
-                      onMouseLeave={() => setHoveredColIdx(null)}
-                      style={{ minWidth: header.column.getSize() !== 150 ? header.column.getSize() : undefined }}
-                      className={`
-                        relative px-2.5 py-2 text-left font-medium border-x border-[var(--color-border)]
-                        first:border-l-0 last:border-r-0
-                        ${isSorted ? "bg-[var(--color-accent)]/10" : ""}
-                        ${draggingIdx === visualIdx ? "opacity-40" : ""}
-                        ${dragOverIdx === visualIdx && draggingIdx !== null && draggingIdx !== visualIdx ? "border-l-2 border-[var(--color-accent)]" : ""}
-                        ${stickyFirstColumn && visualIdx === 0 ? "sticky left-0 z-40 bg-[var(--color-surface-elevated,var(--color-surface))] border-r-2 border-r-[var(--color-accent)]/30" : ""}
-                        ${isLocked ? "cursor-default" : "cursor-grab active:cursor-grabbing"}
-                      `}
-                    >
-                      <div
-                        className={`flex items-center gap-1 ${header.column.getCanSort() && !isLocked ? "cursor-pointer select-none" : ""}`}
-                        onClick={
-                          header.column.getCanSort() && !isLocked
-                            ? header.column.getToggleSortingHandler()
-                            : undefined
-                        }
-                        onKeyDown={(e) => {
-                          if ((e.key === "Enter" || e.key === " ") && header.column.getCanSort() && !isLocked) {
-                            e.preventDefault();
-                            header.column.getToggleSortingHandler()?.(e);
-                          }
-                        }}
-                        tabIndex={header.column.getCanSort() && !isLocked ? 0 : undefined}
-                      >
-                        {flexRender(header.column.columnDef.header, header.getContext())}
-                        <span className="inline-block w-4 text-center select-none">
-                          {isSorted ? (
-                            <span className="text-[var(--color-accent)]">
-                              {isSorted === "asc" ? "↑" : "↓"}
-                            </span>
-                          ) : header.column.getCanSort() ? (
-                            <span className="opacity-0">↑</span>
-                          ) : null}
-                        </span>
-                        {hasActiveFilter && !isSorted && (
-                          <span className="absolute right-1 top-1 h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]" />
-                        )}
-                      </div>
-
-                      {/* Hover popover */}
-                      {isHovered && (
-                        <div
-                          className="absolute left-0 top-full z-50 mt-1 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] shadow-xl"
-                          onMouseEnter={() => setHoveredColIdx(visualIdx)}
-                          onMouseLeave={() => setHoveredColIdx(null)}
-                        >
-                          <HeaderFilterPopover
-                            column={header.column}
-                            isSorted={isSorted}
-                            onSort={(dir) => handleSort(colId, dir)}
-                            filterValue={getColumnFilter(colId)}
-                            onFilterChange={(val) => setColumnFilter(colId, val)}
-                          />
-                        </div>
-                      )}
-                    </th>
-                  );
-                })}
-              </tr>
-            ))}
-          </thead>
-        </table>
-
-        {/* ── VIRTUALIZED BODY (CSS Grid) ────────────────────────── */}
-        {/* We use a separate scrollable div with CSS Grid to avoid table+absolute positioning issues */}
-        <div
-          ref={scrollRef}
-          className="overflow-auto"
-          style={{ height: "calc(100vh - 7rem - 41px)" }} /* 41px = thead height */
-        >
+          {/* ── STICKY HEADER ROW ────────────────────────────────────── */}
           <div
+            className="text-xs uppercase tracking-wider text-[var(--color-text-muted)]"
             style={{
               display: "grid",
               gridTemplateColumns,
-              width: colWidths.reduce((a, b) => a + b, 0),
-              position: "relative",
+              position: "sticky",
+              top: 0,
+              zIndex: 20,
+              height: HEADER_HEIGHT,
+              backgroundColor: "var(--color-surface)",
+              boxShadow: "0 1px 2px rgba(0,0,0,0.1)",
             }}
           >
-            {/* Scroll spacer — establishes total scroll height */}
-            <div
-              aria-hidden="true"
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: 1,
-                height: totalSize,
-              }}
-            />
+            {headerGroups.map((headerGroup) =>
+              headerGroup.headers.map((header, visualIdx) => {
+                const colId = header.column.id;
+                const isLocked = LOCKED_COLUMN_IDS.includes(colId as typeof LOCKED_COLUMN_IDS[number]);
+                const isSorted = header.column.getIsSorted();
+                const isHovered = hoveredColIdx === visualIdx;
+                const hasActiveFilter = getColumnFilter(colId) !== undefined;
+                // 📖 Corner cell (header + first col) gets z-30, other header cells z-20
+                const isFirstSticky = stickyFirstColumn && visualIdx === 0;
 
-            {/* Only render visible rows */}
+                return (
+                  <div
+                    key={header.id}
+                    draggable={!isLocked}
+                    onDragStart={(e) => handleHeaderDragStart(e, visualIdx)}
+                    onDragOver={(e) => handleHeaderDragOver(e, visualIdx)}
+                    onDrop={(e) => handleHeaderDrop(e, visualIdx)}
+                    onDragEnd={handleHeaderDragEnd}
+                    onMouseEnter={() => setHoveredColIdx(visualIdx)}
+                    onMouseLeave={() => setHoveredColIdx(null)}
+                    className={`
+                      relative flex items-center px-2.5 py-2 text-left font-medium
+                      border-r border-[var(--color-border)]
+                      last:border-r-0
+                      ${isSorted ? "bg-[var(--color-accent)]/10" : ""}
+                      ${draggingIdx === visualIdx ? "opacity-40" : ""}
+                      ${dragOverIdx === visualIdx && draggingIdx !== null && draggingIdx !== visualIdx ? "border-l-2 border-l-[var(--color-accent)]" : ""}
+                      ${isLocked ? "cursor-default" : "cursor-grab active:cursor-grabbing"}
+                    `}
+                    style={{
+                      ...(isFirstSticky
+                        ? {
+                            position: "sticky" as const,
+                            left: 0,
+                            zIndex: 30,
+                            backgroundColor: "var(--color-surface-elevated, var(--color-surface))",
+                            borderRight: "2px solid color-mix(in srgb, var(--color-accent) 30%, transparent)",
+                          }
+                        : {}),
+                    }}
+                  >
+                    <div
+                      className={`flex items-center gap-1 ${header.column.getCanSort() && !isLocked ? "cursor-pointer select-none" : ""}`}
+                      onClick={
+                        header.column.getCanSort() && !isLocked
+                          ? header.column.getToggleSortingHandler()
+                          : undefined
+                      }
+                      onKeyDown={(e) => {
+                        if ((e.key === "Enter" || e.key === " ") && header.column.getCanSort() && !isLocked) {
+                          e.preventDefault();
+                          header.column.getToggleSortingHandler()?.(e);
+                        }
+                      }}
+                      tabIndex={header.column.getCanSort() && !isLocked ? 0 : undefined}
+                    >
+                      {flexRender(header.column.columnDef.header, header.getContext())}
+                      <span className="inline-block w-4 text-center select-none">
+                        {isSorted ? (
+                          <span className="text-[var(--color-accent)]">
+                            {isSorted === "asc" ? "↑" : "↓"}
+                          </span>
+                        ) : header.column.getCanSort() ? (
+                          <span className="opacity-0">↑</span>
+                        ) : null}
+                      </span>
+                      {hasActiveFilter && !isSorted && (
+                        <span className="absolute right-1 top-1 h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]" />
+                      )}
+                    </div>
+
+                    {/* Hover popover */}
+                    {isHovered && (
+                      <div
+                        className="absolute left-0 top-full z-50 mt-1 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] shadow-xl"
+                        onMouseEnter={() => setHoveredColIdx(visualIdx)}
+                        onMouseLeave={() => setHoveredColIdx(null)}
+                      >
+                        <HeaderFilterPopover
+                          column={header.column}
+                          isSorted={isSorted}
+                          onSort={(dir) => handleSort(colId, dir)}
+                          filterValue={getColumnFilter(colId)}
+                          onFilterChange={(val) => setColumnFilter(colId, val)}
+                        />
+                      </div>
+                    )}
+                  </div>
+                );
+              }),
+            )}
+          </div>
+
+          {/* ── VIRTUALIZED BODY ────────────────────────────────────── */}
+          <div style={{ position: "relative", height: totalSize }}>
             {virtualItems.map((vRow) => {
               const row = rows[vRow.index];
               return (
@@ -331,20 +323,33 @@ export function DataTable<TData>({
                     }
                   }}
                 >
-                  {row.getVisibleCells().map((cell, visualIdx) => (
-                    <div
-                      key={cell.id}
-                      className={`
-                        flex items-center px-2.5 border-x border-[var(--color-border)]
-                        first:border-l-0 last:border-r-0 overflow-hidden
-                        ${stickyFirstColumn && visualIdx === 0 ? "sticky left-0 z-10 bg-[var(--color-surface-elevated,var(--color-bg))] border-r-2 border-r-[var(--color-accent)]/30" : ""}
-                      `}
-                    >
-                      <div className="truncate text-sm">
-                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  {row.getVisibleCells().map((cell, visualIdx) => {
+                    const isFirstSticky = stickyFirstColumn && visualIdx === 0;
+                    return (
+                      <div
+                        key={cell.id}
+                        className={`
+                          flex items-center px-2.5 border-r border-[var(--color-border)]
+                          last:border-r-0 overflow-hidden
+                        `}
+                        style={{
+                          ...(isFirstSticky
+                            ? {
+                                position: "sticky" as const,
+                                left: 0,
+                                zIndex: 10,
+                                backgroundColor: "var(--color-surface-elevated, var(--color-bg))",
+                                borderRight: "2px solid color-mix(in srgb, var(--color-accent) 30%, transparent)",
+                              }
+                            : {}),
+                        }}
+                      >
+                        <div className="truncate text-sm">
+                          {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               );
             })}
