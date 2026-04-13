@@ -46,8 +46,8 @@ export const o3Mini: ModelEntry = {
       terminal_bench: undefined,
       livecodebench: undefined,
       bigcodebench: undefined,
-      mbpp: undefined,
-      aider_polyglot: undefined,
+      mbpp: 63.2,
+      aider_polyglot: 60.4,
       arena_elo: 1318,
     },
     description:

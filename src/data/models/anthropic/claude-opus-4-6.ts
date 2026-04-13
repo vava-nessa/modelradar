@@ -40,7 +40,7 @@ export const claudeOpus46: ModelEntry = {
       verified_swe_bench: 80.8,
       arena_elo: 1500,
       gpqa_diamond: 91.3,
-      humaneval: undefined,
+      humaneval: 93.5,
       mmlu: 91.1,
       mmlu_pro: 91.0,
       math_500: undefined,
@@ -50,7 +50,7 @@ export const claudeOpus46: ModelEntry = {
       livecodebench: undefined,
       bigcodebench: 72.1,
       mbpp: undefined,
-      aider_polyglot: undefined,
+      aider_polyglot: 75.0,
     },
     description:
       "Claude Opus 4.6 - current flagship with massive gains on ARC-AGI-2, BrowseComp, and tau2-bench.",

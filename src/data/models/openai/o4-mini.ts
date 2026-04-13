@@ -37,6 +37,9 @@ export const o4Mini: ModelEntry = {
       swe_bench: 45.0,
       verified_swe_bench: 45.0,
       gpqa_diamond: undefined,
+      humaneval: 74,
+      mbpp: 64.3,
+      aider_polyglot: 68.9,
       mmlu: undefined,
       mmlu_pro: undefined,
       math_500: undefined,
@@ -46,8 +49,7 @@ export const o4Mini: ModelEntry = {
       terminal_bench: undefined,
       livecodebench: undefined,
       bigcodebench: undefined,
-      mbpp: undefined,
-      aider_polyglot: undefined,
+
       arena_elo: 1362,
     },
     description:

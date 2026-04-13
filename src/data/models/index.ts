@@ -41,6 +41,7 @@ import * as black_forest_labs from "./black-forest-labs";
 import * as nvidia from "./nvidia";
 import * as zai from "./z-ai";
 import * as stepfun_ai from "./stepfun-ai";
+import * as freecoding from "./freecoding/freecodingModels";
 
 // 📖 Collects every ModelEntry from all creator modules
 export const allEntries: ModelEntry[] = [
@@ -73,6 +74,7 @@ export const allEntries: ModelEntry[] = [
   ...Object.values(black_forest_labs),
   ...Object.values(nvidia),
   ...Object.values(zai),
+import * as freecoding from "./freecoding/freecodingModels";
 ];
 
 // 📖 Flat list of all models (intrinsic data only)

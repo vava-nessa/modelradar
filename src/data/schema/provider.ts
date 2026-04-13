@@ -24,6 +24,8 @@ export type BillingModel =
 
 /** 📖 Une plateforme qui vend l'accès à des modèles via API */
 export interface Provider {
+  /** 📖 Boolean indicating if the provider can be installed via a CLI/SDK (default true) */
+  installable?: boolean;
   /** 📖 Slug unique, ex: "openrouter" */
   id: string;
   /** 📖 Nom d'affichage, ex: "OpenRouter" */

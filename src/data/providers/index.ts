@@ -109,6 +109,9 @@ import { xiaomiTokenPlanAms } from "./xiaomi-token-plan-ams";
 import { xiaomiTokenPlanCn } from "./xiaomi-token-plan-cn";
 import { xiaomiTokenPlanSgp } from "./xiaomi-token-plan-sgp";
 import { zenmux } from "./zenmux";
+import { rovo } from "./rovo";
+import { gemini } from "./gemini";
+import { opencodeZen } from "./opencode-zen";
 import { zai } from "./zai";
 import { zaiCodingPlan } from "./zai-coding-plan";
 import { zhipuai } from "./zhipuai";
@@ -209,6 +212,9 @@ export const allProviders: Provider[] = [
   moonshotaiCn,
   tencentCodingPlan,
   zenmux,
+  rovo,
+  gemini,
+  opencodeZen,
   zai,
   zaiCodingPlan,
 ];

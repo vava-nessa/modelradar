@@ -50,7 +50,7 @@ export const claudeOpus45: ModelEntry = {
       livecodebench: undefined,
       bigcodebench: undefined,
       mbpp: 96.1,
-      aider_polyglot: undefined,
+      aider_polyglot: 89.4,
     },
     description:
       "Claude Opus 4.5 - most capable Sonnet model with major improvements across all benchmarks.",

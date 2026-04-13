@@ -49,7 +49,8 @@ export const claudeSonnet45: ModelEntry = {
       terminal_bench: 51.0,
       livecodebench: 65.0,
       bigcodebench: undefined,
-      aider_polyglot: undefined,
+      mbpp: 62.2,
+      aider_polyglot: 68.0,
     },
     description:
       "Claude Sonnet 4.5 - strong all-around performance with improved reasoning and coding capabilities.",

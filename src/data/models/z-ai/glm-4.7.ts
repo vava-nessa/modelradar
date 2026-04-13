@@ -33,6 +33,7 @@ export const glm47: ModelEntry = {
       tau_bench: 87.4,
       terminal_bench: 41.0,
       humanity_last_exam: 42.8,
+      aider_polyglot: 52.1,
     },
     description: "Zet's GLM-4.7 reasoning model with interleaved thinking.",
     supportedOn: ["api"],

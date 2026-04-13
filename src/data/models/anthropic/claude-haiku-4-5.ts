@@ -40,7 +40,7 @@ export const claudeHaiku45: ModelEntry = {
       verified_swe_bench: 73.3,
       arena_elo: undefined,
       gpqa_diamond: 73.0,
-      humaneval: undefined,
+      humaneval: 96.3,
       mmlu: undefined,
       mmlu_pro: undefined,
       math_500: undefined,
@@ -49,7 +49,7 @@ export const claudeHaiku45: ModelEntry = {
       terminal_bench: 41.0,
       livecodebench: undefined,
       bigcodebench: undefined,
-      mbpp: undefined,
+      mbpp: 53.4,
       aider_polyglot: undefined,
     },
     description:
