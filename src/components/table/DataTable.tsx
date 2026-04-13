@@ -90,24 +90,25 @@ export function DataTable<TData>({
 
   const { rows } = table.getRowModel();
 
-  /* ── Measure header column widths ─────────────────────────────── */
+  /* ── Measure header column widths via ResizeObserver ──────────── */
   useEffect(() => {
-    const unsubscribe = table.onStateChange(() => {
-      const ths = theadRef.current?.querySelectorAll("th");
-      if (!ths) return;
+    const thead = theadRef.current;
+    if (!thead) return;
+    const ths = thead.querySelectorAll("th");
+    if (!ths || ths.length === 0) return;
+
+    const measure = () => {
       const widths = Array.from(ths).map((th) => th.offsetWidth);
       setColWidths(widths);
-    });
-    // Initial measurement
-    requestAnimationFrame(() => {
-      const ths = theadRef.current?.querySelectorAll("th");
-      if (!ths) return;
-      setColWidths(Array.from(ths).map((th) => th.offsetWidth));
-    });
-    return unsubscribe;
-    // table is derived from orderedColumns so re-runs are covered by table dep
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [table]);
+    };
+
+    const ro = new ResizeObserver(measure);
+    ro.observe(thead);
+    measure();
+
+    return () => ro.disconnect();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [orderedColumns]);
 
   /* ── Virtualizer ─────────────────────────────────────────────── */
   const rowVirtualizer = useVirtualizer({
