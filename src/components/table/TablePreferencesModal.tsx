@@ -3,10 +3,11 @@
  *
  * @features
  * - Drag & drop column reordering (+ keyboard arrows)
- * - Toggle column visibility
+ * - Toggle column visibility (locked columns exempt)
  * - Quick-apply built-in presets (All / Coding / Benchmarks / Cost)
  * - Save / load / delete custom presets
  * - Visual indicator of active preset
+ * - Locked columns (e.g. "Model") are pinned, always visible, non-draggable
  *
  * @trigger <TablePrefsButton> — renders the button that opens the modal
  */
@@ -15,7 +16,7 @@ import { useState, useEffect, useRef } from "react";
 import type {
   UseTablePreferencesReturn,
 } from "@/lib/useTablePreferences";
-import { BUILT_IN_PRESETS } from "@/lib/useTablePreferences";
+import { BUILT_IN_PRESETS, LOCKED_COLUMN_IDS } from "@/lib/useTablePreferences";
 
 /* ─── Icons ──────────────────────────────────────────────────────────────── */
 
@@ -83,6 +84,15 @@ function ResetIcon() {
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="M2 7A5 5 0 1 1 4 10.5" />
       <polyline points="2,4 2,7 5,7" />
+    </svg>
+  );
+}
+
+function LockIcon() {
+  return (
+    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="2.5" y="5.5" width="7" height="5.5" rx="1" />
+      <path d="M4 5.5V4a2 2 0 1 1 4 0v1.5" />
     </svg>
   );
 }
@@ -237,51 +247,69 @@ export function TablePreferencesModal({ prefs, allColumns, onClose }: TablePrefe
                 const isVisible = visibility[col.id] !== false;
                 const isDragging = drag?.index === i;
                 const isDragOver = dragOver === i;
+                const isLocked = LOCKED_COLUMN_IDS.includes(col.id as typeof LOCKED_COLUMN_IDS[number]);
 
                 return (
                   <li
                     key={col.id}
-                    draggable
-                    onDragStart={(e) => handleDragStart(e, i)}
+                    draggable={!isLocked}
+                    onDragStart={(e) => { if (!isLocked) handleDragStart(e, i); }}
                     onDragOver={(e) => handleDragOver(e, i)}
                     onDrop={(e) => handleDrop(e, i)}
                     onDragEnd={handleDragEnd}
                     aria-label={`${col.label}, ${isVisible ? "visible" : "hidden"}.`}
                     className={`
-                      group flex items-center gap-2 rounded-lg px-2 py-1.5 text-sm transition-all cursor-move select-none
+                      group flex items-center gap-2 rounded-lg px-2 py-1.5 text-sm transition-all
+                      ${isLocked ? "cursor-default" : "cursor-move"}
                       ${isDragging ? "opacity-40 scale-95" : ""}
-                      ${isDragOver && !isDragging ? "border-t-2 border-[var(--color-accent)]" : ""}
+                      ${isDragOver && !isDragging && !isLocked ? "border-t-2 border-[var(--color-accent)]" : ""}
                       ${isVisible ? "bg-[var(--color-surface)]" : "bg-transparent"}
                     `}
                   >
-                    {/* Grip */}
-                    <span className="flex-shrink-0 cursor-grab active:cursor-grabbing" aria-hidden="true">
-                      <GripIcon />
-                    </span>
+                    {/* Grip or Lock */}
+                    {isLocked ? (
+                      <span className="flex-shrink-0 text-[var(--color-text-muted)]" aria-hidden="true">
+                        <LockIcon />
+                      </span>
+                    ) : (
+                      <span className="flex-shrink-0 cursor-grab active:cursor-grabbing" aria-hidden="true">
+                        <GripIcon />
+                      </span>
+                    )}
 
-                    {/* Visibility toggle */}
-                    <button
-                      type="button"
-                      onClick={() => toggleVisibility(col.id)}
-                      title={isVisible ? "Hide column" : "Show column"}
-                      aria-label={isVisible ? `Hide ${col.label} column` : `Show ${col.label} column`}
-                      className={`
-                        flex h-5 w-5 flex-shrink-0 items-center justify-center rounded border text-xs transition-colors
-                        ${isVisible
-                          ? "border-[var(--color-accent)] bg-[var(--color-accent)] text-white"
-                          : "border-[var(--color-border)] bg-transparent text-[var(--color-text-muted)]"}
-                      `}
-                    >
-                      {isVisible && <CheckIcon />}
-                    </button>
+                    {/* Visibility toggle — hidden for locked columns */}
+                    {isLocked ? (
+                      <span
+                        title="Always visible"
+                        className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded border border-[var(--color-accent)] bg-[var(--color-accent)]/10 text-[var(--color-accent)]"
+                      >
+                        <CheckIcon />
+                      </span>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={() => toggleVisibility(col.id)}
+                        title={isVisible ? "Hide column" : "Show column"}
+                        aria-label={isVisible ? `Hide ${col.label} column` : `Show ${col.label} column`}
+                        className={`
+                          flex h-5 w-5 flex-shrink-0 items-center justify-center rounded border text-xs transition-colors
+                          ${isVisible
+                            ? "border-[var(--color-accent)] bg-[var(--color-accent)] text-white"
+                            : "border-[var(--color-border)] bg-transparent text-[var(--color-text-muted)]"}
+                        `}
+                      >
+                        {isVisible && <CheckIcon />}
+                      </button>
+                    )}
 
                     {/* Label */}
-                    <span className={`flex-1 truncate ${!isVisible ? "text-[var(--color-text-muted)]" : ""}`}>
+                    <span className={`flex-1 truncate ${!isVisible && !isLocked ? "text-[var(--color-text-muted)]" : ""}`}>
                       {col.label}
+                      {isLocked && <span className="ml-1 text-[10px] text-[var(--color-text-muted)]">(locked)</span>}
                     </span>
 
-                    {/* Move up/down buttons */}
-                    <span className="flex items-center gap-0.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                    {/* Move up/down buttons — hidden for locked */}
+                    {!isLocked && <span className="flex items-center gap-0.5 opacity-0 group-hover:opacity-100 transition-opacity">
                       <button
                         type="button"
                         onClick={(e) => { e.stopPropagation(); moveUp(i); }}
@@ -300,7 +328,7 @@ export function TablePreferencesModal({ prefs, allColumns, onClose }: TablePrefe
                       >
                         <ChevronIcon dir="down" />
                       </button>
-                    </span>
+                    </span>}
                   </li>
                 );
               })}

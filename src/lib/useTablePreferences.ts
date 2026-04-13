@@ -16,6 +16,9 @@ import type { Column } from "@tanstack/react-table";
 
 const STORAGE_KEY = "modelradar:table-prefs";
 
+/** 📖 Columns that cannot be moved, hidden, or deleted — Model must always be visible & first */
+export const LOCKED_COLUMN_IDS = ["name"] as const;
+
 /** Default visibility: all columns visible */
 function defaultVisibility(columns: Column<unknown, unknown>[]) {
   return Object.fromEntries(columns.map((c) => [c.id, true]));
