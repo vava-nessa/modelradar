@@ -143,3 +143,5 @@ app.config.timestamp_*.js
 app.config.timestamp_*.mjs
 .vercel/
 .tanstack/
+.vercel
+.env*.local
