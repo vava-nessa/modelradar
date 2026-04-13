@@ -21,6 +21,7 @@ export const solarMini: ModelEntry = {
     capabilities: {
       streaming: true,
       function_calling: true,
+      vision: false,
     },
     description:
       "Upstage's compact model delivering strong performance with high efficiency on single GPU.",

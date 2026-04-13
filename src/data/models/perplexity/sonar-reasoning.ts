@@ -20,6 +20,8 @@ export const sonarReasoning: ModelEntry = {
     temperature: true,
     capabilities: {
       streaming: true,
+      function_calling: false,
+      vision: false,
     },
     description:
       "Perplexity's reasoning model optimized for chain-of-thought tasks with real-time web search integration.",

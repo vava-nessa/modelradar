@@ -28,3 +28,20 @@ export function formatRateLimit(rpm: number | undefined): string {
   if (rpm >= 1000) return `${(rpm / 1000).toFixed(0)}K/min`;
   return `${rpm}/min`;
 }
+
+/** 📖 Formater un coût mensuel en dollars — affiche en K$ pour les grandes valeurs */
+export function formatMonthlyCost(n: number): string {
+  if (n === 0) return "$0.00/mo";
+  if (n >= 10_000) return `$${(n / 1000).toFixed(1)}K/mo`;
+  if (n >= 1_000) return `$${(n / 1000).toFixed(2)}K/mo`;
+  if (n < 0.01) return `<$0.01/mo`;
+  return `$${n.toFixed(2)}/mo`;
+}
+
+/** 📖 Formater un volume de tokens (ex: 1M, 500K, 1B) */
+export function formatTokenVolume(n: number): string {
+  if (n >= 1_000_000_000) return `${(n / 1_000_000_000).toFixed(1)}B`;
+  if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(0)}M`;
+  if (n >= 1_000) return `${(n / 1_000).toFixed(0)}K`;
+  return n.toString();
+}

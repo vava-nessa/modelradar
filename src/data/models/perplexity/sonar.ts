@@ -21,6 +21,7 @@ export const sonar: ModelEntry = {
     capabilities: {
       streaming: true,
       function_calling: true,
+      vision: false,
       citations: true,
     },
     description:

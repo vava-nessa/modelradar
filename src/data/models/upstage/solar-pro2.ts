@@ -21,6 +21,7 @@ export const solarPro2: ModelEntry = {
     capabilities: {
       streaming: true,
       function_calling: true,
+      vision: false,
     },
     description:
       "Upstage's 31B reasoning model that rivals 70B+ models. Hybrid reasoning mode with high efficiency.",

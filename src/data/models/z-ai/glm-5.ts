@@ -30,7 +30,6 @@ export const glm5: ModelEntry = {
       mmlu_pro: undefined,
       livecodebench: undefined,
       aime_2025: 92.7,
-      aime_2026: undefined,
       tau_bench: 89.7,
       terminal_bench: 56.2,
       humanity_last_exam: 50.4,

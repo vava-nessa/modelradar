@@ -40,7 +40,6 @@ export const minimaxM25: ModelEntry = {
       tau_bench: 95.3,
       terminal_bench: 51.7,
       humanity_last_exam: 19.4,
-      mmbench: undefined,
       bfcl: 76.8,
       math_500: undefined,
       frontier_math: undefined,

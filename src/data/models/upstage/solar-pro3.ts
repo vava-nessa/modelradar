@@ -22,6 +22,7 @@ export const solarPro3: ModelEntry = {
     capabilities: {
       streaming: true,
       function_calling: true,
+      vision: false,
     },
     description:
       "Upstage's latest MoE model with 102B total parameters and 12B active. Improved reasoning and instruction following.",

@@ -43,7 +43,6 @@ export const o4Mini: ModelEntry = {
       mmlu: undefined,
       mmlu_pro: undefined,
       math_500: undefined,
-      aime_2024: 93.0,
       aime_2025: 99.5,
       tau_bench: undefined,
       terminal_bench: undefined,

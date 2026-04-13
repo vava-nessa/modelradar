@@ -7,7 +7,7 @@ export const gemini: Provider = {
   type: "aggregator",
   provider_access_type: "api",
   status: "active",
-  url: null,
+  url: undefined,
   has_free_tier: true,
   // CLI‑only – not installable via standard API key workflow
   installable: false,

@@ -20,6 +20,8 @@ export const sonarDeepResearch: ModelEntry = {
     temperature: false,
     capabilities: {
       streaming: true,
+      function_calling: false,
+      vision: false,
       citations: true,
     },
     description:
